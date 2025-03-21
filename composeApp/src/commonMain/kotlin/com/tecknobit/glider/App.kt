@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.text.font.FontFamily
 import com.tecknobit.equinoxcompose.session.EquinoxLocalUser
-import com.tecknobit.glider.ui.screens.home.HomeScreen
+import com.tecknobit.glider.ui.screens.home.presenter.HomeScreen
 import com.tecknobit.glider.ui.screens.splashscreen.Splashscreen
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.inter
@@ -43,7 +43,7 @@ val localUser = EquinoxLocalUser("Glider")
 const val SPLASHSCREEN = "Splashscreen"
 
 /**
- * `HOME_SCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.home.HomeScreen]
+ * `HOME_SCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.home.presenter.HomeScreen]
  */
 const val HOME_SCREEN = "HomeScreen"
 
