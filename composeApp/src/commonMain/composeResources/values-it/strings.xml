@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name" translatable="false">Glider</string>
     <string name="app_version" translatable="false">2.0.0</string>
-    <string name="generate">Generate</string>
-    <string name="insert">Insert</string>
-    <string name="keychain">Keychain</string>
+    <string name="generate">Genera</string>
+    <string name="insert">Inserisci</string>
+    <string name="keychain">Portachiavi</string>
 </resources>
