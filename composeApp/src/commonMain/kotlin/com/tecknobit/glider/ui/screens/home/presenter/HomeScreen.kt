@@ -1,12 +1,14 @@
 package com.tecknobit.glider.ui.screens.home.presenter
 
 import androidx.compose.animation.AnimatedContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -16,6 +18,7 @@ import androidx.compose.material.icons.filled.Keyboard
 import androidx.compose.material.icons.filled.Password
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.NavigationRail
@@ -27,6 +30,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.utilities.CompactClassComponent
@@ -42,6 +47,7 @@ import com.tecknobit.glider.ui.shared.presenters.GliderScreen
 import com.tecknobit.glider.ui.theme.AppTypography
 import com.tecknobit.glider.ui.theme.GliderTheme
 import glider.composeapp.generated.resources.Res
+import glider.composeapp.generated.resources.app_name
 import glider.composeapp.generated.resources.app_version
 import glider.composeapp.generated.resources.generate
 import glider.composeapp.generated.resources.insert
@@ -97,7 +103,21 @@ class HomeScreen : EquinoxNoModelScreen() {
         Row {
             NavigationRail(
                 modifier = Modifier
-                    .width(185.dp)
+                    .width(185.dp),
+                header = {
+                    Text(
+                        modifier = Modifier
+                            .padding(
+                                start = 16.dp,
+                                top = 35.dp
+                            )
+                            .fillMaxWidth(),
+                        text = stringResource(Res.string.app_name),
+                        style = AppTypography.displaySmall,
+                        textAlign = TextAlign.Start,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
             ) {
                 tabs.forEachIndexed { index, tab ->
                     NavigationDrawerItem(
@@ -142,6 +162,7 @@ class HomeScreen : EquinoxNoModelScreen() {
             Column(
                 modifier = Modifier
                     .weight(1f)
+                    .background(MaterialTheme.colorScheme.onPrimaryContainer)
             ) {
                 ScreenTabContent(
                     paddingValues = PaddingValues(
@@ -156,7 +177,11 @@ class HomeScreen : EquinoxNoModelScreen() {
     @CompactClassComponent
     @NonRestartableComposable
     private fun BottomNavigationContent() {
-        Box {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(MaterialTheme.colorScheme.onPrimaryContainer)
+        ) {
             ScreenTabContent(
                 paddingValues = PaddingValues(
                     top = 16.dp,
