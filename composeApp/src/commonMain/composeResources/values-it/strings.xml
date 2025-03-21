@@ -5,4 +5,22 @@
     <string name="insert">Inserisci</string>
     <string name="keychain">Portachiavi</string>
     <string name="account">Account</string>
+    <string name="name">Nome</string>
+    <string name="wrong_name">Nome errato</string>
+    <string name="surname">Cognome</string>
+    <string name="wrong_surname">Cognome sbagliato</string>
+    <string name="email">Email</string>
+    <string name="wrong_email">Email sbagliata</string>
+    <string name="password">Password</string>
+    <string name="wrong_password">Password sbagliata</string>
+    <string name="logout">Logout</string>
+    <string name="logout_warn_text">Se confermi, verrai disconness dalla sessione corrente. Desideri procedere?</string>
+    <string name="delete">Elimina</string>
+    <string name="delete_warn_text">Se confermi, il tuo account e tutti i dati associati saranno eliminati in modo permanente. Questa azione non può essere annullata. Desideri procedere?</string>
+    <string name="change_email">Cambia email</string>
+    <string name="new_email">Nuova email</string>
+    <string name="change_password">Cambia la password</string>
+    <string name="change_language">Cambia la lingua</string>
+    <string name="change_theme">Cambia tema</string>
+    <string name="new_password">Nuova password</string>
 </resources>

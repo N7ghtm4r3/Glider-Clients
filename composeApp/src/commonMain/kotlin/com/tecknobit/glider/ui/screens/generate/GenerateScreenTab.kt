@@ -1,18 +1,19 @@
 package com.tecknobit.glider.ui.screens.generate
 
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import com.tecknobit.glider.ui.shared.presenters.GliderScreen
+import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.generate
 
-class GenerateScreen : GliderScreen<GenerateScreenViewModel>(
+class GenerateScreenTab : GliderScreenTab<GenerateScreenViewModel>(
     viewModel = GenerateScreenViewModel(),
     title = Res.string.generate
 ) {
 
     @Composable
-    override fun ScreenContent() {
+    override fun ColumnScope.ScreenContent() {
         Text(
             text = "gagaga"
         )

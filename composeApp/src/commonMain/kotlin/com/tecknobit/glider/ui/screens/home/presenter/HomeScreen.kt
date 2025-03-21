@@ -41,12 +41,12 @@ import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.EXPANDED_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.MEDIUM_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClassComponent
 import com.tecknobit.equinoxcompose.utilities.ResponsiveContent
-import com.tecknobit.glider.ui.screens.account.presenter.AccountScreen
-import com.tecknobit.glider.ui.screens.generate.GenerateScreen
+import com.tecknobit.glider.ui.screens.account.presenter.AccountScreenTab
+import com.tecknobit.glider.ui.screens.generate.GenerateScreenTab
 import com.tecknobit.glider.ui.screens.home.data.ScreenTab
-import com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreen
-import com.tecknobit.glider.ui.screens.keychain.presenter.KeychainScreen
-import com.tecknobit.glider.ui.shared.presenters.GliderScreen
+import com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab
+import com.tecknobit.glider.ui.screens.keychain.presenter.KeychainScreenTab
+import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
 import com.tecknobit.glider.ui.theme.AppTypography
 import com.tecknobit.glider.ui.theme.GliderTheme
 import glider.composeapp.generated.resources.Res
@@ -251,12 +251,12 @@ class HomeScreen : EquinoxNoModelScreen() {
         }
     }
 
-    private fun Int.relatedScreenTab(): GliderScreen<*> {
+    private fun Int.relatedScreenTab(): GliderScreenTab<*> {
         return when (this) {
-            0 -> GenerateScreen()
-            1 -> InsertPasswordScreen()
-            2 -> KeychainScreen()
-            else -> AccountScreen()
+            0 -> GenerateScreenTab()
+            1 -> InsertPasswordScreenTab()
+            2 -> KeychainScreenTab()
+            else -> AccountScreenTab()
         }
     }
 

@@ -5,4 +5,22 @@
     <string name="insert">Insert</string>
     <string name="keychain">Keychain</string>
     <string name="account">Account</string>
+    <string name="name">Name</string>
+    <string name="wrong_name">Wrong name</string>
+    <string name="surname">Surname</string>
+    <string name="wrong_surname">Wrong surname</string>
+    <string name="email">Email</string>
+    <string name="wrong_email">Wrong email</string>
+    <string name="password">Password</string>
+    <string name="wrong_password">Wrong password</string>
+    <string name="logout">Logout</string>
+    <string name="logout_warn_text">If you confirm, you will be logged out of the current session. Do you wish to proceed?</string>
+    <string name="delete">Delete</string>
+    <string name="delete_warn_text">If you confirm, your account and all associated data will be permanently deleted. This action cannot be undone. Do you wish to proceed?</string>
+    <string name="change_email">Change email</string>
+    <string name="new_email">New email</string>
+    <string name="change_password">Change password</string>
+    <string name="change_language">Change language</string>
+    <string name="change_theme">Change theme</string>
+    <string name="new_password">New password</string>
 </resources>
