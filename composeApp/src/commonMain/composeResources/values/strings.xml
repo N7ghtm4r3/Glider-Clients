@@ -4,4 +4,5 @@
     <string name="generate">Generate</string>
     <string name="insert">Insert</string>
     <string name="keychain">Keychain</string>
+    <string name="account">Account</string>
 </resources>

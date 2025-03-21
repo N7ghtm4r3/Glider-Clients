@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Key
 import androidx.compose.material.icons.filled.Keyboard
+import androidx.compose.material.icons.filled.ManageAccounts
 import androidx.compose.material.icons.filled.Password
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.Icon
@@ -32,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.utilities.CompactClassComponent
@@ -39,6 +41,7 @@ import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.EXPANDED_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.MEDIUM_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClassComponent
 import com.tecknobit.equinoxcompose.utilities.ResponsiveContent
+import com.tecknobit.glider.ui.screens.account.presenter.AccountScreen
 import com.tecknobit.glider.ui.screens.generate.GenerateScreen
 import com.tecknobit.glider.ui.screens.home.data.ScreenTab
 import com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreen
@@ -47,6 +50,7 @@ import com.tecknobit.glider.ui.shared.presenters.GliderScreen
 import com.tecknobit.glider.ui.theme.AppTypography
 import com.tecknobit.glider.ui.theme.GliderTheme
 import glider.composeapp.generated.resources.Res
+import glider.composeapp.generated.resources.account
 import glider.composeapp.generated.resources.app_name
 import glider.composeapp.generated.resources.app_version
 import glider.composeapp.generated.resources.generate
@@ -73,6 +77,11 @@ class HomeScreen : EquinoxNoModelScreen() {
                 tabTitle = Res.string.keychain,
                 contentDescription = "Keychain",
                 icon = Icons.Default.Key
+            ),
+            ScreenTab(
+                tabTitle = Res.string.account,
+                contentDescription = "Account",
+                icon = Icons.Default.ManageAccounts
             )
         )
 
@@ -139,7 +148,9 @@ class HomeScreen : EquinoxNoModelScreen() {
                         },
                         label = {
                             Text(
-                                text = stringResource(tab.tabTitle)
+                                text = stringResource(tab.tabTitle),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
                             )
                         }
                     )
@@ -166,7 +177,10 @@ class HomeScreen : EquinoxNoModelScreen() {
             ) {
                 ScreenTabContent(
                     paddingValues = PaddingValues(
-                        all = 16.dp
+                        top = 35.dp,
+                        start = 35.dp,
+                        end = 35.dp,
+                        bottom = 16.dp
                     )
                 )
             }
@@ -184,7 +198,7 @@ class HomeScreen : EquinoxNoModelScreen() {
         ) {
             ScreenTabContent(
                 paddingValues = PaddingValues(
-                    top = 16.dp,
+                    top = 25.dp,
                     start = 16.dp,
                     end = 16.dp,
                     bottom = 96.dp
@@ -206,7 +220,9 @@ class HomeScreen : EquinoxNoModelScreen() {
                         },
                         label = {
                             Text(
-                                text = stringResource(tab.tabTitle)
+                                text = stringResource(tab.tabTitle),
+                                maxLines = 1,
+                                overflow = TextOverflow.Ellipsis
                             )
                         }
                     )
@@ -223,12 +239,14 @@ class HomeScreen : EquinoxNoModelScreen() {
         Column(
             modifier = Modifier
                 .padding(paddingValues)
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
-            AnimatedContent(
-                targetState = activeScreenTabIndex.value
-            ) { activeIndex ->
-                activeIndex.relatedScreenTab().ShowContent()
+            Column {
+                AnimatedContent(
+                    targetState = activeScreenTabIndex.value
+                ) { activeIndex ->
+                    activeIndex.relatedScreenTab().ShowContent()
+                }
             }
         }
     }
@@ -237,7 +255,8 @@ class HomeScreen : EquinoxNoModelScreen() {
         return when (this) {
             0 -> GenerateScreen()
             1 -> InsertPasswordScreen()
-            else -> KeychainScreen()
+            2 -> KeychainScreen()
+            else -> AccountScreen()
         }
     }
 
