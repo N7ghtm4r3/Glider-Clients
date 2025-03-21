@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name" translatable="false">Glider</string>
+    <string name="app_version" translatable="false">2.0.0</string>
+</resources>
