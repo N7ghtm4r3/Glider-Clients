@@ -30,6 +30,12 @@ abstract class PasswordFormViewModel(
 
     lateinit var quantityPickerState: QuantityPickerState
 
+    lateinit var includeNumbers: MutableState<Boolean>
+
+    lateinit var includeUppercaseLetters: MutableState<Boolean>
+
+    lateinit var includeSpecialCharacters: MutableState<Boolean>
+
     @RequiresSuperCall
     protected open fun validateForm(): Boolean {
         if (!tailIsValid(tail.value)) {

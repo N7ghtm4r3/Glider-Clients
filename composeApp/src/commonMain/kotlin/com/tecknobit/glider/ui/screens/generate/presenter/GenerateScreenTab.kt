@@ -24,6 +24,7 @@ import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.PASSWORD_MAX_LENGTH
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.PASSWORD_MIN_LENGTH
+import com.tecknobit.glider.ui.screens.generate.components.PasswordOptions
 import com.tecknobit.glider.ui.screens.generate.components.QuantityPicker
 import com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState
 import com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel
@@ -91,8 +92,7 @@ class GenerateScreenTab(
             EquinoxOutlinedTextField(
                 modifier = Modifier
                     .padding(
-                        top = 10.dp,
-                        bottom = 15.dp
+                        top = 10.dp
                     ),
                 shape = InputFieldShape,
                 value = viewModel.scopes,
@@ -102,13 +102,21 @@ class GenerateScreenTab(
                 isError = viewModel.scopesError,
                 validator = { GliderInputsValidator.scopesAreValid(it) },
                 keyboardOptions = KeyboardOptions(
-                    imeAction = ImeAction.Next
+                    imeAction = ImeAction.Done
                 ),
                 supportingText = {
                     Text(
                         text = stringResource(Res.string.comma_separated_list)
                     )
                 }
+            )
+            PasswordOptions(
+                modifier = Modifier
+                    .padding(
+                        top = 10.dp,
+                        bottom = 15.dp
+                    ),
+                viewModel = viewModel
             )
             Button(
                 modifier = Modifier
@@ -117,7 +125,8 @@ class GenerateScreenTab(
                 onClick = { viewModel.generatePassword() }
             ) {
                 Text(
-                    text = stringResource(Res.string.generate)
+                    text = stringResource(Res.string.generate),
+                    style = AppTypography.bodyLarge
                 )
             }
         }
@@ -128,18 +137,21 @@ class GenerateScreenTab(
      */
     @Composable
     override fun CollectStates() {
-        viewModel.tail = remember { mutableStateOf("") }
-        viewModel.tailError = remember { mutableStateOf(false) }
-        viewModel.scopes = remember { mutableStateOf("") }
-        viewModel.scopesError = remember { mutableStateOf(false) }
-        viewModel.passwordLength = remember { mutableStateOf("") }
-        viewModel.passwordLengthError = remember { mutableStateOf(false) }
         viewModel.quantityPickerState = rememberQuantityPickerState(
             initialQuantity = PASSWORD_MIN_LENGTH,
             minQuantity = PASSWORD_MIN_LENGTH,
             maxQuantity = PASSWORD_MAX_LENGTH,
             longPressQuantity = 4
         )
+        viewModel.tail = remember { mutableStateOf("") }
+        viewModel.tailError = remember { mutableStateOf(false) }
+        viewModel.scopes = remember { mutableStateOf("") }
+        viewModel.scopesError = remember { mutableStateOf(false) }
+        viewModel.passwordLength = remember { mutableStateOf("") }
+        viewModel.passwordLengthError = remember { mutableStateOf(false) }
+        viewModel.includeNumbers = remember { mutableStateOf(true) }
+        viewModel.includeUppercaseLetters = remember { mutableStateOf(true) }
+        viewModel.includeSpecialCharacters = remember { mutableStateOf(true) }
     }
 
 }

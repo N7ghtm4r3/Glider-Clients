@@ -98,6 +98,7 @@ class HomeScreen : EquinoxNoModelScreen() {
             ResponsiveContent(
                 onExpandedSizeClass = { SideNavigationContent() },
                 onMediumSizeClass = { SideNavigationContent() },
+                onMediumWidthExpandedHeight = { BottomNavigationContent() },
                 onCompactSizeClass = { BottomNavigationContent() }
             )
         }

@@ -30,4 +30,7 @@
     <string name="password_length">Lunghezza della password</string>
     <string name="wrong_password_length">Lunghezza della password errata</string>
     <string name="comma_separated_list">Elenco separato da virgola</string>
+    <string name="include_numbers">Includi numeri</string>
+    <string name="include_uppercase_letters">Includi lettere maiuscole</string>
+    <string name="include_special_characters">Includi caratteri speciali</string>
 </resources>

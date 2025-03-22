@@ -30,4 +30,7 @@
     <string name="password_length">Password length</string>
     <string name="wrong_password_length">Wrong password length</string>
     <string name="comma_separated_list">Comma separated list</string>
+    <string name="include_numbers">Include numbers</string>
+    <string name="include_uppercase_letters">Include uppercase letters</string>
+    <string name="include_special_characters">Include special character</string>
 </resources>

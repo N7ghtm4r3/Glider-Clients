@@ -10,6 +10,7 @@ class GenerateScreenViewModel(
     passwordId = passwordId
 ) {
 
+
     fun generatePassword() {
         if (!validateForm())
             return
