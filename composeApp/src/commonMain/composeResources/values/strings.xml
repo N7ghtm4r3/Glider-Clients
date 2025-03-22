@@ -29,4 +29,5 @@
     <string name="wrong_scopes">Wrong scopes</string>
     <string name="password_length">Password length</string>
     <string name="wrong_password_length">Wrong password length</string>
+    <string name="comma_separated_list">Comma separated list</string>
 </resources>

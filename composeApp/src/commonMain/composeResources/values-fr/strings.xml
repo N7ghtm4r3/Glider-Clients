@@ -29,4 +29,5 @@
     <string name="wrong_scopes">Mauvaise portée</string>
     <string name="password_length">Longueur du mot de passe</string>
     <string name="wrong_password_length">Longueur du mot de passe incorrecte</string>
+    <string name="comma_separated_list">Liste séparée par des virgules</string>
 </resources>

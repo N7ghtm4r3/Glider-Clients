@@ -29,4 +29,5 @@
     <string name="wrong_scopes">Ámbitos equivocados</string>
     <string name="password_length">Longitud de la contraseña</string>
     <string name="wrong_password_length">Longitud incorrecta de la contraseña</string>
+    <string name="comma_separated_list">Lista separada por comas</string>
 </resources>

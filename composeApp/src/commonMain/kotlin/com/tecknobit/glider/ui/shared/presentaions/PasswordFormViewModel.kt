@@ -5,6 +5,8 @@ import androidx.compose.runtime.MutableState
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
+import com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState
+import com.tecknobit.glidercore.helpers.GliderInputsValidator.scopesAreValid
 import com.tecknobit.glidercore.helpers.GliderInputsValidator.tailIsValid
 
 @Structure
@@ -26,13 +28,15 @@ abstract class PasswordFormViewModel(
 
     lateinit var passwordLengthError: MutableState<Boolean>
 
+    lateinit var quantityPickerState: QuantityPickerState
+
     @RequiresSuperCall
     protected open fun validateForm(): Boolean {
         if (!tailIsValid(tail.value)) {
             tailError.value = true
             return false
         }
-        if (!tailIsValid(scopes.value)) {
+        if (!scopesAreValid(scopes.value)) {
             scopesError.value = true
             return false
         }

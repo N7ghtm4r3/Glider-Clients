@@ -54,6 +54,8 @@ fun QuantityPicker(
     modifier: Modifier = Modifier,
     quantityButtonModifier: Modifier = Modifier,
     state: QuantityPickerState,
+    informativeText: String? = null,
+    informativeTextStyle: TextStyle = TextStyle.Default,
     quantityIndicatorStyle: TextStyle = TextStyle.Default,
 ) {
     Row(
@@ -61,6 +63,12 @@ fun QuantityPicker(
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
+        informativeText?.let {
+            Text(
+                text = informativeText,
+                style = informativeTextStyle
+            )
+        }
         DecrementButton(
             state = state,
             modifier = quantityButtonModifier
@@ -145,6 +153,7 @@ private fun QuantityButton(
             .background(MaterialTheme.colorScheme.primary)
             .combinedClickable(
                 onClick = quantityAction,
+                onDoubleClick = longPressQuantityAction,
                 onLongClick = longPressQuantityAction
             ),
         contentAlignment = Alignment.Center

@@ -29,4 +29,5 @@
     <string name="wrong_scopes">Campi sbagliati</string>
     <string name="password_length">Lunghezza della password</string>
     <string name="wrong_password_length">Lunghezza della password errata</string>
+    <string name="comma_separated_list">Elenco separato da virgola</string>
 </resources>

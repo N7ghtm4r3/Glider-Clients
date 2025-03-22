@@ -7,10 +7,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Button
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -25,13 +28,20 @@ import com.tecknobit.glider.ui.screens.generate.components.QuantityPicker
 import com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState
 import com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
+import com.tecknobit.glider.ui.theme.AppTypography
+import com.tecknobit.glider.ui.theme.ButtonShape
+import com.tecknobit.glider.ui.theme.ButtonSize
+import com.tecknobit.glider.ui.theme.InputFieldShape
 import com.tecknobit.glidercore.helpers.GliderInputsValidator
 import glider.composeapp.generated.resources.Res
+import glider.composeapp.generated.resources.comma_separated_list
 import glider.composeapp.generated.resources.generate
+import glider.composeapp.generated.resources.password_length
 import glider.composeapp.generated.resources.scopes
 import glider.composeapp.generated.resources.tail
 import glider.composeapp.generated.resources.wrong_scopes
 import glider.composeapp.generated.resources.wrong_tail
+import org.jetbrains.compose.resources.stringResource
 
 class GenerateScreenTab(
     passwordId: String? = null,
@@ -53,10 +63,22 @@ class GenerateScreenTab(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            EquinoxOutlinedTextField(
-                shape = RoundedCornerShape(
-                    size = 10.dp
+            QuantityPicker(
+                state = viewModel.quantityPickerState,
+                informativeText = stringResource(Res.string.password_length),
+                informativeTextStyle = AppTypography.labelLarge.copy(
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 ),
+                quantityIndicatorStyle = AppTypography.bodyMedium.copy(
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            )
+            EquinoxOutlinedTextField(
+                modifier = Modifier
+                    .padding(
+                        top = 10.dp
+                    ),
+                shape = InputFieldShape,
                 value = viewModel.tail,
                 placeholder = Res.string.tail,
                 errorText = Res.string.wrong_tail,
@@ -69,11 +91,10 @@ class GenerateScreenTab(
             EquinoxOutlinedTextField(
                 modifier = Modifier
                     .padding(
-                        top = 10.dp
+                        top = 10.dp,
+                        bottom = 15.dp
                     ),
-                shape = RoundedCornerShape(
-                    size = 10.dp
-                ),
+                shape = InputFieldShape,
                 value = viewModel.scopes,
                 placeholder = Res.string.scopes,
                 errorText = Res.string.wrong_scopes,
@@ -82,20 +103,23 @@ class GenerateScreenTab(
                 validator = { GliderInputsValidator.scopesAreValid(it) },
                 keyboardOptions = KeyboardOptions(
                     imeAction = ImeAction.Next
-                )
+                ),
+                supportingText = {
+                    Text(
+                        text = stringResource(Res.string.comma_separated_list)
+                    )
+                }
             )
-            QuantityPicker(
+            Button(
                 modifier = Modifier
-                    .padding(
-                        top = 10.dp
-                    ),
-                state = rememberQuantityPickerState(
-                    initialQuantity = PASSWORD_MIN_LENGTH,
-                    minQuantity = PASSWORD_MIN_LENGTH,
-                    maxQuantity = PASSWORD_MAX_LENGTH,
-                    longPressQuantity = 4
+                    .size(ButtonSize),
+                shape = ButtonShape,
+                onClick = { viewModel.generatePassword() }
+            ) {
+                Text(
+                    text = stringResource(Res.string.generate)
                 )
-            )
+            }
         }
     }
 
@@ -110,6 +134,12 @@ class GenerateScreenTab(
         viewModel.scopesError = remember { mutableStateOf(false) }
         viewModel.passwordLength = remember { mutableStateOf("") }
         viewModel.passwordLengthError = remember { mutableStateOf(false) }
+        viewModel.quantityPickerState = rememberQuantityPickerState(
+            initialQuantity = PASSWORD_MIN_LENGTH,
+            minQuantity = PASSWORD_MIN_LENGTH,
+            maxQuantity = PASSWORD_MAX_LENGTH,
+            longPressQuantity = 4
+        )
     }
 
 }
