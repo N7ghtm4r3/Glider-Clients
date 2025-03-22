@@ -42,7 +42,7 @@ import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.MEDIUM_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClassComponent
 import com.tecknobit.equinoxcompose.utilities.ResponsiveContent
 import com.tecknobit.glider.ui.screens.account.presenter.AccountScreenTab
-import com.tecknobit.glider.ui.screens.generate.GenerateScreenTab
+import com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab
 import com.tecknobit.glider.ui.screens.home.data.ScreenTab
 import com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab
 import com.tecknobit.glider.ui.screens.keychain.presenter.KeychainScreenTab
@@ -173,7 +173,7 @@ class HomeScreen : EquinoxNoModelScreen() {
             Column(
                 modifier = Modifier
                     .weight(1f)
-                    .background(MaterialTheme.colorScheme.onPrimaryContainer)
+                    .background(MaterialTheme.colorScheme.inverseOnSurface)
             ) {
                 ScreenTabContent(
                     paddingValues = PaddingValues(
@@ -194,7 +194,7 @@ class HomeScreen : EquinoxNoModelScreen() {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(MaterialTheme.colorScheme.onPrimaryContainer)
+                .background(MaterialTheme.colorScheme.inverseOnSurface)
         ) {
             ScreenTabContent(
                 paddingValues = PaddingValues(

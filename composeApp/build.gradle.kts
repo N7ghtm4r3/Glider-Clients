@@ -79,6 +79,7 @@ kotlin {
             implementation(libs.equinox.compose)
             implementation(libs.equinox.core)
             implementation(libs.kotlinx.serialization.json)
+            implementation(libs.glidercore)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

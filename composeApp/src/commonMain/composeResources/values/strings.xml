@@ -23,4 +23,10 @@
     <string name="change_language">Change language</string>
     <string name="change_theme">Change theme</string>
     <string name="new_password">New password</string>
+    <string name="tail">Tail</string>
+    <string name="wrong_tail">Wrong tail</string>
+    <string name="scopes">Scopes</string>
+    <string name="wrong_scopes">Wrong scopes</string>
+    <string name="password_length">Password length</string>
+    <string name="wrong_password_length">Wrong password length</string>
 </resources>

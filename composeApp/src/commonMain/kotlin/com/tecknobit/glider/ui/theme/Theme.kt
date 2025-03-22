@@ -4,6 +4,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import com.tecknobit.equinoxcompose.session.EquinoxLocalUser.ApplicationTheme.Auto
+import com.tecknobit.equinoxcompose.session.EquinoxLocalUser.ApplicationTheme.Dark
+import com.tecknobit.equinoxcompose.session.EquinoxLocalUser.ApplicationTheme.Light
+import com.tecknobit.glider.localUser
 
 private val lightScheme = lightColorScheme(
     primary = primaryLightHighContrast,
@@ -81,11 +85,10 @@ private val darkScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDark,
 )
 
-// TODO: TO USE THE localUser THEMING INSTEAD
 @Composable
 fun GliderTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable() () -> Unit
+    darkTheme: Boolean = applyDarkTheme(),
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
         darkTheme -> darkScheme
@@ -98,3 +101,11 @@ fun GliderTheme(
     )
 }
 
+@Composable
+private fun applyDarkTheme(): Boolean {
+    return when (localUser.theme) {
+        Dark -> true
+        Light -> false
+        Auto -> isSystemInDarkTheme()
+    }
+}

@@ -5,9 +5,11 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.widthIn
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.Text
+import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,6 +46,9 @@ abstract class GliderScreenTab<V : EquinoxViewModel>(
                     modifier = Modifier
                         .fillMaxWidth(),
                     text = stringResource(title),
+                    color = contentColorFor(
+                        backgroundColor = MaterialTheme.colorScheme.inverseOnSurface
+                    ),
                     style = AppTypography.displayMedium,
                     fontWeight = FontWeight.Bold,
                     maxLines = 1,

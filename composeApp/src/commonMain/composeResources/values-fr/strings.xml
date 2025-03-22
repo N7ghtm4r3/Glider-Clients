@@ -23,4 +23,10 @@
     <string name="change_language">Changer de langue</string>
     <string name="change_theme">Changer de thème</string>
     <string name="new_password">Nouveau mot de passe</string>
+    <string name="tail">Queue</string>
+    <string name="wrong_tail">Mauvaise queue</string>
+    <string name="scopes">Scopes</string>
+    <string name="wrong_scopes">Mauvaise portée</string>
+    <string name="password_length">Longueur du mot de passe</string>
+    <string name="wrong_password_length">Longueur du mot de passe incorrecte</string>
 </resources>

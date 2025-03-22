@@ -23,4 +23,10 @@
     <string name="change_language">Cambiar de idioma</string>
     <string name="change_theme">Cambiar de tema</string>
     <string name="new_password">Nueva contraseña</string>
+    <string name="tail">Cola</string>
+    <string name="wrong_tail">Cola equivocada</string>
+    <string name="scopes">Visores</string>
+    <string name="wrong_scopes">Ámbitos equivocados</string>
+    <string name="password_length">Longitud de la contraseña</string>
+    <string name="wrong_password_length">Longitud incorrecta de la contraseña</string>
 </resources>
