@@ -19,6 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
+import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.PASSWORD_MAX_LENGTH
+import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.PASSWORD_MIN_LENGTH
 import com.tecknobit.glider.ui.screens.generate.components.QuantityPicker
 import com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState
 import com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel
@@ -88,7 +90,10 @@ class GenerateScreenTab(
                         top = 10.dp
                     ),
                 state = rememberQuantityPickerState(
-                    initialQuantity = 0
+                    initialQuantity = PASSWORD_MIN_LENGTH,
+                    minQuantity = PASSWORD_MIN_LENGTH,
+                    maxQuantity = PASSWORD_MAX_LENGTH,
+                    longPressQuantity = 4
                 )
             )
         }
