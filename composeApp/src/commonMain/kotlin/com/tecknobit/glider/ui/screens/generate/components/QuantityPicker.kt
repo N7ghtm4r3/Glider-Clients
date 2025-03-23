@@ -189,13 +189,14 @@ fun rememberQuantityPickerState(
 }
 
 class QuantityPickerState internal constructor(
-    val initialQuantity: Int,
+    val initialQuantity: Int = 0,
+    val currentQuantity: Int = initialQuantity,
     val minQuantity: Int = Int.MIN_VALUE,
     val maxQuantity: Int = Int.MAX_VALUE,
     val longPressQuantity: Int? = null,
 ) {
 
-    val quantity = mutableStateOf(initialQuantity)
+    val quantity = mutableStateOf(currentQuantity)
 
     val longPressEnabled = longPressQuantity != null && longPressQuantity > 1
 
@@ -245,6 +246,10 @@ class QuantityPickerState internal constructor(
             quantity.value -= decrementValue
     }
 
+    fun reset() {
+        quantity.value = initialQuantity
+    }
+
 }
 
 internal object QuantityPickerSaver : Saver<QuantityPickerState, Array<Int?>> {
@@ -258,9 +263,10 @@ internal object QuantityPickerSaver : Saver<QuantityPickerState, Array<Int?>> {
     ): QuantityPickerState {
         return QuantityPickerState(
             initialQuantity = value[0]!!,
-            minQuantity = value[1]!!,
-            maxQuantity = value[2]!!,
-            longPressQuantity = value[3]
+            currentQuantity = value[1]!!,
+            minQuantity = value[2]!!,
+            maxQuantity = value[3]!!,
+            longPressQuantity = value[4]
         )
     }
 
@@ -272,6 +278,7 @@ internal object QuantityPickerSaver : Saver<QuantityPickerState, Array<Int?>> {
     ): Array<Int?> {
         return arrayOf(
             value.initialQuantity,
+            value.currentQuantity,
             value.minQuantity,
             value.maxQuantity,
             value.longPressQuantity

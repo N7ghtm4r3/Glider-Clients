@@ -14,5 +14,5 @@ val ButtonShape = RoundedCornerShape(
 
 val ButtonSize = DpSize(
     width = 300.dp,
-    height = 60.dp
+    height = 55.dp
 )

@@ -32,5 +32,6 @@
     <string name="comma_separated_list">Lista separada por comas</string>
     <string name="include_numbers">Incluir números</string>
     <string name="include_uppercase_letters">Incluir letras mayúsculas</string>
-    <string name="include_special_characters">Incluir carácter especial</string>
+    <string name="include_special_characters">Incluir carácteres especial</string>
+    <string name="password_generated">¡Contraseña generada!</string>
 </resources>

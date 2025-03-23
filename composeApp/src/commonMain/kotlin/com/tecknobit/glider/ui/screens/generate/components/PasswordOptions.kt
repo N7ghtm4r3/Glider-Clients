@@ -12,7 +12,7 @@ import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.tecknobit.glider.ui.shared.presentaions.PasswordFormViewModel
+import com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.include_numbers
 import glider.composeapp.generated.resources.include_special_characters
@@ -24,7 +24,7 @@ import org.jetbrains.compose.resources.stringResource
 @NonRestartableComposable
 fun PasswordOptions(
     modifier: Modifier = Modifier,
-    viewModel: PasswordFormViewModel,
+    viewModel: GenerateScreenViewModel,
 ) {
     Column(
         modifier = modifier

@@ -32,5 +32,6 @@
     <string name="comma_separated_list">Comma separated list</string>
     <string name="include_numbers">Include numbers</string>
     <string name="include_uppercase_letters">Include uppercase letters</string>
-    <string name="include_special_characters">Include special character</string>
+    <string name="include_special_characters">Include special characters</string>
+    <string name="password_generated">Password generated!</string>
 </resources>

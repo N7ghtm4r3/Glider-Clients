@@ -15,6 +15,8 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -52,6 +54,8 @@ class GenerateScreenTab(
     ),
     title = Res.string.generate
 ) {
+
+    private lateinit var generatingPassword: State<Boolean>
 
     @Composable
     override fun ColumnScope.ScreenContent() {
@@ -122,6 +126,7 @@ class GenerateScreenTab(
                 modifier = Modifier
                     .size(ButtonSize),
                 shape = ButtonShape,
+                enabled = !generatingPassword.value,
                 onClick = { viewModel.generatePassword() }
             ) {
                 Text(
@@ -147,11 +152,12 @@ class GenerateScreenTab(
         viewModel.tailError = remember { mutableStateOf(false) }
         viewModel.scopes = remember { mutableStateOf("") }
         viewModel.scopesError = remember { mutableStateOf(false) }
-        viewModel.passwordLength = remember { mutableStateOf("") }
-        viewModel.passwordLengthError = remember { mutableStateOf(false) }
         viewModel.includeNumbers = remember { mutableStateOf(true) }
         viewModel.includeUppercaseLetters = remember { mutableStateOf(true) }
         viewModel.includeSpecialCharacters = remember { mutableStateOf(true) }
+        generatingPassword = viewModel.generatingPassword.collectAsState(
+            initial = false
+        )
     }
 
 }
