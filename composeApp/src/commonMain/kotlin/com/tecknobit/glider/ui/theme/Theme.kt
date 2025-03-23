@@ -102,7 +102,7 @@ fun GliderTheme(
 }
 
 @Composable
-private fun applyDarkTheme(): Boolean {
+fun applyDarkTheme(): Boolean {
     return when (localUser.theme) {
         Dark -> true
         Light -> false

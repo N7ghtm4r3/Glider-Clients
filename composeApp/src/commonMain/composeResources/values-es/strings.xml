@@ -38,4 +38,6 @@
     <string name="copy">Copia</string>
     <string name="inserting">Insertando...</string>
     <string name="password_inserted">¡Contraseña introducida!</string>
+    <string name="loading_passwords">Cargando contraseñas...</string>
+    <string name="no_passwords_available">No hay contraseñas disponibles</string>
 </resources>

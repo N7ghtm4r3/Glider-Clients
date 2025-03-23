@@ -80,6 +80,7 @@ kotlin {
             implementation(libs.equinox.core)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.glidercore)
+            implementation(libs.lazy.pagination.compose)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

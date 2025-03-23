@@ -2,6 +2,7 @@ package com.tecknobit.glider.ui.screens.keychain.presenter
 
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.runtime.Composable
+import com.tecknobit.glider.ui.screens.keychain.components.Passwords
 import com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
 import glider.composeapp.generated.resources.Res
@@ -14,7 +15,9 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
 
     @Composable
     override fun ColumnScope.ScreenContent() {
-
+        Passwords(
+            viewModel = viewModel
+        )
     }
 
     /**
