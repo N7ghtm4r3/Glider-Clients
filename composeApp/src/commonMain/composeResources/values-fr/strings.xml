@@ -40,4 +40,5 @@
     <string name="password_inserted">Mot de passe inséré !</string>
     <string name="loading_passwords">Chargement des mots de passe...</string>
     <string name="no_passwords_available">Pas de mots de passe disponibles</string>
+    <string name="password_copied">Mot de passe copié !</string>
 </resources>

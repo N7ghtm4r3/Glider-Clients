@@ -31,19 +31,22 @@ class KeychainScreenViewModel : EquinoxViewModel(
             items = listOf(
                 Password(
                     id = Random.nextLong().toString(),
-                    password = Random.nextLong().toString(),
+                    password = "q3K6S;r{,Tn8Ab6wfpVRnx-((\\ARYSb'",
+                    tail = "Password #1",
                     status = PasswordStatus.ACTIVE,
                     type = PasswordType.GENERATED
                 ),
                 Password(
                     id = Random.nextLong().toString(),
-                    password = Random.nextLong().toString(),
+                    password = "q3K6S;r{,Tn8Ab6wfpVRnx-((\\ARYSb'",
+                    tail = "Password #2",
                     status = PasswordStatus.ACTIVE,
                     type = PasswordType.GENERATED
                 ),
                 Password(
                     id = Random.nextLong().toString(),
-                    password = Random.nextLong().toString(),
+                    password = "q3K6S;r{,Tn8Ab6wfpVRnx-((\\ARYSb'",
+                    tail = "Password #3",
                     status = PasswordStatus.ACTIVE,
                     type = PasswordType.GENERATED
                 ),

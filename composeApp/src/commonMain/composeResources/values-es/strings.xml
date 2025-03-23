@@ -40,4 +40,5 @@
     <string name="password_inserted">¡Contraseña introducida!</string>
     <string name="loading_passwords">Cargando contraseñas...</string>
     <string name="no_passwords_available">No hay contraseñas disponibles</string>
+    <string name="password_copied">¡Contraseña copiada!</string>
 </resources>

@@ -7,6 +7,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Password(
     val id: String,
+    val tail: String,
     val password: String,
     val scopes: List<String> = emptyList(),
     val type: PasswordType,
