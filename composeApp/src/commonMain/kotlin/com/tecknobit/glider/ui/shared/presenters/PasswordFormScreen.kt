@@ -70,7 +70,7 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
 
     @Composable
     @NonRestartableComposable
-    protected abstract fun Form()
+    protected abstract fun ColumnScope.Form()
 
     @Composable
     @NonRestartableComposable
@@ -94,7 +94,9 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
 
     @Composable
     @NonRestartableComposable
-    protected fun ScopesInputField() {
+    protected fun ScopesInputField(
+        imeAction: ImeAction = ImeAction.Done,
+    ) {
         EquinoxOutlinedTextField(
             modifier = Modifier
                 .padding(
@@ -108,7 +110,7 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
             isError = viewModel.scopesError,
             validator = { GliderInputsValidator.scopesAreValid(it) },
             keyboardOptions = KeyboardOptions(
-                imeAction = ImeAction.Done
+                imeAction = imeAction
             ),
             supportingText = {
                 Text(

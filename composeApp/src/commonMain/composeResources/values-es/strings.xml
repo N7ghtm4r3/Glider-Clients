@@ -36,4 +36,6 @@
     <string name="generating">Generando...</string>
     <string name="password_generated">¡Contraseña generada!</string>
     <string name="copy">Copia</string>
+    <string name="inserting">Insertando...</string>
+    <string name="password_inserted">¡Contraseña introducida!</string>
 </resources>

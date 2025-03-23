@@ -39,11 +39,11 @@ class GenerateScreenViewModel(
         if (!validateForm())
             return
         viewModelScope.launch {
-            // TODO: MAKE THE REQUEST THEN
             _performingPasswordOperation.emit(true)
+            // TODO: MAKE THE REQUEST THEN
             delay(Random.nextInt(3) * 1000L) // TODO: TO REMOVE
-            resetForm(Random.nextLong().toString()) // TODO: TO PASS THE REAL ONE
             _performingPasswordOperation.emit(false)
+            resetForm(Random.nextLong().toString()) // TODO: TO PASS THE REAL ONE
         }
     }
 
@@ -54,18 +54,20 @@ class GenerateScreenViewModel(
         includeUppercaseLetters.value = true
         includeSpecialCharacters.value = true
         quantityPickerState.reset()
-        {
-            copyOnClipboard(
-                content = extra[0] as String
-            )
-        }
-        super.showSnackbarMessage()
+        showSnackbarMessage(
+            message = Res.string.password_generated,
+            actionLabel = Res.string.copy,
+            onActionPerformed = {
+                copyOnClipboard(
+                    content = extra[0] as String
+                )
+            }
+        )
     }
 
     @FutureEquinoxApi
     @Deprecated(
-        message = "TO USE THE BUILT-IN ONE",
-        replaceWith = ReplaceWith("super.showSnackbarMessage()")
+        message = "TO USE THE BUILT-IN ONE"
     )
     fun showSnackbarMessage(
         message: StringResource,

@@ -36,4 +36,6 @@
     <string name="generating">Générateur...</string>
     <string name="password_generated">Mot de passe généré !</string>
     <string name="copy">Copie</string>
+    <string name="inserting">Insérer...</string>
+    <string name="password_inserted">Mot de passe inséré !</string>
 </resources>
