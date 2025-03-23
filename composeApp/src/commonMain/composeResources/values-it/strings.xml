@@ -41,4 +41,6 @@
     <string name="loading_passwords">Caricamento password...</string>
     <string name="no_passwords_available">Nessuna password disponibile</string>
     <string name="password_copied">Password copiata!</string>
+    <string name="generated">Generata</string>
+    <string name="inserted">Inserita</string>
 </resources>

@@ -73,4 +73,8 @@ val surfaceContainerDark = Color(0xFF002060)
 val surfaceContainerHighDark = Color(0xFF003070)
 val surfaceContainerHighestDark = Color(0xFF004080)
 
-val tabBackground = Color(0xFFD4E3F2)
+val generatedColorLight = Color(0xFF9A4DFF)
+val generatedColorDark = Color(0xFF7A1B88)
+
+val insertedColorLight = Color(0xFFFF7A00)
+val insertedColorDark = Color(0xFFB45A1A)

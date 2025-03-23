@@ -31,6 +31,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
+import com.tecknobit.glider.ui.components.PasswordTypeBadge
 import com.tecknobit.glider.ui.screens.keychain.data.Password
 import com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel
 import com.tecknobit.glider.ui.theme.AppTypography
@@ -58,6 +59,11 @@ fun PasswordCard(
             colors = ListItemDefaults.colors(
                 containerColor = Color.Transparent
             ),
+            overlineContent = {
+                PasswordTypeBadge(
+                    type = password.type
+                )
+            },
             headlineContent = {
                 Text(
                     text = password.tail,
