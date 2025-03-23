@@ -33,5 +33,7 @@
     <string name="include_numbers">Inclure les chiffres</string>
     <string name="include_uppercase_letters">Inclure des lettres majuscules</string>
     <string name="include_special_characters">Inclure un caractères spécial</string>
+    <string name="generating">Générateur...</string>
     <string name="password_generated">Mot de passe généré !</string>
+    <string name="copy">Copie</string>
 </resources>

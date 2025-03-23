@@ -5,11 +5,11 @@ import androidx.compose.runtime.Composable
 import com.tecknobit.glider.ui.screens.insert.presentation.KeychainScreenViewModel
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
 import glider.composeapp.generated.resources.Res
-import glider.composeapp.generated.resources.insert
+import glider.composeapp.generated.resources.keychain
 
-class InsertPasswordScreenTab : GliderScreenTab<KeychainScreenViewModel>(
+class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
     viewModel = KeychainScreenViewModel(),
-    title = Res.string.insert
+    title = Res.string.keychain
 ) {
 
     @Composable

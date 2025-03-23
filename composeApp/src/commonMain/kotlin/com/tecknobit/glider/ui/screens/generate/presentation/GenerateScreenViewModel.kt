@@ -1,15 +1,22 @@
 package com.tecknobit.glider.ui.screens.generate.presentation
 
+import androidx.compose.material3.SnackbarResult.ActionPerformed
+import androidx.compose.material3.SnackbarResult.Dismissed
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.viewModelScope
+import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
+import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 import com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState
 import com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel
 import glider.composeapp.generated.resources.Res
+import glider.composeapp.generated.resources.copy
 import glider.composeapp.generated.resources.password_generated
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.getString
 import kotlin.random.Random
 
 class GenerateScreenViewModel(
@@ -38,21 +45,59 @@ class GenerateScreenViewModel(
             // TODO: MAKE THE REQUEST THEN
             _generatingPassword.emit(true)
             delay(Random.nextInt(3) * 1000L) // TODO: TO REMOVE
-            resetForm()
+            resetForm(
+                generatedPassword = Random.nextLong().toString() // TODO: TO PASS THE REAL ONE
+            )
             _generatingPassword.emit(false)
         }
     }
 
-    private fun resetForm() {
+    private fun resetForm(
+        generatedPassword: String,
+    ) {
         tail.value = ""
         scopes.value = ""
         includeNumbers.value = true
         includeUppercaseLetters.value = true
         includeSpecialCharacters.value = true
         quantityPickerState.reset()
-        showSnackbarMessage(
-            message = Res.string.password_generated
-        )
+        {
+            copyOnClipboard(
+                content = generatedPassword
+            )
+        }
+        super.showSnackbarMessage()
+    }
+
+    @FutureEquinoxApi
+    @Deprecated(
+        message = "TO USE THE BUILT-IN ONE",
+        replaceWith = ReplaceWith("super.showSnackbarMessage()")
+    )
+    fun showSnackbarMessage(
+        message: StringResource,
+        actionLabel: StringResource? = null,
+        onDismiss: (() -> Unit)? = null,
+        onActionPerformed: (() -> Unit)? = null,
+    ) {
+        viewModelScope.launch {
+            snackbarHostState!!.showSnackbar(
+                message = getString(
+                    resource = message
+                ),
+                actionLabel = if (actionLabel != null) {
+                    getString(
+                        resource = actionLabel
+                    )
+                } else
+                    null
+            ).let {
+                when (it) {
+                    Dismissed -> onDismiss?.invoke()
+                    ActionPerformed -> onActionPerformed?.invoke()
+                }
+            }
+        }
     }
 
 }

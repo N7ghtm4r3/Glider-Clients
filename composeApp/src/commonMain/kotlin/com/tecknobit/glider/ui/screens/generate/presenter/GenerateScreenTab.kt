@@ -21,6 +21,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
@@ -39,6 +40,7 @@ import com.tecknobit.glidercore.helpers.GliderInputsValidator
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.comma_separated_list
 import glider.composeapp.generated.resources.generate
+import glider.composeapp.generated.resources.generating
 import glider.composeapp.generated.resources.password_length
 import glider.composeapp.generated.resources.scopes
 import glider.composeapp.generated.resources.tail
@@ -122,15 +124,24 @@ class GenerateScreenTab(
                     ),
                 viewModel = viewModel
             )
+            val softwareKeyboardController = LocalSoftwareKeyboardController.current
             Button(
                 modifier = Modifier
                     .size(ButtonSize),
                 shape = ButtonShape,
                 enabled = !generatingPassword.value,
-                onClick = { viewModel.generatePassword() }
+                onClick = {
+                    softwareKeyboardController?.hide()
+                    viewModel.generatePassword()
+                }
             ) {
                 Text(
-                    text = stringResource(Res.string.generate),
+                    text = stringResource(
+                        if (generatingPassword.value)
+                            Res.string.generating
+                        else
+                            Res.string.generate
+                    ),
                     style = AppTypography.bodyLarge
                 )
             }
