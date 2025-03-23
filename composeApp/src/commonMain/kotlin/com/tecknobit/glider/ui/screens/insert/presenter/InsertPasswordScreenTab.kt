@@ -1,4 +1,4 @@
-package com.tecknobit.glider.ui.screens.generate.presenter
+package com.tecknobit.glider.ui.screens.insert.presenter
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -7,16 +7,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
-import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -25,39 +20,27 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
-import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.PASSWORD_MAX_LENGTH
-import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.PASSWORD_MIN_LENGTH
-import com.tecknobit.glider.ui.screens.generate.components.PasswordOptions
-import com.tecknobit.glider.ui.screens.generate.components.QuantityPicker
-import com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState
-import com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel
+import com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
-import com.tecknobit.glider.ui.theme.AppTypography
-import com.tecknobit.glider.ui.theme.ButtonShape
-import com.tecknobit.glider.ui.theme.ButtonSize
 import com.tecknobit.glider.ui.theme.InputFieldShape
 import com.tecknobit.glidercore.helpers.GliderInputsValidator
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.comma_separated_list
-import glider.composeapp.generated.resources.generate
-import glider.composeapp.generated.resources.generating
-import glider.composeapp.generated.resources.password_length
+import glider.composeapp.generated.resources.insert
 import glider.composeapp.generated.resources.scopes
 import glider.composeapp.generated.resources.tail
 import glider.composeapp.generated.resources.wrong_scopes
 import glider.composeapp.generated.resources.wrong_tail
 import org.jetbrains.compose.resources.stringResource
 
-class GenerateScreenTab(
+class InsertPasswordScreenTab(
     passwordId: String? = null,
-) : GliderScreenTab<GenerateScreenViewModel>(
-    viewModel = GenerateScreenViewModel(
+) : GliderScreenTab<InsertPasswordScreenViewModel>(
+    viewModel = InsertPasswordScreenViewModel(
         passwordId = passwordId
     ),
-    title = Res.string.generate
+    title = Res.string.insert
 ) {
-
-    private lateinit var generatingPassword: State<Boolean>
 
     @Composable
     override fun ColumnScope.ScreenContent() {
@@ -70,16 +53,6 @@ class GenerateScreenTab(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            QuantityPicker(
-                state = viewModel.quantityPickerState,
-                informativeText = stringResource(Res.string.password_length),
-                informativeTextStyle = AppTypography.labelLarge.copy(
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                ),
-                quantityIndicatorStyle = AppTypography.bodyMedium.copy(
-                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                )
-            )
             EquinoxOutlinedTextField(
                 modifier = Modifier
                     .padding(
@@ -116,16 +89,8 @@ class GenerateScreenTab(
                     )
                 }
             )
-            PasswordOptions(
-                modifier = Modifier
-                    .padding(
-                        top = 10.dp,
-                        bottom = 15.dp
-                    ),
-                viewModel = viewModel
-            )
             val softwareKeyboardController = LocalSoftwareKeyboardController.current
-            Button(
+            /*Button(
                 modifier = Modifier
                     .size(ButtonSize),
                 shape = ButtonShape,
@@ -144,7 +109,7 @@ class GenerateScreenTab(
                     ),
                     style = AppTypography.bodyLarge
                 )
-            }
+            }*/
         }
     }
 
@@ -153,22 +118,10 @@ class GenerateScreenTab(
      */
     @Composable
     override fun CollectStates() {
-        viewModel.quantityPickerState = rememberQuantityPickerState(
-            initialQuantity = PASSWORD_MIN_LENGTH,
-            minQuantity = PASSWORD_MIN_LENGTH,
-            maxQuantity = PASSWORD_MAX_LENGTH,
-            longPressQuantity = 4
-        )
         viewModel.tail = remember { mutableStateOf("") }
         viewModel.tailError = remember { mutableStateOf(false) }
         viewModel.scopes = remember { mutableStateOf("") }
         viewModel.scopesError = remember { mutableStateOf(false) }
-        viewModel.includeNumbers = remember { mutableStateOf(true) }
-        viewModel.includeUppercaseLetters = remember { mutableStateOf(true) }
-        viewModel.includeSpecialCharacters = remember { mutableStateOf(true) }
-        generatingPassword = viewModel.performingPasswordOperation.collectAsState(
-            initial = false
-        )
     }
 
 }

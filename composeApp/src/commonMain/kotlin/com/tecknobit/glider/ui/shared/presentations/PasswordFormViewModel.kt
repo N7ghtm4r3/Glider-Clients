@@ -7,6 +7,8 @@ import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.glidercore.helpers.GliderInputsValidator.scopesAreValid
 import com.tecknobit.glidercore.helpers.GliderInputsValidator.tailIsValid
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.asSharedFlow
 
 @Structure
 abstract class PasswordFormViewModel(
@@ -22,6 +24,29 @@ abstract class PasswordFormViewModel(
     lateinit var scopes: MutableState<String>
 
     lateinit var scopesError: MutableState<Boolean>
+
+    protected val _performingPasswordOperation = MutableSharedFlow<Boolean>(
+        replay = 1
+    )
+    val performingPasswordOperation = _performingPasswordOperation.asSharedFlow()
+
+    /**
+     * Method to execute the operation related to the password such generating or inserting
+     */
+    abstract fun performPasswordOperation()
+
+    /**
+     * Method to reset the form to the initial state to perform a new action
+     *
+     * @param extra Extra parameters to use to reset the form state
+     */
+    @RequiresSuperCall
+    protected open fun resetForm(
+        vararg extra: Any,
+    ) {
+        tail.value = ""
+        scopes.value = ""
+    }
 
     @RequiresSuperCall
     protected open fun validateForm(): Boolean {

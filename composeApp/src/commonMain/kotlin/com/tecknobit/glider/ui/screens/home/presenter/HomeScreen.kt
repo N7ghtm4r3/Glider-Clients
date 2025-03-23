@@ -44,8 +44,8 @@ import com.tecknobit.equinoxcompose.utilities.ResponsiveContent
 import com.tecknobit.glider.ui.screens.account.presenter.AccountScreenTab
 import com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab
 import com.tecknobit.glider.ui.screens.home.data.ScreenTab
-import com.tecknobit.glider.ui.screens.insert.presenter.KeychainScreenTab
-import com.tecknobit.glider.ui.screens.keychain.presenter.InsertPasswordScreenTab
+import com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab
+import com.tecknobit.glider.ui.screens.keychain.presenter.KeychainScreenTab
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
 import com.tecknobit.glider.ui.theme.AppTypography
 import com.tecknobit.glider.ui.theme.GliderTheme
