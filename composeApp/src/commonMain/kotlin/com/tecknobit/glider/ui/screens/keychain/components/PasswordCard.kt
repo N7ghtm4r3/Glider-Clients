@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.tecknobit.glider.ui.screens.keychain.components
 
 import androidx.compose.animation.AnimatedVisibility
@@ -19,11 +21,13 @@ import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -53,6 +57,7 @@ fun PasswordCard(
     viewModel: KeychainScreenViewModel,
     password: Password,
 ) {
+    val showTimeline = remember { mutableStateOf(false) }
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -67,7 +72,8 @@ fun PasswordCard(
     ) {
         ToolBar(
             password = password,
-            viewModel = viewModel
+            viewModel = viewModel,
+            showTimeline = showTimeline
         )
         Column(
             modifier = Modifier
@@ -99,6 +105,13 @@ fun PasswordCard(
         Scopes(
             password = password
         )
+        AnimatedVisibility(
+            visible = showTimeline.value
+        ) {
+            PasswordTimeline(
+                password = password
+            )
+        }
     }
 }
 
@@ -158,8 +171,9 @@ private fun PasswordText(
 @Composable
 @NonRestartableComposable
 private fun ToolBar(
-    password: Password,
     viewModel: KeychainScreenViewModel,
+    password: Password,
+    showTimeline: MutableState<Boolean>,
 ) {
     var hidden by rememberSaveable { mutableStateOf(true) }
     Column(
@@ -195,14 +209,8 @@ private fun ToolBar(
                     imageVector = Icons.Default.Edit,
                     contentDescription = null
                 )
-                Icon(
-                    modifier = Modifier
-                        .clip(CircleShape)
-                        .clickable {
-
-                        },
-                    imageVector = Icons.Default.Timeline,
-                    contentDescription = null
+                PasswordTimelineButton(
+                    showTimeline = showTimeline
                 )
                 if (password.type == GENERATED) {
                     RefreshPasswordButton(
@@ -217,6 +225,20 @@ private fun ToolBar(
             }
         }
     }
+}
+
+@Composable
+@NonRestartableComposable
+private fun PasswordTimelineButton(
+    showTimeline: MutableState<Boolean>,
+) {
+    Icon(
+        modifier = Modifier
+            .clip(CircleShape)
+            .clickable { showTimeline.value = !showTimeline.value },
+        imageVector = Icons.Default.Timeline,
+        contentDescription = null
+    )
 }
 
 @Composable

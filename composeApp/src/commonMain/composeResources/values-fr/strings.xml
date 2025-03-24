@@ -48,4 +48,12 @@
     <string name="delete_password_warn_text">Si vous confirmez, le mot de passe sera définitivement effacé.</string>
     <string name="refresh_password">Rafraîchir le mot de passe</string>
     <string name="refresh_password_warn_text">Le mot de passe sera actualisé avec les mêmes paramètres que ceux utilisés pour le générer.</string>
+    <string name="copied">Copié</string>
+    <string name="edited">Édité</string>
+    <string name="refreshed">Rafraîchie</string>
+    <string name="password_generated_event">Le mot de passe a été généré le %1$s à %2$s</string>
+    <string name="password_inserted_event">Le mot de passe a été inséré sur %1$s à %2$s</string>
+    <string name="password_copied_event">Le mot de passe a été copié sur %1$s à %2$s</string>
+    <string name="password_edited_event">Le mot de passe a été modifié le %1$s à %2$s</string>
+    <string name="password_refreshed_event">Le mot de passe a été actualisé le %1$s à %2$s</string>
 </resources>

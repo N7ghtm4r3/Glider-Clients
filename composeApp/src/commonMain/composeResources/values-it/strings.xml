@@ -48,4 +48,12 @@
     <string name="delete_password_warn_text">Se confermi, la password sarà definitivamente eliminata, procedere?</string>
     <string name="refresh_password">Aggiorna password</string>
     <string name="refresh_password_warn_text">La password verrà aggiornata con gli stessi parametri utilizzati per generarla, procedere?</string>
+    <string name="copied">Copiata</string>
+    <string name="edited">Modificata</string>
+    <string name="refreshed">Aggiornata</string>
+    <string name="password_generated_event">La password è stata generata il %1$s alle %2$s</string>
+    <string name="password_inserted_event">La password è stata inserita il %1$s alle %2$s</string>
+    <string name="password_copied_event">La password è stata copiata il %1$s alle %2$s</string>
+    <string name="password_edited_event">La password è stata modificata il %1$s alle %2$s</string>
+    <string name="password_refreshed_event">La password è stata aggiornata il %1$s alle %2$s</string>
 </resources>

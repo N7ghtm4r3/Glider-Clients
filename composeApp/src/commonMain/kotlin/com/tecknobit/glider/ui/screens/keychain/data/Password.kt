@@ -14,6 +14,7 @@ data class Password(
     val password: String,
     val scopes: Set<String> = emptySet(),
     val type: PasswordType,
+    val events: List<PasswordEvent>,
 ) {
 
     fun hasScopes(): Boolean {

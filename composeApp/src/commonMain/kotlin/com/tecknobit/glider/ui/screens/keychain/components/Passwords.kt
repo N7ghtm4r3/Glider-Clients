@@ -6,9 +6,9 @@ import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
@@ -33,7 +33,7 @@ import glider.composeapp.generated.resources.no_passwords_available
 import glider.composeapp.generated.resources.no_passwords_dark
 import glider.composeapp.generated.resources.no_passwords_light
 import io.github.ahmad_hamwi.compose.pagination.PaginatedLazyColumn
-import io.github.ahmad_hamwi.compose.pagination.PaginatedLazyVerticalGrid
+import io.github.ahmad_hamwi.compose.pagination.PaginatedLazyVerticalStaggeredGrid
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -73,11 +73,11 @@ fun Passwords(
 private fun PasswordsGrid(
     viewModel: KeychainScreenViewModel,
 ) {
-    PaginatedLazyVerticalGrid(
+    PaginatedLazyVerticalStaggeredGrid(
         modifier = Modifier
             .navigationBarsPadding()
             .animateContentSize(),
-        columns = GridCells.Adaptive(
+        columns = StaggeredGridCells.Adaptive(
             minSize = 400.dp
         ),
         paginationState = viewModel.passwordsState,
@@ -85,7 +85,7 @@ private fun PasswordsGrid(
         firstPageProgressIndicator = { FirstPageProgressIndicator() },
         newPageErrorIndicator = { NewPageProgressIndicator() },
         horizontalArrangement = Arrangement.spacedBy(10.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp),
+        verticalItemSpacing = 10.dp,
         contentPadding = PaddingValues(
             vertical = 16.dp
         )

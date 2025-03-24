@@ -78,3 +78,11 @@ val generatedColorDark = Color(0xFF7A1B88)
 
 val insertedColorLight = Color(0xFFFF7A00)
 val insertedColorDark = Color(0xFFB45A1A)
+
+val copiedLight = Color(0xFF2C6A92)
+val editedLight = Color(0xFFA56AC4)
+val refreshedLight = Color(0xFF4A8B74)
+
+val copiedDark = Color(0xFF3E7D99)
+val editedDark = Color(0xFF8E56A6)
+val refreshedDark = Color(0xFF538D74)
