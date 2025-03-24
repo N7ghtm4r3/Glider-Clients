@@ -70,7 +70,7 @@ fun PasswordCard(
             )
         }
     ) {
-        ToolBar(
+        ToolsBar(
             password = password,
             viewModel = viewModel,
             showTimeline = showTimeline
@@ -105,13 +105,10 @@ fun PasswordCard(
         Scopes(
             password = password
         )
-        AnimatedVisibility(
-            visible = showTimeline.value
-        ) {
-            PasswordTimeline(
-                password = password
-            )
-        }
+        PasswordTimeline(
+            show = showTimeline,
+            password = password
+        )
     }
 }
 
@@ -170,7 +167,7 @@ private fun PasswordText(
 
 @Composable
 @NonRestartableComposable
-private fun ToolBar(
+private fun ToolsBar(
     viewModel: KeychainScreenViewModel,
     password: Password,
     showTimeline: MutableState<Boolean>,
@@ -192,7 +189,11 @@ private fun ToolBar(
             Icon(
                 modifier = Modifier
                     .clip(CircleShape)
-                    .clickable { hidden = !hidden },
+                    .clickable {
+                        hidden = !hidden
+                        if (hidden)
+                            showTimeline.value = false
+                    },
                 imageVector = if (hidden)
                     SettingsBRoll
                 else
