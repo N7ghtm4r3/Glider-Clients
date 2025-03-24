@@ -1,13 +1,15 @@
 package com.tecknobit.glider.ui.screens.keychain.components
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Timeline
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -27,18 +29,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
-import com.tecknobit.glider.ui.components.PasswordTypeBadge
 import com.tecknobit.glider.ui.screens.keychain.data.Password
 import com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel
 import com.tecknobit.glider.ui.theme.AppTypography
-import glider.composeapp.generated.resources.Res
-import glider.composeapp.generated.resources.copy
-import glider.composeapp.generated.resources.password_copied
-import org.jetbrains.compose.resources.stringResource
 
 private const val HIDDEN_PASSWORD = "********"
 
@@ -53,7 +48,12 @@ fun PasswordCard(
             .fillMaxWidth(),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surfaceContainer
-        )
+        ),
+        onClick = {
+            viewModel.copy(
+                password = password
+            )
+        }
     ) {
         ListItem(
             colors = ListItemDefaults.colors(
@@ -79,8 +79,7 @@ fun PasswordCard(
                 )
             }
         )
-        CopyPasswordButton(
-            viewModel = viewModel,
+        Scopes(
             password = password
         )
     }
@@ -139,35 +138,51 @@ private fun PasswordText(
 
 @Composable
 @NonRestartableComposable
-private fun CopyPasswordButton(
-    viewModel: KeychainScreenViewModel,
+private fun ToolBar(
     password: Password,
+    viewModel: KeychainScreenViewModel,
 ) {
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable {
-                copyOnClipboard(
-                    content = password.password,
-                    onCopy = {
-                        viewModel.showSnackbarMessage(
-                            message = Res.string.password_copied
-                        )
-                    }
-                )
+    Row {
+        IconButton(
+            onClick = {
+
             }
-    ) {
-        Text(
-            modifier = Modifier
-                .padding(
-                    all = 8.dp
-                )
-                .fillMaxWidth(),
-            text = stringResource(Res.string.copy),
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold,
-            color = MaterialTheme.colorScheme.primary,
-            style = AppTypography.titleMedium
-        )
+        ) {
+            Icon(
+                imageVector = Icons.Default.Edit,
+                contentDescription = null
+            )
+        }
+        IconButton(
+            onClick = {
+
+            }
+        ) {
+            Icon(
+                imageVector = Icons.Default.Timeline,
+                contentDescription = null
+            )
+        }
+        IconButton(
+            onClick = {
+
+            }
+        ) {
+            Icon(
+                imageVector = Icons.Default.Refresh,
+                contentDescription = null
+            )
+        }
+        IconButton(
+            onClick = {
+
+            }
+        ) {
+            Icon(
+                imageVector = Icons.Default.Delete,
+                contentDescription = null,
+                tint = MaterialTheme.colorScheme.onError
+            )
+        }
     }
 }

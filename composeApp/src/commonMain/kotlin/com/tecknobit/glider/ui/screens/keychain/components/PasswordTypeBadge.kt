@@ -1,4 +1,4 @@
-package com.tecknobit.glider.ui.components
+package com.tecknobit.glider.ui.screens.keychain.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tecknobit.glider.ui.theme.applyDarkTheme
@@ -45,7 +46,9 @@ fun PasswordTypeBadge(
         text = stringResource(type.text()),
         fontSize = 10.sp,
         fontWeight = FontWeight.Bold,
-        color = Color.White
+        color = Color.White,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis
     )
 }
 
