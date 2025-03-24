@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.selection.selectableGroup
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AlternateEmail
@@ -55,9 +54,12 @@ import com.tecknobit.equinoxcompose.components.stepper.Step
 import com.tecknobit.equinoxcompose.components.stepper.StepContent
 import com.tecknobit.equinoxcompose.components.stepper.Stepper
 import com.tecknobit.equinoxcompose.session.EquinoxLocalUser.ApplicationTheme
+import com.tecknobit.equinoxcompose.utilities.CompactClassComponent
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.COMPACT_CONTENT
+import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.EXPANDED_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.MEDIUM_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClassComponent
+import com.tecknobit.equinoxcompose.utilities.ResponsiveContent
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.LANGUAGES_SUPPORTED
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isEmailValid
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
@@ -69,6 +71,9 @@ import com.tecknobit.glider.ui.components.DeleteAccount
 import com.tecknobit.glider.ui.components.Logout
 import com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
+import com.tecknobit.glider.ui.theme.AppTypography
+import com.tecknobit.glider.ui.theme.ButtonShape
+import com.tecknobit.glider.ui.theme.applyDarkTheme
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.account
 import glider.composeapp.generated.resources.change_email
@@ -107,45 +112,94 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            Column(
-                modifier = Modifier
-                    .padding(
-                        top = 10.dp
-                    )
-            ) {
-                Text(
-                    text = localUser.completeName,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
+            Column {
                 Text(
                     text = viewModel.email.value,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
-                    fontSize = 12.sp
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    style = AppTypography.titleMedium,
+                    fontFamily = bodyFontFamily,
+                    fontWeight = FontWeight.Bold
                 )
+                ResponsiveContent(
+                    onExpandedSizeClass = { RowedActions() },
+                    onMediumSizeClass = { RowedActions() },
+                    onCompactSizeClass = { ColumnedActions() }
+                )
+            }
+        }
+    }
+
+    @Composable
+    @NonRestartableComposable
+    @ResponsiveClassComponent(
+        classes = [EXPANDED_CONTENT, MEDIUM_CONTENT]
+    )
+    private fun RowedActions() {
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = localUser.completeName,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = AppTypography.displaySmall
+            )
+            Column(
+                modifier = Modifier
+                    .weight(1f),
+                horizontalAlignment = Alignment.End
+            ) {
                 ActionButtons()
             }
         }
     }
 
+    @Composable
+    @CompactClassComponent
+    @NonRestartableComposable
+    private fun ColumnedActions() {
+        Column {
+            Text(
+                text = localUser.completeName,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = AppTypography.displaySmall
+            )
+            ActionButtons(
+                buttonModifier = Modifier
+                    .weight(1f)
+            )
+        }
+    }
+
     /**
      * The actions can be execute on the [localUser] account such logout and delete account
+     *
+     * @param buttonModifier The modifier to apply to the buttons
      */
     @Composable
     @NonRestartableComposable
-    private fun ActionButtons() {
+    private fun ActionButtons(
+        buttonModifier: Modifier = Modifier,
+    ) {
         Row(
+            modifier = Modifier
+                .padding(
+                    bottom = 5.dp
+                ),
             horizontalArrangement = Arrangement.spacedBy(5.dp)
         ) {
             val logout = remember { mutableStateOf(false) }
             Button(
+                modifier = buttonModifier,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.inversePrimary
+                    containerColor = MaterialTheme.colorScheme.secondary
                 ),
-                shape = RoundedCornerShape(
-                    size = 10.dp
-                ),
+                shape = ButtonShape,
                 onClick = { logout.value = true }
             ) {
                 ChameleonText(
@@ -153,7 +207,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                     fontSize = 12.sp,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
-                    backgroundColor = MaterialTheme.colorScheme.inversePrimary
+                    backgroundColor = MaterialTheme.colorScheme.secondary
                 )
             }
             Logout(
@@ -161,17 +215,22 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                 show = logout
             )
             val deleteAccount = remember { mutableStateOf(false) }
+            val deleteButtonColor = if (applyDarkTheme())
+                MaterialTheme.colorScheme.onError
+            else
+                MaterialTheme.colorScheme.errorContainer
             Button(
+                modifier = buttonModifier,
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.error
+                    containerColor = deleteButtonColor,
+                    contentColor = MaterialTheme.colorScheme.onError
                 ),
-                shape = RoundedCornerShape(
-                    size = 10.dp
-                ),
+                shape = ButtonShape,
                 onClick = { deleteAccount.value = true }
             ) {
-                Text(
+                ChameleonText(
                     text = stringResource(Res.string.delete),
+                    backgroundColor = deleteButtonColor,
                     fontSize = 12.sp,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
@@ -249,7 +308,8 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
             )
         }
         Stepper(
-            steps = steps
+            steps = steps,
+            stepBackgroundColor = MaterialTheme.colorScheme.surfaceContainer
         )
     }
 
@@ -274,7 +334,10 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
             textFieldColors = TextFieldDefaults.colors(
                 unfocusedIndicatorColor = Color.Transparent,
                 focusedIndicatorColor = Color.Transparent,
-                errorIndicatorColor = Color.Transparent
+                errorIndicatorColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent,
+                errorContainerColor = Color.Transparent,
+                focusedContainerColor = Color.Transparent
             ),
             value = viewModel.newEmail,
             textFieldStyle = TextStyle(
@@ -321,7 +384,10 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
             outlinedTextFieldColors = TextFieldDefaults.colors(
                 unfocusedIndicatorColor = Color.Transparent,
                 focusedIndicatorColor = Color.Transparent,
-                errorIndicatorColor = Color.Transparent
+                errorIndicatorColor = Color.Transparent,
+                unfocusedContainerColor = Color.Transparent,
+                errorContainerColor = Color.Transparent,
+                focusedContainerColor = Color.Transparent
             ),
             value = viewModel.newPassword,
             outlinedTextFieldStyle = TextStyle(
