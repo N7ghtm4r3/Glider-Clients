@@ -56,4 +56,5 @@
     <string name="password_copied_event">La contraseña se ha copiado en %1$s en %2$s</string>
     <string name="password_edited_event">La contraseña ha sido editada en %1$s en %2$s</string>
     <string name="password_refreshed_event">La contraseña se ha actualizado en %1$s en %2$s</string>
+    <string name="search_placeholder">Cola o ámbitos</string>
 </resources>

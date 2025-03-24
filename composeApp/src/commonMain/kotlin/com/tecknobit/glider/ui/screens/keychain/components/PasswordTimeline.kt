@@ -19,12 +19,10 @@ import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.unit.dp
 import com.pushpal.jetlime.EventPosition
 import com.pushpal.jetlime.ItemsList
 import com.pushpal.jetlime.JetLimeColumn
-import com.pushpal.jetlime.JetLimeDefaults
 import com.pushpal.jetlime.JetLimeEvent
 import com.pushpal.jetlime.JetLimeEventDefaults
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.COMPACT_CONTENT
@@ -164,12 +162,6 @@ private fun PasswordTimelineContent(
         key = { _, event -> event.id },
         contentPadding = PaddingValues(
             all = 16.dp
-        ),
-        style = JetLimeDefaults.columnStyle(
-            pathEffect = PathEffect.dashPathEffect(
-                intervals = floatArrayOf(30f, 30f),
-                phase = 0f,
-            )
         )
     ) { _, event, position ->
         PasswordEvent(
