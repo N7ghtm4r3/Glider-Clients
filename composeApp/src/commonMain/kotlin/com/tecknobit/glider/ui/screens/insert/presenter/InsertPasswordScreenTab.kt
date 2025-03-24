@@ -61,10 +61,11 @@ class InsertPasswordScreenTab(
         EquinoxOutlinedTextField(
             modifier = Modifier
                 .padding(
+                    top = 10.dp,
                     bottom = 25.dp
                 ),
+            placeholder = stringResource(Res.string.password),
             value = viewModel.password,
-            label = stringResource(Res.string.password),
             shape = InputFieldShape,
             allowsBlankSpaces = false,
             trailingIcon = {
