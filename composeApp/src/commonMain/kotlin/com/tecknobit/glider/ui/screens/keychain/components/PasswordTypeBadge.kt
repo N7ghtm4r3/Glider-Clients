@@ -41,10 +41,11 @@ fun PasswordTypeBadge(
             )
             .background(type.color())
             .padding(
-                all = 4.dp
+                vertical = 1.dp,
+                horizontal = 4.dp
             ),
         text = stringResource(type.text()),
-        fontSize = 10.sp,
+        fontSize = 12.sp,
         fontWeight = FontWeight.Bold,
         color = Color.White,
         maxLines = 1,

@@ -43,4 +43,9 @@
     <string name="password_copied">Password copiata!</string>
     <string name="generated">Generata</string>
     <string name="inserted">Inserita</string>
+    <string name="no_scopes">Nessun campo</string>
+    <string name="delete_password">Elimina password</string>
+    <string name="delete_password_warn_text">Se confermi, la password sarà definitivamente eliminata, procedere?</string>
+    <string name="refresh_password">Aggiorna password</string>
+    <string name="refresh_password_warn_text">La password verrà aggiornata con gli stessi parametri utilizzati per generarla, procedere?</string>
 </resources>

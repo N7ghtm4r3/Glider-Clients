@@ -14,4 +14,10 @@ data class Password(
     val password: String,
     val scopes: Set<String> = emptySet(),
     val type: PasswordType,
-)
+) {
+
+    fun hasScopes(): Boolean {
+        return scopes.isNotEmpty()
+    }
+
+}

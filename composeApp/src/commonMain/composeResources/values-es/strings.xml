@@ -16,7 +16,7 @@
     <string name="logout">Cierre de sesión</string>
     <string name="logout_warn_text">Si confirma, saldrá de la sesión actual. ¿Desea continuar?</string>
     <string name="delete">Borrar</string>
-    <string name="delete_warn_text">Si confirma, su cuenta y todos los datos asociados se eliminarán de forma permanente. Esta acción no se puede deshacer. ¿Desea continuar\?</string>
+    <string name="delete_warn_text">Si confirma, su cuenta y todos los datos asociados se eliminarán de forma permanente. Esta acción no se puede deshacer. ¿Desea continuar?</string>
     <string name="change_email">Cambiar correo electrónico</string>
     <string name="new_email">Nuevo correo electrónico</string>
     <string name="change_password">Cambiar contraseña</string>
@@ -43,4 +43,9 @@
     <string name="password_copied">¡Contraseña copiada!</string>
     <string name="generated">Generada</string>
     <string name="inserted">Insertada</string>
+    <string name="no_scopes">Sin visores</string>
+    <string name="delete_password">Borrar contraseña</string>
+    <string name="delete_password_warn_text">Si confirmas, la contraseña se borrará definitivamente, ¿procedes?</string>
+    <string name="refresh_password">Actualizar contraseña</string>
+    <string name="refresh_password_warn_text">La contraseña se actualizará con los mismos parámetros utilizados para generarla, ¿procede?</string>
 </resources>

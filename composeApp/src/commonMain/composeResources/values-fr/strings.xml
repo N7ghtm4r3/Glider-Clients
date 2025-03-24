@@ -43,4 +43,9 @@
     <string name="password_copied">Mot de passe copié !</string>
     <string name="generated">Généré</string>
     <string name="inserted">Inséré</string>
+    <string name="no_scopes">Pas de lunettes</string>
+    <string name="delete_password">Supprimer le mot de passe</string>
+    <string name="delete_password_warn_text">Si vous confirmez, le mot de passe sera définitivement effacé.</string>
+    <string name="refresh_password">Rafraîchir le mot de passe</string>
+    <string name="refresh_password_warn_text">Le mot de passe sera actualisé avec les mêmes paramètres que ceux utilisés pour le générer.</string>
 </resources>

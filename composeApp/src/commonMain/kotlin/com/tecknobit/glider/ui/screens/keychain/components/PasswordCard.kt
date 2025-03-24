@@ -1,22 +1,26 @@
 package com.tecknobit.glider.ui.screens.keychain.components
 
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.animateContentSize
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Timeline
 import androidx.compose.material.icons.filled.Visibility
+import androidx.compose.material.icons.outlined.Close
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.material3.ListItem
-import androidx.compose.material3.ListItemDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,16 +28,22 @@ import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.tecknobit.glider.ui.components.DeletePassword
+import com.tecknobit.glider.ui.components.RefreshPassword
+import com.tecknobit.glider.ui.icons.SettingsBRoll
 import com.tecknobit.glider.ui.screens.keychain.data.Password
 import com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel
 import com.tecknobit.glider.ui.theme.AppTypography
+import com.tecknobit.glider.ui.theme.applyDarkTheme
+import com.tecknobit.glidercore.enums.PasswordType.GENERATED
 
 private const val HIDDEN_PASSWORD = "********"
 
@@ -55,30 +65,37 @@ fun PasswordCard(
             )
         }
     ) {
-        ListItem(
-            colors = ListItemDefaults.colors(
-                containerColor = Color.Transparent
-            ),
-            overlineContent = {
-                PasswordTypeBadge(
-                    type = password.type
-                )
-            },
-            headlineContent = {
-                Text(
-                    text = password.tail,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    style = AppTypography.titleLarge,
-                    fontWeight = FontWeight.Bold
-                )
-            },
-            supportingContent = {
-                PasswordText(
-                    password = password
-                )
-            }
+        ToolBar(
+            password = password,
+            viewModel = viewModel
         )
+        Column(
+            modifier = Modifier
+                .padding(
+                    horizontal = 12.dp
+                )
+                .padding(
+                    bottom = 12.dp
+                )
+        ) {
+            PasswordTypeBadge(
+                type = password.type
+            )
+            Text(
+                modifier = Modifier
+                    .padding(
+                        top = 5.dp
+                    ),
+                text = password.tail,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                style = AppTypography.titleLarge,
+                fontWeight = FontWeight.Bold
+            )
+            PasswordText(
+                password = password
+            )
+        }
         Scopes(
             password = password
         )
@@ -103,6 +120,7 @@ private fun PasswordText(
             ) {
                 Text(
                     text = password.password,
+                    style = AppTypography.bodyMedium,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -112,6 +130,7 @@ private fun PasswordText(
             ) {
                 Text(
                     text = HIDDEN_PASSWORD,
+                    style = AppTypography.bodyMedium,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -142,47 +161,106 @@ private fun ToolBar(
     password: Password,
     viewModel: KeychainScreenViewModel,
 ) {
-    Row {
-        IconButton(
-            onClick = {
-
-            }
+    var hidden by rememberSaveable { mutableStateOf(true) }
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(
+                all = 12.dp
+            )
+    ) {
+        Row(
+            modifier = Modifier
+                .animateContentSize(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Icon(
-                imageVector = Icons.Default.Edit,
+                modifier = Modifier
+                    .clip(CircleShape)
+                    .clickable { hidden = !hidden },
+                imageVector = if (hidden)
+                    SettingsBRoll
+                else
+                    Icons.Outlined.Close,
                 contentDescription = null
             )
-        }
-        IconButton(
-            onClick = {
+            if (!hidden) {
+                Icon(
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .clickable {
+                            // TODO: NAV TO EDIT
+                        },
+                    imageVector = Icons.Default.Edit,
+                    contentDescription = null
+                )
+                Icon(
+                    modifier = Modifier
+                        .clip(CircleShape)
+                        .clickable {
 
+                        },
+                    imageVector = Icons.Default.Timeline,
+                    contentDescription = null
+                )
+                if (password.type == GENERATED) {
+                    RefreshPasswordButton(
+                        viewModel = viewModel,
+                        password = password
+                    )
+                }
+                DeletePasswordButton(
+                    viewModel = viewModel,
+                    password = password
+                )
             }
-        ) {
-            Icon(
-                imageVector = Icons.Default.Timeline,
-                contentDescription = null
-            )
-        }
-        IconButton(
-            onClick = {
-
-            }
-        ) {
-            Icon(
-                imageVector = Icons.Default.Refresh,
-                contentDescription = null
-            )
-        }
-        IconButton(
-            onClick = {
-
-            }
-        ) {
-            Icon(
-                imageVector = Icons.Default.Delete,
-                contentDescription = null,
-                tint = MaterialTheme.colorScheme.onError
-            )
         }
     }
+}
+
+@Composable
+@NonRestartableComposable
+private fun RefreshPasswordButton(
+    viewModel: KeychainScreenViewModel,
+    password: Password,
+) {
+    val refreshPassword = remember { mutableStateOf(false) }
+    Icon(
+        modifier = Modifier
+            .clip(CircleShape)
+            .clickable { refreshPassword.value = !refreshPassword.value },
+        imageVector = Icons.Default.Refresh,
+        contentDescription = null
+    )
+    RefreshPassword(
+        viewModel = viewModel,
+        show = refreshPassword,
+        password = password
+    )
+}
+
+@Composable
+@NonRestartableComposable
+private fun DeletePasswordButton(
+    viewModel: KeychainScreenViewModel,
+    password: Password,
+) {
+    val deletePassword = remember { mutableStateOf(false) }
+    Icon(
+        modifier = Modifier
+            .clip(CircleShape)
+            .clickable { deletePassword.value = !deletePassword.value },
+        imageVector = Icons.Default.Delete,
+        contentDescription = null,
+        tint = if (applyDarkTheme())
+            MaterialTheme.colorScheme.onError
+        else
+            MaterialTheme.colorScheme.errorContainer
+    )
+    DeletePassword(
+        viewModel = viewModel,
+        show = deletePassword,
+        password = password
+    )
 }

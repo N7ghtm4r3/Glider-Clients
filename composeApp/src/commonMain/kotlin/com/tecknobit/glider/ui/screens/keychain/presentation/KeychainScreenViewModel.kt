@@ -74,4 +74,22 @@ class KeychainScreenViewModel : EquinoxViewModel(
         )
     }
 
+    fun refreshPassword(
+        password: Password,
+        onRefresh: () -> Unit,
+    ) {
+        // TODO: MAKE THE REQUEST THEN
+        onRefresh()
+        passwordsState.refresh()
+    }
+
+    fun deletePassword(
+        password: Password,
+        onDelete: () -> Unit,
+    ) {
+        // TODO: MAKE THE REQUEST THEN
+        onDelete()
+        passwordsState.refresh()
+    }
+
 }

@@ -43,4 +43,9 @@
     <string name="password_copied">Password copied!</string>
     <string name="generated">Generated</string>
     <string name="inserted">Inserted</string>
+    <string name="no_scopes">No scopes</string>
+    <string name="delete_password">Delete password</string>
+    <string name="delete_password_warn_text">If you confirm, the password will be definitely deleted, proceed?</string>
+    <string name="refresh_password">Refresh password</string>
+    <string name="refresh_password_warn_text">The password will be refreshed with the same parameters used to generate it, proceed?</string>
 </resources>
