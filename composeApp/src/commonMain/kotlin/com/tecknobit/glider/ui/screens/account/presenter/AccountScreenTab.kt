@@ -2,6 +2,7 @@
 
 package com.tecknobit.glider.ui.screens.account.presenter
 
+import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
@@ -514,7 +515,8 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
             modifier = Modifier
                 .heightIn(
                     max = 500.dp
-                ),
+                )
+                .animateContentSize(),
             paginationState = viewModel.connectedDevicesState,
             firstPageProgressIndicator = { FirstPageProgressIndicator() },
             newPageProgressIndicator = { NewPageProgressIndicator() }

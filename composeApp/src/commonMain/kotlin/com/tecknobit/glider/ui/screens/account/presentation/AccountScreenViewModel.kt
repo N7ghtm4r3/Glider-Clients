@@ -66,4 +66,13 @@ class AccountScreenViewModel : EquinoxProfileViewModel(
         )
     }
 
+    fun disconnectDevice(
+        device: ConnectedDevice,
+        onDisconnected: () -> Unit,
+    ) {
+        // TODO: MAKE THE REQUEST THEN
+        connectedDevicesState.refresh()
+        onDisconnected()
+    }
+
 }

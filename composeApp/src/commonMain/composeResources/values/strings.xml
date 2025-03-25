@@ -61,4 +61,6 @@
     <string name="last_login">Last login on %1$s at %2$s</string>
     <string name="with_the_browser">With the %1$s browser</string>
     <string name="current_device">Current</string>
+    <string name="disconnect_device">Disconnect device</string>
+    <string name="disconnect_device_text">If you confirm, the device will be disconnected from the current session, proceed?</string>
 </resources>

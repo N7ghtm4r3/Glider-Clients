@@ -27,6 +27,8 @@ import androidx.compose.material3.TooltipDefaults
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -39,6 +41,7 @@ import com.tecknobit.equinoxcompose.utilities.responsiveAssignment
 import com.tecknobit.equinoxcore.time.TimeFormatter.EUROPEAN_DATE_PATTERN
 import com.tecknobit.equinoxcore.time.TimeFormatter.H24_HOURS_MINUTES_SECONDS_PATTERN
 import com.tecknobit.equinoxcore.time.TimeFormatter.toDateString
+import com.tecknobit.glider.ui.components.DisconnectDevice
 import com.tecknobit.glider.ui.icons.Globe
 import com.tecknobit.glider.ui.screens.account.data.ConnectedDevice
 import com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel
@@ -104,9 +107,9 @@ fun ConnectedDeviceItem(
         },
         trailingContent = if (!isTheCurrentDevice) {
             {
+                val disconnectDevice = remember { mutableStateOf(false) }
                 IconButton(
-                    onClick = {
-                    }
+                    onClick = { disconnectDevice.value = true }
                 ) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.Logout,
@@ -117,6 +120,11 @@ fun ConnectedDeviceItem(
                             MaterialTheme.colorScheme.error
                     )
                 }
+                DisconnectDevice(
+                    viewModel = viewModel,
+                    show = disconnectDevice,
+                    device = connectedDevice
+                )
             }
         } else
             null
