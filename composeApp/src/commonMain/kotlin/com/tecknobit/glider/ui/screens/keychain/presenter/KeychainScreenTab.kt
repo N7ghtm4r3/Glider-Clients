@@ -39,6 +39,7 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
     title = Res.string.keychain
 ) {
 
+    // TODO: WHEN POSSIBLE CUSTOMIZE THE COLORS OF THE ManagedContent
     @Composable
     override fun ColumnScope.ScreenContent() {
         ManagedContent(
