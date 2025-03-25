@@ -1,34 +1,31 @@
-package com.tecknobit.glider.ui.screens.insert.presentation
+package com.tecknobit.glider.ui.screens.editinsertedpassword.presentation
 
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
-import com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel
-import glider.composeapp.generated.resources.Res
-import glider.composeapp.generated.resources.password_inserted
-import kotlinx.coroutines.delay
+import com.tecknobit.glider.navigator
+import com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel
 import kotlinx.coroutines.launch
 
-class InsertPasswordScreenViewModel : PasswordFormViewModel() {
+class EditInsertedPasswordScreenViewModel(
+    passwordId: String,
+) : EditPasswordFormViewModel(
+    passwordId = passwordId
+) {
 
     lateinit var passwordValue: MutableState<String>
 
     lateinit var passwordError: MutableState<Boolean>
 
-    /**
-     * Method to execute the operation related to the password such generating or inserting
-     */
     override fun performPasswordOperation() {
         if (!validateForm())
             return
         viewModelScope.launch {
             _performingPasswordOperation.emit(true)
             // TODO: MAKE THE REQUEST THEN
-            delay(1000) // TODO: TO REMOVE
-            resetForm()
             _performingPasswordOperation.emit(false)
-            showSnackbarMessage(Res.string.password_inserted)
+            navigator.goBack()
         }
     }
 
@@ -42,14 +39,6 @@ class InsertPasswordScreenViewModel : PasswordFormViewModel() {
             return false
         }
         return true
-    }
-
-    @RequiresSuperCall
-    override fun resetForm(
-        vararg extra: Any,
-    ) {
-        super.resetForm(*extra)
-        passwordValue.value = ""
     }
 
 }

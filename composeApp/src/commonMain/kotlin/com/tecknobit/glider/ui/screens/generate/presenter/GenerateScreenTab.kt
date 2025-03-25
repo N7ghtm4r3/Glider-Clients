@@ -23,12 +23,8 @@ import glider.composeapp.generated.resources.generating
 import glider.composeapp.generated.resources.password_length
 import org.jetbrains.compose.resources.stringResource
 
-class GenerateScreenTab(
-    passwordId: String? = null,
-) : PasswordFormScreen<GenerateScreenViewModel>(
-    viewModel = GenerateScreenViewModel(
-        passwordId = passwordId
-    ),
+class GenerateScreenTab : PasswordFormScreen<GenerateScreenViewModel>(
+    viewModel = GenerateScreenViewModel(),
     title = Res.string.generate
 ) {
 
@@ -60,9 +56,6 @@ class GenerateScreenTab(
         )
     }
 
-    /**
-     * Method to collect or instantiate the states of the screen
-     */
     @Composable
     @RequiresSuperCall
     override fun CollectStates() {

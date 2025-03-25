@@ -4,7 +4,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.text.font.FontFamily
 import com.tecknobit.equinoxcompose.session.EquinoxLocalUser
+import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
 import com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen
+import com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen
+import com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen
 import com.tecknobit.glider.ui.screens.home.presenter.HomeScreen
 import com.tecknobit.glider.ui.screens.splashscreen.Splashscreen
 import glider.composeapp.generated.resources.Res
@@ -13,6 +16,7 @@ import glider.composeapp.generated.resources.josefinsans
 import moe.tlaster.precompose.PreComposeApp
 import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
+import moe.tlaster.precompose.navigation.path
 import moe.tlaster.precompose.navigation.rememberNavigator
 import org.jetbrains.compose.resources.Font
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -53,6 +57,16 @@ const val AUTH_SCREEN = "AuthScreen"
  */
 const val HOME_SCREEN = "HomeScreen"
 
+/**
+ * `EDIT_GENERATED_PASSWORD_SCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab]
+ */
+const val EDIT_GENERATED_PASSWORD_SCREEN = "EditGeneratedPasswordScreen"
+
+/**
+ * `EDIT_INSERTED_PASSWORD_SCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab]
+ */
+const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
+
 @Composable
 @Preview
 fun App() {
@@ -78,6 +92,22 @@ fun App() {
                 route = HOME_SCREEN
             ) {
                 HomeScreen().ShowContent()
+            }
+            scene(
+                route = "$EDIT_GENERATED_PASSWORD_SCREEN/{${IDENTIFIER_KEY}}"
+            ) { backstackEntry ->
+                val passwordId = backstackEntry.path<String>(IDENTIFIER_KEY)!!
+                EditGeneratedPasswordScreen(
+                    passwordId = passwordId
+                ).ShowContent()
+            }
+            scene(
+                route = "$EDIT_INSERTED_PASSWORD_SCREEN/{${IDENTIFIER_KEY}}"
+            ) { backstackEntry ->
+                val passwordId = backstackEntry.path<String>(IDENTIFIER_KEY)!!
+                EditInsertedPasswordScreen(
+                    passwordId = passwordId
+                ).ShowContent()
             }
         }
     }

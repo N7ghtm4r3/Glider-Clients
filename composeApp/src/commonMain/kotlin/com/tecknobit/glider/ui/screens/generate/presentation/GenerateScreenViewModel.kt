@@ -18,11 +18,7 @@ import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.getString
 import kotlin.random.Random
 
-class GenerateScreenViewModel(
-    passwordId: String?,
-) : PasswordFormViewModel(
-    passwordId = passwordId
-) {
+class GenerateScreenViewModel : PasswordFormViewModel() {
 
     lateinit var quantityPickerState: QuantityPickerState
 

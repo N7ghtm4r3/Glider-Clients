@@ -45,10 +45,12 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
         ManagedContent(
             viewModel = viewModel,
             content = {
-                Filters()
-                Passwords(
-                    viewModel = viewModel
-                )
+                Column {
+                    Filters()
+                    Passwords(
+                        viewModel = viewModel
+                    )
+                }
             }
         )
     }

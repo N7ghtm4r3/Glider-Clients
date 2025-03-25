@@ -26,7 +26,7 @@ import org.jetbrains.compose.resources.stringResource
 @Structure
 abstract class GliderScreenTab<V : EquinoxViewModel>(
     viewModel: V,
-    private val title: StringResource,
+    protected val title: StringResource,
 ) : EquinoxScreen<V>(
     viewModel = viewModel
 ) {

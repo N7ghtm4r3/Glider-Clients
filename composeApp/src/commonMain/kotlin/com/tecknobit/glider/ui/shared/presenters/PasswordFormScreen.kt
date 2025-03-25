@@ -95,10 +95,11 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
     @Composable
     @NonRestartableComposable
     protected fun ScopesInputField(
+        modifier: Modifier = Modifier,
         imeAction: ImeAction = ImeAction.Done,
     ) {
         EquinoxOutlinedTextField(
-            modifier = Modifier
+            modifier = modifier
                 .padding(
                     top = 10.dp
                 ),

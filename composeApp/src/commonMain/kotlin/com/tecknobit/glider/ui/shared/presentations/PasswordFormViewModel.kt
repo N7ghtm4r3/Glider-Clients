@@ -11,9 +11,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 
 @Structure
-abstract class PasswordFormViewModel(
-    protected val passwordId: String?,
-) : EquinoxViewModel(
+abstract class PasswordFormViewModel : EquinoxViewModel(
     snackbarHostState = SnackbarHostState()
 ) {
 

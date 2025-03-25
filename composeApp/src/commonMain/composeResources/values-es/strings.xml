@@ -73,4 +73,7 @@
     <string name="are_you_new_to_glider">¿Eres nuevo en Glider?</string>
     <string name="welcome_back">Bienvenido de nuevo</string>
     <string name="hello">Hola</string>
+    <string name="edit_password">Editar contraseña</string>
+    <string name="edit">Editar</string>
+    <string name="editing">Editando...</string>
 </resources>

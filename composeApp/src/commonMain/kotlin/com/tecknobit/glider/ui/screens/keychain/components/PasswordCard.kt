@@ -40,6 +40,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.tecknobit.glider.EDIT_GENERATED_PASSWORD_SCREEN
+import com.tecknobit.glider.EDIT_INSERTED_PASSWORD_SCREEN
+import com.tecknobit.glider.navigator
 import com.tecknobit.glider.ui.components.DeletePassword
 import com.tecknobit.glider.ui.components.RefreshPassword
 import com.tecknobit.glider.ui.icons.SettingsBRoll
@@ -205,7 +208,15 @@ private fun ToolsBar(
                     modifier = Modifier
                         .clip(CircleShape)
                         .clickable {
-                            // TODO: NAV TO EDIT
+                            if (password.type == GENERATED) {
+                                navigator.navigate(
+                                    route = "$EDIT_GENERATED_PASSWORD_SCREEN/${password.id}"
+                                )
+                            } else {
+                                navigator.navigate(
+                                    route = "$EDIT_INSERTED_PASSWORD_SCREEN/${password.id}"
+                                )
+                            }
                         },
                     imageVector = Icons.Default.Edit,
                     contentDescription = null
