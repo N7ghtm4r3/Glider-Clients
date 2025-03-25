@@ -63,4 +63,14 @@
     <string name="current_device">Attuale</string>
     <string name="disconnect_device">Disconnettere il dispositivo</string>
     <string name="disconnect_device_text">Se confermi, il dispositivo verrà disconnesso dalla sessione corrente, procedere?</string>
+    <string name="sign_up">Iscriviti</string>
+    <string name="sign_in">Login</string>
+    <string name="host">Host</string>
+    <string name="wrong_host_address">Indirizzo host errato</string>
+    <string name="server_secret">Segreto del server</string>
+    <string name="wrong_server_secret">Segreto del server errato</string>
+    <string name="have_an_account">Hai un account?</string>
+    <string name="are_you_new_to_glider">Sei nuov su Glider?</string>
+    <string name="welcome_back">Bentornat</string>
+    <string name="hello">Ciao</string>
 </resources>

@@ -19,6 +19,7 @@ fun main() = application {
             placement = WindowPlacement.Maximized
         )
     ) {
+        // TODO: SETUP SESSION 
         App()
     }
 }

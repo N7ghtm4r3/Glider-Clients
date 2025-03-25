@@ -42,6 +42,7 @@ import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.MEDIUM_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.MEDIUM_EXPANDED_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClassComponent
 import com.tecknobit.equinoxcompose.utilities.ResponsiveContent
+import com.tecknobit.glider.CloseApplicationOnNavBack
 import com.tecknobit.glider.ui.screens.account.presenter.AccountScreenTab
 import com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab
 import com.tecknobit.glider.ui.screens.home.data.ScreenTab
@@ -95,6 +96,7 @@ class HomeScreen : EquinoxNoModelScreen() {
      */
     @Composable
     override fun ArrangeScreenContent() {
+        CloseApplicationOnNavBack()
         GliderTheme {
             ResponsiveContent(
                 onExpandedSizeClass = { SideNavigationContent() },

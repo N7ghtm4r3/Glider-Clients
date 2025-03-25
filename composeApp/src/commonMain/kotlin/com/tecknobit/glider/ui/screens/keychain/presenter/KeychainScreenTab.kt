@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.DebouncedOutlinedTextField
+import com.tecknobit.equinoxcompose.session.ManagedContent
 import com.tecknobit.equinoxcompose.utilities.responsiveAssignment
 import com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu
 import com.tecknobit.glider.ui.screens.keychain.components.Passwords
@@ -40,9 +41,14 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
 
     @Composable
     override fun ColumnScope.ScreenContent() {
-        Filters()
-        Passwords(
-            viewModel = viewModel
+        ManagedContent(
+            viewModel = viewModel,
+            content = {
+                Filters()
+                Passwords(
+                    viewModel = viewModel
+                )
+            }
         )
     }
 

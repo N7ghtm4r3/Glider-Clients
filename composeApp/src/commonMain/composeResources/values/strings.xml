@@ -63,4 +63,14 @@
     <string name="current_device">Current</string>
     <string name="disconnect_device">Disconnect device</string>
     <string name="disconnect_device_text">If you confirm, the device will be disconnected from the current session, proceed?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="sign_in">Sign In</string>
+    <string name="host">Host</string>
+    <string name="wrong_host_address">Wrong host address</string>
+    <string name="server_secret">Server secret</string>
+    <string name="wrong_server_secret">Wrong server secret</string>
+    <string name="have_an_account">Have an account?</string>
+    <string name="are_you_new_to_glider">Are you new to Glider?</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="hello">Hello</string>
 </resources>

@@ -11,6 +11,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             enableEdgeToEdge()
+
+            // TODO: SETUP SESSION
             App()
         }
     }
