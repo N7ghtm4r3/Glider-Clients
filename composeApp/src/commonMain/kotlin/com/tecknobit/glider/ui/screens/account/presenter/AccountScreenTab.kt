@@ -7,11 +7,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.selection.selectableGroup
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AlternateEmail
+import androidx.compose.material.icons.filled.Devices
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.Password
@@ -68,7 +73,10 @@ import com.tecknobit.glider.bodyFontFamily
 import com.tecknobit.glider.localUser
 import com.tecknobit.glider.navigator
 import com.tecknobit.glider.ui.components.DeleteAccount
+import com.tecknobit.glider.ui.components.FirstPageProgressIndicator
 import com.tecknobit.glider.ui.components.Logout
+import com.tecknobit.glider.ui.components.NewPageProgressIndicator
+import com.tecknobit.glider.ui.screens.account.components.ConnectedDeviceItem
 import com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
 import com.tecknobit.glider.ui.theme.AppTypography
@@ -80,12 +88,14 @@ import glider.composeapp.generated.resources.change_email
 import glider.composeapp.generated.resources.change_language
 import glider.composeapp.generated.resources.change_password
 import glider.composeapp.generated.resources.change_theme
+import glider.composeapp.generated.resources.connected_devices
 import glider.composeapp.generated.resources.delete
 import glider.composeapp.generated.resources.logout
 import glider.composeapp.generated.resources.new_email
 import glider.composeapp.generated.resources.new_password
 import glider.composeapp.generated.resources.wrong_email
 import glider.composeapp.generated.resources.wrong_password
+import io.github.ahmad_hamwi.compose.pagination.PaginatedLazyColumn
 import org.jetbrains.compose.resources.stringResource
 
 class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
@@ -304,10 +314,18 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                             }
                         )
                     }
+                ),
+                Step(
+                    stepIcon = Icons.Default.Devices,
+                    title = Res.string.connected_devices,
+                    content = { ConnectedDevices() },
+                    confirmIcon = Icons.Filled.KeyboardArrowUp
                 )
             )
         }
         Stepper(
+            modifier = Modifier
+                .navigationBarsPadding(),
             steps = steps,
             stepBackgroundColor = MaterialTheme.colorScheme.surfaceContainer
         )
@@ -482,6 +500,34 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                         text = entry.name
                     )
                 }
+            }
+        }
+    }
+
+    @StepContent(
+        number = 5
+    )
+    @Composable
+    @NonRestartableComposable
+    private fun ConnectedDevices() {
+        PaginatedLazyColumn(
+            modifier = Modifier
+                .heightIn(
+                    max = 500.dp
+                ),
+            paginationState = viewModel.connectedDevicesState,
+            firstPageProgressIndicator = { FirstPageProgressIndicator() },
+            newPageProgressIndicator = { NewPageProgressIndicator() }
+        ) {
+            itemsIndexed(
+                items = viewModel.connectedDevicesState.allItems!!,
+                key = { _, device -> device.id }
+            ) { index, device ->
+                ConnectedDeviceItem(
+                    viewModel = viewModel,
+                    connectedDevice = device,
+                    isLast = index == viewModel.connectedDevicesState.allItems!!.lastIndex
+                )
             }
         }
     }

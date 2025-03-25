@@ -57,4 +57,8 @@
     <string name="password_edited_event">The password has been edited on %1$s at %2$s</string>
     <string name="password_refreshed_event">The password has been refreshed on %1$s at %2$s</string>
     <string name="search_placeholder">Tail or scopes</string>
+    <string name="connected_devices">Connected devices</string>
+    <string name="last_login">Last login on %1$s at %2$s</string>
+    <string name="with_the_browser">With the %1$s browser</string>
+    <string name="current_device">Current</string>
 </resources>

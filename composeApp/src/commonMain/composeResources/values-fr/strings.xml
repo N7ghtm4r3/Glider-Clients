@@ -57,4 +57,8 @@
     <string name="password_edited_event">Le mot de passe a été modifié le %1$s à %2$s</string>
     <string name="password_refreshed_event">Le mot de passe a été actualisé le %1$s à %2$s</string>
     <string name="search_placeholder">Queue ou les champs</string>
+    <string name="connected_devices">Dispositifs connectés</string>
+    <string name="last_login">Dernière connexion le %1$s à %2$s</string>
+    <string name="with_the_browser">Avec le navigateur %1$s</string>
+    <string name="current_device">Actuel</string>
 </resources>
