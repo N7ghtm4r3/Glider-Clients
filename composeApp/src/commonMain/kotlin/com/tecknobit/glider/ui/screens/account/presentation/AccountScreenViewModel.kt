@@ -1,11 +1,11 @@
 package com.tecknobit.glider.ui.screens.account.presentation
 
 import androidx.compose.material3.SnackbarHostState
-import com.tecknobit.equinoxcompose.network.EquinoxRequester
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxProfileViewModel
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.DEFAULT_PAGE
 import com.tecknobit.equinoxcore.time.TimeFormatter
 import com.tecknobit.glider.localUser
+import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.screens.account.data.ConnectedDevice
 import com.tecknobit.glidercore.enums.ConnectedDeviceType
 import io.github.ahmad_hamwi.compose.pagination.PaginationState
@@ -13,13 +13,7 @@ import kotlin.random.Random
 
 class AccountScreenViewModel : EquinoxProfileViewModel(
     snackbarHostState = SnackbarHostState(),
-    // TODO: TO SET
-    requester = object : EquinoxRequester(
-        host = "",
-        connectionErrorMessage = "TODO()"
-    ) {
-        // TODO: TO SET
-    },
+    requester = requester,
     localUser = localUser
 ) {
 

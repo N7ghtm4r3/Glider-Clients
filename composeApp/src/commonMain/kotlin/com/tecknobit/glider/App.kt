@@ -3,8 +3,11 @@ package com.tecknobit.glider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.text.font.FontFamily
-import com.tecknobit.equinoxcompose.session.EquinoxLocalUser
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
+import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
+import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
+import com.tecknobit.glider.helpers.GliderLocalUser
+import com.tecknobit.glider.helpers.GliderRequester
 import com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen
 import com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen
 import com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen
@@ -13,6 +16,8 @@ import com.tecknobit.glider.ui.screens.splashscreen.Splashscreen
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.inter
 import glider.composeapp.generated.resources.josefinsans
+import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.launch
 import moe.tlaster.precompose.PreComposeApp
 import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
@@ -40,7 +45,12 @@ lateinit var navigator: Navigator
  * `localUser` -> the helper to manage the local sessions stored locally in
  * the device
  */
-val localUser = EquinoxLocalUser("Glider")
+val localUser = GliderLocalUser()
+
+/**
+ * `requester` -> the instance to manage the requests with the backend
+ */
+lateinit var requester: GliderRequester
 
 /**
  * `SPLASHSCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.splashscreen.Splashscreen]
@@ -72,6 +82,7 @@ const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
 fun App() {
     displayFontFamily = FontFamily(Font(Res.font.josefinsans))
     bodyFontFamily = FontFamily(Font(Res.font.inter))
+    
     PreComposeApp {
         navigator = rememberNavigator()
         NavHost(
@@ -145,18 +156,16 @@ expect fun CheckForUpdatesAndLaunch()
  *
  */
 fun startSession() {
-    // TODO: TO SET
-    /*requester = PandoroRequester(
+    requester = GliderRequester(
         host = localUser.hostAddress,
         userId = localUser.userId,
-        userToken = localUser.userToken
+        userToken = localUser.userToken,
+        debugMode = true // TODO: TO REMOVE
     )
     val route = if (localUser.isAuthenticated) {
         MainScope().launch {
             requester.sendRequest(
-                request = {
-                    getDynamicAccountData()
-                },
+                request = { getDynamicAccountData() },
                 onSuccess = { response ->
                     localUser.updateDynamicAccountData(
                         dynamicData = response.toResponseData()
@@ -167,9 +176,9 @@ fun startSession() {
         }
         HOME_SCREEN
     } else
-        AUTH_SCREEN*/
+        AUTH_SCREEN
     setUserLanguage()
-    navigator.navigate(AUTH_SCREEN)
+    navigator.navigate(route)
 }
 
 /**

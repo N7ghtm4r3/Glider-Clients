@@ -52,9 +52,7 @@ import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordVal
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isServerSecretValid
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isSurnameValid
 import com.tecknobit.glider.CloseApplicationOnNavBack
-import com.tecknobit.glider.HOME_SCREEN
 import com.tecknobit.glider.displayFontFamily
-import com.tecknobit.glider.navigator
 import com.tecknobit.glider.ui.screens.auth.presentation.AuthScreenViewModel
 import com.tecknobit.glider.ui.theme.ButtonShape
 import com.tecknobit.glider.ui.theme.ButtonSize
@@ -306,9 +304,7 @@ class AuthScreen : EquinoxScreen<AuthScreenViewModel>(
                     shape = ButtonShape,
                     onClick = {
                         softwareKeyboardController?.hide()
-                        // TODO: TO SET
-                        // viewModel.auth()
-                        navigator.navigate(HOME_SCREEN)
+                        viewModel.auth()
                     }
                 ) {
                     Text(

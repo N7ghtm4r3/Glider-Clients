@@ -1,10 +1,10 @@
 package com.tecknobit.glider.ui.screens.account.data
 
+import com.tecknobit.glider.localUser
 import com.tecknobit.glidercore.LAST_LOGIN_KEY
 import com.tecknobit.glidercore.enums.ConnectedDeviceType
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-import kotlin.random.Random
 
 @Serializable
 data class ConnectedDevice(
@@ -18,8 +18,7 @@ data class ConnectedDevice(
 ) {
 
     fun isTheCurrentDevice(): Boolean {
-        // TODO: TO USE KINFO INSTEAD
-        return Random.nextBoolean()
+        return localUser.deviceId == id
     }
 
 }
