@@ -7,6 +7,7 @@ import com.tecknobit.equinoxcore.network.EquinoxBaseEndpointsSet.Companion.DYNAM
 import com.tecknobit.equinoxcore.network.RequestMethod.GET
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.DEFAULT_PAGE_SIZE
 import com.tecknobit.glider.localUser
+import com.tecknobit.glider.ui.screens.account.data.ConnectedDevice
 import com.tecknobit.glidercore.DEVICES_KEY
 import com.tecknobit.glidercore.DEVICE_IDENTIFIER_KEY
 import com.tecknobit.glidercore.DEVICE_KEY
@@ -18,7 +19,7 @@ import kotlinx.serialization.json.jsonObject
 class GliderRequester(
     host: String,
     userId: String?,
-    private val deviceId: String?,
+    var deviceId: String?,
     userToken: String?,
     debugMode: Boolean = false,
 ) : EquinoxRequester(
@@ -34,7 +35,7 @@ class GliderRequester(
 
     init {
         deviceId?.let {
-            deviceIdHeader[DEVICE_IDENTIFIER_KEY] = deviceId
+            deviceIdHeader[DEVICE_IDENTIFIER_KEY] = deviceId!!
         }
     }
 
@@ -110,6 +111,25 @@ class GliderRequester(
                 page = page,
                 pageSize = pageSize
             )
+        )
+    }
+
+    suspend fun disconnectDevice(
+        device: ConnectedDevice,
+    ): JsonObject {
+        return disconnectDevice(
+            deviceId = device.id
+        )
+    }
+
+    suspend fun disconnectDevice(
+        deviceId: String,
+    ): JsonObject {
+        return execDelete(
+            endpoint = assembleUsersEndpointPath(
+                endpoint = "/$DEVICES_KEY/$deviceId"
+            ),
+            headers = deviceIdHeader
         )
     }
 

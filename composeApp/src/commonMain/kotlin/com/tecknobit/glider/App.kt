@@ -171,7 +171,16 @@ fun startSession() {
                         dynamicData = response.toResponseData()
                     )
                 },
-                onFailure = {}
+                onFailure = {
+                    localUser.clear()
+                    // TODO: TO USE THE BUILT-IN METHOD
+                    requester.setUserCredentials(
+                        userId = null,
+                        userToken = null
+                    )
+                    requester.deviceId = null
+                    navigator.navigate(AUTH_SCREEN)
+                }
             )
         }
         HOME_SCREEN

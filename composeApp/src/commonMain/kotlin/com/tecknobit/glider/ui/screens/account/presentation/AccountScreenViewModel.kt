@@ -4,6 +4,7 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxProfileViewModel
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendPaginatedRequest
+import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.DEFAULT_PAGE
 import com.tecknobit.glider.localUser
 import com.tecknobit.glider.requester
@@ -53,9 +54,45 @@ class AccountScreenViewModel : EquinoxProfileViewModel(
         device: ConnectedDevice,
         onDisconnected: () -> Unit,
     ) {
-        // TODO: MAKE THE REQUEST THEN
-        connectedDevicesState.refresh()
-        onDisconnected()
+        viewModelScope.launch {
+            requester.sendRequest(
+                request = {
+                    disconnectDevice(
+                        device = device
+                    )
+                },
+                onSuccess = {
+                    connectedDevicesState.refresh()
+                    onDisconnected()
+                },
+                onFailure = { showSnackbarMessage(it) }
+            )
+        }
+    }
+
+    // TODO: TO REMOVE AND OVERRIDE INSTEAD THE clearSession PREBUILT METHOD
+    fun logout(
+        onClear: (() -> Unit)? = null,
+    ) {
+        viewModelScope.launch {
+            requester.sendRequest(
+                request = {
+                    disconnectDevice(
+                        deviceId = localUser.deviceId!!
+                    )
+                },
+                onSuccess = {
+                    localUser.clear()
+                    requester.setUserCredentials(
+                        userId = null,
+                        userToken = null
+                    )
+                    requester.deviceId = null
+                    onClear?.invoke()
+                },
+                onFailure = { showSnackbarMessage(it) }
+            )
+        }
     }
 
 }
