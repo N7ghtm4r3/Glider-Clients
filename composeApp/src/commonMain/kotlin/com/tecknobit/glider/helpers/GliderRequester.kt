@@ -4,9 +4,13 @@ import com.tecknobit.equinoxcompose.network.EquinoxRequester
 import com.tecknobit.equinoxcore.annotations.Assembler
 import com.tecknobit.equinoxcore.annotations.CustomParametersOrder
 import com.tecknobit.equinoxcore.annotations.RequestPath
+import com.tecknobit.equinoxcore.helpers.KEYWORDS_KEY
+import com.tecknobit.equinoxcore.helpers.PASSWORD_KEY
 import com.tecknobit.equinoxcore.network.EquinoxBaseEndpointsSet.Companion.DYNAMIC_ACCOUNT_DATA_ENDPOINT
 import com.tecknobit.equinoxcore.network.RequestMethod.GET
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.DEFAULT_PAGE_SIZE
+import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.PAGE_KEY
+import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.PAGE_SIZE_KEY
 import com.tecknobit.glider.localUser
 import com.tecknobit.glider.ui.screens.account.data.ConnectedDevice
 import com.tecknobit.glidercore.DEVICES_KEY
@@ -19,6 +23,9 @@ import com.tecknobit.glidercore.PASSWORDS_KEY
 import com.tecknobit.glidercore.PASSWORD_LENGTH_KEY
 import com.tecknobit.glidercore.SCOPES_KEY
 import com.tecknobit.glidercore.TAIL_KEY
+import com.tecknobit.glidercore.TYPE_KEY
+import com.tecknobit.glidercore.enums.PasswordType
+import com.tecknobit.glidercore.helpers.GliderEndpointsSet.KEYCHAIN_ENDPOINT
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.buildJsonObject
@@ -163,6 +170,44 @@ class GliderRequester(
             endpoint = assemblePasswordsEndpoint(),
             headers = deviceIdHeader,
             payload = payload
+        )
+    }
+
+    suspend fun insertPassword(
+        tail: String,
+        scopes: String,
+        password: String,
+    ): JsonObject {
+        val payload = buildJsonObject {
+            put(TAIL_KEY, tail)
+            put(SCOPES_KEY, scopes)
+            put(PASSWORD_KEY, password)
+        }
+        return execPost(
+            endpoint = assemblePasswordsEndpoint(),
+            headers = deviceIdHeader,
+            payload = payload
+        )
+    }
+
+    suspend fun getKeychain(
+        page: Int,
+        pageSize: Int = DEFAULT_PAGE_SIZE,
+        keywords: String,
+        passwordTypes: List<PasswordType>,
+    ): JsonObject {
+        val query = buildJsonObject {
+            put(PAGE_KEY, page)
+            put(PAGE_SIZE_KEY, pageSize)
+            put(KEYWORDS_KEY, keywords)
+            put(TYPE_KEY, passwordTypes.joinToString())
+        }
+        return execGet(
+            endpoint = assemblePasswordsEndpoint(
+                subEndpoint = KEYCHAIN_ENDPOINT
+            ),
+            headers = deviceIdHeader,
+            query = query
         )
     }
 

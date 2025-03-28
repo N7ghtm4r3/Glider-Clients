@@ -11,6 +11,7 @@ import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcore.toggle
 import com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel
 import com.tecknobit.glidercore.enums.PasswordType
 
@@ -39,12 +40,10 @@ fun PasswordTypeFiltersMenu(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Checkbox(
-                    checked = viewModel.typeFilterApplied(
-                        type = type
-                    ),
+                    checked = viewModel.passwordTypes.contains(type),
                     onCheckedChange = {
-                        viewModel.applyTypeFilters(
-                            type = type
+                        viewModel.passwordTypes.toggle(
+                            element = type
                         )
                     }
                 )

@@ -25,13 +25,7 @@ abstract class EditPasswordFormViewModel(
             creationDate = TimeFormatter.currentTimestamp(),
             password = "q3K6S;r{,Tn8Ab6wfpVRnx-((\\ARYSb'",
             tail = "Password #1",
-            scopes = setOf(
-                "tecknobit",
-                "mock",
-                "tecknobit1",
-                "tecknobit3",
-                "tecknobit5"
-            ),
+            _scopes = "",
             type = GENERATED,
             events = listOf()
         )

@@ -16,7 +16,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.NonRestartableComposable
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -30,6 +32,7 @@ import com.tecknobit.glider.ui.screens.keychain.components.Passwords
 import com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
 import com.tecknobit.glider.ui.theme.InputFieldShape
+import com.tecknobit.glidercore.enums.PasswordType
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.keychain
 import glider.composeapp.generated.resources.search_placeholder
@@ -104,8 +107,10 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
     @Composable
     override fun CollectStates() {
         viewModel.keywords = remember { mutableStateOf("") }
-        viewModel.includeGeneratedPasswords = remember { mutableStateOf(true) }
-        viewModel.includeInsertedPasswords = remember { mutableStateOf(true) }
+        viewModel.passwordTypes = remember { mutableStateListOf() }
+        LaunchedEffect(Unit) {
+            viewModel.passwordTypes.addAll(PasswordType.entries)
+        }
     }
 
 }

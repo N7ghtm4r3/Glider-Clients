@@ -4,10 +4,11 @@ import androidx.compose.runtime.MutableState
 import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
+import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
+import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.password_inserted
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class InsertPasswordScreenViewModel : PasswordFormViewModel() {
@@ -24,11 +25,27 @@ class InsertPasswordScreenViewModel : PasswordFormViewModel() {
             return
         viewModelScope.launch {
             _performingPasswordOperation.emit(true)
-            // TODO: MAKE THE REQUEST THEN
-            delay(1000) // TODO: TO REMOVE
-            resetForm()
-            _performingPasswordOperation.emit(false)
-            showSnackbarMessage(Res.string.password_inserted)
+            requester.sendRequest(
+                request = {
+                    insertPassword(
+                        tail = tail.value,
+                        scopes = scopes.value,
+                        password = passwordValue.value
+                    )
+                },
+                onSuccess = {
+                    viewModelScope.launch {
+                        _performingPasswordOperation.emit(false)
+                        resetForm()
+                    }
+                },
+                onFailure = {
+                    viewModelScope.launch {
+                        _performingPasswordOperation.emit(false)
+                        showSnackbarMessage(it)
+                    }
+                }
+            )
         }
     }
 
@@ -50,6 +67,7 @@ class InsertPasswordScreenViewModel : PasswordFormViewModel() {
     ) {
         super.resetForm(*extra)
         passwordValue.value = ""
+        showSnackbarMessage(Res.string.password_inserted)
     }
 
 }
