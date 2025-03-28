@@ -82,7 +82,6 @@ const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
 fun App() {
     displayFontFamily = FontFamily(Font(Res.font.josefinsans))
     bodyFontFamily = FontFamily(Font(Res.font.inter))
-    
     PreComposeApp {
         navigator = rememberNavigator()
         NavHost(
@@ -160,12 +159,13 @@ fun startSession() {
         host = localUser.hostAddress,
         userId = localUser.userId,
         userToken = localUser.userToken,
+        deviceId = localUser.deviceId,
         debugMode = true // TODO: TO REMOVE
     )
     val route = if (localUser.isAuthenticated) {
         MainScope().launch {
             requester.sendRequest(
-                request = { getDynamicAccountData() },
+                request = { getCustomDynamicAccountData() },
                 onSuccess = { response ->
                     localUser.updateDynamicAccountData(
                         dynamicData = response.toResponseData()

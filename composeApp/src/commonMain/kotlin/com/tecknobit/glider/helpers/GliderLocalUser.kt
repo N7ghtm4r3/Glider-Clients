@@ -2,6 +2,9 @@ package com.tecknobit.glider.helpers
 
 import com.tecknobit.equinoxcompose.session.EquinoxLocalUser
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
+import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
+import com.tecknobit.equinoxcore.json.treatsAsString
+import com.tecknobit.glider.requester
 import com.tecknobit.glidercore.DEVICE_IDENTIFIER_KEY
 import kotlinx.serialization.json.JsonObject
 
@@ -9,13 +12,14 @@ class GliderLocalUser : EquinoxLocalUser(
     localStoragePath = "Glider"
 ) {
 
-    var deviceId: String = ""
+    var deviceId: String? = null
         set(value) {
             if (field != value) {
                 setPreference(
                     key = DEVICE_IDENTIFIER_KEY,
                     value = value
                 )
+                field = value
             }
         }
 
@@ -40,15 +44,17 @@ class GliderLocalUser : EquinoxLocalUser(
             response,
             *custom
         )
-        deviceId = custom.extractsCustomValue(
+        val device: JsonObject = custom.extractsCustomValue(
             itemPosition = 0
         )
+        deviceId = device[IDENTIFIER_KEY].treatsAsString()
+        requester.setLocalUserDeviceId()
     }
 
     @RequiresSuperCall
     override fun initLocalUser() {
         super.initLocalUser()
-        deviceId = getNullSafePreference(DEVICE_IDENTIFIER_KEY)
+        deviceId = getPreference(DEVICE_IDENTIFIER_KEY)
     }
 
 }
