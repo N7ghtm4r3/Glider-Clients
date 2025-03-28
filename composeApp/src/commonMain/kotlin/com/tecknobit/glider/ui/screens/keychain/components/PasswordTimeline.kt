@@ -17,6 +17,7 @@ import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.NonRestartableComposable
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -152,13 +153,14 @@ private fun ModalBottomSheetTimeline(
 private fun PasswordTimelineContent(
     password: Password,
 ) {
+    val events = remember { password.events }
     HorizontalDivider()
     JetLimeColumn(
         modifier = Modifier
             .heightIn(
                 max = 500.dp
             ),
-        itemsList = ItemsList(password.events),
+        itemsList = ItemsList(events),
         key = { _, event -> event.id },
         contentPadding = PaddingValues(
             all = 16.dp

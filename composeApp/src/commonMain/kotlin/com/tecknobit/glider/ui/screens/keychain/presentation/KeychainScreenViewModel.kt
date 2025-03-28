@@ -4,10 +4,12 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.viewModelScope
+import com.tecknobit.equinoxcompose.session.setHasBeenDisconnectedValue
 import com.tecknobit.equinoxcompose.session.setServerOfflineValue
 import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendPaginatedRequest
+import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.screens.keychain.data.Password
@@ -55,7 +57,7 @@ class KeychainScreenViewModel : EquinoxViewModel(
                         isLastPage = paginatedResponse.isLastPage
                     )
                 },
-                onFailure = { /*setHasBeenDisconnectedValue(true)*/ },
+                onFailure = { setHasBeenDisconnectedValue(true) },
                 onConnectionError = { setServerOfflineValue(true) }
             )
         }
@@ -64,15 +66,27 @@ class KeychainScreenViewModel : EquinoxViewModel(
     fun copy(
         password: Password,
     ) {
-        // TODO: MAKE THE REQUEST TO REGISTER THE EVENT THEN
-        copyOnClipboard(
-            content = password.password,
-            onCopy = {
-                showSnackbarMessage(
-                    message = Res.string.password_copied
-                )
-            }
-        )
+        viewModelScope.launch {
+            requester.sendRequest(
+                request = {
+                    copyPassword(
+                        password = password
+                    )
+                },
+                onSuccess = {
+                    copyOnClipboard(
+                        content = password.password,
+                        onCopy = {
+                            password.appendCopiedPasswordEvent()
+                            showSnackbarMessage(
+                                message = Res.string.password_copied
+                            )
+                        }
+                    )
+                },
+                onFailure = { showSnackbarMessage(it) }
+            )
+        }
     }
 
     fun refreshPassword(
@@ -88,9 +102,20 @@ class KeychainScreenViewModel : EquinoxViewModel(
         password: Password,
         onDelete: () -> Unit,
     ) {
-        // TODO: MAKE THE REQUEST THEN
-        onDelete()
-        passwordsState.refresh()
+        viewModelScope.launch {
+            requester.sendRequest(
+                request = {
+                    deletePassword(
+                        password = password
+                    )
+                },
+                onSuccess = {
+                    onDelete()
+                    passwordsState.refresh()
+                },
+                onFailure = { showSnackbarMessage(it) }
+            )
+        }
     }
 
 }

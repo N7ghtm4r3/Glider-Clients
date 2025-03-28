@@ -1,5 +1,6 @@
 package com.tecknobit.glider.ui.shared.presentations
 
+import androidx.compose.runtime.mutableStateListOf
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.equinoxcore.time.TimeFormatter
 import com.tecknobit.glider.ui.screens.keychain.data.Password
@@ -27,7 +28,7 @@ abstract class EditPasswordFormViewModel(
             tail = "Password #1",
             _scopes = "",
             type = GENERATED,
-            events = listOf()
+            _events = mutableStateListOf()
         )
     }
 

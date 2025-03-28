@@ -13,6 +13,7 @@ import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.PAGE_KEY
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.PAGE_SIZE_KEY
 import com.tecknobit.glider.localUser
 import com.tecknobit.glider.ui.screens.account.data.ConnectedDevice
+import com.tecknobit.glider.ui.screens.keychain.data.Password
 import com.tecknobit.glidercore.DEVICES_KEY
 import com.tecknobit.glidercore.DEVICE_IDENTIFIER_KEY
 import com.tecknobit.glidercore.DEVICE_KEY
@@ -208,6 +209,28 @@ class GliderRequester(
             ),
             headers = deviceIdHeader,
             query = query
+        )
+    }
+
+    suspend fun copyPassword(
+        password: Password,
+    ): JsonObject {
+        return execPut(
+            endpoint = assemblePasswordsEndpoint(
+                subEndpoint = password.id
+            ),
+            headers = deviceIdHeader
+        )
+    }
+
+    suspend fun deletePassword(
+        password: Password,
+    ): JsonObject {
+        return execDelete(
+            endpoint = assemblePasswordsEndpoint(
+                subEndpoint = password.id
+            ),
+            headers = deviceIdHeader
         )
     }
 
