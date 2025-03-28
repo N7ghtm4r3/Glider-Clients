@@ -1,15 +1,15 @@
 package com.tecknobit.glider.ui.screens.account.presentation
 
 import androidx.compose.material3.SnackbarHostState
+import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxProfileViewModel
+import com.tecknobit.equinoxcore.network.Requester.Companion.sendPaginatedRequest
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.DEFAULT_PAGE
-import com.tecknobit.equinoxcore.time.TimeFormatter
 import com.tecknobit.glider.localUser
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.screens.account.data.ConnectedDevice
-import com.tecknobit.glidercore.enums.ConnectedDeviceType
 import io.github.ahmad_hamwi.compose.pagination.PaginationState
-import kotlin.random.Random
+import kotlinx.coroutines.launch
 
 class AccountScreenViewModel : EquinoxProfileViewModel(
     snackbarHostState = SnackbarHostState(),
@@ -29,35 +29,24 @@ class AccountScreenViewModel : EquinoxProfileViewModel(
     private fun loadDevices(
         page: Int,
     ) {
-        // TODO: TO MAKE THE REQUEST THEN
-        connectedDevicesState.appendPage(
-            items = listOf(
-                ConnectedDevice(
-                    id = Random.nextLong().toString(),
-                    brand = "Oppo",
-                    model = "11",
-                    lastLogin = TimeFormatter.currentTimestamp(),
-                    type = ConnectedDeviceType.MOBILE
-                ),
-                ConnectedDevice(
-                    id = Random.nextLong().toString(),
-                    brand = "Lenovo",
-                    model = "Thinkpad",
-                    lastLogin = TimeFormatter.currentTimestamp(),
-                    type = ConnectedDeviceType.DESKTOP
-                ),
-                ConnectedDevice(
-                    id = Random.nextLong().toString(),
-                    brand = "Lenovo",
-                    model = "Thinkpad",
-                    browser = "Chrome",
-                    lastLogin = TimeFormatter.currentTimestamp(),
-                    type = ConnectedDeviceType.WEB
-                )
-            ), // TODO: TO USE THE REAL DATA
-            nextPageKey = page + 1, // TODO: TO USE THE REAL DATA
-            isLastPage = Random.nextBoolean() // TODO: TO USE THE REAL DATA
-        )
+        viewModelScope.launch {
+            requester.sendPaginatedRequest(
+                request = {
+                    getConnectedDevices(
+                        page = page
+                    )
+                },
+                serializer = ConnectedDevice.serializer(),
+                onSuccess = { paginatedResponse ->
+                    connectedDevicesState.appendPage(
+                        items = paginatedResponse.data,
+                        nextPageKey = paginatedResponse.nextPage,
+                        isLastPage = paginatedResponse.isLastPage
+                    )
+                },
+                onFailure = { showSnackbarMessage(it) }
+            )
+        }
     }
 
     fun disconnectDevice(

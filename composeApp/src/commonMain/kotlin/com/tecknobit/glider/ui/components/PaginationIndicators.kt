@@ -14,9 +14,9 @@ import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcompose.resources.Res
+import com.tecknobit.equinoxcompose.resources.loading_data
 import com.tecknobit.glider.ui.theme.AppTypography
-import glider.composeapp.generated.resources.Res
-import glider.composeapp.generated.resources.loading_passwords
 import org.jetbrains.compose.resources.stringResource
 
 /**
@@ -29,7 +29,10 @@ fun FirstPageProgressIndicator(
 ) {
     Column(
         modifier = modifier
-            .fillMaxSize(),
+            .fillMaxSize()
+            .padding(
+                all = 16.dp
+            ),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -44,7 +47,7 @@ fun FirstPageProgressIndicator(
                 .padding(
                     top = 10.dp
                 ),
-            text = stringResource(Res.string.loading_passwords),
+            text = stringResource(Res.string.loading_data),
             style = AppTypography.bodyLarge,
             color = MaterialTheme.colorScheme.primary
         )

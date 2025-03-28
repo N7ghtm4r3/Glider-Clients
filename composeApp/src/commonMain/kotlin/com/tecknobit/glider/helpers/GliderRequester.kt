@@ -5,7 +5,9 @@ import com.tecknobit.equinoxcore.annotations.CustomParametersOrder
 import com.tecknobit.equinoxcore.annotations.RequestPath
 import com.tecknobit.equinoxcore.network.EquinoxBaseEndpointsSet.Companion.DYNAMIC_ACCOUNT_DATA_ENDPOINT
 import com.tecknobit.equinoxcore.network.RequestMethod.GET
+import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.DEFAULT_PAGE_SIZE
 import com.tecknobit.glider.localUser
+import com.tecknobit.glidercore.DEVICES_KEY
 import com.tecknobit.glidercore.DEVICE_IDENTIFIER_KEY
 import com.tecknobit.glidercore.DEVICE_KEY
 import kotlinx.serialization.json.Json
@@ -88,8 +90,26 @@ class GliderRequester(
     @RequestPath(path = "/api/v1/users/{id}/dynamicAccountData", method = GET)
     suspend fun getCustomDynamicAccountData(): JsonObject {
         return execGet(
-            endpoint = assembleUsersEndpointPath(DYNAMIC_ACCOUNT_DATA_ENDPOINT),
+            endpoint = assembleUsersEndpointPath(
+                endpoint = DYNAMIC_ACCOUNT_DATA_ENDPOINT
+            ),
             headers = deviceIdHeader
+        )
+    }
+
+    suspend fun getConnectedDevices(
+        page: Int,
+        pageSize: Int = DEFAULT_PAGE_SIZE,
+    ): JsonObject {
+        return execGet(
+            endpoint = assembleUsersEndpointPath(
+                endpoint = "/$DEVICES_KEY"
+            ),
+            headers = deviceIdHeader,
+            query = createPaginationQuery(
+                page = page,
+                pageSize = pageSize
+            )
         )
     }
 
