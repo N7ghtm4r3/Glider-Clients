@@ -7,16 +7,17 @@ import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
 import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
+import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
+import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseContent
+import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState
 import com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.copy
 import glider.composeapp.generated.resources.password_generated
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.getString
-import kotlin.random.Random
 
 class GenerateScreenViewModel : PasswordFormViewModel() {
 
@@ -36,10 +37,30 @@ class GenerateScreenViewModel : PasswordFormViewModel() {
             return
         viewModelScope.launch {
             _performingPasswordOperation.emit(true)
-            // TODO: MAKE THE REQUEST THEN
-            delay(Random.nextInt(3) * 1000L) // TODO: TO REMOVE
-            _performingPasswordOperation.emit(false)
-            resetForm(Random.nextLong().toString()) // TODO: TO PASS THE REAL ONE
+            requester.sendRequest(
+                request = {
+                    generatePassword(
+                        length = quantityPickerState.quantityPicked,
+                        tail = tail.value,
+                        scopes = scopes.value,
+                        includeNumbers = includeNumbers.value,
+                        includeUppercaseLetters = includeUppercaseLetters.value,
+                        includeSpecialCharacters = includeSpecialCharacters.value
+                    )
+                },
+                onSuccess = {
+                    viewModelScope.launch {
+                        _performingPasswordOperation.emit(false)
+                        resetForm(it.toResponseContent())
+                    }
+                },
+                onFailure = {
+                    viewModelScope.launch {
+                        _performingPasswordOperation.emit(false)
+                    }
+                    showSnackbarMessage(it)
+                }
+            )
         }
     }
 

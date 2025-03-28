@@ -198,6 +198,9 @@ class QuantityPickerState internal constructor(
 
     val quantity = mutableStateOf(currentQuantity)
 
+    val quantityPicked: Int
+        get() = quantity.value
+
     val longPressEnabled = longPressQuantity != null && longPressQuantity > 1
 
     @Wrapper

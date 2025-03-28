@@ -1,6 +1,7 @@
 package com.tecknobit.glider.helpers
 
 import com.tecknobit.equinoxcompose.network.EquinoxRequester
+import com.tecknobit.equinoxcore.annotations.Assembler
 import com.tecknobit.equinoxcore.annotations.CustomParametersOrder
 import com.tecknobit.equinoxcore.annotations.RequestPath
 import com.tecknobit.equinoxcore.network.EquinoxBaseEndpointsSet.Companion.DYNAMIC_ACCOUNT_DATA_ENDPOINT
@@ -11,10 +12,19 @@ import com.tecknobit.glider.ui.screens.account.data.ConnectedDevice
 import com.tecknobit.glidercore.DEVICES_KEY
 import com.tecknobit.glidercore.DEVICE_IDENTIFIER_KEY
 import com.tecknobit.glidercore.DEVICE_KEY
+import com.tecknobit.glidercore.INCLUDE_NUMBERS_KEY
+import com.tecknobit.glidercore.INCLUDE_SPECIAL_CHARACTERS_KEY
+import com.tecknobit.glidercore.INCLUDE_UPPERCASE_LETTERS_KEY
+import com.tecknobit.glidercore.PASSWORDS_KEY
+import com.tecknobit.glidercore.PASSWORD_LENGTH_KEY
+import com.tecknobit.glidercore.SCOPES_KEY
+import com.tecknobit.glidercore.TAIL_KEY
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.encodeToJsonElement
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.put
 
 class GliderRequester(
     host: String,
@@ -130,6 +140,39 @@ class GliderRequester(
                 endpoint = "/$DEVICES_KEY/$deviceId"
             ),
             headers = deviceIdHeader
+        )
+    }
+
+    suspend fun generatePassword(
+        length: Int,
+        tail: String,
+        scopes: String,
+        includeNumbers: Boolean,
+        includeUppercaseLetters: Boolean,
+        includeSpecialCharacters: Boolean,
+    ): JsonObject {
+        val payload = buildJsonObject {
+            put(PASSWORD_LENGTH_KEY, length)
+            put(TAIL_KEY, tail)
+            put(SCOPES_KEY, scopes)
+            put(INCLUDE_NUMBERS_KEY, includeNumbers)
+            put(INCLUDE_UPPERCASE_LETTERS_KEY, includeUppercaseLetters)
+            put(INCLUDE_SPECIAL_CHARACTERS_KEY, includeSpecialCharacters)
+        }
+        return execPut(
+            endpoint = assemblePasswordsEndpoint(),
+            headers = deviceIdHeader,
+            payload = payload
+        )
+    }
+
+    @Assembler
+    private fun assemblePasswordsEndpoint(
+        subEndpoint: String = "",
+    ): String {
+        return assembleCustomEndpointPath(
+            customEndpoint = PASSWORDS_KEY,
+            subEndpoint = subEndpoint
         )
     }
 
