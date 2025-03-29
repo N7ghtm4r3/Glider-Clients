@@ -10,6 +10,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     kotlin("plugin.serialization") version "2.0.20"
+    id("com.github.gmazzo.buildconfig") version "5.5.1"
 }
 
 kotlin {
@@ -68,6 +69,8 @@ kotlin {
             implementation(libs.app.update.ktx)
             implementation(libs.review)
             implementation(libs.review.ktx)
+            // TODO: TO REMOVE
+            implementation(libs.androidx.startup.runtime)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -86,6 +89,7 @@ kotlin {
             implementation(libs.glidercore)
             implementation(libs.lazy.pagination.compose)
             implementation(libs.jetlime)
+            implementation(libs.ametista.engine)
             implementation("io.github.n7ghtm4r3:KInfo:1.0.1")
         }
         desktopMain.dependencies {
@@ -135,6 +139,29 @@ compose.desktop {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "com.tecknobit.glider"
             packageVersion = "2.0.0"
+
+            // TODO: TO SET
         }
     }
+}
+
+buildConfig {
+    className("AmetistaConfig")
+    packageName("com.tecknobit.pandoro")
+    buildConfigField<String>(
+        name = "HOST",
+        value = project.findProperty("host").toString()
+    )
+    buildConfigField<String?>(
+        name = "SERVER_SECRET",
+        value = project.findProperty("server_secret").toString()
+    )
+    buildConfigField<String?>(
+        name = "APPLICATION_IDENTIFIER",
+        value = project.findProperty("application_id").toString()
+    )
+    buildConfigField<Boolean>(
+        name = "BYPASS_SSL_VALIDATION",
+        value = project.findProperty("bypass_ssl_validation").toString().toBoolean()
+    )
 }

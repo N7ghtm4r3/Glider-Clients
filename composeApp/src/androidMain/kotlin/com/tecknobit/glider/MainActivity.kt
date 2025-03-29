@@ -13,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
+import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.equinoxcompose.session.setUpSession
 import com.tecknobit.equinoxcore.utilities.ContextActivityProvider
 
@@ -41,6 +42,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AmetistaEngine.intake()
         setContent {
             enableEdgeToEdge()
             initSession()

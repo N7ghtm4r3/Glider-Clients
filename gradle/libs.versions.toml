@@ -1,5 +1,6 @@
 [versions]
 agp = "8.5.2"
+ametistaEngine = "1.0.2"
 android-compileSdk = "35"
 android-minSdk = "24"
 android-targetSdk = "35"
@@ -18,8 +19,11 @@ octocatkdu = "1.0.5"
 precompose = "1.7.0-alpha03"
 appUpdate = "2.1.0"
 review = "2.0.2"
+#TODO: TO REMOVE
+startupRuntime = "1.2.0"
 
 [libraries]
+ametista-engine = { module = "io.github.n7ghtm4r3:Ametista-Engine", version.ref = "ametistaEngine" }
 equinox-core = { module = "io.github.n7ghtm4r3:equinox-core", version.ref = "equinoxCore" }
 equinox-compose = { module = "io.github.n7ghtm4r3:equinox-compose", version.ref = "equinoxCompose" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
@@ -36,6 +40,8 @@ review = { module = "com.google.android.play:review", version.ref = "review" }
 review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "review" }
 app-update = { module = "com.google.android.play:app-update", version.ref = "appUpdate" }
 app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdate" }
+#TODO: TO REMOVE
+androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "startupRuntime" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

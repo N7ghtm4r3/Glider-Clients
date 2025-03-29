@@ -1,5 +1,6 @@
 package com.tecknobit.glider.helpers
 
+import com.tecknobit.ametistaengine.AmetistaEngine.Companion.ametistaEngine
 import com.tecknobit.equinoxcompose.network.EquinoxRequester
 import com.tecknobit.equinoxcore.annotations.Assembler
 import com.tecknobit.equinoxcore.annotations.CustomParametersOrder
@@ -49,6 +50,12 @@ class GliderRequester(
     byPassSSLValidation = true,
     connectionErrorMessage = "Server temporary unavailable"
 ) {
+
+    init {
+        attachInterceptorOnRequest {
+            ametistaEngine.notifyNetworkRequest()
+        }
+    }
 
     private val deviceIdHeader: MutableMap<String, String> = mutableMapOf()
 

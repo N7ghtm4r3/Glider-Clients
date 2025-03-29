@@ -1,8 +1,13 @@
+@file:OptIn(ExperimentalResourceApi::class)
+
 package com.tecknobit.glider
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.text.font.FontFamily
+import com.tecknobit.ametistaengine.AmetistaEngine
+import com.tecknobit.ametistaengine.AmetistaEngine.Companion.FILES_AMETISTA_CONFIG_PATHNAME
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
@@ -13,6 +18,7 @@ import com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGener
 import com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen
 import com.tecknobit.glider.ui.screens.home.presenter.HomeScreen
 import com.tecknobit.glider.ui.screens.splashscreen.Splashscreen
+import com.tecknobit.pandoro.AmetistaConfig
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.inter
 import glider.composeapp.generated.resources.josefinsans
@@ -23,8 +29,8 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.path
 import moe.tlaster.precompose.navigation.rememberNavigator
+import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.Font
-import org.jetbrains.compose.ui.tooling.preview.Preview
 
 /**
  * `bodyFontFamily` -> the Glider's body font family
@@ -78,8 +84,8 @@ const val EDIT_GENERATED_PASSWORD_SCREEN = "EditGeneratedPasswordScreen"
 const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
 
 @Composable
-@Preview
 fun App() {
+    InitAmetista()
     displayFontFamily = FontFamily(Font(Res.font.josefinsans))
     bodyFontFamily = FontFamily(Font(Res.font.inter))
     PreComposeApp {
@@ -128,7 +134,7 @@ fun App() {
  */
 @Composable
 private fun InitAmetista() {
-    /*LaunchedEffect(Unit) {
+    LaunchedEffect(Unit) {
         val ametistaEngine = AmetistaEngine.ametistaEngine
         ametistaEngine.fireUp(
             configData = Res.readBytes(FILES_AMETISTA_CONFIG_PATHNAME),
@@ -136,9 +142,9 @@ private fun InitAmetista() {
             serverSecret = AmetistaConfig.SERVER_SECRET!!,
             applicationId = AmetistaConfig.APPLICATION_IDENTIFIER!!,
             bypassSslValidation = AmetistaConfig.BYPASS_SSL_VALIDATION,
-            debugMode = false
+            debugMode = true // TODO: TO SET ON FALSE
         )
-    }*/
+    }
 }
 
 /**
