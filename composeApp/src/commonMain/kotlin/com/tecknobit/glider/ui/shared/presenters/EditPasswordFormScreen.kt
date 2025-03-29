@@ -39,7 +39,7 @@ import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.equinoxcore.annotations.Wrapper
 import com.tecknobit.glider.navigator
-import com.tecknobit.glider.ui.screens.keychain.data.Password
+import com.tecknobit.glider.ui.shared.data.PasswordDetails
 import com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel
 import com.tecknobit.glider.ui.theme.GliderTheme
 import glider.composeapp.generated.resources.Res
@@ -56,7 +56,7 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
     title = Res.string.edit_password
 ) {
 
-    protected lateinit var password: State<Password?>
+    protected lateinit var password: State<PasswordDetails?>
 
     @Composable
     override fun ArrangeScreenContent() {

@@ -213,6 +213,39 @@ class GliderRequester(
         )
     }
 
+    suspend fun getPassword(
+        passwordId: String,
+    ): JsonObject {
+        return execGet(
+            endpoint = assemblePasswordsEndpoint(
+                subEndpoint = passwordId
+            ),
+            headers = deviceIdHeader
+        )
+    }
+
+    suspend fun editPassword(
+        passwordId: String,
+        tail: String,
+        scopes: String,
+        password: String? = null,
+    ): JsonObject {
+        val payload = buildJsonObject {
+            put(TAIL_KEY, tail)
+            put(SCOPES_KEY, scopes)
+            password?.let {
+                put(PASSWORD_KEY, password)
+            }
+        }
+        return execPatch(
+            endpoint = assemblePasswordsEndpoint(
+                subEndpoint = passwordId
+            ),
+            headers = deviceIdHeader,
+            payload = payload
+        )
+    }
+
     suspend fun copyPassword(
         password: Password,
     ): JsonObject {

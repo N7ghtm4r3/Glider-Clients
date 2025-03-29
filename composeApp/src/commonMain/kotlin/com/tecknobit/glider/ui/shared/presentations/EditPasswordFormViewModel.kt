@@ -1,35 +1,41 @@
 package com.tecknobit.glider.ui.shared.presentations
 
-import androidx.compose.runtime.mutableStateListOf
+import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcore.annotations.Structure
-import com.tecknobit.equinoxcore.time.TimeFormatter
-import com.tecknobit.glider.ui.screens.keychain.data.Password
-import com.tecknobit.glidercore.enums.PasswordType.GENERATED
+import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
+import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
+import com.tecknobit.glider.requester
+import com.tecknobit.glider.ui.shared.data.PasswordDetails
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlin.random.Random
+import kotlinx.coroutines.launch
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.decodeFromJsonElement
 
 @Structure
 abstract class EditPasswordFormViewModel(
-    private val passwordId: String?,
+    protected val passwordId: String,
 ) : PasswordFormViewModel() {
 
-    protected val _password = MutableStateFlow<Password?>(
+    protected val _password = MutableStateFlow<PasswordDetails?>(
         value = null
     )
     val password = _password.asStateFlow()
 
     fun retrievePassword() {
-        // TODO: MAKE THE REQUEST THEN
-        _password.value = Password(
-            id = Random.nextLong().toString(),
-            creationDate = TimeFormatter.currentTimestamp(),
-            _password = "q3K6S;r{,Tn8Ab6wfpVRnx-((\\ARYSb'",
-            tail = "Password #1",
-            _scopes = "",
-            type = GENERATED,
-            _events = mutableStateListOf()
-        )
+        viewModelScope.launch {
+            requester.sendRequest(
+                request = {
+                    getPassword(
+                        passwordId = passwordId
+                    )
+                },
+                onSuccess = {
+                    _password.value = Json.decodeFromJsonElement(it.toResponseData())
+                },
+                onFailure = { showSnackbarMessage(it) }
+            )
+        }
     }
 
 }
