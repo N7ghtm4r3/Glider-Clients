@@ -159,8 +159,7 @@ fun startSession() {
         host = localUser.hostAddress,
         userId = localUser.userId,
         userToken = localUser.userToken,
-        deviceId = localUser.deviceId,
-        debugMode = true // TODO: TO REMOVE
+        deviceId = localUser.deviceId
     )
     val route = if (localUser.isAuthenticated) {
         MainScope().launch {
@@ -180,7 +179,8 @@ fun startSession() {
                     )
                     requester.deviceId = null
                     navigator.navigate(AUTH_SCREEN)
-                }
+                },
+                onConnectionError = { }
             )
         }
         HOME_SCREEN

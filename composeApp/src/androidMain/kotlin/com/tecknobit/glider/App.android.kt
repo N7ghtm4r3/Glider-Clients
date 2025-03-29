@@ -3,7 +3,13 @@ package com.tecknobit.glider
 import androidx.activity.compose.LocalActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
+import com.google.android.play.core.appupdate.AppUpdateOptions
+import com.google.android.play.core.install.model.AppUpdateType
+import com.google.android.play.core.install.model.UpdateAvailability.UPDATE_AVAILABLE
+import com.google.android.play.core.ktx.isImmediateUpdateAllowed
 import com.tecknobit.equinoxcore.utilities.AppContext
+import com.tecknobit.glider.MainActivity.Companion.appUpdateManager
+import com.tecknobit.glider.MainActivity.Companion.launcher
 import moe.tlaster.precompose.navigation.BackHandler
 import java.util.Locale
 
@@ -15,8 +21,7 @@ import java.util.Locale
 @Composable
 @NonRestartableComposable
 actual fun CheckForUpdatesAndLaunch() {
-    // TODO: TO SET
-    /*appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
+    appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
         val isUpdateAvailable = info.updateAvailability() == UPDATE_AVAILABLE
         val isUpdateSupported = info.isImmediateUpdateAllowed
         if (isUpdateAvailable && isUpdateSupported) {
@@ -29,8 +34,7 @@ actual fun CheckForUpdatesAndLaunch() {
             startSession()
     }.addOnFailureListener {
         startSession()
-    }*/
-    startSession()
+    }
 }
 
 /**

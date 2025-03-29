@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
+import com.tecknobit.glider.helpers.KReviewer
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel
 import glider.composeapp.generated.resources.Res
@@ -36,7 +37,10 @@ class InsertPasswordScreenViewModel : PasswordFormViewModel() {
                 onSuccess = {
                     viewModelScope.launch {
                         _performingPasswordOperation.emit(false)
-                        resetForm()
+                        val kReviewer = KReviewer()
+                        kReviewer.reviewInApp {
+                            resetForm()
+                        }
                     }
                 },
                 onFailure = {

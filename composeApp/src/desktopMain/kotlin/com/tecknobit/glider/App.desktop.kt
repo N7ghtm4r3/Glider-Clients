@@ -1,8 +1,18 @@
 package com.tecknobit.glider
 
+import OctocatKDUConfig
+import UpdaterDialog
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import com.tecknobit.glider.ui.theme.GliderTheme
+import glider.composeapp.generated.resources.Res
+import glider.composeapp.generated.resources.app_name
+import glider.composeapp.generated.resources.app_version
+import org.jetbrains.compose.resources.stringResource
 import java.util.Locale
 
 /**
@@ -14,8 +24,7 @@ import java.util.Locale
 @NonRestartableComposable
 actual fun CheckForUpdatesAndLaunch() {
     GliderTheme {
-        // TODO: TO SET
-        /*var launchApp by remember { mutableStateOf(true) }
+        var launchApp by remember { mutableStateOf(true) }
         UpdaterDialog(
             config = OctocatKDUConfig(
                 locale = Locale.getDefault(),
@@ -26,8 +35,7 @@ actual fun CheckForUpdatesAndLaunch() {
             )
         )
         if (launchApp)
-            startSession()*/
-        startSession()
+            startSession()
     }
 }
 

@@ -64,6 +64,10 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.app.update)
+            implementation(libs.app.update.ktx)
+            implementation(libs.review)
+            implementation(libs.review.ktx)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -87,6 +91,7 @@ kotlin {
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
             implementation(libs.kotlinx.coroutines.swing)
+            implementation(libs.octocatkdu)
         }
     }
 }

@@ -9,6 +9,7 @@ import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseContent
+import com.tecknobit.glider.helpers.KReviewer
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState
 import com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel
@@ -51,7 +52,10 @@ class GenerateScreenViewModel : PasswordFormViewModel() {
                 onSuccess = {
                     viewModelScope.launch {
                         _performingPasswordOperation.emit(false)
-                        resetForm(it.toResponseContent())
+                        val kReviewer = KReviewer()
+                        kReviewer.reviewInApp {
+                            resetForm(it.toResponseContent())
+                        }
                     }
                 },
                 onFailure = {
