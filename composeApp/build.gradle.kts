@@ -1,8 +1,11 @@
-
-import org.jetbrains.compose.desktop.application.dsl.TargetFormat
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Deb
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Exe
+import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Pkg
+import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
+import java.util.UUID
 
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
@@ -15,6 +18,7 @@ plugins {
 
 kotlin {
     androidTarget {
+        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_22)
         }
@@ -33,6 +37,7 @@ kotlin {
 
     jvm("desktop") {
         compilations.all {
+            @OptIn(ExperimentalKotlinGradlePluginApi::class)
             this@jvm.compilerOptions {
                 jvmTarget.set(JvmTarget.JVM_22)
             }
@@ -134,20 +139,56 @@ dependencies {
 compose.desktop {
     application {
         mainClass = "com.tecknobit.glider.MainKt"
-
         nativeDistributions {
-            targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
-            packageName = "com.tecknobit.glider"
+            targetFormats(Deb, Pkg, Exe)
+            modules(
+                "java.compiler",
+                "java.instrument",
+                "java.management",
+                "java.net.http",
+                "java.prefs",
+                "java.rmi",
+                "java.scripting",
+                "java.security.jgss",
+                "java.sql.rowset",
+                "jdk.jfr",
+                "jdk.unsupported",
+                "jdk.security.auth"
+            )
+            packageName = "Glider"
             packageVersion = "2.0.0"
-
-            // TODO: TO SET
+            version = "2.0.0"
+            description = "Glider, open source passwords manager"
+            copyright = "© 2025 Tecknobit"
+            vendor = "Tecknobit"
+            licenseFile.set(project.file("src/desktopMain/resources/LICENSE"))
+            macOS {
+                bundleID = "com.tecknobit.glider"
+                iconFile.set(project.file("src/desktopMain/resources/logo.icns"))
+            }
+            windows {
+                iconFile.set(project.file("src/desktopMain/resources/logo.ico"))
+                upgradeUuid = UUID.randomUUID().toString()
+            }
+            linux {
+                iconFile.set(project.file("src/desktopMain/resources/logo.png"))
+                packageName = "com-tecknobit-glider"
+                debMaintainer = "infotecknobitcompany@gmail.com"
+                appRelease = "2.0.0"
+                appCategory = "PERSONALIZATION"
+                rpmLicenseType = "MIT"
+            }
+        }
+        buildTypes.release.proguard {
+            configurationFiles.from(project.file("src/desktopMain/resources/compose-desktop.pro"))
+            obfuscate.set(true)
         }
     }
 }
 
 buildConfig {
     className("AmetistaConfig")
-    packageName("com.tecknobit.pandoro")
+    packageName("com.tecknobit.glider")
     buildConfigField<String>(
         name = "HOST",
         value = project.findProperty("host").toString()
