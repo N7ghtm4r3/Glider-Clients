@@ -121,6 +121,7 @@ private fun PasswordText(
     password: Password,
 ) {
     var hidden by remember { mutableStateOf(true) }
+    val passwordValue by remember { password.password }
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -132,7 +133,7 @@ private fun PasswordText(
                 visible = !hidden
             ) {
                 Text(
-                    text = password.password,
+                    text = passwordValue,
                     style = AppTypography.bodyMedium,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis

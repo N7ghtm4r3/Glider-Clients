@@ -44,7 +44,9 @@ class EditInsertedPasswordScreen(
     @RequiresSuperCall
     override fun CollectStatesAfterLoading() {
         super.CollectStatesAfterLoading()
-        viewModel.passwordValue = remember { mutableStateOf(viewModel.password.value!!.password) }
+        viewModel.passwordValue = remember {
+            mutableStateOf(viewModel.password.value!!.password.value)
+        }
     }
 
 }

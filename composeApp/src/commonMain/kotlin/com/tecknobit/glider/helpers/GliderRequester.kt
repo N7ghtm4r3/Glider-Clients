@@ -27,6 +27,7 @@ import com.tecknobit.glidercore.TAIL_KEY
 import com.tecknobit.glidercore.TYPE_KEY
 import com.tecknobit.glidercore.enums.PasswordType
 import com.tecknobit.glidercore.helpers.GliderEndpointsSet.KEYCHAIN_ENDPOINT
+import com.tecknobit.glidercore.helpers.GliderEndpointsSet.REFRESH_ENDPOINT
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.buildJsonObject
@@ -218,6 +219,17 @@ class GliderRequester(
         return execPut(
             endpoint = assemblePasswordsEndpoint(
                 subEndpoint = password.id
+            ),
+            headers = deviceIdHeader
+        )
+    }
+
+    suspend fun refreshPassword(
+        password: Password,
+    ): JsonObject {
+        return execPatch(
+            endpoint = assemblePasswordsEndpoint(
+                subEndpoint = password.id + REFRESH_ENDPOINT
             ),
             headers = deviceIdHeader
         )

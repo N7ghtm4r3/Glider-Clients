@@ -24,7 +24,7 @@ abstract class EditPasswordFormViewModel(
         _password.value = Password(
             id = Random.nextLong().toString(),
             creationDate = TimeFormatter.currentTimestamp(),
-            password = "q3K6S;r{,Tn8Ab6wfpVRnx-((\\ARYSb'",
+            _password = "q3K6S;r{,Tn8Ab6wfpVRnx-((\\ARYSb'",
             tail = "Password #1",
             _scopes = "",
             type = GENERATED,

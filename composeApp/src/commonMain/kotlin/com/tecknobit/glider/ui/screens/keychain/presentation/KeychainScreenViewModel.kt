@@ -10,6 +10,7 @@ import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendPaginatedRequest
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
+import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseContent
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.screens.keychain.data.Password
@@ -75,7 +76,7 @@ class KeychainScreenViewModel : EquinoxViewModel(
                 },
                 onSuccess = {
                     copyOnClipboard(
-                        content = password.password,
+                        content = password.password.value,
                         onCopy = {
                             password.appendCopiedPasswordEvent()
                             showSnackbarMessage(
@@ -93,9 +94,22 @@ class KeychainScreenViewModel : EquinoxViewModel(
         password: Password,
         onRefresh: () -> Unit,
     ) {
-        // TODO: MAKE THE REQUEST THEN
-        onRefresh()
-        passwordsState.refresh()
+        viewModelScope.launch {
+            requester.sendRequest(
+                request = {
+                    refreshPassword(
+                        password = password
+                    )
+                },
+                onSuccess = {
+                    password.refreshPassword(
+                        refreshedPassword = it.toResponseContent()
+                    )
+                    onRefresh()
+                },
+                onFailure = { showSnackbarMessage(it) }
+            )
+        }
     }
 
     fun deletePassword(
