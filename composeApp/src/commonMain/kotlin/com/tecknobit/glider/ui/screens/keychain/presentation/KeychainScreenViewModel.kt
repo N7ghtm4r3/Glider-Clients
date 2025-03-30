@@ -72,7 +72,7 @@ class KeychainScreenViewModel : EquinoxViewModel(
                     getKeychain(
                         page = page,
                         keywords = keywords.value,
-                        passwordTypes = passwordTypes
+                        types = passwordTypes
                     )
                 },
                 serializer = Password.serializer(),

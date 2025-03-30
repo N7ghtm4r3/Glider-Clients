@@ -8,7 +8,7 @@ import com.tecknobit.equinoxcore.annotations.RequestPath
 import com.tecknobit.equinoxcore.helpers.KEYWORDS_KEY
 import com.tecknobit.equinoxcore.helpers.PASSWORD_KEY
 import com.tecknobit.equinoxcore.network.EquinoxBaseEndpointsSet.Companion.DYNAMIC_ACCOUNT_DATA_ENDPOINT
-import com.tecknobit.equinoxcore.network.RequestMethod.GET
+import com.tecknobit.equinoxcore.network.RequestMethod.*
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.DEFAULT_PAGE_SIZE
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.PAGE_KEY
 import com.tecknobit.equinoxcore.pagination.PaginatedResponse.Companion.PAGE_SIZE_KEY
@@ -36,6 +36,21 @@ import kotlinx.serialization.json.encodeToJsonElement
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.put
 
+/**
+ * The `GliderRequester` class is useful to communicate with Glider's backend
+ *
+ * @param host The host address where is running the backend
+ * @param userId The user identifier
+ * @param deviceId The identifier of the current device
+ * @param userToken The user token
+ * @param debugMode Whether the requester is still in development and who is developing needs the log
+ * of the requester's workflow, if it is enabled all the details of the requests sent and the errors
+ * occurred will be printed in the console
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ *
+ * @see EquinoxRequester
+ */
 class GliderRequester(
     host: String,
     userId: String?,
@@ -57,6 +72,9 @@ class GliderRequester(
         }
     }
 
+    /**
+     * `deviceIdHeader` the default headers map with the current [deviceId]
+     */
     private val deviceIdHeader: MutableMap<String, String> = mutableMapOf()
 
     init {
@@ -65,10 +83,27 @@ class GliderRequester(
         }
     }
 
+    /**
+     * Method used to load the [deviceIdHeader] map with the current [localUser.deviceId]
+     */
     fun setLocalUserDeviceId() {
         deviceIdHeader[DEVICE_IDENTIFIER_KEY] = localUser.deviceId!!
     }
 
+    /**
+     * Method to create the payload for the [signUp] request
+     *
+     * @param serverSecret The secret of the personal Equinox's backend
+     * @param name The name of the user
+     * @param surname The surname of the user
+     * @param email The email of the user
+     * @param password The password of the user
+     * @param language The language of the user
+     * @param custom The custom parameters added in a customization of the equinox user to execute a customized sign-up
+     *
+     * @return the payload for the request as [JsonObject]
+     *
+     */
     @CustomParametersOrder(DEVICE_KEY)
     override fun getSignUpPayload(
         serverSecret: String,
@@ -93,6 +128,16 @@ class GliderRequester(
         return Json.encodeToJsonElement(payload).jsonObject
     }
 
+    /**
+     * Method to create the payload for the [signIn] request
+     *
+     * @param email The email of the user
+     * @param password The password of the user
+     * @param custom The custom parameters added in a customization of the equinox user to execute a customized sign-in
+     *
+     * @return the payload for the request as [JsonObject]
+     *
+     */
     @CustomParametersOrder(DEVICE_KEY)
     override fun getSignInPayload(
         email: String,
@@ -110,7 +155,7 @@ class GliderRequester(
     }
 
     /**
-     * Method to request the dynamic data of the user
+     * Request the dynamic data of the user
      *
      * @return the result of the request as [JsonObject]
      */
@@ -124,6 +169,15 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request get the connected device of the user
+     *
+     * @param page     The page requested
+     * @param pageSize The size of the items to insert in the page
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/devices", method = GET)
     suspend fun getConnectedDevices(
         page: Int,
         pageSize: Int = DEFAULT_PAGE_SIZE,
@@ -140,6 +194,14 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to disconnect a device from the current session
+     *
+     * @param device The device to disconnect
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/devices/{device_id}", method = DELETE)
     suspend fun disconnectDevice(
         device: ConnectedDevice,
     ): JsonObject {
@@ -148,6 +210,14 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to disconnect a device from the current session
+     *
+     * @param deviceId The identifier of the device to disconnect
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/devices/{device_id}", method = DELETE)
     suspend fun disconnectDevice(
         deviceId: String,
     ): JsonObject {
@@ -159,6 +229,21 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to generate a new password
+     *
+     * @param length The length of the password
+     * @param tail The tail of the password
+     * @param scopes The scopes of the password
+     * @param length The length of the password
+     * @param length The length of the password
+     * @param includeNumbers           Whether the generated password must include the numbers
+     * @param includeUppercaseLetters  Whether the generated password must include the uppercase letters
+     * @param includeSpecialCharacters Whether the generated password must include the special characters
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/passwords", method = PUT)
     suspend fun generatePassword(
         length: Int,
         tail: String,
@@ -182,6 +267,16 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to insert a new password
+     *
+     * @param tail The tail of the password
+     * @param scopes The scopes of the password
+     * @param password The value of the password to insert
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/passwords", method = POST)
     suspend fun insertPassword(
         tail: String,
         scopes: String,
@@ -199,17 +294,28 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to retrieve the keychain owned by the user
+     *
+     * @param page      The page requested
+     * @param pageSize  The size of the items to insert in the page
+     * @param keywords The filter keywords
+     * @param types The types of the passwords to retrieve
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/passwords/keychain", method = GET)
     suspend fun getKeychain(
         page: Int,
         pageSize: Int = DEFAULT_PAGE_SIZE,
         keywords: String,
-        passwordTypes: List<PasswordType>,
+        types: List<PasswordType>,
     ): JsonObject {
         val query = buildJsonObject {
             put(PAGE_KEY, page)
             put(PAGE_SIZE_KEY, pageSize)
             put(KEYWORDS_KEY, keywords)
-            put(TYPE_KEY, passwordTypes.joinToString())
+            put(TYPE_KEY, types.joinToString())
         }
         return execGet(
             endpoint = assemblePasswordsEndpoint(
@@ -220,6 +326,14 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to retrieve a password owned by the user
+     *
+     * @param passwordId The identifier of the password
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/passwords/{password_id}", method = GET)
     suspend fun getPassword(
         passwordId: String,
     ): JsonObject {
@@ -231,6 +345,17 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to edit an existing password
+     *
+     * @param passwordId The identifier of the password
+     * @param tail The tail of the password
+     * @param scopes The scopes of the password
+     * @param password The value of the password to insert
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/passwords/{password_id}", method = PATCH)
     suspend fun editPassword(
         passwordId: String,
         tail: String,
@@ -253,6 +378,14 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to notify the copy of a password
+     *
+     * @param password The copied password
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/passwords/{password_id}", method = PUT)
     suspend fun copyPassword(
         password: Password,
     ): JsonObject {
@@ -264,6 +397,14 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to refresh a password
+     *
+     * @param password The password to refresh
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/passwords/{password_id}/refresh", method = PATCH)
     suspend fun refreshPassword(
         password: Password,
     ): JsonObject {
@@ -275,6 +416,14 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Request to delete a password owned by the user
+     *
+     * @param password The password to delete
+     *
+     * @return the result of the request as [JsonObject]
+     */
+    @RequestPath(path = "/api/v1/users/{id}/passwords/{password_id}", method = DELETE)
     suspend fun deletePassword(
         password: Password,
     ): JsonObject {
@@ -286,6 +435,13 @@ class GliderRequester(
         )
     }
 
+    /**
+     * Method to assemble the endpoint to make the request to the password related controller
+     *
+     * @param subEndpoint The sub-endpoint path of the url
+     *
+     * @return an endpoint to make the requests as [String]
+     */
     @Assembler
     private fun assemblePasswordsEndpoint(
         subEndpoint: String = "",
