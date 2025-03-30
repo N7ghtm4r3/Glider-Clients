@@ -8,10 +8,18 @@ import com.tecknobit.glider.requester
 import com.tecknobit.glidercore.DEVICE_IDENTIFIER_KEY
 import kotlinx.serialization.json.JsonObject
 
+/**
+ * The `GliderLocalUser` class is useful to represent a user in the client application
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ */
 class GliderLocalUser : EquinoxLocalUser(
     localStoragePath = "Glider"
 ) {
 
+    /**
+     * `deviceId` the identifier of the current device
+     */
     var deviceId: String? = null
         set(value) {
             if (field != value) {

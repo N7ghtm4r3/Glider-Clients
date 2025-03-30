@@ -6,6 +6,9 @@ import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.equinoxcompose.session.setUpSession
 import kotlinx.browser.document
 
+/**
+ * Method to start the of `Glider` webapp
+ */
 @OptIn(ExperimentalComposeUiApi::class)
 fun main() {
     AmetistaEngine.intake()

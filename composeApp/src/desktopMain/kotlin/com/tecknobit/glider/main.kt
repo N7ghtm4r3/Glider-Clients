@@ -12,6 +12,9 @@ import glider.composeapp.generated.resources.logo
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * Method to start the of `Glider` desktop app
+ */
 fun main() {
     AmetistaEngine.intake()
     application {

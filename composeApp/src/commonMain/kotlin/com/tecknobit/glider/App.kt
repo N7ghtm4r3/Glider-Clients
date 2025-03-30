@@ -18,7 +18,6 @@ import com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGener
 import com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen
 import com.tecknobit.glider.ui.screens.home.presenter.HomeScreen
 import com.tecknobit.glider.ui.screens.splashscreen.Splashscreen
-import com.tecknobit.pandoro.AmetistaConfig
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.inter
 import glider.composeapp.generated.resources.josefinsans
@@ -83,6 +82,9 @@ const val EDIT_GENERATED_PASSWORD_SCREEN = "EditGeneratedPasswordScreen"
  */
 const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
 
+/**
+ * Common entry point of the **Glider** application
+ */
 @Composable
 fun App() {
     InitAmetista()
