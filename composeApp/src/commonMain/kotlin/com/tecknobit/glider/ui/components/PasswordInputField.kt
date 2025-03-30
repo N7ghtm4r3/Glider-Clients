@@ -27,6 +27,12 @@ import glider.composeapp.generated.resources.password
 import glider.composeapp.generated.resources.wrong_password
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * Custom [EquinoxOutlinedTextField] used to allow the user insert the password values
+ *
+ * @param password The state container of the password value
+ * @param passwordError The state handles the validity of the password
+ */
 @Composable
 @NonRestartableComposable
 fun PasswordInputField(

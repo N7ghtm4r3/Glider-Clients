@@ -35,6 +35,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.session.ManagedContent
+import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
+import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.equinoxcore.annotations.Wrapper
@@ -48,6 +50,20 @@ import glider.composeapp.generated.resources.edit_password
 import glider.composeapp.generated.resources.editing
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * The `EditPasswordFormScreen` class is useful to display the forms allowing the user to insert the
+ * new password data to edit a password
+ *
+ * @property viewModel The support viewmodel of the screen
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ *
+ * @param V generic type used to allow the use of own viewmodel in custom screens
+ *
+ * @see EquinoxNoModelScreen
+ * @see EquinoxScreen
+ * @see GliderScreenTab
+ */
 @Structure
 abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
     viewModel: V,
@@ -56,8 +72,14 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
     title = Res.string.edit_password
 ) {
 
+    /**
+     * `password` the password to edit
+     */
     protected lateinit var password: State<PasswordDetails?>
 
+    /**
+     * Method to arrange the content of the screen to display
+     */
     @Composable
     override fun ArrangeScreenContent() {
         GliderTheme {
@@ -125,11 +147,17 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
         }
     }
 
+    /**
+     * The custom content displayed in the tab
+     */
     @Composable
     override fun ColumnScope.ScreenContent() {
         Form()
     }
 
+    /**
+     * Custom [PerformFormActionButton] used to edit the [password]
+     */
     @Wrapper
     @Composable
     @NonRestartableComposable
@@ -140,11 +168,17 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
         )
     }
 
+    /**
+     * Method invoked when the [ShowContent] composable has been started
+     */
     override fun onStart() {
         super.onStart()
         viewModel.retrievePassword()
     }
 
+    /**
+     * Method to collect or instantiate the states of the screen
+     */
     @Composable
     override fun CollectStates() {
         viewModel.tailError = remember { mutableStateOf(false) }

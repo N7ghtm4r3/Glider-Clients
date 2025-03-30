@@ -9,6 +9,9 @@ import com.tecknobit.equinoxcompose.session.EquinoxLocalUser.ApplicationTheme.Da
 import com.tecknobit.equinoxcompose.session.EquinoxLocalUser.ApplicationTheme.Light
 import com.tecknobit.glider.localUser
 
+/**
+ * `lightScheme` default light colors scheme
+ */
 private val lightScheme = lightColorScheme(
     primary = primaryLightHighContrast,
     onPrimary = onPrimaryLightHighContrast,
@@ -47,6 +50,9 @@ private val lightScheme = lightColorScheme(
     surfaceContainerHighest = surfaceContainerHighestLightHighContrast,
 )
 
+/**
+ * `darkScheme` default dark colors scheme
+ */
 private val darkScheme = darkColorScheme(
     primary = primaryDark,
     onPrimary = onPrimaryDark,
@@ -85,6 +91,12 @@ private val darkScheme = darkColorScheme(
     surfaceContainerHighest = surfaceContainerHighestDark,
 )
 
+/**
+ * Method to set the Glider theme to the content
+ *
+ * @param darkTheme Whether to use the dark or light theme
+ * @param content The content to display
+ */
 @Composable
 fun GliderTheme(
     darkTheme: Boolean = applyDarkTheme(),
@@ -101,6 +113,11 @@ fun GliderTheme(
     )
 }
 
+/**
+ * Method to check which colors scheme is to use based on the current [localUser.theme] property
+ *
+ * @return whether use the dark colors scheme as [Boolean]
+ */
 @Composable
 fun applyDarkTheme(): Boolean {
     return when (localUser.theme) {

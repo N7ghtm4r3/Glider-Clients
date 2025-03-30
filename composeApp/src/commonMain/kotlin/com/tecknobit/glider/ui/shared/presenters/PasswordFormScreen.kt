@@ -25,6 +25,8 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
+import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
+import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel
@@ -42,6 +44,21 @@ import glider.composeapp.generated.resources.wrong_tail
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * The `PasswordFormScreen` class is useful to display the forms allowing the user to insert the
+ * password data to generate or insert a password
+ *
+ * @property viewModel The support viewmodel of the screen
+ * @property title The title of the screen
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ *
+ * @param V generic type used to allow the use of own viewmodel in custom screens
+ *
+ * @see EquinoxNoModelScreen
+ * @see EquinoxScreen
+ * @see GliderScreenTab
+ */
 @Structure
 abstract class PasswordFormScreen<V : PasswordFormViewModel>(
     viewModel: V,
@@ -51,8 +68,15 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
     title = title
 ) {
 
+    /**
+     * `performingPasswordOperation` whether is currently performing an operation related to a
+     * password such generating, inserting or editing
+     */
     protected lateinit var performingPasswordOperation: State<Boolean>
 
+    /**
+     * The custom content displayed in the tab
+     */
     @Composable
     override fun ColumnScope.ScreenContent() {
         Column(
@@ -68,10 +92,17 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
         }
     }
 
+    /**
+     * The form where the user can insert the details of the password
+     */
     @Composable
     @NonRestartableComposable
     protected abstract fun ColumnScope.Form()
 
+    /**
+     * Custom [EquinoxOutlinedTextField] used to allow the user insert the value of the tail of the
+     * password
+     */
     @Composable
     @NonRestartableComposable
     protected fun TailInputField() {
@@ -92,6 +123,13 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
         )
     }
 
+    /**
+     * Custom [EquinoxOutlinedTextField] used to allow the user insert the value of the scopes of the
+     * password
+     *
+     * @param modifier The modifier to apply to the component
+     * @param imeAction The ime action to attach to the component
+     */
     @Composable
     @NonRestartableComposable
     protected fun ScopesInputField(
@@ -121,6 +159,12 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
         )
     }
 
+    /**
+     * Custom [Button] used to perform the form action
+     *
+     * @param performActionText The representative text of the action to perform
+     * @param performingActionText The representative text of the performing action
+     */
     @Composable
     @NonRestartableComposable
     protected fun PerformFormActionButton(

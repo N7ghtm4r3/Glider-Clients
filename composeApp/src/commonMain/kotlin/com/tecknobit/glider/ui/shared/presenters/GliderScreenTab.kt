@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.Structure
@@ -23,6 +24,19 @@ import com.tecknobit.glider.ui.theme.AppTypography
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * The `GliderScreenTab` class is useful to create and handle a tab with the Glider's structure
+ *
+ * @property viewModel The support viewmodel of the screen
+ * @property title The title of the tab
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ *
+ * @param V generic type used to allow the use of own viewmodel in custom screens
+ *
+ * @see EquinoxNoModelScreen
+ * @see EquinoxScreen
+ */
 @Structure
 abstract class GliderScreenTab<V : EquinoxViewModel>(
     viewModel: V,
@@ -31,6 +45,9 @@ abstract class GliderScreenTab<V : EquinoxViewModel>(
     viewModel = viewModel
 ) {
 
+    /**
+     * Method to arrange the content of the screen to display
+     */
     @Composable
     override fun ArrangeScreenContent() {
         Scaffold(
@@ -72,6 +89,9 @@ abstract class GliderScreenTab<V : EquinoxViewModel>(
         }
     }
 
+    /**
+     * The custom content displayed in the tab
+     */
     @Composable
     protected abstract fun ColumnScope.ScreenContent()
 

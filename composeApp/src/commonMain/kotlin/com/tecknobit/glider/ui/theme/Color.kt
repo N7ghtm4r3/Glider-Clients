@@ -1,6 +1,9 @@
 package com.tecknobit.glider.ui.theme
 import androidx.compose.ui.graphics.Color
 
+/**
+ * Set of the light colors scheme
+ */
 val primaryLightHighContrast = Color(0xFF0025A0)
 val onPrimaryLightHighContrast = Color(0xFFFFFFFF)
 val primaryContainerLightHighContrast = Color(0xFF0040E0)
@@ -37,6 +40,9 @@ val surfaceContainerLightHighContrast = Color(0xFFC8D6FF)
 val surfaceContainerHighLightHighContrast = Color(0xFFAFC6FF)
 val surfaceContainerHighestLightHighContrast = Color(0xFF98B5FF)
 
+/**
+ * Set of the dark colors scheme
+ */
 val primaryDark = Color(0xFFA0B8FF)
 val onPrimaryDark = Color(0xFF002080)
 val primaryContainerDark = Color(0xFF0040D0)
@@ -73,16 +79,32 @@ val surfaceContainerDark = Color(0xFF002060)
 val surfaceContainerHighDark = Color(0xFF003070)
 val surfaceContainerHighestDark = Color(0xFF004080)
 
+/**
+ * `generatedColor` the color related to generated password/event
+ */
 val generatedColorLight = Color(0xFF9A4DFF)
 val generatedColorDark = Color(0xFF7A1B88)
 
+/**
+ * `insertedColor` the color related to inserted password/event
+ */
 val insertedColorLight = Color(0xFFFF7A00)
 val insertedColorDark = Color(0xFFB45A1A)
 
+/**
+ * `copied` the color related to copied event
+ */
 val copiedLight = Color(0xFF2C6A92)
-val editedLight = Color(0xFFA56AC4)
-val refreshedLight = Color(0xFF4A8B74)
-
 val copiedDark = Color(0xFF3E7D99)
+
+/**
+ * `edited` the color related to edited event
+ */
+val editedLight = Color(0xFFA56AC4)
 val editedDark = Color(0xFF8E56A6)
+
+/**
+ * `refreshed` the color related to refreshed event
+ */
+val refreshedLight = Color(0xFF4A8B74)
 val refreshedDark = Color(0xFF538D74)

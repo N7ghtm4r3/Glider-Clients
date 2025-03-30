@@ -4,8 +4,14 @@ import androidx.compose.material3.Typography
 import com.tecknobit.glider.bodyFontFamily
 import com.tecknobit.glider.displayFontFamily
 
+/**
+ * `baseline` -> the Glider's baseline
+ */
 val baseline = Typography()
 
+/**
+ * `AppTypography` -> the Glider's Typography
+ */
 val AppTypography = Typography(
     displayLarge = baseline.displayLarge.copy(fontFamily = displayFontFamily),
     displayMedium = baseline.displayMedium.copy(fontFamily = displayFontFamily),
