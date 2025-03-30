@@ -52,8 +52,17 @@ import com.tecknobit.glider.ui.theme.AppTypography
 import com.tecknobit.glider.ui.theme.applyDarkTheme
 import com.tecknobit.glidercore.enums.PasswordType.GENERATED
 
+/**
+ * `HIDDEN_PASSWORD` constant for the hidden password text
+ */
 private const val HIDDEN_PASSWORD = "********"
 
+/**
+ * Custom [Card] used to display a [Password]
+ *
+ * @param viewModel The support viewmodel of the screen
+ * @param password The password to display
+ */
 @Composable
 @NonRestartableComposable
 fun PasswordCard(
@@ -115,6 +124,11 @@ fun PasswordCard(
     }
 }
 
+/**
+ * Section where is displayed the text of the password value ([HIDDEN_PASSWORD] if currently hidden)
+ *
+ * @param password The password to display
+ */
 @Composable
 @NonRestartableComposable
 private fun PasswordText(
@@ -169,6 +183,13 @@ private fun PasswordText(
     }
 }
 
+/**
+ * Toolbar of the [PasswordCard] component
+ *
+ * @param viewModel The support viewmodel of the screen
+ * @param password The password to display
+ * @param showTimeline Whether show the [PasswordTimeline]
+ */
 @Composable
 @NonRestartableComposable
 private fun ToolsBar(
@@ -240,6 +261,11 @@ private fun ToolsBar(
     }
 }
 
+/**
+ * Custom [Icon] used as button to display the timeline
+ *
+ * @param showTimeline Whether show the [PasswordTimeline]
+ */
 @Composable
 @NonRestartableComposable
 private fun PasswordTimelineButton(
@@ -254,6 +280,12 @@ private fun PasswordTimelineButton(
     )
 }
 
+/**
+ * Custom [Icon] used as button to refresh the password value
+ *
+ * @param viewModel The support viewmodel of the screen
+ * @param password The password to display
+ */
 @Composable
 @NonRestartableComposable
 private fun RefreshPasswordButton(
@@ -275,6 +307,12 @@ private fun RefreshPasswordButton(
     )
 }
 
+/**
+ * Custom [Icon] used as button to delete the password
+ *
+ * @param viewModel The support viewmodel of the screen
+ * @param password The password to display
+ */
 @Composable
 @NonRestartableComposable
 private fun DeletePasswordButton(

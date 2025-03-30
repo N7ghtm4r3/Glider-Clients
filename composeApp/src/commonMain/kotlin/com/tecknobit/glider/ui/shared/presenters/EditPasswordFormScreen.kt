@@ -63,6 +63,7 @@ import org.jetbrains.compose.resources.stringResource
  * @see EquinoxNoModelScreen
  * @see EquinoxScreen
  * @see GliderScreenTab
+ * @see PasswordFormScreen
  */
 @Structure
 abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(

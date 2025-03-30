@@ -36,6 +36,11 @@ import io.github.ahmad_hamwi.compose.pagination.PaginatedLazyColumn
 import io.github.ahmad_hamwi.compose.pagination.PaginatedLazyVerticalStaggeredGrid
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * Layout used to display the passwords owned by the [com.tecknobit.glider.localUser]
+ *
+ * @param viewModel The support viewmodel of the screen
+ */
 @Composable
 @NonRestartableComposable
 fun Passwords(
@@ -65,6 +70,12 @@ fun Passwords(
     )
 }
 
+/**
+ * Custom [PaginatedLazyVerticalStaggeredGrid] used to display the passwords owned by the
+ * [com.tecknobit.glider.localUser]
+ *
+ * @param viewModel The support viewmodel of the screen
+ */
 @Composable
 @NonRestartableComposable
 @ResponsiveClassComponent(
@@ -102,6 +113,12 @@ private fun PasswordsGrid(
     }
 }
 
+/**
+ * Custom [PaginatedLazyColumn] used to display the passwords owned by the
+ * [com.tecknobit.glider.localUser]
+ *
+ * @param viewModel The support viewmodel of the screen
+ */
 @Composable
 @NonRestartableComposable
 @ResponsiveClassComponent(
@@ -132,6 +149,9 @@ private fun PasswordsList(
     }
 }
 
+/**
+ * Custom [EmptyState] displayed when the are no passwords available
+ */
 @Composable
 @NonRestartableComposable
 private fun NoPasswords() {

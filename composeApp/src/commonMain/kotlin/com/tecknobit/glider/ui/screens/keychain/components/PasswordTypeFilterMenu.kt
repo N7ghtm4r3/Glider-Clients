@@ -15,6 +15,12 @@ import com.tecknobit.equinoxcore.toggle
 import com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel
 import com.tecknobit.glidercore.enums.PasswordType
 
+/**
+ * Custom [DropdownMenu] used to select the [PasswordType] filters
+ *
+ * @param expanded Whether the menu is expanded
+ * @param viewModel The support viewmodel of the screen
+ */
 @Composable
 @NonRestartableComposable
 fun PasswordTypeFiltersMenu(

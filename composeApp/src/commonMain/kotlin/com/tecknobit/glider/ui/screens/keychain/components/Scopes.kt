@@ -24,6 +24,12 @@ import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.no_scopes
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * Custom [LazyRow] used to display the scopes attached to the [password]
+ *
+ * @param modifier The modifier to apply to the component
+ * @param password The owner password of the scopes
+ */
 @Composable
 @NonRestartableComposable
 fun Scopes(
@@ -60,6 +66,14 @@ fun Scopes(
     }
 }
 
+
+/**
+ * The component used to display a single scope value
+ *
+ * @param scope The scope to display
+ * @param containerColor The color of the badge
+ * @param contentColor The color of the text displayed on the badge
+ */
 @Composable
 @NonRestartableComposable
 private fun Scope(

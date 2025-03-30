@@ -16,6 +16,20 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.Transient
 
+/**
+ * The `Password` data class represents the password data
+ *
+ * @property id The identifier of the password
+ * @property creationDate When the password has been created
+ * @property tail The tail of the password
+ * @property _password The value of the password
+ * @property _scopes The scopes of the password
+ * @property type The type of the password
+ * @property _events The events of the password
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ *
+ */
 @Serializable
 data class Password(
     val id: String,
@@ -31,22 +45,39 @@ data class Password(
     private val _events: List<PasswordEvent>,
 ) {
 
+    /**
+     * `scopes` the scopes of the password
+     */
     @Transient
     val scopes = if (_scopes.isBlank())
         emptySet()
     else
         _scopes.split(",").toSet()
 
+    /**
+     * `events` the events of the password
+     */
     @Transient
     val events = _events.toMutableStateList()
 
+    /**
+     * `password` state container of the password value
+     */
     @Transient
     val password = mutableStateOf(_password)
 
+    /**
+     * Method used to check whether the password has any scopes attached
+     *
+     * @return whether the password has any scopes attached as [Boolean]
+     */
     fun hasScopes(): Boolean {
         return scopes.isNotEmpty()
     }
 
+    /**
+     * Method used to locally append the [PasswordEventType.COPIED] event
+     */
     @Wrapper
     fun appendCopiedPasswordEvent() {
         appendPasswordEvent(
@@ -54,6 +85,9 @@ data class Password(
         )
     }
 
+    /**
+     * Method used to locally append the [PasswordEventType.REFRESHED] event
+     */
     @Wrapper
     fun appendRefreshedPasswordEvent() {
         appendPasswordEvent(
@@ -61,6 +95,11 @@ data class Password(
         )
     }
 
+    /**
+     * Method used to locally append an event related to the password
+     *
+     * @param eventType The type of the event to append
+     */
     private fun appendPasswordEvent(
         eventType: PasswordEventType,
     ) {
@@ -75,6 +114,11 @@ data class Password(
         )
     }
 
+    /**
+     * Method used to locally refresh the [password] value
+     *
+     * @param refreshedPassword The new value of the refreshed password
+     */
     fun refreshPassword(
         refreshedPassword: String,
     ) {

@@ -54,6 +54,12 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * Layout used to display the timeline of a [password]
+ *
+ * @param show Whether the timeline is shown
+ * @param password The password to display its timeline
+ */
 @Composable
 @NonRestartableComposable
 fun PasswordTimeline(
@@ -88,6 +94,12 @@ fun PasswordTimeline(
     )
 }
 
+/**
+ * Custom [PasswordTimelineContent] displayed in container [Card] on large and medium screens
+ *
+ * @param show Whether the timeline is shown
+ * @param password The password to display its timeline
+ */
 @Composable
 @NonRestartableComposable
 @ResponsiveClassComponent(
@@ -106,6 +118,12 @@ private fun ContainedTimeline(
     }
 }
 
+/**
+ * Custom [PasswordTimelineContent] displayed in container [Card] on compact screens
+ *
+ * @param show Whether the timeline is shown
+ * @param password The password to display its timeline
+ */
 @Composable
 @NonRestartableComposable
 @ResponsiveClassComponent(
@@ -148,6 +166,11 @@ private fun ModalBottomSheetTimeline(
     }
 }
 
+/**
+ * Custom [JetLimeColumn] used to display the events made up the timeline
+ *
+ * @param password The password to display its timeline
+ */
 @Composable
 @NonRestartableComposable
 private fun PasswordTimelineContent(
@@ -173,6 +196,12 @@ private fun PasswordTimelineContent(
     }
 }
 
+/**
+ * Custom [JetLimeEvent] used to display the password event
+ *
+ * @param event The event to display
+ * @param position The position occupied by the event inside the timeline
+ */
 @Composable
 @NonRestartableComposable
 private fun PasswordEvent(
@@ -221,6 +250,11 @@ private fun PasswordEvent(
     }
 }
 
+/**
+ * Method used to convert the [PasswordEventType] entry as internationalized [StringResource]
+ *
+ * @return the entry as [StringResource]
+ */
 @Composable
 private fun PasswordEventType.text(): StringResource {
     return when (this) {

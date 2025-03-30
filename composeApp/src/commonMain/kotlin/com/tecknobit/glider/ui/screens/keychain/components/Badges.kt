@@ -38,6 +38,9 @@ import glider.composeapp.generated.resources.refreshed
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * Badge used to display a [PasswordType] entry
+ */
 @Wrapper
 @Composable
 @NonRestartableComposable
@@ -50,6 +53,11 @@ fun PasswordTypeBadge(
     )
 }
 
+/**
+ * Method used to convert the [PasswordType] entry as internationalized [StringResource]
+ *
+ * @return the entry as [StringResource]
+ */
 @Composable
 private fun PasswordType.text(): StringResource {
     return when (this) {
@@ -58,6 +66,11 @@ private fun PasswordType.text(): StringResource {
     }
 }
 
+/**
+ * Method used to associate a custom color for a [PasswordType] entry
+ *
+ * @return the associated color as [Color]
+ */
 @Composable
 private fun PasswordType.color(): Color {
     return if (applyDarkTheme()) {
@@ -73,6 +86,9 @@ private fun PasswordType.color(): Color {
     }
 }
 
+/**
+ * Badge used to display a [PasswordEventType] entry
+ */
 @Wrapper
 @Composable
 @NonRestartableComposable
@@ -85,6 +101,11 @@ fun PasswordEventTypeBadge(
     )
 }
 
+/**
+ * Method used to convert the [PasswordEventType] entry as internationalized [StringResource]
+ *
+ * @return the entry as [StringResource]
+ */
 @Composable
 private fun PasswordEventType.text(): StringResource {
     return when (this) {
@@ -96,6 +117,11 @@ private fun PasswordEventType.text(): StringResource {
     }
 }
 
+/**
+ * Method used to associate a custom color for a [PasswordEventType] entry
+ *
+ * @return the associated color as [Color]
+ */
 @Composable
 private fun PasswordEventType.color(): Color {
     return if (applyDarkTheme()) {
@@ -117,6 +143,12 @@ private fun PasswordEventType.color(): Color {
     }
 }
 
+/**
+ * Custom text used as badge to display an [Enum] entry as badge
+ *
+ * @param color The color of the badge
+ * @param badgeText The text of the badge
+ */
 @Composable
 @NonRestartableComposable
 private fun EnumBadge(

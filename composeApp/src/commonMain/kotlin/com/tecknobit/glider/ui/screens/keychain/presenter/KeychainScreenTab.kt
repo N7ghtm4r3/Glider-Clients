@@ -26,6 +26,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.DebouncedOutlinedTextField
 import com.tecknobit.equinoxcompose.session.ManagedContent
+import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
+import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcompose.utilities.responsiveAssignment
 import com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu
 import com.tecknobit.glider.ui.screens.keychain.components.Passwords
@@ -37,11 +39,24 @@ import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.keychain
 import glider.composeapp.generated.resources.search_placeholder
 
+/**
+ * The `KeychainScreenTab` class is useful to display and manage the passwords owned by the
+ * [com.tecknobit.glider.localUser]
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ *
+ * @see EquinoxNoModelScreen
+ * @see EquinoxScreen
+ * @see GliderScreenTab
+ */
 class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
     viewModel = KeychainScreenViewModel(),
     title = Res.string.keychain
 ) {
 
+    /**
+     * The custom content displayed in the tab
+     */
     // TODO: WHEN POSSIBLE CUSTOMIZE THE COLORS OF THE ManagedContent
     @Composable
     override fun ColumnScope.ScreenContent() {
@@ -58,6 +73,9 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
         )
     }
 
+    /**
+     * Section where the user can apply the filters to the passwords list to retrieve
+     */
     @Composable
     @NonRestartableComposable
     private fun Filters() {
