@@ -79,12 +79,10 @@ dependencies {
 
 <details>
   <summary>Desktop UI</summary>
-  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/projects_desktop.png" alt="projects"/>
-  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/project_desktop.png" alt="project"/>
-  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/notes_desktop.png" alt="notes"/>
-  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/overview_desktop.png" alt="overview"/>
-  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/groups_desktop.png" alt="groups"/>
-  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/group_desktop.png" alt="groupc"/>
+  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/generate_desktop_eng.png" alt="generate_password"/>
+  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/insert_desktop_eng.png" alt="insert_password"/>
+  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/keychain_desktop_eng.png" alt="keychain"/>
+  <img src="https://github.com/N7ghtm4r3/Glider-Clients/blob/main/images/account_desktop_eng.png" alt="account"/>
 </details>
 
 ## Illustrations
