@@ -99,11 +99,22 @@ import glider.composeapp.generated.resources.wrong_password
 import io.github.ahmad_hamwi.compose.pagination.PaginatedLazyColumn
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * The [AccountScreenTab] display the account settings of the current [localUser],
+ * allow to customize the preferences and settings
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @see com.tecknobit.equinoxcompose.session.EquinoxScreen
+ * @see GliderScreenTab
+ */
 class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
     viewModel = AccountScreenViewModel(),
     title = Res.string.account
 ) {
 
+    /**
+     * The custom content displayed in the tab
+     */
     @Composable
     override fun ColumnScope.ScreenContent() {
         UserDetails()
@@ -142,6 +153,9 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
         }
     }
 
+    /**
+     * Method used to format the [ActionButtons] component as [Row]
+     */
     @Composable
     @NonRestartableComposable
     @ResponsiveClassComponent(
@@ -168,6 +182,9 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
         }
     }
 
+    /**
+     * Method used to format the [ActionButtons] component as [Column]
+     */
     @Composable
     @CompactClassComponent
     @NonRestartableComposable
@@ -505,6 +522,9 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
         }
     }
 
+    /**
+     * Section used to display the current devices connected to the session
+     */
     @StepContent(
         number = 5
     )

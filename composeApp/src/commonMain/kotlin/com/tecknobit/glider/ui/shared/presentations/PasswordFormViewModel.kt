@@ -62,19 +62,6 @@ abstract class PasswordFormViewModel : EquinoxViewModel(
     abstract fun performPasswordOperation()
 
     /**
-     * Method to reset the form to the initial state to perform a new action
-     *
-     * @param extra Extra parameters to use to reset the form state
-     */
-    @RequiresSuperCall
-    protected open fun resetForm(
-        vararg extra: Any,
-    ) {
-        tail.value = ""
-        scopes.value = ""
-    }
-
-    /**
      * Method to validate the form values
      *
      * @return whether the form is valid as [Boolean]
@@ -90,6 +77,19 @@ abstract class PasswordFormViewModel : EquinoxViewModel(
             return false
         }
         return true
+    }
+
+    /**
+     * Method to reset the form to the initial state to perform a new action
+     *
+     * @param extra Extra parameters to use to reset the form state
+     */
+    @RequiresSuperCall
+    protected open fun resetForm(
+        vararg extra: Any,
+    ) {
+        tail.value = ""
+        scopes.value = ""
     }
 
 }

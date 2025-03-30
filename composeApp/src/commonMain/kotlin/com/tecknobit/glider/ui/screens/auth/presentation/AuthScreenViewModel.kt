@@ -26,22 +26,52 @@ import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 
+/**
+ * The **AuthScreenViewModel** class is the support class used to execute the authentication requests
+ * to the backend
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @see androidx.lifecycle.ViewModel
+ * @see com.tecknobit.equinoxcompose.session.Retriever.RetrieverWrapper
+ * @see EquinoxViewModel
+ * @see EquinoxAuthViewModel
+ */
 class AuthScreenViewModel : EquinoxAuthViewModel(
     snackbarHostState = SnackbarHostState(),
     requester = requester,
     localUser = localUser
 ) {
 
+    /**
+     * Method used to get the list of the custom parameters to use in the [signUp] request
+     *
+     * The order of the custom parameters must be the same of that specified in your customization of the
+     * [getSignUpValuesKeys()](https://github.com/N7ghtm4r3/Equinox/blob/main/src/main/java/com/tecknobit/equinox/environment/helpers/services/EquinoxUsersHelper.java#L133)
+     * method
+     */
     @CustomParametersOrder(DEVICE_KEY)
     override fun getSignUpCustomParameters(): Array<out Any?> {
         return arrayOf(getCurrentDeviceInformation())
     }
 
+    /**
+     * Method used to get the list of the custom parameters to use in the [signIn] request.
+     *
+     * The order of the custom parameters must be the same of that specified in your customization of the
+     * [getSignUpValuesKeys()](https://github.com/N7ghtm4r3/Equinox/blob/main/src/main/java/com/tecknobit/equinox/environment/helpers/services/EquinoxUsersHelper.java#L133)
+     * method
+     *
+     **/
     @CustomParametersOrder(DEVICE_KEY)
     override fun getSignInCustomParameters(): Array<out Any?> {
         return arrayOf(getCurrentDeviceInformation())
     }
 
+    /**
+     * Method used to retrieve the information of the current device
+     *
+     * @return the device information as [JsonObject]
+     */
     private fun getCurrentDeviceInformation(): JsonObject {
         val state = KInfoState()
         return when (state.devicePlatform) {
@@ -90,6 +120,12 @@ class AuthScreenViewModel : EquinoxAuthViewModel(
         }
     }
 
+    /**
+     * Method used to assemble the payload with the device information
+     *
+     * @param type The type of the device
+     * @param deviceInfo The retrieved information of the device
+     */
     @Assembler
     @CustomParametersOrder(
         order = [IDENTIFIER_KEY, BRAND_KEY, MODEL_KEY, BROWSER_KEY]
@@ -108,6 +144,16 @@ class AuthScreenViewModel : EquinoxAuthViewModel(
         }
     }
 
+    /**
+     * Method to launch the application after the authentication request, will be instantiated with the user details
+     * both the [requester] and the [localUser]
+     *
+     * @param response The response of the authentication request
+     * @param name The name of the user
+     * @param surname The surname of the user
+     * @param language The language of the user
+     * @param custom The custom parameters added in a customization of the equinox user
+     */
     @RequiresSuperCall
     override fun launchApp(
         response: JsonObject,

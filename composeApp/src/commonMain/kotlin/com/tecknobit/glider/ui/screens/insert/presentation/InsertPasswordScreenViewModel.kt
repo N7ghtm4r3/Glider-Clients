@@ -2,6 +2,7 @@ package com.tecknobit.glider.ui.screens.insert.presentation
 
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.viewModelScope
+import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
@@ -12,10 +13,28 @@ import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.password_inserted
 import kotlinx.coroutines.launch
 
+/**
+ * The `InsertPasswordScreenViewModel` class is the support class used by the
+ * [com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab] to insert a new password
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ *
+ * @see androidx.lifecycle.ViewModel
+ * @see com.tecknobit.equinoxcompose.session.Retriever
+ * @see EquinoxViewModel
+ * @see PasswordFormViewModel
+ *
+ */
 class InsertPasswordScreenViewModel : PasswordFormViewModel() {
 
+    /**
+     * `passwordValue` the value of the password
+     */
     lateinit var passwordValue: MutableState<String>
 
+    /**
+     * `passwordError` whether the [passwordValue] field is not valid
+     */
     lateinit var passwordError: MutableState<Boolean>
 
     /**
@@ -53,6 +72,11 @@ class InsertPasswordScreenViewModel : PasswordFormViewModel() {
         }
     }
 
+    /**
+     * Method to validate the form values
+     *
+     * @return whether the form is valid as [Boolean]
+     */
     @RequiresSuperCall
     override fun validateForm(): Boolean {
         val validity = super.validateForm()
@@ -65,6 +89,11 @@ class InsertPasswordScreenViewModel : PasswordFormViewModel() {
         return true
     }
 
+    /**
+     * Method to reset the form to the initial state to perform a new action
+     *
+     * @param extra Extra parameters to use to reset the form state
+     */
     @RequiresSuperCall
     override fun resetForm(
         vararg extra: Any,

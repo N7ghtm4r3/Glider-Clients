@@ -5,6 +5,7 @@ import androidx.compose.material3.SnackbarResult.Dismissed
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
+import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
@@ -20,14 +21,38 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.getString
 
+/**
+ * The `GenerateScreenViewModel` class is the support class used by the
+ * [com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab] to generate a new password
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ *
+ * @see androidx.lifecycle.ViewModel
+ * @see com.tecknobit.equinoxcompose.session.Retriever
+ * @see EquinoxViewModel
+ * @see PasswordFormViewModel
+ *
+ */
 class GenerateScreenViewModel : PasswordFormViewModel() {
 
+    /**
+     * `quantityPickerState` state used to handle the length of the password to generate
+     */
     lateinit var quantityPickerState: QuantityPickerState
 
+    /**
+     * `includeNumbers` whether the generated password must include the numbers
+     */
     lateinit var includeNumbers: MutableState<Boolean>
 
+    /**
+     * `includeUppercaseLetters` whether the generated password must include the uppercase letters
+     */
     lateinit var includeUppercaseLetters: MutableState<Boolean>
 
+    /**
+     * `includeSpecialCharacters` whether the generated password must include the special characters
+     */
     lateinit var includeSpecialCharacters: MutableState<Boolean>
 
     /**
@@ -68,6 +93,11 @@ class GenerateScreenViewModel : PasswordFormViewModel() {
         }
     }
 
+    /**
+     * Method to reset the form to the initial state to perform a new action
+     *
+     * @param extra Extra parameters to use to reset the form state
+     */
     @RequiresSuperCall
     override fun resetForm(vararg extra: Any) {
         super.resetForm(*extra)

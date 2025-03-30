@@ -55,6 +55,13 @@ import glider.composeapp.generated.resources.with_the_browser
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * Custom [ListItem] used to display the information about a [ConnectedDevice]
+ *
+ * @param viewModel The support viewmodel used by the screen
+ * @param connectedDevice The device to display its information
+ * @param isLast Whether this item is the last in the list
+ */
 @Composable
 @NonRestartableComposable
 fun ConnectedDeviceItem(
@@ -133,6 +140,11 @@ fun ConnectedDeviceItem(
         DevicesDivider()
 }
 
+/**
+ * Representative icon based on the [com.tecknobit.glidercore.enums.ConnectedDeviceType] type
+ *
+ * @param device The device to display
+ */
 @Composable
 @NonRestartableComposable
 private fun DeviceIcon(
@@ -178,6 +190,9 @@ private fun DeviceIcon(
     }
 }
 
+/**
+ * Badge used as marker if the device displayed is the current one
+ */
 @Composable
 @NonRestartableComposable
 private fun CurrentDeviceBadge() {
@@ -202,6 +217,9 @@ private fun CurrentDeviceBadge() {
     )
 }
 
+/**
+ * Custom [HorizontalDivider] used to divide each [ConnectedDeviceItem]
+ */
 @Composable
 @NonRestartableComposable
 private fun DevicesDivider() {

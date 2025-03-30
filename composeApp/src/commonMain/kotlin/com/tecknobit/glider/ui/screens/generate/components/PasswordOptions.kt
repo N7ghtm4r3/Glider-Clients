@@ -20,6 +20,12 @@ import glider.composeapp.generated.resources.include_uppercase_letters
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * Component used to insert the options to use as configuration to generate the password
+ *
+ * @param modifier The modifier to apply to the component
+ * @param viewModel The support viewmodel used by the screen
+ */
 @Composable
 @NonRestartableComposable
 fun PasswordOptions(
@@ -45,6 +51,12 @@ fun PasswordOptions(
     }
 }
 
+/**
+ * Custom [Checkbox] used to select or unselect a password option
+ *
+ * @param checked Whether the option is enabled
+ * @param infoText The informative text about the option
+ */
 @Composable
 @NonRestartableComposable
 private fun PasswordOptionCheckBox(

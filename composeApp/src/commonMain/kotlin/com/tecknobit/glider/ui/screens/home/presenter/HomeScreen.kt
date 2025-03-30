@@ -64,10 +64,19 @@ import glider.composeapp.generated.resources.insert
 import glider.composeapp.generated.resources.keychain
 import org.jetbrains.compose.resources.stringResource
 
+/**
+ * The [HomeScreen] class is used to display the specific tab and handle the navigation in app
+ *
+ * @author N7ghtm4r3 - Tecknobit
+ * @see EquinoxNoModelScreen
+ */
 class HomeScreen : EquinoxNoModelScreen() {
 
     companion object {
 
+        /**
+         *`tabs` the destination reachable with the navigation
+         */
         private val tabs = arrayOf(
             ScreenTab(
                 tabTitle = Res.string.generate,
@@ -93,6 +102,9 @@ class HomeScreen : EquinoxNoModelScreen() {
 
     }
 
+    /**
+     *`activeScreenTabIndex` the index of the current [ScreenTab] displayed
+     */
     private lateinit var activeScreenTabIndex: MutableState<Int>
 
     /**
@@ -111,6 +123,9 @@ class HomeScreen : EquinoxNoModelScreen() {
         }
     }
 
+    /**
+     * The content of the tab arranged as [Row] with the side [NavigationRail] as navigator bar
+     */
     @Composable
     @NonRestartableComposable
     @ResponsiveClassComponent(
@@ -195,6 +210,9 @@ class HomeScreen : EquinoxNoModelScreen() {
         }
     }
 
+    /**
+     * The content of the tab arranged as [Box] with the side [BottomAppBar] as navigator bar
+     */
     @Composable
     @NonRestartableComposable
     @ResponsiveClassComponent(
@@ -241,6 +259,11 @@ class HomeScreen : EquinoxNoModelScreen() {
         }
     }
 
+    /**
+     * The content of the tab
+     *
+     * @param paddingValues The values of the padding to apply to the content
+     */
     @Composable
     @NonRestartableComposable
     private fun ScreenTabContent(
@@ -265,6 +288,11 @@ class HomeScreen : EquinoxNoModelScreen() {
         }
     }
 
+    /**
+     * Method used to instantiate the related screen based on the current [activeScreenTabIndex]
+     *
+     * @return the screen as [GliderScreenTab]
+     */
     private fun Int.relatedScreenTab(): GliderScreenTab<*> {
         return when (this) {
             0 -> GenerateScreenTab()
