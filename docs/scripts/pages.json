@@ -1,0 +1,2862 @@
+[
+  {
+    "name": "abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(viewModel: V) : PasswordFormScreen<V> ",
+    "description": "com.tecknobit.glider.ui.shared.presenters.EditPasswordFormScreen",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presenters/-edit-password-form-screen/index.html",
+    "searchKeys": [
+      "EditPasswordFormScreen",
+      "abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(viewModel: V) : PasswordFormScreen<V> ",
+      "com.tecknobit.glider.ui.shared.presenters.EditPasswordFormScreen"
+    ]
+  },
+  {
+    "name": "abstract class EditPasswordFormViewModel(passwordId: String) : PasswordFormViewModel",
+    "description": "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-edit-password-form-view-model/index.html",
+    "searchKeys": [
+      "EditPasswordFormViewModel",
+      "abstract class EditPasswordFormViewModel(passwordId: String) : PasswordFormViewModel",
+      "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel"
+    ]
+  },
+  {
+    "name": "abstract class GliderScreenTab<V : EquinoxViewModel>(viewModel: V, title: StringResource) : EquinoxScreen<V> ",
+    "description": "com.tecknobit.glider.ui.shared.presenters.GliderScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presenters/-glider-screen-tab/index.html",
+    "searchKeys": [
+      "GliderScreenTab",
+      "abstract class GliderScreenTab<V : EquinoxViewModel>(viewModel: V, title: StringResource) : EquinoxScreen<V> ",
+      "com.tecknobit.glider.ui.shared.presenters.GliderScreenTab"
+    ]
+  },
+  {
+    "name": "abstract class PasswordFormScreen<V : PasswordFormViewModel>(viewModel: V, title: StringResource) : GliderScreenTab<V> ",
+    "description": "com.tecknobit.glider.ui.shared.presenters.PasswordFormScreen",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presenters/-password-form-screen/index.html",
+    "searchKeys": [
+      "PasswordFormScreen",
+      "abstract class PasswordFormScreen<V : PasswordFormViewModel>(viewModel: V, title: StringResource) : GliderScreenTab<V> ",
+      "com.tecknobit.glider.ui.shared.presenters.PasswordFormScreen"
+    ]
+  },
+  {
+    "name": "abstract class PasswordFormViewModel : EquinoxViewModel",
+    "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/index.html",
+    "searchKeys": [
+      "PasswordFormViewModel",
+      "abstract class PasswordFormViewModel : EquinoxViewModel",
+      "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel"
+    ]
+  },
+  {
+    "name": "abstract fun performPasswordOperation()",
+    "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.performPasswordOperation",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/perform-password-operation.html",
+    "searchKeys": [
+      "performPasswordOperation",
+      "abstract fun performPasswordOperation()",
+      "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.performPasswordOperation"
+    ]
+  },
+  {
+    "name": "class AccountScreenTab : GliderScreenTab<AccountScreenViewModel> ",
+    "description": "com.tecknobit.glider.ui.screens.account.presenter.AccountScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.presenter/-account-screen-tab/index.html",
+    "searchKeys": [
+      "AccountScreenTab",
+      "class AccountScreenTab : GliderScreenTab<AccountScreenViewModel> ",
+      "com.tecknobit.glider.ui.screens.account.presenter.AccountScreenTab"
+    ]
+  },
+  {
+    "name": "class AccountScreenViewModel : EquinoxProfileViewModel",
+    "description": "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/index.html",
+    "searchKeys": [
+      "AccountScreenViewModel",
+      "class AccountScreenViewModel : EquinoxProfileViewModel",
+      "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel"
+    ]
+  },
+  {
+    "name": "class AppContextInitializer : Initializer<Context> ",
+    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer",
+    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/index.html",
+    "searchKeys": [
+      "AppContextInitializer",
+      "class AppContextInitializer : Initializer<Context> ",
+      "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer"
+    ]
+  },
+  {
+    "name": "class AuthScreen : EquinoxScreen<AuthScreenViewModel> ",
+    "description": "com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.auth.presenter/-auth-screen/index.html",
+    "searchKeys": [
+      "AuthScreen",
+      "class AuthScreen : EquinoxScreen<AuthScreenViewModel> ",
+      "com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen"
+    ]
+  },
+  {
+    "name": "class AuthScreenViewModel : EquinoxAuthViewModel",
+    "description": "com.tecknobit.glider.ui.screens.auth.presentation.AuthScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.auth.presentation/-auth-screen-view-model/index.html",
+    "searchKeys": [
+      "AuthScreenViewModel",
+      "class AuthScreenViewModel : EquinoxAuthViewModel",
+      "com.tecknobit.glider.ui.screens.auth.presentation.AuthScreenViewModel"
+    ]
+  },
+  {
+    "name": "class EditGeneratedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditGeneratedPasswordScreenViewModel> ",
+    "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter/-edit-generated-password-screen/index.html",
+    "searchKeys": [
+      "EditGeneratedPasswordScreen",
+      "class EditGeneratedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditGeneratedPasswordScreenViewModel> ",
+      "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen"
+    ]
+  },
+  {
+    "name": "class EditGeneratedPasswordScreenViewModel(passwordId: String) : EditPasswordFormViewModel",
+    "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation/-edit-generated-password-screen-view-model/index.html",
+    "searchKeys": [
+      "EditGeneratedPasswordScreenViewModel",
+      "class EditGeneratedPasswordScreenViewModel(passwordId: String) : EditPasswordFormViewModel",
+      "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel"
+    ]
+  },
+  {
+    "name": "class EditInsertedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditInsertedPasswordScreenViewModel> ",
+    "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presenter/-edit-inserted-password-screen/index.html",
+    "searchKeys": [
+      "EditInsertedPasswordScreen",
+      "class EditInsertedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditInsertedPasswordScreenViewModel> ",
+      "com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen"
+    ]
+  },
+  {
+    "name": "class EditInsertedPasswordScreenViewModel(passwordId: String) : EditPasswordFormViewModel",
+    "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/index.html",
+    "searchKeys": [
+      "EditInsertedPasswordScreenViewModel",
+      "class EditInsertedPasswordScreenViewModel(passwordId: String) : EditPasswordFormViewModel",
+      "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel"
+    ]
+  },
+  {
+    "name": "class GenerateScreenTab : PasswordFormScreen<GenerateScreenViewModel> ",
+    "description": "com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presenter/-generate-screen-tab/index.html",
+    "searchKeys": [
+      "GenerateScreenTab",
+      "class GenerateScreenTab : PasswordFormScreen<GenerateScreenViewModel> ",
+      "com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab"
+    ]
+  },
+  {
+    "name": "class GenerateScreenViewModel : PasswordFormViewModel",
+    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/index.html",
+    "searchKeys": [
+      "GenerateScreenViewModel",
+      "class GenerateScreenViewModel : PasswordFormViewModel",
+      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel"
+    ]
+  },
+  {
+    "name": "class GliderLocalUser : EquinoxLocalUser",
+    "description": "com.tecknobit.glider.helpers.GliderLocalUser",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-local-user/index.html",
+    "searchKeys": [
+      "GliderLocalUser",
+      "class GliderLocalUser : EquinoxLocalUser",
+      "com.tecknobit.glider.helpers.GliderLocalUser"
+    ]
+  },
+  {
+    "name": "class GliderRequester(host: String, userId: String?, var deviceId: String?, userToken: String?, debugMode: Boolean = false) : EquinoxRequester",
+    "description": "com.tecknobit.glider.helpers.GliderRequester",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/index.html",
+    "searchKeys": [
+      "GliderRequester",
+      "class GliderRequester(host: String, userId: String?, var deviceId: String?, userToken: String?, debugMode: Boolean = false) : EquinoxRequester",
+      "com.tecknobit.glider.helpers.GliderRequester"
+    ]
+  },
+  {
+    "name": "class HomeScreen : EquinoxNoModelScreen",
+    "description": "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.home.presenter/-home-screen/index.html",
+    "searchKeys": [
+      "HomeScreen",
+      "class HomeScreen : EquinoxNoModelScreen",
+      "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen"
+    ]
+  },
+  {
+    "name": "class InsertPasswordScreenTab : PasswordFormScreen<InsertPasswordScreenViewModel> ",
+    "description": "com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.insert.presenter/-insert-password-screen-tab/index.html",
+    "searchKeys": [
+      "InsertPasswordScreenTab",
+      "class InsertPasswordScreenTab : PasswordFormScreen<InsertPasswordScreenViewModel> ",
+      "com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab"
+    ]
+  },
+  {
+    "name": "class InsertPasswordScreenViewModel : PasswordFormViewModel",
+    "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/index.html",
+    "searchKeys": [
+      "InsertPasswordScreenViewModel",
+      "class InsertPasswordScreenViewModel : PasswordFormViewModel",
+      "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel"
+    ]
+  },
+  {
+    "name": "class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel> ",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presenter.KeychainScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presenter/-keychain-screen-tab/index.html",
+    "searchKeys": [
+      "KeychainScreenTab",
+      "class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel> ",
+      "com.tecknobit.glider.ui.screens.keychain.presenter.KeychainScreenTab"
+    ]
+  },
+  {
+    "name": "class KeychainScreenViewModel : EquinoxViewModel",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/index.html",
+    "searchKeys": [
+      "KeychainScreenViewModel",
+      "class KeychainScreenViewModel : EquinoxViewModel",
+      "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel"
+    ]
+  },
+  {
+    "name": "class MainActivity : ComponentActivity",
+    "description": "com.tecknobit.glider.MainActivity",
+    "location": "-glider/com.tecknobit.glider/-main-activity/index.html",
+    "searchKeys": [
+      "MainActivity",
+      "class MainActivity : ComponentActivity",
+      "com.tecknobit.glider.MainActivity"
+    ]
+  },
+  {
+    "name": "class QuantityPickerState",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/index.html",
+    "searchKeys": [
+      "QuantityPickerState",
+      "class QuantityPickerState",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState"
+    ]
+  },
+  {
+    "name": "class Splashscreen : EquinoxNoModelScreen",
+    "description": "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.splashscreen/-splashscreen/index.html",
+    "searchKeys": [
+      "Splashscreen",
+      "class Splashscreen : EquinoxNoModelScreen",
+      "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen"
+    ]
+  },
+  {
+    "name": "const val AUTH_SCREEN: String",
+    "description": "com.tecknobit.glider.AUTH_SCREEN",
+    "location": "-glider/com.tecknobit.glider/-a-u-t-h_-s-c-r-e-e-n.html",
+    "searchKeys": [
+      "AUTH_SCREEN",
+      "const val AUTH_SCREEN: String",
+      "com.tecknobit.glider.AUTH_SCREEN"
+    ]
+  },
+  {
+    "name": "const val EDIT_GENERATED_PASSWORD_SCREEN: String",
+    "description": "com.tecknobit.glider.EDIT_GENERATED_PASSWORD_SCREEN",
+    "location": "-glider/com.tecknobit.glider/-e-d-i-t_-g-e-n-e-r-a-t-e-d_-p-a-s-s-w-o-r-d_-s-c-r-e-e-n.html",
+    "searchKeys": [
+      "EDIT_GENERATED_PASSWORD_SCREEN",
+      "const val EDIT_GENERATED_PASSWORD_SCREEN: String",
+      "com.tecknobit.glider.EDIT_GENERATED_PASSWORD_SCREEN"
+    ]
+  },
+  {
+    "name": "const val EDIT_INSERTED_PASSWORD_SCREEN: String",
+    "description": "com.tecknobit.glider.EDIT_INSERTED_PASSWORD_SCREEN",
+    "location": "-glider/com.tecknobit.glider/-e-d-i-t_-i-n-s-e-r-t-e-d_-p-a-s-s-w-o-r-d_-s-c-r-e-e-n.html",
+    "searchKeys": [
+      "EDIT_INSERTED_PASSWORD_SCREEN",
+      "const val EDIT_INSERTED_PASSWORD_SCREEN: String",
+      "com.tecknobit.glider.EDIT_INSERTED_PASSWORD_SCREEN"
+    ]
+  },
+  {
+    "name": "const val HOME_SCREEN: String",
+    "description": "com.tecknobit.glider.HOME_SCREEN",
+    "location": "-glider/com.tecknobit.glider/-h-o-m-e_-s-c-r-e-e-n.html",
+    "searchKeys": [
+      "HOME_SCREEN",
+      "const val HOME_SCREEN: String",
+      "com.tecknobit.glider.HOME_SCREEN"
+    ]
+  },
+  {
+    "name": "const val SPLASHSCREEN: String",
+    "description": "com.tecknobit.glider.SPLASHSCREEN",
+    "location": "-glider/com.tecknobit.glider/-s-p-l-a-s-h-s-c-r-e-e-n.html",
+    "searchKeys": [
+      "SPLASHSCREEN",
+      "const val SPLASHSCREEN: String",
+      "com.tecknobit.glider.SPLASHSCREEN"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.AppContextInitializer",
+    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/-app-context-initializer.html",
+    "searchKeys": [
+      "AppContextInitializer",
+      "constructor()",
+      "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.AppContextInitializer"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.MainActivity.MainActivity",
+    "location": "-glider/com.tecknobit.glider/-main-activity/-main-activity.html",
+    "searchKeys": [
+      "MainActivity",
+      "constructor()",
+      "com.tecknobit.glider.MainActivity.MainActivity"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.helpers.GliderLocalUser.GliderLocalUser",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-local-user/-glider-local-user.html",
+    "searchKeys": [
+      "GliderLocalUser",
+      "constructor()",
+      "com.tecknobit.glider.helpers.GliderLocalUser.GliderLocalUser"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.AccountScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/-account-screen-view-model.html",
+    "searchKeys": [
+      "AccountScreenViewModel",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.AccountScreenViewModel"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.account.presenter.AccountScreenTab.AccountScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.presenter/-account-screen-tab/-account-screen-tab.html",
+    "searchKeys": [
+      "AccountScreenTab",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.account.presenter.AccountScreenTab.AccountScreenTab"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.auth.presentation.AuthScreenViewModel.AuthScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.auth.presentation/-auth-screen-view-model/-auth-screen-view-model.html",
+    "searchKeys": [
+      "AuthScreenViewModel",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.auth.presentation.AuthScreenViewModel.AuthScreenViewModel"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen.AuthScreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.auth.presenter/-auth-screen/-auth-screen.html",
+    "searchKeys": [
+      "AuthScreen",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen.AuthScreen"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.GenerateScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/-generate-screen-view-model.html",
+    "searchKeys": [
+      "GenerateScreenViewModel",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.GenerateScreenViewModel"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab.GenerateScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presenter/-generate-screen-tab/-generate-screen-tab.html",
+    "searchKeys": [
+      "GenerateScreenTab",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab.GenerateScreenTab"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen.HomeScreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.home.presenter/-home-screen/-home-screen.html",
+    "searchKeys": [
+      "HomeScreen",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen.HomeScreen"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.InsertPasswordScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/-insert-password-screen-view-model.html",
+    "searchKeys": [
+      "InsertPasswordScreenViewModel",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.InsertPasswordScreenViewModel"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab.InsertPasswordScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.insert.presenter/-insert-password-screen-tab/-insert-password-screen-tab.html",
+    "searchKeys": [
+      "InsertPasswordScreenTab",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab.InsertPasswordScreenTab"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.KeychainScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/-keychain-screen-view-model.html",
+    "searchKeys": [
+      "KeychainScreenViewModel",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.KeychainScreenViewModel"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presenter.KeychainScreenTab.KeychainScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presenter/-keychain-screen-tab/-keychain-screen-tab.html",
+    "searchKeys": [
+      "KeychainScreenTab",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.keychain.presenter.KeychainScreenTab.KeychainScreenTab"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen.Splashscreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.splashscreen/-splashscreen/-splashscreen.html",
+    "searchKeys": [
+      "Splashscreen",
+      "constructor()",
+      "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen.Splashscreen"
+    ]
+  },
+  {
+    "name": "constructor()",
+    "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.PasswordFormViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/-password-form-view-model.html",
+    "searchKeys": [
+      "PasswordFormViewModel",
+      "constructor()",
+      "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.PasswordFormViewModel"
+    ]
+  },
+  {
+    "name": "constructor(host: String, userId: String?, deviceId: String?, userToken: String?, debugMode: Boolean = false)",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.GliderRequester",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/-glider-requester.html",
+    "searchKeys": [
+      "GliderRequester",
+      "constructor(host: String, userId: String?, deviceId: String?, userToken: String?, debugMode: Boolean = false)",
+      "com.tecknobit.glider.helpers.GliderRequester.GliderRequester"
+    ]
+  },
+  {
+    "name": "constructor(id: String, brand: String, model: String, browser: String? = null, lastLogin: Long, type: ConnectedDeviceType)",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.ConnectedDevice",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/-connected-device.html",
+    "searchKeys": [
+      "ConnectedDevice",
+      "constructor(id: String, brand: String, model: String, browser: String? = null, lastLogin: Long, type: ConnectedDeviceType)",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.ConnectedDevice"
+    ]
+  },
+  {
+    "name": "constructor(id: String, creationDate: Long, tail: String, _password: String, _scopes: String, type: PasswordType, _events: List<PasswordEvent>)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.Password",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/-password.html",
+    "searchKeys": [
+      "Password",
+      "constructor(id: String, creationDate: Long, tail: String, _password: String, _scopes: String, type: PasswordType, _events: List<PasswordEvent>)",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.Password"
+    ]
+  },
+  {
+    "name": "constructor(id: String, eventDate: Long, type: PasswordEventType)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent.PasswordEvent",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password-event/-password-event.html",
+    "searchKeys": [
+      "PasswordEvent",
+      "constructor(id: String, eventDate: Long, type: PasswordEventType)",
+      "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent.PasswordEvent"
+    ]
+  },
+  {
+    "name": "constructor(id: String, tail: String, _scopes: String, password: String? = null)",
+    "description": "com.tecknobit.glider.ui.shared.data.PasswordDetails.PasswordDetails",
+    "location": "-glider/com.tecknobit.glider.ui.shared.data/-password-details/-password-details.html",
+    "searchKeys": [
+      "PasswordDetails",
+      "constructor(id: String, tail: String, _scopes: String, password: String? = null)",
+      "com.tecknobit.glider.ui.shared.data.PasswordDetails.PasswordDetails"
+    ]
+  },
+  {
+    "name": "constructor(passwordId: String)",
+    "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel.EditGeneratedPasswordScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation/-edit-generated-password-screen-view-model/-edit-generated-password-screen-view-model.html",
+    "searchKeys": [
+      "EditGeneratedPasswordScreenViewModel",
+      "constructor(passwordId: String)",
+      "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel.EditGeneratedPasswordScreenViewModel"
+    ]
+  },
+  {
+    "name": "constructor(passwordId: String)",
+    "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen.EditGeneratedPasswordScreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter/-edit-generated-password-screen/-edit-generated-password-screen.html",
+    "searchKeys": [
+      "EditGeneratedPasswordScreen",
+      "constructor(passwordId: String)",
+      "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen.EditGeneratedPasswordScreen"
+    ]
+  },
+  {
+    "name": "constructor(passwordId: String)",
+    "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.EditInsertedPasswordScreenViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/-edit-inserted-password-screen-view-model.html",
+    "searchKeys": [
+      "EditInsertedPasswordScreenViewModel",
+      "constructor(passwordId: String)",
+      "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.EditInsertedPasswordScreenViewModel"
+    ]
+  },
+  {
+    "name": "constructor(passwordId: String)",
+    "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen.EditInsertedPasswordScreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presenter/-edit-inserted-password-screen/-edit-inserted-password-screen.html",
+    "searchKeys": [
+      "EditInsertedPasswordScreen",
+      "constructor(passwordId: String)",
+      "com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen.EditInsertedPasswordScreen"
+    ]
+  },
+  {
+    "name": "constructor(passwordId: String)",
+    "description": "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.EditPasswordFormViewModel",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-edit-password-form-view-model/-edit-password-form-view-model.html",
+    "searchKeys": [
+      "EditPasswordFormViewModel",
+      "constructor(passwordId: String)",
+      "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.EditPasswordFormViewModel"
+    ]
+  },
+  {
+    "name": "constructor(tabTitle: StringResource, contentDescription: String, icon: ImageVector)",
+    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab.ScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/-screen-tab.html",
+    "searchKeys": [
+      "ScreenTab",
+      "constructor(tabTitle: StringResource, contentDescription: String, icon: ImageVector)",
+      "com.tecknobit.glider.ui.screens.home.data.ScreenTab.ScreenTab"
+    ]
+  },
+  {
+    "name": "constructor(viewModel: V)",
+    "description": "com.tecknobit.glider.ui.shared.presenters.EditPasswordFormScreen.EditPasswordFormScreen",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presenters/-edit-password-form-screen/-edit-password-form-screen.html",
+    "searchKeys": [
+      "EditPasswordFormScreen",
+      "constructor(viewModel: V)",
+      "com.tecknobit.glider.ui.shared.presenters.EditPasswordFormScreen.EditPasswordFormScreen"
+    ]
+  },
+  {
+    "name": "constructor(viewModel: V, title: StringResource)",
+    "description": "com.tecknobit.glider.ui.shared.presenters.GliderScreenTab.GliderScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presenters/-glider-screen-tab/-glider-screen-tab.html",
+    "searchKeys": [
+      "GliderScreenTab",
+      "constructor(viewModel: V, title: StringResource)",
+      "com.tecknobit.glider.ui.shared.presenters.GliderScreenTab.GliderScreenTab"
+    ]
+  },
+  {
+    "name": "constructor(viewModel: V, title: StringResource)",
+    "description": "com.tecknobit.glider.ui.shared.presenters.PasswordFormScreen.PasswordFormScreen",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presenters/-password-form-screen/-password-form-screen.html",
+    "searchKeys": [
+      "PasswordFormScreen",
+      "constructor(viewModel: V, title: StringResource)",
+      "com.tecknobit.glider.ui.shared.presenters.PasswordFormScreen.PasswordFormScreen"
+    ]
+  },
+  {
+    "name": "data class ConnectedDevice(val id: String, val brand: String, val model: String, val browser: String? = null, val lastLogin: Long, val type: ConnectedDeviceType)",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/index.html",
+    "searchKeys": [
+      "ConnectedDevice",
+      "data class ConnectedDevice(val id: String, val brand: String, val model: String, val browser: String? = null, val lastLogin: Long, val type: ConnectedDeviceType)",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice"
+    ]
+  },
+  {
+    "name": "data class Password(val id: String, val creationDate: Long, val tail: String, _password: String, _scopes: String, val type: PasswordType, _events: List<PasswordEvent>)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/index.html",
+    "searchKeys": [
+      "Password",
+      "data class Password(val id: String, val creationDate: Long, val tail: String, _password: String, _scopes: String, val type: PasswordType, _events: List<PasswordEvent>)",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password"
+    ]
+  },
+  {
+    "name": "data class PasswordDetails(val id: String, val tail: String, _scopes: String, val password: String? = null)",
+    "description": "com.tecknobit.glider.ui.shared.data.PasswordDetails",
+    "location": "-glider/com.tecknobit.glider.ui.shared.data/-password-details/index.html",
+    "searchKeys": [
+      "PasswordDetails",
+      "data class PasswordDetails(val id: String, val tail: String, _scopes: String, val password: String? = null)",
+      "com.tecknobit.glider.ui.shared.data.PasswordDetails"
+    ]
+  },
+  {
+    "name": "data class PasswordEvent(val id: String, val eventDate: Long, val type: PasswordEventType)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password-event/index.html",
+    "searchKeys": [
+      "PasswordEvent",
+      "data class PasswordEvent(val id: String, val eventDate: Long, val type: PasswordEventType)",
+      "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent"
+    ]
+  },
+  {
+    "name": "data class ScreenTab(val tabTitle: StringResource, val contentDescription: String, val icon: ImageVector)",
+    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab",
+    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/index.html",
+    "searchKeys": [
+      "ScreenTab",
+      "data class ScreenTab(val tabTitle: StringResource, val contentDescription: String, val icon: ImageVector)",
+      "com.tecknobit.glider.ui.screens.home.data.ScreenTab"
+    ]
+  },
+  {
+    "name": "expect class KReviewer",
+    "description": "com.tecknobit.glider.helpers.KReviewer",
+    "location": "-glider/com.tecknobit.glider.helpers/-k-reviewer/index.html",
+    "searchKeys": [
+      "KReviewer",
+      "expect class KReviewer",
+      "com.tecknobit.glider.helpers.KReviewer"
+    ]
+  },
+  {
+    "name": "expect constructor()",
+    "description": "com.tecknobit.glider.helpers.KReviewer.KReviewer",
+    "location": "-glider/com.tecknobit.glider.helpers/-k-reviewer/-k-reviewer.html",
+    "searchKeys": [
+      "KReviewer",
+      "expect constructor()",
+      "com.tecknobit.glider.helpers.KReviewer.KReviewer"
+    ]
+  },
+  {
+    "name": "expect fun CheckForUpdatesAndLaunch()",
+    "description": "com.tecknobit.glider.CheckForUpdatesAndLaunch",
+    "location": "-glider/com.tecknobit.glider/-check-for-updates-and-launch.html",
+    "searchKeys": [
+      "CheckForUpdatesAndLaunch",
+      "expect fun CheckForUpdatesAndLaunch()",
+      "com.tecknobit.glider.CheckForUpdatesAndLaunch"
+    ]
+  },
+  {
+    "name": "expect fun CloseApplicationOnNavBack()",
+    "description": "com.tecknobit.glider.CloseApplicationOnNavBack",
+    "location": "-glider/com.tecknobit.glider/-close-application-on-nav-back.html",
+    "searchKeys": [
+      "CloseApplicationOnNavBack",
+      "expect fun CloseApplicationOnNavBack()",
+      "com.tecknobit.glider.CloseApplicationOnNavBack"
+    ]
+  },
+  {
+    "name": "expect fun reviewInApp(flowAction: () -> Unit = {})",
+    "description": "com.tecknobit.glider.helpers.KReviewer.reviewInApp",
+    "location": "-glider/com.tecknobit.glider.helpers/-k-reviewer/review-in-app.html",
+    "searchKeys": [
+      "reviewInApp",
+      "expect fun reviewInApp(flowAction: () -> Unit = {})",
+      "com.tecknobit.glider.helpers.KReviewer.reviewInApp"
+    ]
+  },
+  {
+    "name": "expect fun setUserLanguage()",
+    "description": "com.tecknobit.glider.setUserLanguage",
+    "location": "-glider/com.tecknobit.glider/set-user-language.html",
+    "searchKeys": [
+      "setUserLanguage",
+      "expect fun setUserLanguage()",
+      "com.tecknobit.glider.setUserLanguage"
+    ]
+  },
+  {
+    "name": "fun App()",
+    "description": "com.tecknobit.glider.App",
+    "location": "-glider/com.tecknobit.glider/-app.html",
+    "searchKeys": [
+      "App",
+      "fun App()",
+      "com.tecknobit.glider.App"
+    ]
+  },
+  {
+    "name": "fun ConnectedDeviceItem(viewModel: AccountScreenViewModel, connectedDevice: ConnectedDevice, isLast: Boolean)",
+    "description": "com.tecknobit.glider.ui.screens.account.components.ConnectedDeviceItem",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.components/-connected-device-item.html",
+    "searchKeys": [
+      "ConnectedDeviceItem",
+      "fun ConnectedDeviceItem(viewModel: AccountScreenViewModel, connectedDevice: ConnectedDevice, isLast: Boolean)",
+      "com.tecknobit.glider.ui.screens.account.components.ConnectedDeviceItem"
+    ]
+  },
+  {
+    "name": "fun DeleteAccount(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
+    "description": "com.tecknobit.glider.ui.components.DeleteAccount",
+    "location": "-glider/com.tecknobit.glider.ui.components/-delete-account.html",
+    "searchKeys": [
+      "DeleteAccount",
+      "fun DeleteAccount(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
+      "com.tecknobit.glider.ui.components.DeleteAccount"
+    ]
+  },
+  {
+    "name": "fun DeletePassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
+    "description": "com.tecknobit.glider.ui.components.DeletePassword",
+    "location": "-glider/com.tecknobit.glider.ui.components/-delete-password.html",
+    "searchKeys": [
+      "DeletePassword",
+      "fun DeletePassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
+      "com.tecknobit.glider.ui.components.DeletePassword"
+    ]
+  },
+  {
+    "name": "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: MutableState<Boolean>, device: ConnectedDevice)",
+    "description": "com.tecknobit.glider.ui.components.DisconnectDevice",
+    "location": "-glider/com.tecknobit.glider.ui.components/-disconnect-device.html",
+    "searchKeys": [
+      "DisconnectDevice",
+      "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: MutableState<Boolean>, device: ConnectedDevice)",
+      "com.tecknobit.glider.ui.components.DisconnectDevice"
+    ]
+  },
+  {
+    "name": "fun FirstPageProgressIndicator(modifier: Modifier = Modifier)",
+    "description": "com.tecknobit.glider.ui.components.FirstPageProgressIndicator",
+    "location": "-glider/com.tecknobit.glider.ui.components/-first-page-progress-indicator.html",
+    "searchKeys": [
+      "FirstPageProgressIndicator",
+      "fun FirstPageProgressIndicator(modifier: Modifier = Modifier)",
+      "com.tecknobit.glider.ui.components.FirstPageProgressIndicator"
+    ]
+  },
+  {
+    "name": "fun GliderTheme(darkTheme: Boolean = applyDarkTheme(), content: () -> Unit)",
+    "description": "com.tecknobit.glider.ui.theme.GliderTheme",
+    "location": "-glider/com.tecknobit.glider.ui.theme/-glider-theme.html",
+    "searchKeys": [
+      "GliderTheme",
+      "fun GliderTheme(darkTheme: Boolean = applyDarkTheme(), content: () -> Unit)",
+      "com.tecknobit.glider.ui.theme.GliderTheme"
+    ]
+  },
+  {
+    "name": "fun Logout(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
+    "description": "com.tecknobit.glider.ui.components.Logout",
+    "location": "-glider/com.tecknobit.glider.ui.components/-logout.html",
+    "searchKeys": [
+      "Logout",
+      "fun Logout(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
+      "com.tecknobit.glider.ui.components.Logout"
+    ]
+  },
+  {
+    "name": "fun NewPageProgressIndicator(modifier: Modifier = Modifier)",
+    "description": "com.tecknobit.glider.ui.components.NewPageProgressIndicator",
+    "location": "-glider/com.tecknobit.glider.ui.components/-new-page-progress-indicator.html",
+    "searchKeys": [
+      "NewPageProgressIndicator",
+      "fun NewPageProgressIndicator(modifier: Modifier = Modifier)",
+      "com.tecknobit.glider.ui.components.NewPageProgressIndicator"
+    ]
+  },
+  {
+    "name": "fun PasswordCard(viewModel: KeychainScreenViewModel, password: Password)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordCard",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-card.html",
+    "searchKeys": [
+      "PasswordCard",
+      "fun PasswordCard(viewModel: KeychainScreenViewModel, password: Password)",
+      "com.tecknobit.glider.ui.screens.keychain.components.PasswordCard"
+    ]
+  },
+  {
+    "name": "fun PasswordEventTypeBadge(type: PasswordEventType)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordEventTypeBadge",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-event-type-badge.html",
+    "searchKeys": [
+      "PasswordEventTypeBadge",
+      "fun PasswordEventTypeBadge(type: PasswordEventType)",
+      "com.tecknobit.glider.ui.screens.keychain.components.PasswordEventTypeBadge"
+    ]
+  },
+  {
+    "name": "fun PasswordInputField(password: MutableState<String>, passwordError: MutableState<Boolean>)",
+    "description": "com.tecknobit.glider.ui.components.PasswordInputField",
+    "location": "-glider/com.tecknobit.glider.ui.components/-password-input-field.html",
+    "searchKeys": [
+      "PasswordInputField",
+      "fun PasswordInputField(password: MutableState<String>, passwordError: MutableState<Boolean>)",
+      "com.tecknobit.glider.ui.components.PasswordInputField"
+    ]
+  },
+  {
+    "name": "fun PasswordOptions(modifier: Modifier = Modifier, viewModel: GenerateScreenViewModel)",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.PasswordOptions",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-password-options.html",
+    "searchKeys": [
+      "PasswordOptions",
+      "fun PasswordOptions(modifier: Modifier = Modifier, viewModel: GenerateScreenViewModel)",
+      "com.tecknobit.glider.ui.screens.generate.components.PasswordOptions"
+    ]
+  },
+  {
+    "name": "fun PasswordTimeline(show: MutableState<Boolean>, password: Password)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordTimeline",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-timeline.html",
+    "searchKeys": [
+      "PasswordTimeline",
+      "fun PasswordTimeline(show: MutableState<Boolean>, password: Password)",
+      "com.tecknobit.glider.ui.screens.keychain.components.PasswordTimeline"
+    ]
+  },
+  {
+    "name": "fun PasswordTypeBadge(type: PasswordType)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeBadge",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-type-badge.html",
+    "searchKeys": [
+      "PasswordTypeBadge",
+      "fun PasswordTypeBadge(type: PasswordType)",
+      "com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeBadge"
+    ]
+  },
+  {
+    "name": "fun PasswordTypeFiltersMenu(expanded: MutableState<Boolean>, viewModel: KeychainScreenViewModel)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-type-filters-menu.html",
+    "searchKeys": [
+      "PasswordTypeFiltersMenu",
+      "fun PasswordTypeFiltersMenu(expanded: MutableState<Boolean>, viewModel: KeychainScreenViewModel)",
+      "com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu"
+    ]
+  },
+  {
+    "name": "fun Passwords(viewModel: KeychainScreenViewModel)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.components.Passwords",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-passwords.html",
+    "searchKeys": [
+      "Passwords",
+      "fun Passwords(viewModel: KeychainScreenViewModel)",
+      "com.tecknobit.glider.ui.screens.keychain.components.Passwords"
+    ]
+  },
+  {
+    "name": "fun QuantityPicker(modifier: Modifier = Modifier, quantityButtonModifier: Modifier = Modifier, state: QuantityPickerState, informativeText: String? = null, informativeTextStyle: TextStyle = TextStyle.Default, quantityIndicatorStyle: TextStyle = TextStyle.Default)",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPicker",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker.html",
+    "searchKeys": [
+      "QuantityPicker",
+      "fun QuantityPicker(modifier: Modifier = Modifier, quantityButtonModifier: Modifier = Modifier, state: QuantityPickerState, informativeText: String? = null, informativeTextStyle: TextStyle = TextStyle.Default, quantityIndicatorStyle: TextStyle = TextStyle.Default)",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPicker"
+    ]
+  },
+  {
+    "name": "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
+    "description": "com.tecknobit.glider.ui.components.RefreshPassword",
+    "location": "-glider/com.tecknobit.glider.ui.components/-refresh-password.html",
+    "searchKeys": [
+      "RefreshPassword",
+      "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
+      "com.tecknobit.glider.ui.components.RefreshPassword"
+    ]
+  },
+  {
+    "name": "fun Scopes(modifier: Modifier = Modifier, password: Password)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.components.Scopes",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-scopes.html",
+    "searchKeys": [
+      "Scopes",
+      "fun Scopes(modifier: Modifier = Modifier, password: Password)",
+      "com.tecknobit.glider.ui.screens.keychain.components.Scopes"
+    ]
+  },
+  {
+    "name": "fun appendCopiedPasswordEvent()",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.appendCopiedPasswordEvent",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/append-copied-password-event.html",
+    "searchKeys": [
+      "appendCopiedPasswordEvent",
+      "fun appendCopiedPasswordEvent()",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.appendCopiedPasswordEvent"
+    ]
+  },
+  {
+    "name": "fun appendRefreshedPasswordEvent()",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.appendRefreshedPasswordEvent",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/append-refreshed-password-event.html",
+    "searchKeys": [
+      "appendRefreshedPasswordEvent",
+      "fun appendRefreshedPasswordEvent()",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.appendRefreshedPasswordEvent"
+    ]
+  },
+  {
+    "name": "fun applyDarkTheme(): Boolean",
+    "description": "com.tecknobit.glider.ui.theme.applyDarkTheme",
+    "location": "-glider/com.tecknobit.glider.ui.theme/apply-dark-theme.html",
+    "searchKeys": [
+      "applyDarkTheme",
+      "fun applyDarkTheme(): Boolean",
+      "com.tecknobit.glider.ui.theme.applyDarkTheme"
+    ]
+  },
+  {
+    "name": "fun copy(password: Password)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.copy",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/copy.html",
+    "searchKeys": [
+      "copy",
+      "fun copy(password: Password)",
+      "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.copy"
+    ]
+  },
+  {
+    "name": "fun deletePassword(password: Password, onDelete: () -> Unit)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.deletePassword",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/delete-password.html",
+    "searchKeys": [
+      "deletePassword",
+      "fun deletePassword(password: Password, onDelete: () -> Unit)",
+      "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.deletePassword"
+    ]
+  },
+  {
+    "name": "fun disconnectDevice(device: ConnectedDevice, onDisconnected: () -> Unit)",
+    "description": "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.disconnectDevice",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/disconnect-device.html",
+    "searchKeys": [
+      "disconnectDevice",
+      "fun disconnectDevice(device: ConnectedDevice, onDisconnected: () -> Unit)",
+      "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.disconnectDevice"
+    ]
+  },
+  {
+    "name": "fun get(): Context",
+    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContext.get",
+    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/get.html",
+    "searchKeys": [
+      "get",
+      "fun get(): Context",
+      "com.tecknobit.equinoxcompose.utilities.context.AppContext.get"
+    ]
+  },
+  {
+    "name": "fun hasScopes(): Boolean",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.hasScopes",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/has-scopes.html",
+    "searchKeys": [
+      "hasScopes",
+      "fun hasScopes(): Boolean",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.hasScopes"
+    ]
+  },
+  {
+    "name": "fun isTheCurrentDevice(): Boolean",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.isTheCurrentDevice",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/is-the-current-device.html",
+    "searchKeys": [
+      "isTheCurrentDevice",
+      "fun isTheCurrentDevice(): Boolean",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.isTheCurrentDevice"
+    ]
+  },
+  {
+    "name": "fun logout(onClear: () -> Unit? = null)",
+    "description": "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.logout",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/logout.html",
+    "searchKeys": [
+      "logout",
+      "fun logout(onClear: () -> Unit? = null)",
+      "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.logout"
+    ]
+  },
+  {
+    "name": "fun longDecrement()",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longDecrement",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-decrement.html",
+    "searchKeys": [
+      "longDecrement",
+      "fun longDecrement()",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longDecrement"
+    ]
+  },
+  {
+    "name": "fun longIncrement()",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longIncrement",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-increment.html",
+    "searchKeys": [
+      "longIncrement",
+      "fun longIncrement()",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longIncrement"
+    ]
+  },
+  {
+    "name": "fun main()",
+    "description": "com.tecknobit.glider.main",
+    "location": "-glider/com.tecknobit.glider/[desktop]main.html",
+    "searchKeys": [
+      "main",
+      "fun main()",
+      "com.tecknobit.glider.main"
+    ]
+  },
+  {
+    "name": "fun main()",
+    "description": "com.tecknobit.glider.main",
+    "location": "-glider/com.tecknobit.glider/[wasm-js]main.html",
+    "searchKeys": [
+      "main",
+      "fun main()",
+      "com.tecknobit.glider.main"
+    ]
+  },
+  {
+    "name": "fun refreshPassword(password: Password, onRefresh: () -> Unit)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.refreshPassword",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/refresh-password.html",
+    "searchKeys": [
+      "refreshPassword",
+      "fun refreshPassword(password: Password, onRefresh: () -> Unit)",
+      "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.refreshPassword"
+    ]
+  },
+  {
+    "name": "fun refreshPassword(refreshedPassword: String)",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.refreshPassword",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/refresh-password.html",
+    "searchKeys": [
+      "refreshPassword",
+      "fun refreshPassword(refreshedPassword: String)",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.refreshPassword"
+    ]
+  },
+  {
+    "name": "fun rememberQuantityPickerState(initialQuantity: Int = 0, minQuantity: Int = Int.MIN_VALUE, maxQuantity: Int = Int.MAX_VALUE, longPressQuantity: Int? = null): QuantityPickerState",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/remember-quantity-picker-state.html",
+    "searchKeys": [
+      "rememberQuantityPickerState",
+      "fun rememberQuantityPickerState(initialQuantity: Int = 0, minQuantity: Int = Int.MIN_VALUE, maxQuantity: Int = Int.MAX_VALUE, longPressQuantity: Int? = null): QuantityPickerState",
+      "com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState"
+    ]
+  },
+  {
+    "name": "fun reset()",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.reset",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/reset.html",
+    "searchKeys": [
+      "reset",
+      "fun reset()",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.reset"
+    ]
+  },
+  {
+    "name": "fun retrievePassword()",
+    "description": "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.retrievePassword",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-edit-password-form-view-model/retrieve-password.html",
+    "searchKeys": [
+      "retrievePassword",
+      "fun retrievePassword()",
+      "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.retrievePassword"
+    ]
+  },
+  {
+    "name": "fun setLocalUserDeviceId()",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.setLocalUserDeviceId",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/set-local-user-device-id.html",
+    "searchKeys": [
+      "setLocalUserDeviceId",
+      "fun setLocalUserDeviceId()",
+      "com.tecknobit.glider.helpers.GliderRequester.setLocalUserDeviceId"
+    ]
+  },
+  {
+    "name": "fun setUp(context: Context)",
+    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContext.setUp",
+    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/set-up.html",
+    "searchKeys": [
+      "setUp",
+      "fun setUp(context: Context)",
+      "com.tecknobit.equinoxcompose.utilities.context.AppContext.setUp"
+    ]
+  },
+  {
+    "name": "fun showSnackbarMessage(message: StringResource, actionLabel: StringResource? = null, onDismiss: () -> Unit? = null, onActionPerformed: () -> Unit? = null)",
+    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.showSnackbarMessage",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/show-snackbar-message.html",
+    "searchKeys": [
+      "showSnackbarMessage",
+      "fun showSnackbarMessage(message: StringResource, actionLabel: StringResource? = null, onDismiss: () -> Unit? = null, onActionPerformed: () -> Unit? = null)",
+      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.showSnackbarMessage"
+    ]
+  },
+  {
+    "name": "fun simpleDecrement()",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.simpleDecrement",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/simple-decrement.html",
+    "searchKeys": [
+      "simpleDecrement",
+      "fun simpleDecrement()",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.simpleDecrement"
+    ]
+  },
+  {
+    "name": "fun simpleIncrement()",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.simpleIncrement",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/simple-increment.html",
+    "searchKeys": [
+      "simpleIncrement",
+      "fun simpleIncrement()",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.simpleIncrement"
+    ]
+  },
+  {
+    "name": "fun startSession()",
+    "description": "com.tecknobit.glider.startSession",
+    "location": "-glider/com.tecknobit.glider/start-session.html",
+    "searchKeys": [
+      "startSession",
+      "fun startSession()",
+      "com.tecknobit.glider.startSession"
+    ]
+  },
+  {
+    "name": "lateinit var appUpdateManager: AppUpdateManager",
+    "description": "com.tecknobit.glider.MainActivity.Companion.appUpdateManager",
+    "location": "-glider/com.tecknobit.glider/-main-activity/-companion/app-update-manager.html",
+    "searchKeys": [
+      "appUpdateManager",
+      "lateinit var appUpdateManager: AppUpdateManager",
+      "com.tecknobit.glider.MainActivity.Companion.appUpdateManager"
+    ]
+  },
+  {
+    "name": "lateinit var bodyFontFamily: FontFamily",
+    "description": "com.tecknobit.glider.bodyFontFamily",
+    "location": "-glider/com.tecknobit.glider/body-font-family.html",
+    "searchKeys": [
+      "bodyFontFamily",
+      "lateinit var bodyFontFamily: FontFamily",
+      "com.tecknobit.glider.bodyFontFamily"
+    ]
+  },
+  {
+    "name": "lateinit var displayFontFamily: FontFamily",
+    "description": "com.tecknobit.glider.displayFontFamily",
+    "location": "-glider/com.tecknobit.glider/display-font-family.html",
+    "searchKeys": [
+      "displayFontFamily",
+      "lateinit var displayFontFamily: FontFamily",
+      "com.tecknobit.glider.displayFontFamily"
+    ]
+  },
+  {
+    "name": "lateinit var includeNumbers: MutableState<Boolean>",
+    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeNumbers",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-numbers.html",
+    "searchKeys": [
+      "includeNumbers",
+      "lateinit var includeNumbers: MutableState<Boolean>",
+      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeNumbers"
+    ]
+  },
+  {
+    "name": "lateinit var includeSpecialCharacters: MutableState<Boolean>",
+    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeSpecialCharacters",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-special-characters.html",
+    "searchKeys": [
+      "includeSpecialCharacters",
+      "lateinit var includeSpecialCharacters: MutableState<Boolean>",
+      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeSpecialCharacters"
+    ]
+  },
+  {
+    "name": "lateinit var includeUppercaseLetters: MutableState<Boolean>",
+    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeUppercaseLetters",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-uppercase-letters.html",
+    "searchKeys": [
+      "includeUppercaseLetters",
+      "lateinit var includeUppercaseLetters: MutableState<Boolean>",
+      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeUppercaseLetters"
+    ]
+  },
+  {
+    "name": "lateinit var keywords: MutableState<String>",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.keywords",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/keywords.html",
+    "searchKeys": [
+      "keywords",
+      "lateinit var keywords: MutableState<String>",
+      "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.keywords"
+    ]
+  },
+  {
+    "name": "lateinit var launcher: ActivityResultLauncher<IntentSenderRequest>",
+    "description": "com.tecknobit.glider.MainActivity.Companion.launcher",
+    "location": "-glider/com.tecknobit.glider/-main-activity/-companion/launcher.html",
+    "searchKeys": [
+      "launcher",
+      "lateinit var launcher: ActivityResultLauncher<IntentSenderRequest>",
+      "com.tecknobit.glider.MainActivity.Companion.launcher"
+    ]
+  },
+  {
+    "name": "lateinit var navigator: Navigator",
+    "description": "com.tecknobit.glider.navigator",
+    "location": "-glider/com.tecknobit.glider/navigator.html",
+    "searchKeys": [
+      "navigator",
+      "lateinit var navigator: Navigator",
+      "com.tecknobit.glider.navigator"
+    ]
+  },
+  {
+    "name": "lateinit var passwordError: MutableState<Boolean>",
+    "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordError",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/password-error.html",
+    "searchKeys": [
+      "passwordError",
+      "lateinit var passwordError: MutableState<Boolean>",
+      "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordError"
+    ]
+  },
+  {
+    "name": "lateinit var passwordError: MutableState<Boolean>",
+    "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordError",
+    "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/password-error.html",
+    "searchKeys": [
+      "passwordError",
+      "lateinit var passwordError: MutableState<Boolean>",
+      "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordError"
+    ]
+  },
+  {
+    "name": "lateinit var passwordTypes: SnapshotStateList<PasswordType>",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.passwordTypes",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/password-types.html",
+    "searchKeys": [
+      "passwordTypes",
+      "lateinit var passwordTypes: SnapshotStateList<PasswordType>",
+      "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.passwordTypes"
+    ]
+  },
+  {
+    "name": "lateinit var passwordValue: MutableState<String>",
+    "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordValue",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/password-value.html",
+    "searchKeys": [
+      "passwordValue",
+      "lateinit var passwordValue: MutableState<String>",
+      "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordValue"
+    ]
+  },
+  {
+    "name": "lateinit var passwordValue: MutableState<String>",
+    "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordValue",
+    "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/password-value.html",
+    "searchKeys": [
+      "passwordValue",
+      "lateinit var passwordValue: MutableState<String>",
+      "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordValue"
+    ]
+  },
+  {
+    "name": "lateinit var quantityPickerState: QuantityPickerState",
+    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.quantityPickerState",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/quantity-picker-state.html",
+    "searchKeys": [
+      "quantityPickerState",
+      "lateinit var quantityPickerState: QuantityPickerState",
+      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.quantityPickerState"
+    ]
+  },
+  {
+    "name": "lateinit var requester: GliderRequester",
+    "description": "com.tecknobit.glider.requester",
+    "location": "-glider/com.tecknobit.glider/requester.html",
+    "searchKeys": [
+      "requester",
+      "lateinit var requester: GliderRequester",
+      "com.tecknobit.glider.requester"
+    ]
+  },
+  {
+    "name": "lateinit var scopes: MutableState<String>",
+    "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopes",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/scopes.html",
+    "searchKeys": [
+      "scopes",
+      "lateinit var scopes: MutableState<String>",
+      "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopes"
+    ]
+  },
+  {
+    "name": "lateinit var scopesError: MutableState<Boolean>",
+    "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopesError",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/scopes-error.html",
+    "searchKeys": [
+      "scopesError",
+      "lateinit var scopesError: MutableState<Boolean>",
+      "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopesError"
+    ]
+  },
+  {
+    "name": "lateinit var tail: MutableState<String>",
+    "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tail",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/tail.html",
+    "searchKeys": [
+      "tail",
+      "lateinit var tail: MutableState<String>",
+      "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tail"
+    ]
+  },
+  {
+    "name": "lateinit var tailError: MutableState<Boolean>",
+    "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tailError",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/tail-error.html",
+    "searchKeys": [
+      "tailError",
+      "lateinit var tailError: MutableState<Boolean>",
+      "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tailError"
+    ]
+  },
+  {
+    "name": "object AppContext",
+    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContext",
+    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/index.html",
+    "searchKeys": [
+      "AppContext",
+      "object AppContext",
+      "com.tecknobit.equinoxcompose.utilities.context.AppContext"
+    ]
+  },
+  {
+    "name": "object Companion",
+    "description": "com.tecknobit.glider.MainActivity.Companion",
+    "location": "-glider/com.tecknobit.glider/-main-activity/-companion/index.html",
+    "searchKeys": [
+      "Companion",
+      "object Companion",
+      "com.tecknobit.glider.MainActivity.Companion"
+    ]
+  },
+  {
+    "name": "object Companion",
+    "description": "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen.Companion",
+    "location": "-glider/com.tecknobit.glider.ui.screens.home.presenter/-home-screen/-companion/index.html",
+    "searchKeys": [
+      "Companion",
+      "object Companion",
+      "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen.Companion"
+    ]
+  },
+  {
+    "name": "open override fun create(context: Context): Context",
+    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.create",
+    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/create.html",
+    "searchKeys": [
+      "create",
+      "open override fun create(context: Context): Context",
+      "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.create"
+    ]
+  },
+  {
+    "name": "open override fun dependencies(): List<Class<out Initializer<*>>>",
+    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.dependencies",
+    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/dependencies.html",
+    "searchKeys": [
+      "dependencies",
+      "open override fun dependencies(): List<Class<out Initializer<*>>>",
+      "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.dependencies"
+    ]
+  },
+  {
+    "name": "open override fun insertNewUser(hostAddress: String, name: String, surname: String, email: String, password: String, language: String, response: JsonObject, vararg custom: Any?)",
+    "description": "com.tecknobit.glider.helpers.GliderLocalUser.insertNewUser",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-local-user/insert-new-user.html",
+    "searchKeys": [
+      "insertNewUser",
+      "open override fun insertNewUser(hostAddress: String, name: String, surname: String, email: String, password: String, language: String, response: JsonObject, vararg custom: Any?)",
+      "com.tecknobit.glider.helpers.GliderLocalUser.insertNewUser"
+    ]
+  },
+  {
+    "name": "open override fun performPasswordOperation()",
+    "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel.performPasswordOperation",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation/-edit-generated-password-screen-view-model/perform-password-operation.html",
+    "searchKeys": [
+      "performPasswordOperation",
+      "open override fun performPasswordOperation()",
+      "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel.performPasswordOperation"
+    ]
+  },
+  {
+    "name": "open override fun performPasswordOperation()",
+    "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.performPasswordOperation",
+    "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/perform-password-operation.html",
+    "searchKeys": [
+      "performPasswordOperation",
+      "open override fun performPasswordOperation()",
+      "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.performPasswordOperation"
+    ]
+  },
+  {
+    "name": "open override fun performPasswordOperation()",
+    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.performPasswordOperation",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/perform-password-operation.html",
+    "searchKeys": [
+      "performPasswordOperation",
+      "open override fun performPasswordOperation()",
+      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.performPasswordOperation"
+    ]
+  },
+  {
+    "name": "open override fun performPasswordOperation()",
+    "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.performPasswordOperation",
+    "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/perform-password-operation.html",
+    "searchKeys": [
+      "performPasswordOperation",
+      "open override fun performPasswordOperation()",
+      "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.performPasswordOperation"
+    ]
+  },
+  {
+    "name": "suspend fun copyPassword(password: Password): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.copyPassword",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/copy-password.html",
+    "searchKeys": [
+      "copyPassword",
+      "suspend fun copyPassword(password: Password): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.copyPassword"
+    ]
+  },
+  {
+    "name": "suspend fun deletePassword(password: Password): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.deletePassword",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/delete-password.html",
+    "searchKeys": [
+      "deletePassword",
+      "suspend fun deletePassword(password: Password): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.deletePassword"
+    ]
+  },
+  {
+    "name": "suspend fun disconnectDevice(device: ConnectedDevice): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.disconnectDevice",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/disconnect-device.html",
+    "searchKeys": [
+      "disconnectDevice",
+      "suspend fun disconnectDevice(device: ConnectedDevice): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.disconnectDevice"
+    ]
+  },
+  {
+    "name": "suspend fun disconnectDevice(deviceId: String): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.disconnectDevice",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/disconnect-device.html",
+    "searchKeys": [
+      "disconnectDevice",
+      "suspend fun disconnectDevice(deviceId: String): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.disconnectDevice"
+    ]
+  },
+  {
+    "name": "suspend fun editPassword(passwordId: String, tail: String, scopes: String, password: String? = null): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.editPassword",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/edit-password.html",
+    "searchKeys": [
+      "editPassword",
+      "suspend fun editPassword(passwordId: String, tail: String, scopes: String, password: String? = null): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.editPassword"
+    ]
+  },
+  {
+    "name": "suspend fun generatePassword(length: Int, tail: String, scopes: String, includeNumbers: Boolean, includeUppercaseLetters: Boolean, includeSpecialCharacters: Boolean): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.generatePassword",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/generate-password.html",
+    "searchKeys": [
+      "generatePassword",
+      "suspend fun generatePassword(length: Int, tail: String, scopes: String, includeNumbers: Boolean, includeUppercaseLetters: Boolean, includeSpecialCharacters: Boolean): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.generatePassword"
+    ]
+  },
+  {
+    "name": "suspend fun getConnectedDevices(page: Int, pageSize: Int = DEFAULT_PAGE_SIZE): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.getConnectedDevices",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/get-connected-devices.html",
+    "searchKeys": [
+      "getConnectedDevices",
+      "suspend fun getConnectedDevices(page: Int, pageSize: Int = DEFAULT_PAGE_SIZE): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.getConnectedDevices"
+    ]
+  },
+  {
+    "name": "suspend fun getCustomDynamicAccountData(): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.getCustomDynamicAccountData",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/get-custom-dynamic-account-data.html",
+    "searchKeys": [
+      "getCustomDynamicAccountData",
+      "suspend fun getCustomDynamicAccountData(): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.getCustomDynamicAccountData"
+    ]
+  },
+  {
+    "name": "suspend fun getKeychain(page: Int, pageSize: Int = DEFAULT_PAGE_SIZE, keywords: String, types: List<PasswordType>): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.getKeychain",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/get-keychain.html",
+    "searchKeys": [
+      "getKeychain",
+      "suspend fun getKeychain(page: Int, pageSize: Int = DEFAULT_PAGE_SIZE, keywords: String, types: List<PasswordType>): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.getKeychain"
+    ]
+  },
+  {
+    "name": "suspend fun getPassword(passwordId: String): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.getPassword",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/get-password.html",
+    "searchKeys": [
+      "getPassword",
+      "suspend fun getPassword(passwordId: String): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.getPassword"
+    ]
+  },
+  {
+    "name": "suspend fun insertPassword(tail: String, scopes: String, password: String): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.insertPassword",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/insert-password.html",
+    "searchKeys": [
+      "insertPassword",
+      "suspend fun insertPassword(tail: String, scopes: String, password: String): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.insertPassword"
+    ]
+  },
+  {
+    "name": "suspend fun refreshPassword(password: Password): JsonObject",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.refreshPassword",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/refresh-password.html",
+    "searchKeys": [
+      "refreshPassword",
+      "suspend fun refreshPassword(password: Password): JsonObject",
+      "com.tecknobit.glider.helpers.GliderRequester.refreshPassword"
+    ]
+  },
+  {
+    "name": "val AppTypography: Typography",
+    "description": "com.tecknobit.glider.ui.theme.AppTypography",
+    "location": "-glider/com.tecknobit.glider.ui.theme/-app-typography.html",
+    "searchKeys": [
+      "AppTypography",
+      "val AppTypography: Typography",
+      "com.tecknobit.glider.ui.theme.AppTypography"
+    ]
+  },
+  {
+    "name": "val ButtonShape: RoundedCornerShape",
+    "description": "com.tecknobit.glider.ui.theme.ButtonShape",
+    "location": "-glider/com.tecknobit.glider.ui.theme/-button-shape.html",
+    "searchKeys": [
+      "ButtonShape",
+      "val ButtonShape: RoundedCornerShape",
+      "com.tecknobit.glider.ui.theme.ButtonShape"
+    ]
+  },
+  {
+    "name": "val ButtonSize: DpSize",
+    "description": "com.tecknobit.glider.ui.theme.ButtonSize",
+    "location": "-glider/com.tecknobit.glider.ui.theme/-button-size.html",
+    "searchKeys": [
+      "ButtonSize",
+      "val ButtonSize: DpSize",
+      "com.tecknobit.glider.ui.theme.ButtonSize"
+    ]
+  },
+  {
+    "name": "val Globe: ImageVector",
+    "description": "com.tecknobit.glider.ui.icons.Globe",
+    "location": "-glider/com.tecknobit.glider.ui.icons/-globe.html",
+    "searchKeys": [
+      "Globe",
+      "val Globe: ImageVector",
+      "com.tecknobit.glider.ui.icons.Globe"
+    ]
+  },
+  {
+    "name": "val InputFieldShape: RoundedCornerShape",
+    "description": "com.tecknobit.glider.ui.theme.InputFieldShape",
+    "location": "-glider/com.tecknobit.glider.ui.theme/-input-field-shape.html",
+    "searchKeys": [
+      "InputFieldShape",
+      "val InputFieldShape: RoundedCornerShape",
+      "com.tecknobit.glider.ui.theme.InputFieldShape"
+    ]
+  },
+  {
+    "name": "val SettingsBRoll: ImageVector",
+    "description": "com.tecknobit.glider.ui.icons.SettingsBRoll",
+    "location": "-glider/com.tecknobit.glider.ui.icons/-settings-b-roll.html",
+    "searchKeys": [
+      "SettingsBRoll",
+      "val SettingsBRoll: ImageVector",
+      "com.tecknobit.glider.ui.icons.SettingsBRoll"
+    ]
+  },
+  {
+    "name": "val backgroundDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.backgroundDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/background-dark.html",
+    "searchKeys": [
+      "backgroundDark",
+      "val backgroundDark: Color",
+      "com.tecknobit.glider.ui.theme.backgroundDark"
+    ]
+  },
+  {
+    "name": "val backgroundLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.backgroundLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/background-light-high-contrast.html",
+    "searchKeys": [
+      "backgroundLightHighContrast",
+      "val backgroundLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.backgroundLightHighContrast"
+    ]
+  },
+  {
+    "name": "val baseline: Typography",
+    "description": "com.tecknobit.glider.ui.theme.baseline",
+    "location": "-glider/com.tecknobit.glider.ui.theme/baseline.html",
+    "searchKeys": [
+      "baseline",
+      "val baseline: Typography",
+      "com.tecknobit.glider.ui.theme.baseline"
+    ]
+  },
+  {
+    "name": "val brand: String",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.brand",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/brand.html",
+    "searchKeys": [
+      "brand",
+      "val brand: String",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.brand"
+    ]
+  },
+  {
+    "name": "val browser: String? = null",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.browser",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/browser.html",
+    "searchKeys": [
+      "browser",
+      "val browser: String? = null",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.browser"
+    ]
+  },
+  {
+    "name": "val connectedDevicesState: PaginationState<Int, ConnectedDevice>",
+    "description": "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.connectedDevicesState",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/connected-devices-state.html",
+    "searchKeys": [
+      "connectedDevicesState",
+      "val connectedDevicesState: PaginationState<Int, ConnectedDevice>",
+      "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.connectedDevicesState"
+    ]
+  },
+  {
+    "name": "val contentDescription: String",
+    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab.contentDescription",
+    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/content-description.html",
+    "searchKeys": [
+      "contentDescription",
+      "val contentDescription: String",
+      "com.tecknobit.glider.ui.screens.home.data.ScreenTab.contentDescription"
+    ]
+  },
+  {
+    "name": "val copiedDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.copiedDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/copied-dark.html",
+    "searchKeys": [
+      "copiedDark",
+      "val copiedDark: Color",
+      "com.tecknobit.glider.ui.theme.copiedDark"
+    ]
+  },
+  {
+    "name": "val copiedLight: Color",
+    "description": "com.tecknobit.glider.ui.theme.copiedLight",
+    "location": "-glider/com.tecknobit.glider.ui.theme/copied-light.html",
+    "searchKeys": [
+      "copiedLight",
+      "val copiedLight: Color",
+      "com.tecknobit.glider.ui.theme.copiedLight"
+    ]
+  },
+  {
+    "name": "val creationDate: Long",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.creationDate",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/creation-date.html",
+    "searchKeys": [
+      "creationDate",
+      "val creationDate: Long",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.creationDate"
+    ]
+  },
+  {
+    "name": "val currentQuantity: Int",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.currentQuantity",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/current-quantity.html",
+    "searchKeys": [
+      "currentQuantity",
+      "val currentQuantity: Int",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.currentQuantity"
+    ]
+  },
+  {
+    "name": "val editedDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.editedDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/edited-dark.html",
+    "searchKeys": [
+      "editedDark",
+      "val editedDark: Color",
+      "com.tecknobit.glider.ui.theme.editedDark"
+    ]
+  },
+  {
+    "name": "val editedLight: Color",
+    "description": "com.tecknobit.glider.ui.theme.editedLight",
+    "location": "-glider/com.tecknobit.glider.ui.theme/edited-light.html",
+    "searchKeys": [
+      "editedLight",
+      "val editedLight: Color",
+      "com.tecknobit.glider.ui.theme.editedLight"
+    ]
+  },
+  {
+    "name": "val errorContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.errorContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/error-container-dark.html",
+    "searchKeys": [
+      "errorContainerDark",
+      "val errorContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.errorContainerDark"
+    ]
+  },
+  {
+    "name": "val errorContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.errorContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/error-container-light-high-contrast.html",
+    "searchKeys": [
+      "errorContainerLightHighContrast",
+      "val errorContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.errorContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val errorDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.errorDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/error-dark.html",
+    "searchKeys": [
+      "errorDark",
+      "val errorDark: Color",
+      "com.tecknobit.glider.ui.theme.errorDark"
+    ]
+  },
+  {
+    "name": "val errorLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.errorLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/error-light-high-contrast.html",
+    "searchKeys": [
+      "errorLightHighContrast",
+      "val errorLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.errorLightHighContrast"
+    ]
+  },
+  {
+    "name": "val eventDate: Long",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent.eventDate",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password-event/event-date.html",
+    "searchKeys": [
+      "eventDate",
+      "val eventDate: Long",
+      "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent.eventDate"
+    ]
+  },
+  {
+    "name": "val events: SnapshotStateList<PasswordEvent>",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.events",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/events.html",
+    "searchKeys": [
+      "events",
+      "val events: SnapshotStateList<PasswordEvent>",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.events"
+    ]
+  },
+  {
+    "name": "val generatedColorDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.generatedColorDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/generated-color-dark.html",
+    "searchKeys": [
+      "generatedColorDark",
+      "val generatedColorDark: Color",
+      "com.tecknobit.glider.ui.theme.generatedColorDark"
+    ]
+  },
+  {
+    "name": "val generatedColorLight: Color",
+    "description": "com.tecknobit.glider.ui.theme.generatedColorLight",
+    "location": "-glider/com.tecknobit.glider.ui.theme/generated-color-light.html",
+    "searchKeys": [
+      "generatedColorLight",
+      "val generatedColorLight: Color",
+      "com.tecknobit.glider.ui.theme.generatedColorLight"
+    ]
+  },
+  {
+    "name": "val icon: ImageVector",
+    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab.icon",
+    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/icon.html",
+    "searchKeys": [
+      "icon",
+      "val icon: ImageVector",
+      "com.tecknobit.glider.ui.screens.home.data.ScreenTab.icon"
+    ]
+  },
+  {
+    "name": "val id: String",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.id",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/id.html",
+    "searchKeys": [
+      "id",
+      "val id: String",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.id"
+    ]
+  },
+  {
+    "name": "val id: String",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.id",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/id.html",
+    "searchKeys": [
+      "id",
+      "val id: String",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.id"
+    ]
+  },
+  {
+    "name": "val id: String",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent.id",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password-event/id.html",
+    "searchKeys": [
+      "id",
+      "val id: String",
+      "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent.id"
+    ]
+  },
+  {
+    "name": "val id: String",
+    "description": "com.tecknobit.glider.ui.shared.data.PasswordDetails.id",
+    "location": "-glider/com.tecknobit.glider.ui.shared.data/-password-details/id.html",
+    "searchKeys": [
+      "id",
+      "val id: String",
+      "com.tecknobit.glider.ui.shared.data.PasswordDetails.id"
+    ]
+  },
+  {
+    "name": "val initialQuantity: Int = 0",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.initialQuantity",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/initial-quantity.html",
+    "searchKeys": [
+      "initialQuantity",
+      "val initialQuantity: Int = 0",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.initialQuantity"
+    ]
+  },
+  {
+    "name": "val insertedColorDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.insertedColorDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/inserted-color-dark.html",
+    "searchKeys": [
+      "insertedColorDark",
+      "val insertedColorDark: Color",
+      "com.tecknobit.glider.ui.theme.insertedColorDark"
+    ]
+  },
+  {
+    "name": "val insertedColorLight: Color",
+    "description": "com.tecknobit.glider.ui.theme.insertedColorLight",
+    "location": "-glider/com.tecknobit.glider.ui.theme/inserted-color-light.html",
+    "searchKeys": [
+      "insertedColorLight",
+      "val insertedColorLight: Color",
+      "com.tecknobit.glider.ui.theme.insertedColorLight"
+    ]
+  },
+  {
+    "name": "val inverseOnSurfaceDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.inverseOnSurfaceDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/inverse-on-surface-dark.html",
+    "searchKeys": [
+      "inverseOnSurfaceDark",
+      "val inverseOnSurfaceDark: Color",
+      "com.tecknobit.glider.ui.theme.inverseOnSurfaceDark"
+    ]
+  },
+  {
+    "name": "val inverseOnSurfaceLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.inverseOnSurfaceLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/inverse-on-surface-light-high-contrast.html",
+    "searchKeys": [
+      "inverseOnSurfaceLightHighContrast",
+      "val inverseOnSurfaceLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.inverseOnSurfaceLightHighContrast"
+    ]
+  },
+  {
+    "name": "val inversePrimaryDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.inversePrimaryDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/inverse-primary-dark.html",
+    "searchKeys": [
+      "inversePrimaryDark",
+      "val inversePrimaryDark: Color",
+      "com.tecknobit.glider.ui.theme.inversePrimaryDark"
+    ]
+  },
+  {
+    "name": "val inversePrimaryLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.inversePrimaryLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/inverse-primary-light-high-contrast.html",
+    "searchKeys": [
+      "inversePrimaryLightHighContrast",
+      "val inversePrimaryLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.inversePrimaryLightHighContrast"
+    ]
+  },
+  {
+    "name": "val inverseSurfaceDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.inverseSurfaceDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/inverse-surface-dark.html",
+    "searchKeys": [
+      "inverseSurfaceDark",
+      "val inverseSurfaceDark: Color",
+      "com.tecknobit.glider.ui.theme.inverseSurfaceDark"
+    ]
+  },
+  {
+    "name": "val inverseSurfaceLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.inverseSurfaceLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/inverse-surface-light-high-contrast.html",
+    "searchKeys": [
+      "inverseSurfaceLightHighContrast",
+      "val inverseSurfaceLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.inverseSurfaceLightHighContrast"
+    ]
+  },
+  {
+    "name": "val lastLogin: Long",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.lastLogin",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/last-login.html",
+    "searchKeys": [
+      "lastLogin",
+      "val lastLogin: Long",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.lastLogin"
+    ]
+  },
+  {
+    "name": "val localUser: GliderLocalUser",
+    "description": "com.tecknobit.glider.localUser",
+    "location": "-glider/com.tecknobit.glider/local-user.html",
+    "searchKeys": [
+      "localUser",
+      "val localUser: GliderLocalUser",
+      "com.tecknobit.glider.localUser"
+    ]
+  },
+  {
+    "name": "val longPressEnabled: Boolean",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longPressEnabled",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-press-enabled.html",
+    "searchKeys": [
+      "longPressEnabled",
+      "val longPressEnabled: Boolean",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longPressEnabled"
+    ]
+  },
+  {
+    "name": "val longPressQuantity: Int? = null",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longPressQuantity",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-press-quantity.html",
+    "searchKeys": [
+      "longPressQuantity",
+      "val longPressQuantity: Int? = null",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longPressQuantity"
+    ]
+  },
+  {
+    "name": "val maxQuantity: Int",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.maxQuantity",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/max-quantity.html",
+    "searchKeys": [
+      "maxQuantity",
+      "val maxQuantity: Int",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.maxQuantity"
+    ]
+  },
+  {
+    "name": "val minQuantity: Int",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.minQuantity",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/min-quantity.html",
+    "searchKeys": [
+      "minQuantity",
+      "val minQuantity: Int",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.minQuantity"
+    ]
+  },
+  {
+    "name": "val model: String",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.model",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/model.html",
+    "searchKeys": [
+      "model",
+      "val model: String",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.model"
+    ]
+  },
+  {
+    "name": "val onBackgroundDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onBackgroundDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-background-dark.html",
+    "searchKeys": [
+      "onBackgroundDark",
+      "val onBackgroundDark: Color",
+      "com.tecknobit.glider.ui.theme.onBackgroundDark"
+    ]
+  },
+  {
+    "name": "val onBackgroundLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onBackgroundLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-background-light-high-contrast.html",
+    "searchKeys": [
+      "onBackgroundLightHighContrast",
+      "val onBackgroundLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onBackgroundLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onErrorContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onErrorContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-error-container-dark.html",
+    "searchKeys": [
+      "onErrorContainerDark",
+      "val onErrorContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.onErrorContainerDark"
+    ]
+  },
+  {
+    "name": "val onErrorContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onErrorContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-error-container-light-high-contrast.html",
+    "searchKeys": [
+      "onErrorContainerLightHighContrast",
+      "val onErrorContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onErrorContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onErrorDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onErrorDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-error-dark.html",
+    "searchKeys": [
+      "onErrorDark",
+      "val onErrorDark: Color",
+      "com.tecknobit.glider.ui.theme.onErrorDark"
+    ]
+  },
+  {
+    "name": "val onErrorLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onErrorLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-error-light-high-contrast.html",
+    "searchKeys": [
+      "onErrorLightHighContrast",
+      "val onErrorLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onErrorLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onPrimaryContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onPrimaryContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-primary-container-dark.html",
+    "searchKeys": [
+      "onPrimaryContainerDark",
+      "val onPrimaryContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.onPrimaryContainerDark"
+    ]
+  },
+  {
+    "name": "val onPrimaryContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onPrimaryContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-primary-container-light-high-contrast.html",
+    "searchKeys": [
+      "onPrimaryContainerLightHighContrast",
+      "val onPrimaryContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onPrimaryContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onPrimaryDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onPrimaryDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-primary-dark.html",
+    "searchKeys": [
+      "onPrimaryDark",
+      "val onPrimaryDark: Color",
+      "com.tecknobit.glider.ui.theme.onPrimaryDark"
+    ]
+  },
+  {
+    "name": "val onPrimaryLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onPrimaryLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-primary-light-high-contrast.html",
+    "searchKeys": [
+      "onPrimaryLightHighContrast",
+      "val onPrimaryLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onPrimaryLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onSecondaryContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onSecondaryContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-secondary-container-dark.html",
+    "searchKeys": [
+      "onSecondaryContainerDark",
+      "val onSecondaryContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.onSecondaryContainerDark"
+    ]
+  },
+  {
+    "name": "val onSecondaryContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onSecondaryContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-secondary-container-light-high-contrast.html",
+    "searchKeys": [
+      "onSecondaryContainerLightHighContrast",
+      "val onSecondaryContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onSecondaryContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onSecondaryDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onSecondaryDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-secondary-dark.html",
+    "searchKeys": [
+      "onSecondaryDark",
+      "val onSecondaryDark: Color",
+      "com.tecknobit.glider.ui.theme.onSecondaryDark"
+    ]
+  },
+  {
+    "name": "val onSecondaryLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onSecondaryLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-secondary-light-high-contrast.html",
+    "searchKeys": [
+      "onSecondaryLightHighContrast",
+      "val onSecondaryLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onSecondaryLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onSurfaceDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onSurfaceDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-surface-dark.html",
+    "searchKeys": [
+      "onSurfaceDark",
+      "val onSurfaceDark: Color",
+      "com.tecknobit.glider.ui.theme.onSurfaceDark"
+    ]
+  },
+  {
+    "name": "val onSurfaceLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onSurfaceLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-surface-light-high-contrast.html",
+    "searchKeys": [
+      "onSurfaceLightHighContrast",
+      "val onSurfaceLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onSurfaceLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onSurfaceVariantDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onSurfaceVariantDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-surface-variant-dark.html",
+    "searchKeys": [
+      "onSurfaceVariantDark",
+      "val onSurfaceVariantDark: Color",
+      "com.tecknobit.glider.ui.theme.onSurfaceVariantDark"
+    ]
+  },
+  {
+    "name": "val onSurfaceVariantLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onSurfaceVariantLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-surface-variant-light-high-contrast.html",
+    "searchKeys": [
+      "onSurfaceVariantLightHighContrast",
+      "val onSurfaceVariantLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onSurfaceVariantLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onTertiaryContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onTertiaryContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-tertiary-container-dark.html",
+    "searchKeys": [
+      "onTertiaryContainerDark",
+      "val onTertiaryContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.onTertiaryContainerDark"
+    ]
+  },
+  {
+    "name": "val onTertiaryContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onTertiaryContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-tertiary-container-light-high-contrast.html",
+    "searchKeys": [
+      "onTertiaryContainerLightHighContrast",
+      "val onTertiaryContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onTertiaryContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val onTertiaryDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.onTertiaryDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-tertiary-dark.html",
+    "searchKeys": [
+      "onTertiaryDark",
+      "val onTertiaryDark: Color",
+      "com.tecknobit.glider.ui.theme.onTertiaryDark"
+    ]
+  },
+  {
+    "name": "val onTertiaryLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.onTertiaryLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/on-tertiary-light-high-contrast.html",
+    "searchKeys": [
+      "onTertiaryLightHighContrast",
+      "val onTertiaryLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.onTertiaryLightHighContrast"
+    ]
+  },
+  {
+    "name": "val outlineDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.outlineDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/outline-dark.html",
+    "searchKeys": [
+      "outlineDark",
+      "val outlineDark: Color",
+      "com.tecknobit.glider.ui.theme.outlineDark"
+    ]
+  },
+  {
+    "name": "val outlineLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.outlineLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/outline-light-high-contrast.html",
+    "searchKeys": [
+      "outlineLightHighContrast",
+      "val outlineLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.outlineLightHighContrast"
+    ]
+  },
+  {
+    "name": "val outlineVariantDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.outlineVariantDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/outline-variant-dark.html",
+    "searchKeys": [
+      "outlineVariantDark",
+      "val outlineVariantDark: Color",
+      "com.tecknobit.glider.ui.theme.outlineVariantDark"
+    ]
+  },
+  {
+    "name": "val outlineVariantLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.outlineVariantLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/outline-variant-light-high-contrast.html",
+    "searchKeys": [
+      "outlineVariantLightHighContrast",
+      "val outlineVariantLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.outlineVariantLightHighContrast"
+    ]
+  },
+  {
+    "name": "val password: MutableState<String>",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.password",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/password.html",
+    "searchKeys": [
+      "password",
+      "val password: MutableState<String>",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.password"
+    ]
+  },
+  {
+    "name": "val password: StateFlow<PasswordDetails?>",
+    "description": "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.password",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-edit-password-form-view-model/password.html",
+    "searchKeys": [
+      "password",
+      "val password: StateFlow<PasswordDetails?>",
+      "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.password"
+    ]
+  },
+  {
+    "name": "val password: String? = null",
+    "description": "com.tecknobit.glider.ui.shared.data.PasswordDetails.password",
+    "location": "-glider/com.tecknobit.glider.ui.shared.data/-password-details/password.html",
+    "searchKeys": [
+      "password",
+      "val password: String? = null",
+      "com.tecknobit.glider.ui.shared.data.PasswordDetails.password"
+    ]
+  },
+  {
+    "name": "val passwordsState: PaginationState<Int, Password>",
+    "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.passwordsState",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/passwords-state.html",
+    "searchKeys": [
+      "passwordsState",
+      "val passwordsState: PaginationState<Int, Password>",
+      "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.passwordsState"
+    ]
+  },
+  {
+    "name": "val performingPasswordOperation: SharedFlow<Boolean>",
+    "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.performingPasswordOperation",
+    "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/performing-password-operation.html",
+    "searchKeys": [
+      "performingPasswordOperation",
+      "val performingPasswordOperation: SharedFlow<Boolean>",
+      "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.performingPasswordOperation"
+    ]
+  },
+  {
+    "name": "val primaryContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.primaryContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/primary-container-dark.html",
+    "searchKeys": [
+      "primaryContainerDark",
+      "val primaryContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.primaryContainerDark"
+    ]
+  },
+  {
+    "name": "val primaryContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.primaryContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/primary-container-light-high-contrast.html",
+    "searchKeys": [
+      "primaryContainerLightHighContrast",
+      "val primaryContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.primaryContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val primaryDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.primaryDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/primary-dark.html",
+    "searchKeys": [
+      "primaryDark",
+      "val primaryDark: Color",
+      "com.tecknobit.glider.ui.theme.primaryDark"
+    ]
+  },
+  {
+    "name": "val primaryLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.primaryLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/primary-light-high-contrast.html",
+    "searchKeys": [
+      "primaryLightHighContrast",
+      "val primaryLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.primaryLightHighContrast"
+    ]
+  },
+  {
+    "name": "val quantity: MutableState<Int>",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.quantity",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/quantity.html",
+    "searchKeys": [
+      "quantity",
+      "val quantity: MutableState<Int>",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.quantity"
+    ]
+  },
+  {
+    "name": "val quantityPicked: Int",
+    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.quantityPicked",
+    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/quantity-picked.html",
+    "searchKeys": [
+      "quantityPicked",
+      "val quantityPicked: Int",
+      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.quantityPicked"
+    ]
+  },
+  {
+    "name": "val refreshedDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.refreshedDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/refreshed-dark.html",
+    "searchKeys": [
+      "refreshedDark",
+      "val refreshedDark: Color",
+      "com.tecknobit.glider.ui.theme.refreshedDark"
+    ]
+  },
+  {
+    "name": "val refreshedLight: Color",
+    "description": "com.tecknobit.glider.ui.theme.refreshedLight",
+    "location": "-glider/com.tecknobit.glider.ui.theme/refreshed-light.html",
+    "searchKeys": [
+      "refreshedLight",
+      "val refreshedLight: Color",
+      "com.tecknobit.glider.ui.theme.refreshedLight"
+    ]
+  },
+  {
+    "name": "val scopes: Set<String>",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.scopes",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/scopes.html",
+    "searchKeys": [
+      "scopes",
+      "val scopes: Set<String>",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.scopes"
+    ]
+  },
+  {
+    "name": "val scopes: Set<String>",
+    "description": "com.tecknobit.glider.ui.shared.data.PasswordDetails.scopes",
+    "location": "-glider/com.tecknobit.glider.ui.shared.data/-password-details/scopes.html",
+    "searchKeys": [
+      "scopes",
+      "val scopes: Set<String>",
+      "com.tecknobit.glider.ui.shared.data.PasswordDetails.scopes"
+    ]
+  },
+  {
+    "name": "val scrimDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.scrimDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/scrim-dark.html",
+    "searchKeys": [
+      "scrimDark",
+      "val scrimDark: Color",
+      "com.tecknobit.glider.ui.theme.scrimDark"
+    ]
+  },
+  {
+    "name": "val scrimLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.scrimLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/scrim-light-high-contrast.html",
+    "searchKeys": [
+      "scrimLightHighContrast",
+      "val scrimLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.scrimLightHighContrast"
+    ]
+  },
+  {
+    "name": "val secondaryContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.secondaryContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/secondary-container-dark.html",
+    "searchKeys": [
+      "secondaryContainerDark",
+      "val secondaryContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.secondaryContainerDark"
+    ]
+  },
+  {
+    "name": "val secondaryContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.secondaryContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/secondary-container-light-high-contrast.html",
+    "searchKeys": [
+      "secondaryContainerLightHighContrast",
+      "val secondaryContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.secondaryContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val secondaryDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.secondaryDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/secondary-dark.html",
+    "searchKeys": [
+      "secondaryDark",
+      "val secondaryDark: Color",
+      "com.tecknobit.glider.ui.theme.secondaryDark"
+    ]
+  },
+  {
+    "name": "val secondaryLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.secondaryLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/secondary-light-high-contrast.html",
+    "searchKeys": [
+      "secondaryLightHighContrast",
+      "val secondaryLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.secondaryLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceBrightDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceBrightDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-bright-dark.html",
+    "searchKeys": [
+      "surfaceBrightDark",
+      "val surfaceBrightDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceBrightDark"
+    ]
+  },
+  {
+    "name": "val surfaceBrightLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceBrightLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-bright-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceBrightLightHighContrast",
+      "val surfaceBrightLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceBrightLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-dark.html",
+    "searchKeys": [
+      "surfaceContainerDark",
+      "val surfaceContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerDark"
+    ]
+  },
+  {
+    "name": "val surfaceContainerHighDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerHighDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-high-dark.html",
+    "searchKeys": [
+      "surfaceContainerHighDark",
+      "val surfaceContainerHighDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerHighDark"
+    ]
+  },
+  {
+    "name": "val surfaceContainerHighLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerHighLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-high-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceContainerHighLightHighContrast",
+      "val surfaceContainerHighLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerHighLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceContainerHighestDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerHighestDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-highest-dark.html",
+    "searchKeys": [
+      "surfaceContainerHighestDark",
+      "val surfaceContainerHighestDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerHighestDark"
+    ]
+  },
+  {
+    "name": "val surfaceContainerHighestLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerHighestLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-highest-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceContainerHighestLightHighContrast",
+      "val surfaceContainerHighestLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerHighestLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceContainerLightHighContrast",
+      "val surfaceContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceContainerLowDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerLowDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-low-dark.html",
+    "searchKeys": [
+      "surfaceContainerLowDark",
+      "val surfaceContainerLowDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerLowDark"
+    ]
+  },
+  {
+    "name": "val surfaceContainerLowLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerLowLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-low-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceContainerLowLightHighContrast",
+      "val surfaceContainerLowLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerLowLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceContainerLowestDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerLowestDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-lowest-dark.html",
+    "searchKeys": [
+      "surfaceContainerLowestDark",
+      "val surfaceContainerLowestDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerLowestDark"
+    ]
+  },
+  {
+    "name": "val surfaceContainerLowestLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceContainerLowestLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-container-lowest-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceContainerLowestLightHighContrast",
+      "val surfaceContainerLowestLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceContainerLowestLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-dark.html",
+    "searchKeys": [
+      "surfaceDark",
+      "val surfaceDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceDark"
+    ]
+  },
+  {
+    "name": "val surfaceDimDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceDimDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-dim-dark.html",
+    "searchKeys": [
+      "surfaceDimDark",
+      "val surfaceDimDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceDimDark"
+    ]
+  },
+  {
+    "name": "val surfaceDimLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceDimLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-dim-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceDimLightHighContrast",
+      "val surfaceDimLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceDimLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceLightHighContrast",
+      "val surfaceLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceLightHighContrast"
+    ]
+  },
+  {
+    "name": "val surfaceVariantDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceVariantDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-variant-dark.html",
+    "searchKeys": [
+      "surfaceVariantDark",
+      "val surfaceVariantDark: Color",
+      "com.tecknobit.glider.ui.theme.surfaceVariantDark"
+    ]
+  },
+  {
+    "name": "val surfaceVariantLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.surfaceVariantLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/surface-variant-light-high-contrast.html",
+    "searchKeys": [
+      "surfaceVariantLightHighContrast",
+      "val surfaceVariantLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.surfaceVariantLightHighContrast"
+    ]
+  },
+  {
+    "name": "val tabTitle: StringResource",
+    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab.tabTitle",
+    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/tab-title.html",
+    "searchKeys": [
+      "tabTitle",
+      "val tabTitle: StringResource",
+      "com.tecknobit.glider.ui.screens.home.data.ScreenTab.tabTitle"
+    ]
+  },
+  {
+    "name": "val tail: String",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.tail",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/tail.html",
+    "searchKeys": [
+      "tail",
+      "val tail: String",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.tail"
+    ]
+  },
+  {
+    "name": "val tail: String",
+    "description": "com.tecknobit.glider.ui.shared.data.PasswordDetails.tail",
+    "location": "-glider/com.tecknobit.glider.ui.shared.data/-password-details/tail.html",
+    "searchKeys": [
+      "tail",
+      "val tail: String",
+      "com.tecknobit.glider.ui.shared.data.PasswordDetails.tail"
+    ]
+  },
+  {
+    "name": "val tertiaryContainerDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.tertiaryContainerDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/tertiary-container-dark.html",
+    "searchKeys": [
+      "tertiaryContainerDark",
+      "val tertiaryContainerDark: Color",
+      "com.tecknobit.glider.ui.theme.tertiaryContainerDark"
+    ]
+  },
+  {
+    "name": "val tertiaryContainerLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.tertiaryContainerLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/tertiary-container-light-high-contrast.html",
+    "searchKeys": [
+      "tertiaryContainerLightHighContrast",
+      "val tertiaryContainerLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.tertiaryContainerLightHighContrast"
+    ]
+  },
+  {
+    "name": "val tertiaryDark: Color",
+    "description": "com.tecknobit.glider.ui.theme.tertiaryDark",
+    "location": "-glider/com.tecknobit.glider.ui.theme/tertiary-dark.html",
+    "searchKeys": [
+      "tertiaryDark",
+      "val tertiaryDark: Color",
+      "com.tecknobit.glider.ui.theme.tertiaryDark"
+    ]
+  },
+  {
+    "name": "val tertiaryLightHighContrast: Color",
+    "description": "com.tecknobit.glider.ui.theme.tertiaryLightHighContrast",
+    "location": "-glider/com.tecknobit.glider.ui.theme/tertiary-light-high-contrast.html",
+    "searchKeys": [
+      "tertiaryLightHighContrast",
+      "val tertiaryLightHighContrast: Color",
+      "com.tecknobit.glider.ui.theme.tertiaryLightHighContrast"
+    ]
+  },
+  {
+    "name": "val titleStyle: TextStyle",
+    "description": "com.tecknobit.glider.ui.components.titleStyle",
+    "location": "-glider/com.tecknobit.glider.ui.components/title-style.html",
+    "searchKeys": [
+      "titleStyle",
+      "val titleStyle: TextStyle",
+      "com.tecknobit.glider.ui.components.titleStyle"
+    ]
+  },
+  {
+    "name": "val type: ConnectedDeviceType",
+    "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.type",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/type.html",
+    "searchKeys": [
+      "type",
+      "val type: ConnectedDeviceType",
+      "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.type"
+    ]
+  },
+  {
+    "name": "val type: PasswordEventType",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent.type",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password-event/type.html",
+    "searchKeys": [
+      "type",
+      "val type: PasswordEventType",
+      "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent.type"
+    ]
+  },
+  {
+    "name": "val type: PasswordType",
+    "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.type",
+    "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/type.html",
+    "searchKeys": [
+      "type",
+      "val type: PasswordType",
+      "com.tecknobit.glider.ui.screens.keychain.data.Password.type"
+    ]
+  },
+  {
+    "name": "var deviceId: String?",
+    "description": "com.tecknobit.glider.helpers.GliderLocalUser.deviceId",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-local-user/device-id.html",
+    "searchKeys": [
+      "deviceId",
+      "var deviceId: String?",
+      "com.tecknobit.glider.helpers.GliderLocalUser.deviceId"
+    ]
+  },
+  {
+    "name": "var deviceId: String?",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.deviceId",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/device-id.html",
+    "searchKeys": [
+      "deviceId",
+      "var deviceId: String?",
+      "com.tecknobit.glider.helpers.GliderRequester.deviceId"
+    ]
+  }
+]

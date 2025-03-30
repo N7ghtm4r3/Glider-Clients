@@ -1,6 +1,9 @@
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Deb
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Exe
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Pkg
+import org.jetbrains.dokka.base.DokkaBase
+import org.jetbrains.dokka.base.DokkaBaseConfiguration
+import org.jetbrains.dokka.gradle.DokkaTask
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -12,6 +15,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.dokka)
     kotlin("plugin.serialization") version "2.0.20"
     id("com.github.gmazzo.buildconfig") version "5.5.1"
 }
@@ -183,6 +187,18 @@ compose.desktop {
             configurationFiles.from(project.file("src/desktopMain/resources/compose-desktop.pro"))
             obfuscate.set(true)
         }
+    }
+}
+
+tasks.withType<DokkaTask>().configureEach {
+    dokkaSourceSets {
+        moduleName.set("Glider")
+        outputDirectory.set(layout.projectDirectory.dir("../docs"))
+    }
+
+    pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
+        customAssets = listOf(file("../docs/logo-icon.svg"))
+        footerMessage = "(c) 2025 Tecknobit"
     }
 }
 
