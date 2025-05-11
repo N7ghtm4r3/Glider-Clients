@@ -1,19 +1,13 @@
+@file:OptIn(ExperimentalComposeUiApi::class)
+
 package com.tecknobit.glider.ui.screens.keychain.components
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.NonRestartableComposable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.tecknobit.equinoxcore.annotations.Wrapper
+import com.tecknobit.equinoxcompose.components.BadgeText
 import com.tecknobit.glider.ui.theme.applyDarkTheme
 import com.tecknobit.glider.ui.theme.copiedDark
 import com.tecknobit.glider.ui.theme.copiedLight
@@ -41,15 +35,16 @@ import org.jetbrains.compose.resources.stringResource
 /**
  * Badge used to display a [PasswordType] entry
  */
-@Wrapper
 @Composable
-@NonRestartableComposable
 fun PasswordTypeBadge(
     type: PasswordType,
 ) {
-    EnumBadge(
-        color = type.color(),
-        badgeText = type.text()
+    BadgeText(
+        badgeText = stringResource(type.text()),
+        badgeColor = type.color(),
+        fontSize = 12.sp,
+        fontWeight = FontWeight.Bold,
+        textColor = Color.White
     )
 }
 
@@ -89,15 +84,16 @@ private fun PasswordType.color(): Color {
 /**
  * Badge used to display a [PasswordEventType] entry
  */
-@Wrapper
 @Composable
-@NonRestartableComposable
 fun PasswordEventTypeBadge(
     type: PasswordEventType,
 ) {
-    EnumBadge(
-        color = type.color(),
-        badgeText = type.text()
+    BadgeText(
+        badgeText = stringResource(type.text()),
+        badgeColor = type.color(),
+        fontSize = 12.sp,
+        fontWeight = FontWeight.Bold,
+        textColor = Color.White
     )
 }
 
@@ -141,37 +137,4 @@ private fun PasswordEventType.color(): Color {
             PasswordEventType.REFRESHED -> refreshedDark
         }
     }
-}
-
-/**
- * Custom text used as badge to display an [Enum] entry as badge
- *
- * @param color The color of the badge
- * @param badgeText The text of the badge
- */
-@Composable
-@NonRestartableComposable
-private fun EnumBadge(
-    color: Color,
-    badgeText: StringResource,
-) {
-    Text(
-        modifier = Modifier
-            .clip(
-                RoundedCornerShape(
-                    size = 8.dp
-                )
-            )
-            .background(color)
-            .padding(
-                vertical = 1.dp,
-                horizontal = 4.dp
-            ),
-        text = stringResource(badgeText),
-        fontSize = 12.sp,
-        fontWeight = FontWeight.Bold,
-        color = Color.White,
-        maxLines = 1,
-        overflow = TextOverflow.Ellipsis
-    )
 }

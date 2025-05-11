@@ -7,7 +7,6 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
@@ -48,7 +47,6 @@ val titleStyle = TextStyle(
  * @param password The password to refresh
  */
 @Composable
-@NonRestartableComposable
 fun RefreshPassword(
     viewModel: KeychainScreenViewModel,
     show: MutableState<Boolean>,
@@ -82,7 +80,6 @@ fun RefreshPassword(
  * @param password The password to delete
  */
 @Composable
-@NonRestartableComposable
 fun DeletePassword(
     viewModel: KeychainScreenViewModel,
     show: MutableState<Boolean>,
@@ -116,7 +113,6 @@ fun DeletePassword(
  * @param device The device to disconnect
  */
 @Composable
-@NonRestartableComposable
 fun DisconnectDevice(
     viewModel: AccountScreenViewModel,
     show: MutableState<Boolean>,
@@ -149,7 +145,6 @@ fun DisconnectDevice(
  * @param show Whether the alert is shown
  */
 @Composable
-@NonRestartableComposable
 fun Logout(
     viewModel: AccountScreenViewModel,
     show: MutableState<Boolean>,
@@ -166,7 +161,7 @@ fun Logout(
         titleStyle = titleStyle,
         text = Res.string.logout_warn_text,
         confirmAction = {
-            viewModel.logout {
+            viewModel.clearSession {
                 navigator.navigate(SPLASHSCREEN)
             }
         }
@@ -180,7 +175,6 @@ fun Logout(
  * @param show Whether the alert is shown
  */
 @Composable
-@NonRestartableComposable
 fun DeleteAccount(
     viewModel: AccountScreenViewModel,
     show: MutableState<Boolean>,

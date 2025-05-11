@@ -2,7 +2,7 @@ package com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation
 
 import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
-import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
+import com.tecknobit.equinoxcore.network.sendRequestAsyncHandlers
 import com.tecknobit.glider.navigator
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel
@@ -38,7 +38,7 @@ class EditGeneratedPasswordScreenViewModel(
             return
         viewModelScope.launch {
             _performingPasswordOperation.emit(true)
-            requester.sendRequest(
+            requester.sendRequestAsyncHandlers(
                 request = {
                     editPassword(
                         passwordId = passwordId,
@@ -47,16 +47,12 @@ class EditGeneratedPasswordScreenViewModel(
                     )
                 },
                 onSuccess = {
-                    viewModelScope.launch {
-                        _performingPasswordOperation.emit(false)
-                        navigator.goBack()
-                    }
+                    _performingPasswordOperation.emit(false)
+                    navigator.goBack()
                 },
                 onFailure = {
-                    viewModelScope.launch {
-                        _performingPasswordOperation.emit(false)
-                        showSnackbarMessage(it)
-                    }
+                    _performingPasswordOperation.emit(false)
+                    showSnackbarMessage(it)
                 }
             )
         }

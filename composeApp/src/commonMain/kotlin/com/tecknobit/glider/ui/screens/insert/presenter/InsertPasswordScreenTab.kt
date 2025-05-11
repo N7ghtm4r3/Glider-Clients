@@ -2,7 +2,6 @@ package com.tecknobit.glider.ui.screens.insert.presenter
 
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.text.input.ImeAction
@@ -55,7 +54,6 @@ class InsertPasswordScreenTab : PasswordFormScreen<InsertPasswordScreenViewModel
      * Method to collect or instantiate the states of the screen
      */
     @Composable
-    @NonRestartableComposable
     override fun CollectStates() {
         super.CollectStates()
         viewModel.passwordValue = remember { mutableStateOf("") }

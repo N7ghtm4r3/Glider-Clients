@@ -80,16 +80,6 @@
     ]
   },
   {
-    "name": "class AppContextInitializer : Initializer<Context> ",
-    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer",
-    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/index.html",
-    "searchKeys": [
-      "AppContextInitializer",
-      "class AppContextInitializer : Initializer<Context> ",
-      "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer"
-    ]
-  },
-  {
     "name": "class AuthScreen : EquinoxScreen<AuthScreenViewModel> ",
     "description": "com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen",
     "location": "-glider/com.tecknobit.glider.ui.screens.auth.presenter/-auth-screen/index.html",
@@ -190,12 +180,12 @@
     ]
   },
   {
-    "name": "class HomeScreen : EquinoxNoModelScreen",
+    "name": "class HomeScreen : NavigatorScreen<I18nNavigationTab> ",
     "description": "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen",
     "location": "-glider/com.tecknobit.glider.ui.screens.home.presenter/-home-screen/index.html",
     "searchKeys": [
       "HomeScreen",
-      "class HomeScreen : EquinoxNoModelScreen",
+      "class HomeScreen : NavigatorScreen<I18nNavigationTab> ",
       "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen"
     ]
   },
@@ -247,16 +237,6 @@
       "MainActivity",
       "class MainActivity : ComponentActivity",
       "com.tecknobit.glider.MainActivity"
-    ]
-  },
-  {
-    "name": "class QuantityPickerState",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/index.html",
-    "searchKeys": [
-      "QuantityPickerState",
-      "class QuantityPickerState",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState"
     ]
   },
   {
@@ -317,16 +297,6 @@
       "SPLASHSCREEN",
       "const val SPLASHSCREEN: String",
       "com.tecknobit.glider.SPLASHSCREEN"
-    ]
-  },
-  {
-    "name": "constructor()",
-    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.AppContextInitializer",
-    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/-app-context-initializer.html",
-    "searchKeys": [
-      "AppContextInitializer",
-      "constructor()",
-      "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.AppContextInitializer"
     ]
   },
   {
@@ -580,16 +550,6 @@
     ]
   },
   {
-    "name": "constructor(tabTitle: StringResource, contentDescription: String, icon: ImageVector)",
-    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab.ScreenTab",
-    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/-screen-tab.html",
-    "searchKeys": [
-      "ScreenTab",
-      "constructor(tabTitle: StringResource, contentDescription: String, icon: ImageVector)",
-      "com.tecknobit.glider.ui.screens.home.data.ScreenTab.ScreenTab"
-    ]
-  },
-  {
     "name": "constructor(viewModel: V)",
     "description": "com.tecknobit.glider.ui.shared.presenters.EditPasswordFormScreen.EditPasswordFormScreen",
     "location": "-glider/com.tecknobit.glider.ui.shared.presenters/-edit-password-form-screen/-edit-password-form-screen.html",
@@ -657,16 +617,6 @@
       "PasswordEvent",
       "data class PasswordEvent(val id: String, val eventDate: Long, val type: PasswordEventType)",
       "com.tecknobit.glider.ui.screens.keychain.data.PasswordEvent"
-    ]
-  },
-  {
-    "name": "data class ScreenTab(val tabTitle: StringResource, val contentDescription: String, val icon: ImageVector)",
-    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab",
-    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/index.html",
-    "searchKeys": [
-      "ScreenTab",
-      "data class ScreenTab(val tabTitle: StringResource, val contentDescription: String, val icon: ImageVector)",
-      "com.tecknobit.glider.ui.screens.home.data.ScreenTab"
     ]
   },
   {
@@ -900,16 +850,6 @@
     ]
   },
   {
-    "name": "fun QuantityPicker(modifier: Modifier = Modifier, quantityButtonModifier: Modifier = Modifier, state: QuantityPickerState, informativeText: String? = null, informativeTextStyle: TextStyle = TextStyle.Default, quantityIndicatorStyle: TextStyle = TextStyle.Default)",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPicker",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker.html",
-    "searchKeys": [
-      "QuantityPicker",
-      "fun QuantityPicker(modifier: Modifier = Modifier, quantityButtonModifier: Modifier = Modifier, state: QuantityPickerState, informativeText: String? = null, informativeTextStyle: TextStyle = TextStyle.Default, quantityIndicatorStyle: TextStyle = TextStyle.Default)",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPicker"
-    ]
-  },
-  {
     "name": "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
     "description": "com.tecknobit.glider.ui.components.RefreshPassword",
     "location": "-glider/com.tecknobit.glider.ui.components/-refresh-password.html",
@@ -990,16 +930,6 @@
     ]
   },
   {
-    "name": "fun get(): Context",
-    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContext.get",
-    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/get.html",
-    "searchKeys": [
-      "get",
-      "fun get(): Context",
-      "com.tecknobit.equinoxcompose.utilities.context.AppContext.get"
-    ]
-  },
-  {
     "name": "fun hasScopes(): Boolean",
     "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.hasScopes",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/has-scopes.html",
@@ -1017,36 +947,6 @@
       "isTheCurrentDevice",
       "fun isTheCurrentDevice(): Boolean",
       "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.isTheCurrentDevice"
-    ]
-  },
-  {
-    "name": "fun logout(onClear: () -> Unit? = null)",
-    "description": "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.logout",
-    "location": "-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/logout.html",
-    "searchKeys": [
-      "logout",
-      "fun logout(onClear: () -> Unit? = null)",
-      "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.logout"
-    ]
-  },
-  {
-    "name": "fun longDecrement()",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longDecrement",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-decrement.html",
-    "searchKeys": [
-      "longDecrement",
-      "fun longDecrement()",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longDecrement"
-    ]
-  },
-  {
-    "name": "fun longIncrement()",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longIncrement",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-increment.html",
-    "searchKeys": [
-      "longIncrement",
-      "fun longIncrement()",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longIncrement"
     ]
   },
   {
@@ -1090,26 +990,6 @@
     ]
   },
   {
-    "name": "fun rememberQuantityPickerState(initialQuantity: Int = 0, minQuantity: Int = Int.MIN_VALUE, maxQuantity: Int = Int.MAX_VALUE, longPressQuantity: Int? = null): QuantityPickerState",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/remember-quantity-picker-state.html",
-    "searchKeys": [
-      "rememberQuantityPickerState",
-      "fun rememberQuantityPickerState(initialQuantity: Int = 0, minQuantity: Int = Int.MIN_VALUE, maxQuantity: Int = Int.MAX_VALUE, longPressQuantity: Int? = null): QuantityPickerState",
-      "com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState"
-    ]
-  },
-  {
-    "name": "fun reset()",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.reset",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/reset.html",
-    "searchKeys": [
-      "reset",
-      "fun reset()",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.reset"
-    ]
-  },
-  {
     "name": "fun retrievePassword()",
     "description": "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.retrievePassword",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-edit-password-form-view-model/retrieve-password.html",
@@ -1127,46 +1007,6 @@
       "setLocalUserDeviceId",
       "fun setLocalUserDeviceId()",
       "com.tecknobit.glider.helpers.GliderRequester.setLocalUserDeviceId"
-    ]
-  },
-  {
-    "name": "fun setUp(context: Context)",
-    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContext.setUp",
-    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/set-up.html",
-    "searchKeys": [
-      "setUp",
-      "fun setUp(context: Context)",
-      "com.tecknobit.equinoxcompose.utilities.context.AppContext.setUp"
-    ]
-  },
-  {
-    "name": "fun showSnackbarMessage(message: StringResource, actionLabel: StringResource? = null, onDismiss: () -> Unit? = null, onActionPerformed: () -> Unit? = null)",
-    "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.showSnackbarMessage",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/show-snackbar-message.html",
-    "searchKeys": [
-      "showSnackbarMessage",
-      "fun showSnackbarMessage(message: StringResource, actionLabel: StringResource? = null, onDismiss: () -> Unit? = null, onActionPerformed: () -> Unit? = null)",
-      "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.showSnackbarMessage"
-    ]
-  },
-  {
-    "name": "fun simpleDecrement()",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.simpleDecrement",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/simple-decrement.html",
-    "searchKeys": [
-      "simpleDecrement",
-      "fun simpleDecrement()",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.simpleDecrement"
-    ]
-  },
-  {
-    "name": "fun simpleIncrement()",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.simpleIncrement",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/simple-increment.html",
-    "searchKeys": [
-      "simpleIncrement",
-      "fun simpleIncrement()",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.simpleIncrement"
     ]
   },
   {
@@ -1380,16 +1220,6 @@
     ]
   },
   {
-    "name": "object AppContext",
-    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContext",
-    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/index.html",
-    "searchKeys": [
-      "AppContext",
-      "object AppContext",
-      "com.tecknobit.equinoxcompose.utilities.context.AppContext"
-    ]
-  },
-  {
     "name": "object Companion",
     "description": "com.tecknobit.glider.MainActivity.Companion",
     "location": "-glider/com.tecknobit.glider/-main-activity/-companion/index.html",
@@ -1400,33 +1230,23 @@
     ]
   },
   {
-    "name": "object Companion",
-    "description": "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen.Companion",
-    "location": "-glider/com.tecknobit.glider.ui.screens.home.presenter/-home-screen/-companion/index.html",
+    "name": "open override fun clearSession()",
+    "description": "com.tecknobit.glider.helpers.GliderRequester.clearSession",
+    "location": "-glider/com.tecknobit.glider.helpers/-glider-requester/clear-session.html",
     "searchKeys": [
-      "Companion",
-      "object Companion",
-      "com.tecknobit.glider.ui.screens.home.presenter.HomeScreen.Companion"
+      "clearSession",
+      "open override fun clearSession()",
+      "com.tecknobit.glider.helpers.GliderRequester.clearSession"
     ]
   },
   {
-    "name": "open override fun create(context: Context): Context",
-    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.create",
-    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/create.html",
+    "name": "open override fun clearSession(onClear: () -> Unit?)",
+    "description": "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.clearSession",
+    "location": "-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/clear-session.html",
     "searchKeys": [
-      "create",
-      "open override fun create(context: Context): Context",
-      "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.create"
-    ]
-  },
-  {
-    "name": "open override fun dependencies(): List<Class<out Initializer<*>>>",
-    "description": "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.dependencies",
-    "location": "-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/dependencies.html",
-    "searchKeys": [
-      "dependencies",
-      "open override fun dependencies(): List<Class<out Initializer<*>>>",
-      "com.tecknobit.equinoxcompose.utilities.context.AppContextInitializer.dependencies"
+      "clearSession",
+      "open override fun clearSession(onClear: () -> Unit?)",
+      "com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel.clearSession"
     ]
   },
   {
@@ -1720,16 +1540,6 @@
     ]
   },
   {
-    "name": "val contentDescription: String",
-    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab.contentDescription",
-    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/content-description.html",
-    "searchKeys": [
-      "contentDescription",
-      "val contentDescription: String",
-      "com.tecknobit.glider.ui.screens.home.data.ScreenTab.contentDescription"
-    ]
-  },
-  {
     "name": "val copiedDark: Color",
     "description": "com.tecknobit.glider.ui.theme.copiedDark",
     "location": "-glider/com.tecknobit.glider.ui.theme/copied-dark.html",
@@ -1757,16 +1567,6 @@
       "creationDate",
       "val creationDate: Long",
       "com.tecknobit.glider.ui.screens.keychain.data.Password.creationDate"
-    ]
-  },
-  {
-    "name": "val currentQuantity: Int",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.currentQuantity",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/current-quantity.html",
-    "searchKeys": [
-      "currentQuantity",
-      "val currentQuantity: Int",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.currentQuantity"
     ]
   },
   {
@@ -1870,16 +1670,6 @@
     ]
   },
   {
-    "name": "val icon: ImageVector",
-    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab.icon",
-    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/icon.html",
-    "searchKeys": [
-      "icon",
-      "val icon: ImageVector",
-      "com.tecknobit.glider.ui.screens.home.data.ScreenTab.icon"
-    ]
-  },
-  {
     "name": "val id: String",
     "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice.id",
     "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/id.html",
@@ -1917,16 +1707,6 @@
       "id",
       "val id: String",
       "com.tecknobit.glider.ui.shared.data.PasswordDetails.id"
-    ]
-  },
-  {
-    "name": "val initialQuantity: Int = 0",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.initialQuantity",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/initial-quantity.html",
-    "searchKeys": [
-      "initialQuantity",
-      "val initialQuantity: Int = 0",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.initialQuantity"
     ]
   },
   {
@@ -2027,46 +1807,6 @@
       "localUser",
       "val localUser: GliderLocalUser",
       "com.tecknobit.glider.localUser"
-    ]
-  },
-  {
-    "name": "val longPressEnabled: Boolean",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longPressEnabled",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-press-enabled.html",
-    "searchKeys": [
-      "longPressEnabled",
-      "val longPressEnabled: Boolean",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longPressEnabled"
-    ]
-  },
-  {
-    "name": "val longPressQuantity: Int? = null",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longPressQuantity",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-press-quantity.html",
-    "searchKeys": [
-      "longPressQuantity",
-      "val longPressQuantity: Int? = null",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.longPressQuantity"
-    ]
-  },
-  {
-    "name": "val maxQuantity: Int",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.maxQuantity",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/max-quantity.html",
-    "searchKeys": [
-      "maxQuantity",
-      "val maxQuantity: Int",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.maxQuantity"
-    ]
-  },
-  {
-    "name": "val minQuantity: Int",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.minQuantity",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/min-quantity.html",
-    "searchKeys": [
-      "minQuantity",
-      "val minQuantity: Int",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.minQuantity"
     ]
   },
   {
@@ -2430,26 +2170,6 @@
     ]
   },
   {
-    "name": "val quantity: MutableState<Int>",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.quantity",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/quantity.html",
-    "searchKeys": [
-      "quantity",
-      "val quantity: MutableState<Int>",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.quantity"
-    ]
-  },
-  {
-    "name": "val quantityPicked: Int",
-    "description": "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.quantityPicked",
-    "location": "-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/quantity-picked.html",
-    "searchKeys": [
-      "quantityPicked",
-      "val quantityPicked: Int",
-      "com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState.quantityPicked"
-    ]
-  },
-  {
     "name": "val refreshedDark: Color",
     "description": "com.tecknobit.glider.ui.theme.refreshedDark",
     "location": "-glider/com.tecknobit.glider.ui.theme/refreshed-dark.html",
@@ -2727,16 +2447,6 @@
       "surfaceVariantLightHighContrast",
       "val surfaceVariantLightHighContrast: Color",
       "com.tecknobit.glider.ui.theme.surfaceVariantLightHighContrast"
-    ]
-  },
-  {
-    "name": "val tabTitle: StringResource",
-    "description": "com.tecknobit.glider.ui.screens.home.data.ScreenTab.tabTitle",
-    "location": "-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/tab-title.html",
-    "searchKeys": [
-      "tabTitle",
-      "val tabTitle: StringResource",
-      "com.tecknobit.glider.ui.screens.home.data.ScreenTab.tabTitle"
     ]
   },
   {

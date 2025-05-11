@@ -5,6 +5,7 @@ import com.tecknobit.equinoxcompose.network.EquinoxRequester
 import com.tecknobit.equinoxcore.annotations.Assembler
 import com.tecknobit.equinoxcore.annotations.CustomParametersOrder
 import com.tecknobit.equinoxcore.annotations.RequestPath
+import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.KEYWORDS_KEY
 import com.tecknobit.equinoxcore.helpers.PASSWORD_KEY
 import com.tecknobit.equinoxcore.network.EquinoxBaseEndpointsSet.Companion.DYNAMIC_ACCOUNT_DATA_ENDPOINT
@@ -123,8 +124,7 @@ class GliderRequester(
             language = language,
             custom = custom
         ).toMutableMap()
-        // TODO: USE DIRECTLY THE JsonObject WHEN FIXED
-        payload[DEVICE_KEY] = Json.encodeToJsonElement((custom[0] as JsonObject).toString())
+        payload[DEVICE_KEY] = Json.encodeToJsonElement(custom[0] as JsonObject)
         return Json.encodeToJsonElement(payload).jsonObject
     }
 
@@ -149,8 +149,7 @@ class GliderRequester(
             password = password,
             custom = custom
         ).toMutableMap()
-        // TODO: USE DIRECTLY THE JsonObject WHEN FIXED
-        payload[DEVICE_KEY] = Json.encodeToJsonElement((custom[0] as JsonObject).toString())
+        payload[DEVICE_KEY] = Json.encodeToJsonElement(custom[0] as JsonObject)
         return Json.encodeToJsonElement(payload).jsonObject
     }
 
@@ -217,15 +216,19 @@ class GliderRequester(
      *
      * @return the result of the request as [JsonObject]
      */
-    @RequestPath(path = "/api/v1/users/{id}/devices/{device_id}", method = DELETE)
+    @RequestPath(path = "/api/v1/users/{id}/devices", method = DELETE)
     suspend fun disconnectDevice(
         deviceId: String,
     ): JsonObject {
+        val payload = buildJsonObject {
+            put(DEVICE_IDENTIFIER_KEY, deviceId)
+        }
         return execDelete(
             endpoint = assembleUsersEndpointPath(
-                endpoint = "/$DEVICES_KEY/$deviceId"
+                endpoint = "/$DEVICES_KEY"
             ),
-            headers = deviceIdHeader
+            headers = deviceIdHeader,
+            payload = payload
         )
     }
 
@@ -450,6 +453,16 @@ class GliderRequester(
             customEndpoint = PASSWORDS_KEY,
             subEndpoint = subEndpoint
         )
+    }
+
+    /**
+     * Method used to clear the current session of the requester, for example, after user logged out or
+     * changed the auth credentials
+     */
+    @RequiresSuperCall
+    override fun clearSession() {
+        super.clearSession()
+        deviceId = null
     }
 
 }

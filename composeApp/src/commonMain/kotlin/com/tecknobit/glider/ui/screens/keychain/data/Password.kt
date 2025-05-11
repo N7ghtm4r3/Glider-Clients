@@ -3,9 +3,9 @@ package com.tecknobit.glider.ui.screens.keychain.data
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.toMutableStateList
 import com.tecknobit.equinoxcore.annotations.Wrapper
+import com.tecknobit.equinoxcore.helpers.CREATION_DATE_KEY
 import com.tecknobit.equinoxcore.helpers.PASSWORD_KEY
 import com.tecknobit.equinoxcore.time.TimeFormatter
-import com.tecknobit.glidercore.CREATION_DATE_KEY
 import com.tecknobit.glidercore.EVENTS_KEY
 import com.tecknobit.glidercore.SCOPES_KEY
 import com.tecknobit.glidercore.enums.PasswordEventType

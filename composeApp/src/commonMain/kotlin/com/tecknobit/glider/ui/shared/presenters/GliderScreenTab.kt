@@ -1,23 +1,27 @@
+@file:OptIn(ExperimentalComposeApi::class)
+
 package com.tecknobit.glider.ui.shared.presenters
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.Text
 import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
+import com.tecknobit.equinoxcompose.annotations.ScreenCoordinator
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
+import com.tecknobit.equinoxcompose.utilities.responsiveMaxWidth
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.glider.ui.theme.AppTypography
@@ -38,6 +42,7 @@ import org.jetbrains.compose.resources.stringResource
  * @see EquinoxScreen
  */
 @Structure
+@ScreenCoordinator
 abstract class GliderScreenTab<V : EquinoxViewModel>(
     viewModel: V,
     protected val title: StringResource,
@@ -78,9 +83,7 @@ abstract class GliderScreenTab<V : EquinoxViewModel>(
                 ) {
                     Column(
                         modifier = Modifier
-                            .widthIn(
-                                max = MAX_CONTAINER_WIDTH
-                            )
+                            .responsiveMaxWidth()
                     ) {
                         ScreenContent()
                     }

@@ -3,8 +3,8 @@ package com.tecknobit.glider.ui.shared.presentations
 import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.Structure
-import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
+import com.tecknobit.equinoxcore.network.sendRequest
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.shared.data.PasswordDetails
 import kotlinx.coroutines.flow.MutableStateFlow

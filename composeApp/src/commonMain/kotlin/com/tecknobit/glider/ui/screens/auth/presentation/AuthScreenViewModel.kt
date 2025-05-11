@@ -17,11 +17,12 @@ import com.tecknobit.glidercore.MODEL_KEY
 import com.tecknobit.glidercore.TYPE_KEY
 import com.tecknobit.glidercore.enums.ConnectedDeviceType
 import com.tecknobit.glidercore.enums.ConnectedDeviceType.MOBILE
-import com.tecknobit.kinfo.DevicePlatform.ANDROID
-import com.tecknobit.kinfo.DevicePlatform.DESKTOP
-import com.tecknobit.kinfo.DevicePlatform.IOS
-import com.tecknobit.kinfo.DevicePlatform.WEB
 import com.tecknobit.kinfo.KInfoState
+import com.tecknobit.kinfo.enums.DevicePlatform.ANDROID
+import com.tecknobit.kinfo.enums.DevicePlatform.DESKTOP
+import com.tecknobit.kinfo.enums.DevicePlatform.IOS
+import com.tecknobit.kinfo.enums.DevicePlatform.WEB
+import com.tecknobit.kinfo.model.desktop.DesktopInfo.Companion.whenIsToBeFilledByOEM
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
@@ -94,15 +95,13 @@ class AuthScreenViewModel : EquinoxAuthViewModel(
             DESKTOP -> {
                 val info = state.desktopInfo
                 val computerSystem = info.hardware.computerSystem
-                // TODO: TO USE THE BUILT-IN CONSTANT
-                val TO_BE_FILLED_BY_O_E_M = "To Be Filled By O.E.M."
                 val operatingSystem = info.operatingSystem
-                var brand = computerSystem.manufacturer
-                if (brand == TO_BE_FILLED_BY_O_E_M)
-                    brand = operatingSystem.manufacturer
-                var model = computerSystem.model
-                if (model == TO_BE_FILLED_BY_O_E_M)
-                    model = operatingSystem.family
+                val brand = computerSystem.manufacturer.whenIsToBeFilledByOEM {
+                    operatingSystem.manufacturer
+                }
+                val model = computerSystem.model.whenIsToBeFilledByOEM {
+                    operatingSystem.family
+                }
                 assembleDeviceInformationPayload(
                     type = ConnectedDeviceType.DESKTOP,
                     computerSystem.hardwareUUID, brand, model

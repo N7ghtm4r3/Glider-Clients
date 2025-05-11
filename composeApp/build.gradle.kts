@@ -78,8 +78,6 @@ kotlin {
             implementation(libs.app.update.ktx)
             implementation(libs.review)
             implementation(libs.review.ktx)
-            // TODO: TO REMOVE
-            implementation(libs.androidx.startup.runtime)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -99,7 +97,8 @@ kotlin {
             implementation(libs.lazy.pagination.compose)
             implementation(libs.jetlime)
             implementation(libs.ametista.engine)
-            implementation("io.github.n7ghtm4r3:KInfo:1.0.1")
+            implementation(libs.kinfo)
+            implementation(libs.equinox.navigation)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
@@ -117,8 +116,8 @@ android {
         applicationId = "com.tecknobit.glider"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 6
-        versionName = "2.0.0"
+        versionCode = 7
+        versionName = "2.0.1"
     }
     packaging {
         resources {
@@ -160,8 +159,8 @@ compose.desktop {
                 "jdk.security.auth"
             )
             packageName = "Glider"
-            packageVersion = "2.0.0"
-            version = "2.0.0"
+            packageVersion = "2.0.1"
+            version = "2.0.1"
             description = "Glider, open source passwords manager"
             copyright = "© 2025 Tecknobit"
             vendor = "Tecknobit"
@@ -178,9 +177,9 @@ compose.desktop {
                 iconFile.set(project.file("src/desktopMain/resources/logo.png"))
                 packageName = "com-tecknobit-glider"
                 debMaintainer = "infotecknobitcompany@gmail.com"
-                appRelease = "2.0.0"
+                appRelease = "2.0.1"
                 appCategory = "PERSONALIZATION"
-                rpmLicenseType = "MIT"
+                rpmLicenseType = "APACHE2"
             }
         }
         buildTypes.release.proguard {

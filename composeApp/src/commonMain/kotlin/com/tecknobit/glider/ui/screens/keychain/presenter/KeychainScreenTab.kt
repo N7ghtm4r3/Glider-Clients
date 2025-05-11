@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMultiplatform::class)
-
 package com.tecknobit.glider.ui.screens.keychain.presenter
 
 import androidx.compose.foundation.layout.Arrangement
@@ -7,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -17,7 +16,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -26,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.DebouncedOutlinedTextField
 import com.tecknobit.equinoxcompose.session.ManagedContent
+import com.tecknobit.equinoxcompose.session.createUiLayoutAppearance
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcompose.utilities.responsiveAssignment
@@ -57,10 +56,17 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
     /**
      * The custom content displayed in the tab
      */
-    // TODO: WHEN POSSIBLE CUSTOMIZE THE COLORS OF THE ManagedContent
     @Composable
     override fun ColumnScope.ScreenContent() {
         ManagedContent(
+            modifier = Modifier
+                .fillMaxSize(),
+            serverOfflineUiDefaults = createUiLayoutAppearance(
+                containerColor = MaterialTheme.colorScheme.inverseOnSurface
+            ),
+            noInternetConnectionUiDefaults = createUiLayoutAppearance(
+                containerColor = MaterialTheme.colorScheme.inverseOnSurface
+            ),
             viewModel = viewModel,
             content = {
                 Column {
@@ -77,7 +83,6 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
      * Section where the user can apply the filters to the passwords list to retrieve
      */
     @Composable
-    @NonRestartableComposable
     private fun Filters() {
         Row(
             modifier = Modifier

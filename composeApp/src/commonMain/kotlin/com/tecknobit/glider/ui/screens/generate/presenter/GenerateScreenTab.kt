@@ -4,18 +4,20 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcompose.annotations.ScreenSection
+import com.tecknobit.equinoxcompose.components.quantitypicker.QuantityPicker
+import com.tecknobit.equinoxcompose.components.quantitypicker.rememberQuantityPickerState
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.PASSWORD_MAX_LENGTH
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.PASSWORD_MIN_LENGTH
 import com.tecknobit.glider.ui.screens.generate.components.PasswordOptions
-import com.tecknobit.glider.ui.screens.generate.components.QuantityPicker
-import com.tecknobit.glider.ui.screens.generate.components.rememberQuantityPickerState
 import com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel
 import com.tecknobit.glider.ui.shared.presenters.GliderScreenTab
 import com.tecknobit.glider.ui.shared.presenters.PasswordFormScreen
@@ -37,6 +39,7 @@ import org.jetbrains.compose.resources.stringResource
  * @see GliderScreenTab
  * @see PasswordFormScreen
  */
+@OptIn(ExperimentalComposeApi::class)
 class GenerateScreenTab : PasswordFormScreen<GenerateScreenViewModel>(
     viewModel = GenerateScreenViewModel(),
     title = Res.string.generate
@@ -46,6 +49,7 @@ class GenerateScreenTab : PasswordFormScreen<GenerateScreenViewModel>(
      * The form where the user can insert the details of the password
      */
     @Composable
+    @ScreenSection
     override fun ColumnScope.Form() {
         QuantityPicker(
             state = viewModel.quantityPickerState,

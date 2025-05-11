@@ -1,25 +1,20 @@
 package com.tecknobit.glider.ui.screens.generate.presentation
 
-import androidx.compose.material3.SnackbarResult.ActionPerformed
-import androidx.compose.material3.SnackbarResult.Dismissed
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.viewModelScope
+import com.tecknobit.equinoxcompose.components.quantitypicker.QuantityPickerState
 import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
-import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
-import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseContent
+import com.tecknobit.equinoxcore.network.sendRequestAsyncHandlers
 import com.tecknobit.glider.helpers.KReviewer
 import com.tecknobit.glider.requester
-import com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState
 import com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.copy
 import glider.composeapp.generated.resources.password_generated
 import kotlinx.coroutines.launch
-import org.jetbrains.compose.resources.StringResource
-import org.jetbrains.compose.resources.getString
 
 /**
  * The `GenerateScreenViewModel` class is the support class used by the
@@ -63,7 +58,7 @@ class GenerateScreenViewModel : PasswordFormViewModel() {
             return
         viewModelScope.launch {
             _performingPasswordOperation.emit(true)
-            requester.sendRequest(
+            requester.sendRequestAsyncHandlers(
                 request = {
                     generatePassword(
                         length = quantityPickerState.quantityPicked,
@@ -75,18 +70,14 @@ class GenerateScreenViewModel : PasswordFormViewModel() {
                     )
                 },
                 onSuccess = {
-                    viewModelScope.launch {
-                        _performingPasswordOperation.emit(false)
-                        val kReviewer = KReviewer()
-                        kReviewer.reviewInApp {
-                            resetForm(it.toResponseContent())
-                        }
+                    _performingPasswordOperation.emit(false)
+                    val kReviewer = KReviewer()
+                    kReviewer.reviewInApp {
+                        resetForm(it.toResponseContent())
                     }
                 },
                 onFailure = {
-                    viewModelScope.launch {
-                        _performingPasswordOperation.emit(false)
-                    }
+                    _performingPasswordOperation.emit(false)
                     showSnackbarMessage(it)
                 }
             )
@@ -114,36 +105,6 @@ class GenerateScreenViewModel : PasswordFormViewModel() {
                 )
             }
         )
-    }
-
-    @FutureEquinoxApi
-    @Deprecated(
-        message = "TO USE THE BUILT-IN ONE"
-    )
-    fun showSnackbarMessage(
-        message: StringResource,
-        actionLabel: StringResource? = null,
-        onDismiss: (() -> Unit)? = null,
-        onActionPerformed: (() -> Unit)? = null,
-    ) {
-        viewModelScope.launch {
-            snackbarHostState!!.showSnackbar(
-                message = getString(
-                    resource = message
-                ),
-                actionLabel = if (actionLabel != null) {
-                    getString(
-                        resource = actionLabel
-                    )
-                } else
-                    null
-            ).let {
-                when (it) {
-                    Dismissed -> onDismiss?.invoke()
-                    ActionPerformed -> onActionPerformed?.invoke()
-                }
-            }
-        }
     }
 
 }

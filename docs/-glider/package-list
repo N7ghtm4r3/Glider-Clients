@@ -1,13 +1,5 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
-$dokka.location:com.tecknobit.equinoxcompose.utilities.context////PointingToDeclaration/-glider/com.tecknobit.equinoxcompose.utilities.context/index.html
-$dokka.location:com.tecknobit.equinoxcompose.utilities.context/AppContext///PointingToDeclaration/-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/index.html
-$dokka.location:com.tecknobit.equinoxcompose.utilities.context/AppContext/get/#/PointingToDeclaration/-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/get.html
-$dokka.location:com.tecknobit.equinoxcompose.utilities.context/AppContext/setUp/#android.content.Context/PointingToDeclaration/-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context/set-up.html
-$dokka.location:com.tecknobit.equinoxcompose.utilities.context/AppContextInitializer///PointingToDeclaration/-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/index.html
-$dokka.location:com.tecknobit.equinoxcompose.utilities.context/AppContextInitializer/AppContextInitializer/#/PointingToDeclaration/-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/-app-context-initializer.html
-$dokka.location:com.tecknobit.equinoxcompose.utilities.context/AppContextInitializer/create/#android.content.Context/PointingToDeclaration/-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/create.html
-$dokka.location:com.tecknobit.equinoxcompose.utilities.context/AppContextInitializer/dependencies/#/PointingToDeclaration/-glider/com.tecknobit.equinoxcompose.utilities.context/-app-context-initializer/dependencies.html
 $dokka.location:com.tecknobit.glider.helpers////PointingToDeclaration/-glider/com.tecknobit.glider.helpers/index.html
 $dokka.location:com.tecknobit.glider.helpers/GliderLocalUser///PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-local-user/index.html
 $dokka.location:com.tecknobit.glider.helpers/GliderLocalUser/GliderLocalUser/#/PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-local-user/-glider-local-user.html
@@ -15,6 +7,7 @@ $dokka.location:com.tecknobit.glider.helpers/GliderLocalUser/deviceId/#/Pointing
 $dokka.location:com.tecknobit.glider.helpers/GliderLocalUser/insertNewUser/#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlin.String#kotlinx.serialization.json.JsonObject#kotlin.Array[kotlin.Any?]/PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-local-user/insert-new-user.html
 $dokka.location:com.tecknobit.glider.helpers/GliderRequester///PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-requester/index.html
 $dokka.location:com.tecknobit.glider.helpers/GliderRequester/GliderRequester/#kotlin.String#kotlin.String?#kotlin.String?#kotlin.String?#kotlin.Boolean/PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-requester/-glider-requester.html
+$dokka.location:com.tecknobit.glider.helpers/GliderRequester/clearSession/#/PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-requester/clear-session.html
 $dokka.location:com.tecknobit.glider.helpers/GliderRequester/copyPassword/#com.tecknobit.glider.ui.screens.keychain.data.Password/PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-requester/copy-password.html
 $dokka.location:com.tecknobit.glider.helpers/GliderRequester/deletePassword/#com.tecknobit.glider.ui.screens.keychain.data.Password/PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-requester/delete-password.html
 $dokka.location:com.tecknobit.glider.helpers/GliderRequester/deviceId/#/PointingToDeclaration/-glider/com.tecknobit.glider.helpers/-glider-requester/device-id.html
@@ -60,9 +53,9 @@ $dokka.location:com.tecknobit.glider.ui.screens.account.data/ConnectedDevice/typ
 $dokka.location:com.tecknobit.glider.ui.screens.account.presentation////PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presentation/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.account.presentation/AccountScreenViewModel///PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.account.presentation/AccountScreenViewModel/AccountScreenViewModel/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/-account-screen-view-model.html
+$dokka.location:com.tecknobit.glider.ui.screens.account.presentation/AccountScreenViewModel/clearSession/#kotlin.Function0[kotlin.Unit]?/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/clear-session.html
 $dokka.location:com.tecknobit.glider.ui.screens.account.presentation/AccountScreenViewModel/connectedDevicesState/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/connected-devices-state.html
 $dokka.location:com.tecknobit.glider.ui.screens.account.presentation/AccountScreenViewModel/disconnectDevice/#com.tecknobit.glider.ui.screens.account.data.ConnectedDevice#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/disconnect-device.html
-$dokka.location:com.tecknobit.glider.ui.screens.account.presentation/AccountScreenViewModel/logout/#kotlin.Function0[kotlin.Unit]?/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presentation/-account-screen-view-model/logout.html
 $dokka.location:com.tecknobit.glider.ui.screens.account.presenter////PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presenter/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.account.presenter/AccountScreenTab///PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presenter/-account-screen-tab/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.account.presenter/AccountScreenTab/AccountScreenTab/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.account.presenter/-account-screen-tab/-account-screen-tab.html
@@ -90,22 +83,6 @@ $dokka.location:com.tecknobit.glider.ui.screens.editinsertedpassword.presenter/E
 $dokka.location:com.tecknobit.glider.ui.screens.editinsertedpassword.presenter/EditInsertedPasswordScreen/EditInsertedPasswordScreen/#kotlin.String/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presenter/-edit-inserted-password-screen/-edit-inserted-password-screen.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.components////PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.components//PasswordOptions/#androidx.compose.ui.Modifier#com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-password-options.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components//QuantityPicker/#androidx.compose.ui.Modifier#androidx.compose.ui.Modifier#com.tecknobit.glider.ui.screens.generate.components.QuantityPickerState#kotlin.String?#androidx.compose.ui.text.TextStyle#androidx.compose.ui.text.TextStyle/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components//rememberQuantityPickerState/#kotlin.Int#kotlin.Int#kotlin.Int#kotlin.Int?/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/remember-quantity-picker-state.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState///PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/index.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/currentQuantity/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/current-quantity.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/initialQuantity/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/initial-quantity.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/longDecrement/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-decrement.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/longIncrement/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-increment.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/longPressEnabled/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-press-enabled.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/longPressQuantity/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/long-press-quantity.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/maxQuantity/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/max-quantity.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/minQuantity/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/min-quantity.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/quantity/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/quantity.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/quantityPicked/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/quantity-picked.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/reset/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/reset.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/simpleDecrement/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/simple-decrement.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.components/QuantityPickerState/simpleIncrement/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.components/-quantity-picker-state/simple-increment.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presentation////PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presentation/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presentation/GenerateScreenViewModel///PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presentation/GenerateScreenViewModel/GenerateScreenViewModel/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/-generate-screen-view-model.html
@@ -114,18 +91,10 @@ $dokka.location:com.tecknobit.glider.ui.screens.generate.presentation/GenerateSc
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presentation/GenerateScreenViewModel/includeUppercaseLetters/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-uppercase-letters.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presentation/GenerateScreenViewModel/performPasswordOperation/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/perform-password-operation.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presentation/GenerateScreenViewModel/quantityPickerState/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/quantity-picker-state.html
-$dokka.location:com.tecknobit.glider.ui.screens.generate.presentation/GenerateScreenViewModel/showSnackbarMessage/#org.jetbrains.compose.resources.StringResource#org.jetbrains.compose.resources.StringResource?#kotlin.Function0[kotlin.Unit]?#kotlin.Function0[kotlin.Unit]?/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/show-snackbar-message.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presenter////PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presenter/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presenter/GenerateScreenTab///PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presenter/-generate-screen-tab/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.generate.presenter/GenerateScreenTab/GenerateScreenTab/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.generate.presenter/-generate-screen-tab/-generate-screen-tab.html
-$dokka.location:com.tecknobit.glider.ui.screens.home.data////PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.data/index.html
-$dokka.location:com.tecknobit.glider.ui.screens.home.data/ScreenTab///PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/index.html
-$dokka.location:com.tecknobit.glider.ui.screens.home.data/ScreenTab/ScreenTab/#org.jetbrains.compose.resources.StringResource#kotlin.String#androidx.compose.ui.graphics.vector.ImageVector/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/-screen-tab.html
-$dokka.location:com.tecknobit.glider.ui.screens.home.data/ScreenTab/contentDescription/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/content-description.html
-$dokka.location:com.tecknobit.glider.ui.screens.home.data/ScreenTab/icon/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/icon.html
-$dokka.location:com.tecknobit.glider.ui.screens.home.data/ScreenTab/tabTitle/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.data/-screen-tab/tab-title.html
 $dokka.location:com.tecknobit.glider.ui.screens.home.presenter////PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.presenter/index.html
-$dokka.location:com.tecknobit.glider.ui.screens.home.presenter/HomeScreen.Companion///PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.presenter/-home-screen/-companion/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.home.presenter/HomeScreen///PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.presenter/-home-screen/index.html
 $dokka.location:com.tecknobit.glider.ui.screens.home.presenter/HomeScreen/HomeScreen/#/PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.home.presenter/-home-screen/-home-screen.html
 $dokka.location:com.tecknobit.glider.ui.screens.insert.presentation////PointingToDeclaration/-glider/com.tecknobit.glider.ui.screens.insert.presentation/index.html
@@ -316,7 +285,6 @@ $dokka.location:com.tecknobit.glider/MainActivity.Companion/appUpdateManager/#/P
 $dokka.location:com.tecknobit.glider/MainActivity.Companion/launcher/#/PointingToDeclaration/-glider/com.tecknobit.glider/-main-activity/-companion/launcher.html
 $dokka.location:com.tecknobit.glider/MainActivity///PointingToDeclaration/-glider/com.tecknobit.glider/-main-activity/index.html
 $dokka.location:com.tecknobit.glider/MainActivity/MainActivity/#/PointingToDeclaration/-glider/com.tecknobit.glider/-main-activity/-main-activity.html
-com.tecknobit.equinoxcompose.utilities.context
 com.tecknobit.glider
 com.tecknobit.glider.helpers
 com.tecknobit.glider.ui.components
@@ -334,7 +302,6 @@ com.tecknobit.glider.ui.screens.editinsertedpassword.presenter
 com.tecknobit.glider.ui.screens.generate.components
 com.tecknobit.glider.ui.screens.generate.presentation
 com.tecknobit.glider.ui.screens.generate.presenter
-com.tecknobit.glider.ui.screens.home.data
 com.tecknobit.glider.ui.screens.home.presenter
 com.tecknobit.glider.ui.screens.insert.presentation
 com.tecknobit.glider.ui.screens.insert.presenter

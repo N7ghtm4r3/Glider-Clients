@@ -14,7 +14,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
@@ -24,6 +23,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcompose.annotations.ScreenCoordinator
+import com.tecknobit.equinoxcompose.annotations.ScreenSection
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
@@ -60,6 +61,7 @@ import org.jetbrains.compose.resources.stringResource
  * @see GliderScreenTab
  */
 @Structure
+@ScreenCoordinator
 abstract class PasswordFormScreen<V : PasswordFormViewModel>(
     viewModel: V,
     title: StringResource,
@@ -96,7 +98,7 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
      * The form where the user can insert the details of the password
      */
     @Composable
-    @NonRestartableComposable
+    @ScreenSection
     protected abstract fun ColumnScope.Form()
 
     /**
@@ -104,7 +106,6 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
      * password
      */
     @Composable
-    @NonRestartableComposable
     protected fun TailInputField() {
         EquinoxOutlinedTextField(
             modifier = Modifier
@@ -131,7 +132,6 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
      * @param imeAction The ime action to attach to the component
      */
     @Composable
-    @NonRestartableComposable
     protected fun ScopesInputField(
         modifier: Modifier = Modifier,
         imeAction: ImeAction = ImeAction.Done,
@@ -166,7 +166,6 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
      * @param performingActionText The representative text of the performing action
      */
     @Composable
-    @NonRestartableComposable
     protected fun PerformFormActionButton(
         performActionText: StringResource,
         performingActionText: StringResource,

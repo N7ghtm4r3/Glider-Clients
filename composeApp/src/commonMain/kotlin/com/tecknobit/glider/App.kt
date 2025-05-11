@@ -4,13 +4,12 @@ package com.tecknobit.glider
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.text.font.FontFamily
 import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.ametistaengine.AmetistaEngine.Companion.FILES_AMETISTA_CONFIG_PATHNAME
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
-import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
+import com.tecknobit.equinoxcore.network.sendRequest
 import com.tecknobit.glider.helpers.GliderLocalUser
 import com.tecknobit.glider.helpers.GliderRequester
 import com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen
@@ -155,7 +154,6 @@ private fun InitAmetista() {
  *
  */
 @Composable
-@NonRestartableComposable
 expect fun CheckForUpdatesAndLaunch()
 
 /**
@@ -169,6 +167,7 @@ fun startSession() {
         userToken = localUser.userToken,
         deviceId = localUser.deviceId
     )
+    setUserLanguage()
     val route = if (localUser.isAuthenticated) {
         MainScope().launch {
             requester.sendRequest(
@@ -177,15 +176,11 @@ fun startSession() {
                     localUser.updateDynamicAccountData(
                         dynamicData = response.toResponseData()
                     )
+                    setUserLanguage()
                 },
                 onFailure = {
                     localUser.clear()
-                    // TODO: TO USE THE BUILT-IN METHOD
-                    requester.setUserCredentials(
-                        userId = null,
-                        userToken = null
-                    )
-                    requester.deviceId = null
+                    requester.clearSession()
                     navigator.navigate(AUTH_SCREEN)
                 },
                 onConnectionError = { }
@@ -194,7 +189,6 @@ fun startSession() {
         HOME_SCREEN
     } else
         AUTH_SCREEN
-    setUserLanguage()
     navigator.navigate(route)
 }
 
@@ -209,5 +203,4 @@ expect fun setUserLanguage()
  *
  */
 @Composable
-@NonRestartableComposable
 expect fun CloseApplicationOnNavBack()

@@ -9,7 +9,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -34,7 +33,6 @@ import org.jetbrains.compose.resources.stringResource
  * @param passwordError The state handles the validity of the password
  */
 @Composable
-@NonRestartableComposable
 fun PasswordInputField(
     password: MutableState<String>,
     passwordError: MutableState<Boolean>,

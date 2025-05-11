@@ -2,10 +2,10 @@ package com.tecknobit.glider.ui.screens.editinsertedpassword.presenter
 
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.text.input.ImeAction
+import com.tecknobit.equinoxcompose.annotations.ScreenSection
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
@@ -41,7 +41,7 @@ class EditInsertedPasswordScreen(
      * The form where the user can insert the details of the password
      */
     @Composable
-    @NonRestartableComposable
+    @ScreenSection
     override fun ColumnScope.Form() {
         TailInputField()
         ScopesInputField(
