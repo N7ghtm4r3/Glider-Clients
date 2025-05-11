@@ -168,7 +168,7 @@ fun startSession() {
         userId = localUser.userId,
         userToken = localUser.userToken,
         deviceId = localUser.deviceId,
-        debugMode = true // TODO: TO REMOVE 
+        debugMode = true // TODO: TO REMOVE
     )
     val route = if (localUser.isAuthenticated) {
         MainScope().launch {
