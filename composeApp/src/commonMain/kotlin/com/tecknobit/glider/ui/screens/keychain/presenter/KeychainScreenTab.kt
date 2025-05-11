@@ -26,6 +26,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.tecknobit.equinoxcompose.components.DebouncedOutlinedTextField
 import com.tecknobit.equinoxcompose.session.ManagedContent
+import com.tecknobit.equinoxcompose.session.createUiLayoutAppearance
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcompose.utilities.responsiveAssignment
@@ -57,12 +58,17 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
     /**
      * The custom content displayed in the tab
      */
-    // TODO: WHEN POSSIBLE CUSTOMIZE THE COLORS OF THE ManagedContent
     @Composable
     override fun ColumnScope.ScreenContent() {
         ManagedContent(
             modifier = Modifier
                 .fillMaxSize(),
+            serverOfflineUiDefaults = createUiLayoutAppearance(
+                containerColor = MaterialTheme.colorScheme.inverseOnSurface
+            ),
+            noInternetConnectionUiDefaults = createUiLayoutAppearance(
+                containerColor = MaterialTheme.colorScheme.inverseOnSurface
+            ),
             viewModel = viewModel,
             content = {
                 Column {
