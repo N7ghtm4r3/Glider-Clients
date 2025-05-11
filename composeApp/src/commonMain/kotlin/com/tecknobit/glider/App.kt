@@ -143,7 +143,7 @@ private fun InitAmetista() {
             serverSecret = AmetistaConfig.SERVER_SECRET!!,
             applicationId = AmetistaConfig.APPLICATION_IDENTIFIER!!,
             bypassSslValidation = AmetistaConfig.BYPASS_SSL_VALIDATION,
-            debugMode = true // TODO: TO SET ON FALSE 
+            debugMode = false
         )
     }
 }
@@ -165,8 +165,7 @@ fun startSession() {
         host = localUser.hostAddress,
         userId = localUser.userId,
         userToken = localUser.userToken,
-        deviceId = localUser.deviceId,
-        debugMode = true // TODO: TO REMOVE
+        deviceId = localUser.deviceId
     )
     setUserLanguage()
     val route = if (localUser.isAuthenticated) {
