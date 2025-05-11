@@ -26,6 +26,7 @@ import com.pushpal.jetlime.ItemsList
 import com.pushpal.jetlime.JetLimeColumn
 import com.pushpal.jetlime.JetLimeEvent
 import com.pushpal.jetlime.JetLimeEventDefaults
+import com.tecknobit.equinoxcompose.utilities.LayoutCoordinator
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.COMPACT_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.EXPANDED_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.MEDIUM_CONTENT
@@ -61,6 +62,7 @@ import org.jetbrains.compose.resources.stringResource
  * @param password The password to display its timeline
  */
 @Composable
+@LayoutCoordinator
 @NonRestartableComposable
 fun PasswordTimeline(
     show: MutableState<Boolean>,
@@ -101,7 +103,6 @@ fun PasswordTimeline(
  * @param password The password to display its timeline
  */
 @Composable
-@NonRestartableComposable
 @ResponsiveClassComponent(
     classes = [EXPANDED_CONTENT, MEDIUM_CONTENT]
 )
@@ -125,7 +126,6 @@ private fun ContainedTimeline(
  * @param password The password to display its timeline
  */
 @Composable
-@NonRestartableComposable
 @ResponsiveClassComponent(
     classes = [MEDIUM_EXPANDED_CONTENT, COMPACT_CONTENT]
 )
@@ -172,7 +172,6 @@ private fun ModalBottomSheetTimeline(
  * @param password The password to display its timeline
  */
 @Composable
-@NonRestartableComposable
 private fun PasswordTimelineContent(
     password: Password,
 ) {
@@ -203,7 +202,6 @@ private fun PasswordTimelineContent(
  * @param position The position occupied by the event inside the timeline
  */
 @Composable
-@NonRestartableComposable
 private fun PasswordEvent(
     event: PasswordEvent,
     position: EventPosition,

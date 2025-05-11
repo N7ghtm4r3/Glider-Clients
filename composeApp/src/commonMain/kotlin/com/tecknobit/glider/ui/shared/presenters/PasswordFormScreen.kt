@@ -14,7 +14,6 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
@@ -107,7 +106,6 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
      * password
      */
     @Composable
-    @NonRestartableComposable
     protected fun TailInputField() {
         EquinoxOutlinedTextField(
             modifier = Modifier
@@ -168,7 +166,6 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
      * @param performingActionText The representative text of the performing action
      */
     @Composable
-    @NonRestartableComposable
     protected fun PerformFormActionButton(
         performActionText: StringResource,
         performingActionText: StringResource,

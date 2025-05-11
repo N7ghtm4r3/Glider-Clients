@@ -85,6 +85,8 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
     override fun ArrangeScreenContent() {
         GliderTheme {
             ManagedContent(
+                modifier = Modifier
+                    .fillMaxSize(),
                 viewModel = viewModel,
                 initialDelay = 500,
                 loadingRoutine = { password.value != null },

@@ -21,7 +21,6 @@ import java.util.Locale
  *
  */
 @Composable
-@NonRestartableComposable
 actual fun CheckForUpdatesAndLaunch() {
     GliderTheme {
         var launchApp by remember { mutableStateOf(true) }
@@ -43,8 +42,8 @@ actual fun CheckForUpdatesAndLaunch() {
  * Method to manage correctly the back navigation from the current screen
  *
  */
-@NonRestartableComposable
 @Composable
+@NonRestartableComposable
 actual fun CloseApplicationOnNavBack() {
 }
 

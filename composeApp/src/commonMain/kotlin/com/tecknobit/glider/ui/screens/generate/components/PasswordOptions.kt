@@ -8,7 +8,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -27,7 +26,6 @@ import org.jetbrains.compose.resources.stringResource
  * @param viewModel The support viewmodel used by the screen
  */
 @Composable
-@NonRestartableComposable
 fun PasswordOptions(
     modifier: Modifier = Modifier,
     viewModel: GenerateScreenViewModel,
@@ -58,7 +56,6 @@ fun PasswordOptions(
  * @param infoText The informative text about the option
  */
 @Composable
-@NonRestartableComposable
 private fun PasswordOptionCheckBox(
     checked: MutableState<Boolean>,
     infoText: StringResource,

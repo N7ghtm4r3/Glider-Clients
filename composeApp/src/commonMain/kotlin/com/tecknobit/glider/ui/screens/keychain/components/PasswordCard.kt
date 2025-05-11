@@ -28,7 +28,6 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -64,7 +63,6 @@ private const val HIDDEN_PASSWORD = "********"
  * @param password The password to display
  */
 @Composable
-@NonRestartableComposable
 fun PasswordCard(
     viewModel: KeychainScreenViewModel,
     password: Password,
@@ -130,7 +128,6 @@ fun PasswordCard(
  * @param password The password to display
  */
 @Composable
-@NonRestartableComposable
 private fun PasswordText(
     password: Password,
 ) {
@@ -191,7 +188,6 @@ private fun PasswordText(
  * @param showTimeline Whether show the [PasswordTimeline]
  */
 @Composable
-@NonRestartableComposable
 private fun ToolsBar(
     viewModel: KeychainScreenViewModel,
     password: Password,
@@ -267,7 +263,6 @@ private fun ToolsBar(
  * @param showTimeline Whether show the [PasswordTimeline]
  */
 @Composable
-@NonRestartableComposable
 private fun PasswordTimelineButton(
     showTimeline: MutableState<Boolean>,
 ) {
@@ -287,7 +282,6 @@ private fun PasswordTimelineButton(
  * @param password The password to display
  */
 @Composable
-@NonRestartableComposable
 private fun RefreshPasswordButton(
     viewModel: KeychainScreenViewModel,
     password: Password,
@@ -314,7 +308,6 @@ private fun RefreshPasswordButton(
  * @param password The password to display
  */
 @Composable
-@NonRestartableComposable
 private fun DeletePasswordButton(
     viewModel: KeychainScreenViewModel,
     password: Password,

@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -17,7 +18,6 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -61,6 +61,8 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
     @Composable
     override fun ColumnScope.ScreenContent() {
         ManagedContent(
+            modifier = Modifier
+                .fillMaxSize(),
             viewModel = viewModel,
             content = {
                 Column {
@@ -77,7 +79,6 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
      * Section where the user can apply the filters to the passwords list to retrieve
      */
     @Composable
-    @NonRestartableComposable
     private fun Filters() {
         Row(
             modifier = Modifier

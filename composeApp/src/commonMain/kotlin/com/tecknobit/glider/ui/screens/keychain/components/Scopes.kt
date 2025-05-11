@@ -11,7 +11,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -31,7 +30,6 @@ import org.jetbrains.compose.resources.stringResource
  * @param password The owner password of the scopes
  */
 @Composable
-@NonRestartableComposable
 fun Scopes(
     modifier: Modifier = Modifier,
     password: Password,
@@ -75,7 +73,6 @@ fun Scopes(
  * @param contentColor The color of the text displayed on the badge
  */
 @Composable
-@NonRestartableComposable
 private fun Scope(
     scope: String,
     containerColor: Color = MaterialTheme.colorScheme.primaryContainer,

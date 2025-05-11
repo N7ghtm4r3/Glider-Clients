@@ -4,7 +4,6 @@ package com.tecknobit.glider
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.text.font.FontFamily
 import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.ametistaengine.AmetistaEngine.Companion.FILES_AMETISTA_CONFIG_PATHNAME
@@ -155,7 +154,6 @@ private fun InitAmetista() {
  *
  */
 @Composable
-@NonRestartableComposable
 expect fun CheckForUpdatesAndLaunch()
 
 /**
@@ -170,6 +168,7 @@ fun startSession() {
         deviceId = localUser.deviceId,
         debugMode = true // TODO: TO REMOVE
     )
+    setUserLanguage()
     val route = if (localUser.isAuthenticated) {
         MainScope().launch {
             requester.sendRequest(
@@ -205,5 +204,4 @@ expect fun setUserLanguage()
  *
  */
 @Composable
-@NonRestartableComposable
 expect fun CloseApplicationOnNavBack()

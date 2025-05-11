@@ -5,6 +5,7 @@ package com.tecknobit.glider.ui.screens.keychain.components
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
@@ -153,13 +154,13 @@ private fun PasswordsList(
  * Custom [EmptyState] displayed when the are no passwords available
  */
 @Composable
-@NonRestartableComposable
 private fun NoPasswords() {
     EmptyState(
-        resource = if (applyDarkTheme())
-            Res.drawable.no_passwords_dark
-        else
-            Res.drawable.no_passwords_light,
+        containerModifier = Modifier
+            .fillMaxSize(),
+        lightResource = Res.drawable.no_passwords_light,
+        darkResource = Res.drawable.no_passwords_dark,
+        useDarkResource = applyDarkTheme(),
         resourceSize = 250.dp,
         contentDescription = "No passwords available",
         title = stringResource(Res.string.no_passwords_available),

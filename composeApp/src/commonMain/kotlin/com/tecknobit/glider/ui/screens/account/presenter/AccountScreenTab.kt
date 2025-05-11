@@ -34,7 +34,6 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -53,6 +52,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.tecknobit.equinoxcompose.annotations.ScreenSection
 import com.tecknobit.equinoxcompose.components.ChameleonText
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
 import com.tecknobit.equinoxcompose.components.EquinoxTextField
@@ -125,7 +125,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
      * The details of the [localUser]
      */
     @Composable
-    @NonRestartableComposable
+    @ScreenSection
     @ResponsiveClassComponent(
         classes = [MEDIUM_CONTENT, COMPACT_CONTENT]
     )
@@ -157,7 +157,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
      * Method used to format the [ActionButtons] component as [Row]
      */
     @Composable
-    @NonRestartableComposable
+    @ScreenSection
     @ResponsiveClassComponent(
         classes = [EXPANDED_CONTENT, MEDIUM_CONTENT]
     )
@@ -187,7 +187,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
      */
     @Composable
     @CompactClassComponent
-    @NonRestartableComposable
     private fun ColumnedActions() {
         Column {
             Text(
@@ -210,7 +209,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
      * @param buttonModifier The modifier to apply to the buttons
      */
     @Composable
-    @NonRestartableComposable
     private fun ActionButtons(
         buttonModifier: Modifier = Modifier,
     ) {
@@ -275,7 +273,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
      * The settings section to customize the [localUser] experience
      */
     @Composable
-    @NonRestartableComposable
+    @ScreenSection
     private fun Settings() {
         val steps = remember {
             arrayOf(
@@ -356,7 +354,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
         number = 1
     )
     @Composable
-    @NonRestartableComposable
     private fun ChangeEmail() {
         val focusRequester = remember { FocusRequester() }
         LaunchedEffect(Unit) {
@@ -405,7 +402,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
         number = 2
     )
     @Composable
-    @NonRestartableComposable
     private fun ChangePassword() {
         val focusRequester = remember { FocusRequester() }
         LaunchedEffect(Unit) {
@@ -471,7 +467,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
         number = 3
     )
     @Composable
-    @NonRestartableComposable
     private fun ChangeLanguage() {
         Column(
             modifier = Modifier
@@ -500,7 +495,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
         number = 4
     )
     @Composable
-    @NonRestartableComposable
     private fun ChangeTheme() {
         Column(
             modifier = Modifier
@@ -529,7 +523,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
         number = 5
     )
     @Composable
-    @NonRestartableComposable
     private fun ConnectedDevices() {
         PaginatedLazyColumn(
             modifier = Modifier

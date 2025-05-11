@@ -26,7 +26,6 @@ import androidx.compose.material3.TooltipBox
 import androidx.compose.material3.TooltipDefaults
 import androidx.compose.material3.rememberTooltipState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
@@ -63,7 +62,6 @@ import org.jetbrains.compose.resources.stringResource
  * @param isLast Whether this item is the last in the list
  */
 @Composable
-@NonRestartableComposable
 fun ConnectedDeviceItem(
     viewModel: AccountScreenViewModel,
     connectedDevice: ConnectedDevice,
@@ -146,7 +144,6 @@ fun ConnectedDeviceItem(
  * @param device The device to display
  */
 @Composable
-@NonRestartableComposable
 private fun DeviceIcon(
     device: ConnectedDevice,
 ) {
@@ -194,7 +191,6 @@ private fun DeviceIcon(
  * Badge used as marker if the device displayed is the current one
  */
 @Composable
-@NonRestartableComposable
 private fun CurrentDeviceBadge() {
     Text(
         modifier = Modifier
@@ -221,7 +217,6 @@ private fun CurrentDeviceBadge() {
  * Custom [HorizontalDivider] used to divide each [ConnectedDeviceItem]
  */
 @Composable
-@NonRestartableComposable
 private fun DevicesDivider() {
     Row(
         modifier = Modifier
