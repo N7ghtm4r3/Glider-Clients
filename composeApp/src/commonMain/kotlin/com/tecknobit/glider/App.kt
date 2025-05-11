@@ -178,6 +178,7 @@ fun startSession() {
                     localUser.updateDynamicAccountData(
                         dynamicData = response.toResponseData()
                     )
+                    setUserLanguage()
                 },
                 onFailure = {
                     localUser.clear()
@@ -190,7 +191,6 @@ fun startSession() {
         HOME_SCREEN
     } else
         AUTH_SCREEN
-    setUserLanguage()
     navigator.navigate(route)
 }
 
