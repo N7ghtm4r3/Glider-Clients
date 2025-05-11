@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcompose.annotations.ScreenCoordinator
 import com.tecknobit.equinoxcompose.annotations.ScreenSection
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
@@ -61,6 +62,7 @@ import org.jetbrains.compose.resources.stringResource
  * @see GliderScreenTab
  */
 @Structure
+@ScreenCoordinator
 abstract class PasswordFormScreen<V : PasswordFormViewModel>(
     viewModel: V,
     title: StringResource,

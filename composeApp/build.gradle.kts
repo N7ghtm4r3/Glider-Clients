@@ -98,6 +98,7 @@ kotlin {
             implementation(libs.jetlime)
             implementation(libs.ametista.engine)
             implementation(libs.kinfo)
+            implementation(libs.equinox.navigation)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
