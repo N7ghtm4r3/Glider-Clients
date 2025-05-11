@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
-import com.tecknobit.equinoxcore.network.sendRequest
+import com.tecknobit.equinoxcore.network.sendRequestAsyncHandlers
 import com.tecknobit.glider.navigator
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel
@@ -52,7 +52,7 @@ class EditInsertedPasswordScreenViewModel(
             return
         viewModelScope.launch {
             _performingPasswordOperation.emit(true)
-            requester.sendRequest(
+            requester.sendRequestAsyncHandlers(
                 request = {
                     editPassword(
                         passwordId = passwordId,
@@ -62,16 +62,12 @@ class EditInsertedPasswordScreenViewModel(
                     )
                 },
                 onSuccess = {
-                    viewModelScope.launch {
-                        _performingPasswordOperation.emit(false)
-                        navigator.goBack()
-                    }
+                    _performingPasswordOperation.emit(false)
+                    navigator.goBack()
                 },
                 onFailure = {
-                    viewModelScope.launch {
-                        _performingPasswordOperation.emit(false)
-                        showSnackbarMessage(it)
-                    }
+                    _performingPasswordOperation.emit(false)
+                    showSnackbarMessage(it)
                 }
             )
         }
