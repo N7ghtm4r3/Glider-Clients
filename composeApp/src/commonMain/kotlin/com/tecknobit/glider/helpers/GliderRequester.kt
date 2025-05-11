@@ -216,15 +216,19 @@ class GliderRequester(
      *
      * @return the result of the request as [JsonObject]
      */
-    @RequestPath(path = "/api/v1/users/{id}/devices/{device_id}", method = DELETE)
+    @RequestPath(path = "/api/v1/users/{id}/devices", method = DELETE)
     suspend fun disconnectDevice(
         deviceId: String,
     ): JsonObject {
+        val payload = buildJsonObject {
+            put(DEVICE_IDENTIFIER_KEY, deviceId)
+        }
         return execDelete(
             endpoint = assembleUsersEndpointPath(
-                endpoint = "/$DEVICES_KEY/$deviceId"
+                endpoint = "/$DEVICES_KEY"
             ),
-            headers = deviceIdHeader
+            headers = deviceIdHeader,
+            payload = payload
         )
     }
 
