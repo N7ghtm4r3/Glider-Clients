@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMultiplatform::class)
-
 package com.tecknobit.glider.ui.screens.keychain.presenter
 
 import androidx.compose.foundation.layout.Arrangement
