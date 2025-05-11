@@ -286,7 +286,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                     dismissAction = { visible -> visible.value = false },
                     confirmAction = { visible ->
                         viewModel.changeEmail(
-                            onSuccess = {
+                            onChange = {
                                 visible.value = false
                             }
                         )
@@ -299,7 +299,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                     dismissAction = { visible -> visible.value = false },
                     confirmAction = { visible ->
                         viewModel.changePassword(
-                            onSuccess = {
+                            onChange = {
                                 visible.value = false
                             }
                         )
@@ -312,7 +312,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                     dismissAction = { visible -> visible.value = false },
                     confirmAction = { visible ->
                         viewModel.changeLanguage(
-                            onSuccess = {
+                            onChange = {
                                 visible.value = false
                                 navigator.navigate(SPLASHSCREEN)
                             }
@@ -342,7 +342,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
             )
         }
         Stepper(
-            modifier = Modifier
+            containerModifier = Modifier
                 .navigationBarsPadding(),
             steps = steps,
             stepBackgroundColor = MaterialTheme.colorScheme.surfaceContainer

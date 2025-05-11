@@ -1,37 +1,36 @@
 [versions]
 agp = "8.5.2"
-ametistaEngine = "1.0.2"
+ametistaEngine = "1.0.4"
 android-compileSdk = "35"
 android-minSdk = "24"
 android-targetSdk = "35"
 androidx-activityCompose = "1.10.1"
 androidx-lifecycle = "2.8.4"
 compose-multiplatform = "1.7.3"
-equinoxCompose = "1.0.9"
-equinoxCore = "1.0.9"
-glidercore = "2.0.0"
+equinox = "1.1.1"
+glidercore = "2.0.1"
 jetlime = "3.0.1"
+kinfo = "1.0.2"
 kotlin = "2.1.10"
-kotlinx-coroutines = "1.10.1"
-kotlinxSerializationJson = "1.8.0"
-lazyPaginationCompose = "1.4.0"
+kotlinx-coroutines = "1.10.2"
+kotlinxSerializationJson = "1.8.1"
+lazyPaginationCompose = "1.5.1"
 octocatkdu = "1.0.5"
 precompose = "1.7.0-alpha03"
 appUpdate = "2.1.0"
 review = "2.0.2"
 dokka = "2.0.0"
-#TODO: TO REMOVE
-startupRuntime = "1.2.0"
 
 [libraries]
 ametista-engine = { module = "io.github.n7ghtm4r3:Ametista-Engine", version.ref = "ametistaEngine" }
-equinox-core = { module = "io.github.n7ghtm4r3:equinox-core", version.ref = "equinoxCore" }
-equinox-compose = { module = "io.github.n7ghtm4r3:equinox-compose", version.ref = "equinoxCompose" }
+equinox-core = { module = "io.github.n7ghtm4r3:equinox-core", version.ref = "equinox" }
+equinox-compose = { module = "io.github.n7ghtm4r3:equinox-compose", version.ref = "equinox" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
 glidercore = { module = "com.tecknobit.glidercore:glidercore", version.ref = "glidercore" }
 jetlime = { module = "io.github.pushpalroy:jetlime", version.ref = "jetlime" }
+kinfo = { module = "io.github.n7ghtm4r3:KInfo", version.ref = "kinfo" }
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 lazy-pagination-compose = { module = "io.github.ahmad-hamwi:lazy-pagination-compose", version.ref = "lazyPaginationCompose" }
@@ -42,8 +41,6 @@ review-ktx = { module = "com.google.android.play:review-ktx", version.ref = "rev
 app-update = { module = "com.google.android.play:app-update", version.ref = "appUpdate" }
 app-update-ktx = { module = "com.google.android.play:app-update-ktx", version.ref = "appUpdate" }
 dokka-base = { module = "org.jetbrains.dokka:dokka-base", version.ref = "dokka" }
-#TODO: TO REMOVE
-androidx-startup-runtime = { module = "androidx.startup:startup-runtime", version.ref = "startupRuntime" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

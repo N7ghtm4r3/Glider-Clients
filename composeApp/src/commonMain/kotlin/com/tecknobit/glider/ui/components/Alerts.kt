@@ -166,7 +166,7 @@ fun Logout(
         titleStyle = titleStyle,
         text = Res.string.logout_warn_text,
         confirmAction = {
-            viewModel.logout {
+            viewModel.clearSession {
                 navigator.navigate(SPLASHSCREEN)
             }
         }

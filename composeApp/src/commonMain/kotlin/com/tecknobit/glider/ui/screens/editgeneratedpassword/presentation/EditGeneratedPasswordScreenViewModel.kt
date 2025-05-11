@@ -2,7 +2,7 @@ package com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation
 
 import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
-import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
+import com.tecknobit.equinoxcore.network.sendRequest
 import com.tecknobit.glider.navigator
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel

@@ -9,8 +9,8 @@ import androidx.compose.ui.text.font.FontFamily
 import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.ametistaengine.AmetistaEngine.Companion.FILES_AMETISTA_CONFIG_PATHNAME
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
-import com.tecknobit.equinoxcore.network.Requester.Companion.sendRequest
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
+import com.tecknobit.equinoxcore.network.sendRequest
 import com.tecknobit.glider.helpers.GliderLocalUser
 import com.tecknobit.glider.helpers.GliderRequester
 import com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen
@@ -144,7 +144,7 @@ private fun InitAmetista() {
             serverSecret = AmetistaConfig.SERVER_SECRET!!,
             applicationId = AmetistaConfig.APPLICATION_IDENTIFIER!!,
             bypassSslValidation = AmetistaConfig.BYPASS_SSL_VALIDATION,
-            debugMode = false
+            debugMode = true // TODO: TO SET ON FALSE 
         )
     }
 }
@@ -167,7 +167,8 @@ fun startSession() {
         host = localUser.hostAddress,
         userId = localUser.userId,
         userToken = localUser.userToken,
-        deviceId = localUser.deviceId
+        deviceId = localUser.deviceId,
+        debugMode = true // TODO: TO REMOVE 
     )
     val route = if (localUser.isAuthenticated) {
         MainScope().launch {
@@ -180,12 +181,7 @@ fun startSession() {
                 },
                 onFailure = {
                     localUser.clear()
-                    // TODO: TO USE THE BUILT-IN METHOD
-                    requester.setUserCredentials(
-                        userId = null,
-                        userToken = null
-                    )
-                    requester.deviceId = null
+                    requester.clearSession()
                     navigator.navigate(AUTH_SCREEN)
                 },
                 onConnectionError = { }

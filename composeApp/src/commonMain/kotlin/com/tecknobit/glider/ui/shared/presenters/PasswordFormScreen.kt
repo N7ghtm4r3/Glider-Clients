@@ -24,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcompose.annotations.ScreenSection
 import com.tecknobit.equinoxcompose.components.EquinoxOutlinedTextField
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
@@ -96,7 +97,7 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
      * The form where the user can insert the details of the password
      */
     @Composable
-    @NonRestartableComposable
+    @ScreenSection
     protected abstract fun ColumnScope.Form()
 
     /**
@@ -131,7 +132,6 @@ abstract class PasswordFormScreen<V : PasswordFormViewModel>(
      * @param imeAction The ime action to attach to the component
      */
     @Composable
-    @NonRestartableComposable
     protected fun ScopesInputField(
         modifier: Modifier = Modifier,
         imeAction: ImeAction = ImeAction.Done,
