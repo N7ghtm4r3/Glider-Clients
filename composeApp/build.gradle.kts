@@ -78,6 +78,8 @@ kotlin {
             implementation(libs.app.update.ktx)
             implementation(libs.review)
             implementation(libs.review.ktx)
+            implementation(libs.androidx.biometric)
+            implementation(libs.androidx.appcompat)
         }
         commonMain.dependencies {
             implementation(compose.runtime)

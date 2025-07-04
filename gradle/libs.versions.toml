@@ -4,6 +4,8 @@ ametistaEngine = "1.0.4"
 android-compileSdk = "36"
 android-minSdk = "24"
 android-targetSdk = "36"
+appcompat = "1.7.1"
+biometric = "1.1.0"
 androidx-activityCompose = "1.10.1"
 androidx-lifecycle = "2.8.4"
 compose-multiplatform = "1.8.1"
@@ -23,6 +25,11 @@ review = "2.0.2"
 dokka = "2.0.0"
 
 [libraries]
+
+#TODO: CHECK TO KEEP OR REMOVE WHEN CREATED THE ORIGINAL API
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-biometric = { module = "androidx.biometric:biometric", version.ref = "biometric" }
+
 ametista-engine = { module = "io.github.n7ghtm4r3:Ametista-Engine", version.ref = "ametistaEngine" }
 equinox-core = { module = "io.github.n7ghtm4r3:equinox-core", version.ref = "equinox" }
 equinox-compose = { module = "io.github.n7ghtm4r3:equinox-compose", version.ref = "equinox" }
