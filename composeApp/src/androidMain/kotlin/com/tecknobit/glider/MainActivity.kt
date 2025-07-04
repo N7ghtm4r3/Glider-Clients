@@ -10,12 +10,12 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.IntentSenderRequest
 import androidx.activity.result.contract.ActivityResultContracts.StartIntentSenderForResult
 import androidx.annotation.ContentView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.tecknobit.ametistaengine.AmetistaEngine
-import com.tecknobit.equinoxcompose.session.setUpSession
 import com.tecknobit.equinoxcore.utilities.ContextActivityProvider
 
 /**
@@ -25,7 +25,7 @@ import com.tecknobit.equinoxcore.utilities.ContextActivityProvider
  * @see ComponentActivity
  *
  */
-class MainActivity : ComponentActivity() {
+class MainActivity : AppCompatActivity() {
 
     companion object {
 
@@ -77,12 +77,6 @@ class MainActivity : ComponentActivity() {
         StrictMode.setThreadPolicy(policy)
         ContextActivityProvider.setCurrentActivity(this)
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
-        setUpSession(
-            hasBeenDisconnectedAction = {
-                localUser.clear()
-                navigator.navigate(AUTH_SCREEN)
-            }
-        )
     }
 
 }

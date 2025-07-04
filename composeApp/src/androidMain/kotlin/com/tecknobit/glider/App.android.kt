@@ -10,6 +10,7 @@ import com.google.android.play.core.ktx.isImmediateUpdateAllowed
 import com.tecknobit.equinoxcore.utilities.AppContext
 import com.tecknobit.glider.MainActivity.Companion.appUpdateManager
 import com.tecknobit.glider.MainActivity.Companion.launcher
+import com.tecknobit.glider.helpers.BiometrikAuthenticator
 import moe.tlaster.precompose.navigation.BackHandler
 import java.util.Locale
 
@@ -21,20 +22,24 @@ import java.util.Locale
 @Composable
 @NonRestartableComposable
 actual fun CheckForUpdatesAndLaunch() {
-    appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
-        val isUpdateAvailable = info.updateAvailability() == UPDATE_AVAILABLE
-        val isUpdateSupported = info.isImmediateUpdateAllowed
-        if (isUpdateAvailable && isUpdateSupported) {
-            appUpdateManager.startUpdateFlowForResult(
-                info,
-                launcher,
-                AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
-            )
-        } else
-            startSession()
-    }.addOnFailureListener {
-        startSession()
-    }
+    BiometrikAuthenticator(
+        onSuccess = {
+            appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
+                val isUpdateAvailable = info.updateAvailability() == UPDATE_AVAILABLE
+                val isUpdateSupported = info.isImmediateUpdateAllowed
+                if (isUpdateAvailable && isUpdateSupported) {
+                    appUpdateManager.startUpdateFlowForResult(
+                        info,
+                        launcher,
+                        AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
+                    )
+                } else
+                    startSession()
+            }.addOnFailureListener {
+                startSession()
+            }
+        }
+    )
 }
 
 /**
@@ -54,7 +59,7 @@ actual fun CloseApplicationOnNavBack() {
  *
  */
 actual fun setUserLanguage() {
-    val locale = Locale(localUser.language)
+    val locale = Locale.forLanguageTag(localUser.language)
     Locale.setDefault(locale)
     val context = AppContext.get()
     val config = context.resources.configuration

@@ -1,12 +1,9 @@
-@file:OptIn(ExperimentalComposeApi::class, ExperimentalLayoutApi::class)
-
 package com.tecknobit.glider.ui.screens.account.presenter
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
-import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -32,7 +29,6 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -66,7 +62,7 @@ import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.EXPANDED_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClass.MEDIUM_CONTENT
 import com.tecknobit.equinoxcompose.utilities.ResponsiveClassComponent
 import com.tecknobit.equinoxcompose.utilities.ResponsiveContent
-import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.LANGUAGES_SUPPORTED
+import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.SUPPORTED_LANGUAGES
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isEmailValid
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
 import com.tecknobit.glider.SPLASHSCREEN
@@ -104,7 +100,7 @@ import org.jetbrains.compose.resources.stringResource
  * allow to customize the preferences and settings
  *
  * @author N7ghtm4r3 - Tecknobit
- * @see com.tecknobit.equinoxcompose.session.EquinoxScreen
+ * @see com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
  * @see GliderScreenTab
  */
 class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
@@ -472,7 +468,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
             modifier = Modifier
                 .selectableGroup()
         ) {
-            LANGUAGES_SUPPORTED.entries.forEach { entry ->
+            SUPPORTED_LANGUAGES.entries.forEach { entry ->
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {

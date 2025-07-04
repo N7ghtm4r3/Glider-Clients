@@ -1,14 +1,15 @@
 package com.tecknobit.glider
 
-import OctocatKDUConfig
-import UpdaterDialog
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.tecknobit.glider.helpers.BiometrikAuthenticator
 import com.tecknobit.glider.ui.theme.GliderTheme
+import com.tecknobit.octocatkdu.OctocatKDUConfig
+import com.tecknobit.octocatkdu.UpdaterDialog
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.app_name
 import glider.composeapp.generated.resources.app_version
@@ -33,8 +34,13 @@ actual fun CheckForUpdatesAndLaunch() {
                 dismissAction = { launchApp = true }
             )
         )
-        if (launchApp)
-            startSession()
+        if (launchApp) {
+            BiometrikAuthenticator(
+                onSuccess = {
+                    startSession()
+                }
+            )
+        }
     }
 }
 

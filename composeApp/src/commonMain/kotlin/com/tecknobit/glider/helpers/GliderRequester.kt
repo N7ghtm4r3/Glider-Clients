@@ -133,6 +133,7 @@ class GliderRequester(
      *
      * @param email The email of the user
      * @param password The password of the user
+     * @param language The language of the user
      * @param custom The custom parameters added in a customization of the equinox user to execute a customized sign-in
      *
      * @return the payload for the request as [JsonObject]
@@ -142,11 +143,13 @@ class GliderRequester(
     override fun getSignInPayload(
         email: String,
         password: String,
+        language: String,
         vararg custom: Any?,
     ): JsonObject {
         val payload = super.getSignInPayload(
             email = email,
             password = password,
+            language = language,
             custom = custom
         ).toMutableMap()
         payload[DEVICE_KEY] = Json.encodeToJsonElement(custom[0] as JsonObject)

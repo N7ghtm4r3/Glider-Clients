@@ -50,7 +50,7 @@ kotlin {
     
     @OptIn(ExperimentalWasmDsl::class)
     wasmJs {
-        moduleName = "composeApp"
+        outputModuleName = "composeApp"
         browser {
             val rootDirPath = project.rootDir.path
             val projectDirPath = project.projectDir.path
@@ -78,6 +78,8 @@ kotlin {
             implementation(libs.app.update.ktx)
             implementation(libs.review)
             implementation(libs.review.ktx)
+            implementation(libs.androidx.biometric)
+            implementation(libs.androidx.appcompat)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -116,8 +118,8 @@ android {
         applicationId = "com.tecknobit.glider"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 7
-        versionName = "2.0.1"
+        versionCode = 8
+        versionName = "2.0.2"
     }
     packaging {
         resources {
@@ -159,8 +161,8 @@ compose.desktop {
                 "jdk.security.auth"
             )
             packageName = "Glider"
-            packageVersion = "2.0.1"
-            version = "2.0.1"
+            packageVersion = "2.0.2"
+            version = "2.0.2"
             description = "Glider, open source passwords manager"
             copyright = "© 2025 Tecknobit"
             vendor = "Tecknobit"
@@ -177,7 +179,7 @@ compose.desktop {
                 iconFile.set(project.file("src/desktopMain/resources/logo.png"))
                 packageName = "com-tecknobit-glider"
                 debMaintainer = "infotecknobitcompany@gmail.com"
-                appRelease = "2.0.1"
+                appRelease = "2.0.2"
                 appCategory = "PERSONALIZATION"
                 rpmLicenseType = "APACHE2"
             }

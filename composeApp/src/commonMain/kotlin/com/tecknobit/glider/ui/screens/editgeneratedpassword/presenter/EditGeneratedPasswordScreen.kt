@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcompose.annotations.ScreenSection
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel
@@ -39,6 +40,7 @@ class EditGeneratedPasswordScreen(
      * The form where the user can insert the details of the password
      */
     @Composable
+    @ScreenSection
     override fun ColumnScope.Form() {
         TailInputField()
         ScopesInputField(

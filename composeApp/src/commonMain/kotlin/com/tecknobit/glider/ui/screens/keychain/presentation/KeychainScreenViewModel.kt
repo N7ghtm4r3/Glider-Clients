@@ -1,13 +1,15 @@
+@file:OptIn(ExperimentalComposeApi::class)
+
 package com.tecknobit.glider.ui.screens.keychain.presentation
 
 import androidx.compose.material3.SnackbarHostState
+import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.tecknobit.equinoxcompose.session.Retriever
-import com.tecknobit.equinoxcompose.session.setHasBeenDisconnectedValue
-import com.tecknobit.equinoxcompose.session.setServerOfflineValue
+import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowState
 import com.tecknobit.equinoxcompose.utilities.copyOnClipboard
 import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseContent
@@ -47,6 +49,11 @@ class KeychainScreenViewModel : EquinoxViewModel(
     lateinit var passwordTypes: SnapshotStateList<PasswordType>
 
     /**
+     * `sessionFlowState` the state used to manage the session lifecycle in the screen
+     */
+    lateinit var sessionFlowState: SessionFlowState
+
+    /**
      *`passwordsState` the state used to handle the pagination of the passwords list
      */
     val passwordsState = PaginationState<Int, Password>(
@@ -77,15 +84,18 @@ class KeychainScreenViewModel : EquinoxViewModel(
                 },
                 serializer = Password.serializer(),
                 onSuccess = { paginatedResponse ->
-                    setServerOfflineValue(false)
+                    sessionFlowState.notifyOperational()
                     passwordsState.appendPage(
                         items = paginatedResponse.data,
                         nextPageKey = paginatedResponse.nextPage,
                         isLastPage = paginatedResponse.isLastPage
                     )
                 },
-                onFailure = { setHasBeenDisconnectedValue(true) },
-                onConnectionError = { setServerOfflineValue(true) }
+                onFailure = { sessionFlowState.notifyUserDisconnected() },
+                onConnectionError = {
+                    passwordsState.setError(Exception())
+                    sessionFlowState.notifyServerOffline()
+                }
             )
         }
     }

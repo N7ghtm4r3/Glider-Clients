@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
+@file:OptIn(ExperimentalMaterial3Api::class, ExperimentalComposeApi::class)
 
 package com.tecknobit.glider.ui.shared.presenters
 
@@ -23,6 +23,7 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.State
 import androidx.compose.runtime.collectAsState
@@ -34,13 +35,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.tecknobit.equinoxcompose.session.ManagedContent
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
+import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowContainer
+import com.tecknobit.equinoxcompose.session.sessionflow.rememberSessionFlowState
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.equinoxcore.annotations.Wrapper
 import com.tecknobit.glider.navigator
+import com.tecknobit.glider.ui.components.RetryButton
 import com.tecknobit.glider.ui.shared.data.PasswordDetails
 import com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel
 import com.tecknobit.glider.ui.theme.GliderTheme
@@ -84,11 +87,12 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
     @Composable
     override fun ArrangeScreenContent() {
         GliderTheme {
-            ManagedContent(
+            SessionFlowContainer(
                 modifier = Modifier
                     .fillMaxSize(),
+                state = viewModel.sessionFlowState,
                 viewModel = viewModel,
-                initialDelay = 500,
+                initialLoadingRoutineDelay = 500L,
                 loadingRoutine = { password.value != null },
                 content = {
                     CollectStatesAfterLoading()
@@ -145,6 +149,15 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
                             ScreenContent()
                         }
                     }
+                },
+                retryFailedFlowContent = {
+                    RetryButton(
+                        onRetry = {
+                            // TODO: TO INTEGRATE DIRECTLY INTO reload METHOD
+                            viewModel.retrievePassword()
+                            viewModel.sessionFlowState.reload()
+                        }
+                    )
                 }
             )
         }
@@ -190,6 +203,7 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
             initial = false
         )
         password = viewModel.password.collectAsState()
+        viewModel.sessionFlowState = rememberSessionFlowState()
     }
 
     /**

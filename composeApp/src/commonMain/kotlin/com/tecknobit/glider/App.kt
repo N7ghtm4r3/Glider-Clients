@@ -1,12 +1,14 @@
-@file:OptIn(ExperimentalResourceApi::class)
+@file:OptIn(ExperimentalComposeApi::class)
 
 package com.tecknobit.glider
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.text.font.FontFamily
 import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.ametistaengine.AmetistaEngine.Companion.FILES_AMETISTA_CONFIG_PATHNAME
+import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowState
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
 import com.tecknobit.equinoxcore.network.sendRequest
@@ -27,7 +29,6 @@ import moe.tlaster.precompose.navigation.NavHost
 import moe.tlaster.precompose.navigation.Navigator
 import moe.tlaster.precompose.navigation.path
 import moe.tlaster.precompose.navigation.rememberNavigator
-import org.jetbrains.compose.resources.ExperimentalResourceApi
 import org.jetbrains.compose.resources.Font
 
 /**
@@ -127,6 +128,10 @@ fun App() {
                 ).ShowContent()
             }
         }
+    }
+    SessionFlowState.invokeOnUserDisconnected {
+        localUser.clear()
+        navigator.navigate(AUTH_SCREEN)
     }
 }
 
