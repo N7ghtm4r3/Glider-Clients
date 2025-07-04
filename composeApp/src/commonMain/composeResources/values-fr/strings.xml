@@ -76,4 +76,6 @@
     <string name="edit_password">Modifier le mot de passe</string>
     <string name="edit">Editer</string>
     <string name="editing">Édition...</string>
+    <string name="login_required">Connexion requise</string>
+    <string name="enter_your_credentials_to_continue">Entrez vos informations d'identification pour continuer</string>
 </resources>

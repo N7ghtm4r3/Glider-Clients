@@ -12,5 +12,5 @@ import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 @FutureEquinoxApi
 expect fun BiometrikAuthenticator(
     onSuccess: () -> Unit,
-    onFailure: () -> Unit,
+    onFailure: () -> Unit = {},
 )

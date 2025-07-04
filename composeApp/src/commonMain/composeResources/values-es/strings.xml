@@ -76,4 +76,6 @@
     <string name="edit_password">Editar contraseña</string>
     <string name="edit">Editar</string>
     <string name="editing">Editando...</string>
+    <string name="login_required">Inicio de sesión obligatorio</string>
+    <string name="enter_your_credentials_to_continue">Introduzca sus credenciales para continuar</string>
 </resources>

@@ -76,4 +76,6 @@
     <string name="edit_password">Modifica password</string>
     <string name="edit">Modifica</string>
     <string name="editing">Modificando...</string>
+    <string name="login_required">Accesso richiesto</string>
+    <string name="enter_your_credentials_to_continue">Inserisci le tue credenziali per continuare</string>
 </resources>

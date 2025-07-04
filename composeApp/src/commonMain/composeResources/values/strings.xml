@@ -76,4 +76,6 @@
     <string name="edit_password">Edit password</string>
     <string name="edit">Edit</string>
     <string name="editing">Editing...</string>
+    <string name="login_required">Login required</string>
+    <string name="enter_your_credentials_to_continue">Enter your credentials to continue</string>
 </resources>

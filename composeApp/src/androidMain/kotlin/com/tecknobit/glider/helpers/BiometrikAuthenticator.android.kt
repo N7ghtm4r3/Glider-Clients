@@ -1,12 +1,15 @@
 package com.tecknobit.glider.helpers
 
 import androidx.appcompat.app.AppCompatActivity
-import androidx.biometric.BiometricManager.*
-import androidx.biometric.BiometricManager.Authenticators.*
+import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
+import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
+import androidx.biometric.BiometricManager.BIOMETRIC_ERROR_HW_UNAVAILABLE
+import androidx.biometric.BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED
+import androidx.biometric.BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE
+import androidx.biometric.BiometricManager.from
 import androidx.biometric.BiometricPrompt
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -16,11 +19,19 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.tecknobit.equinoxcompose.components.ErrorUI
-import com.tecknobit.equinoxcompose.resources.retry
 import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 import com.tecknobit.equinoxcore.utilities.ContextActivityProvider
-import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.*
+import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationError
+import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationFailed
+import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationNotSet
+import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationSuccess
+import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.FeatureUnavailable
+import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.HardwareUnavailable
+import com.tecknobit.glider.ui.components.RetryButton
 import com.tecknobit.glider.ui.theme.GliderTheme
+import glider.composeapp.generated.resources.Res
+import glider.composeapp.generated.resources.enter_your_credentials_to_continue
+import glider.composeapp.generated.resources.login_required
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.Channel.Factory.UNLIMITED
 import kotlinx.coroutines.flow.receiveAsFlow
@@ -36,12 +47,10 @@ actual fun BiometrikAuthenticator(
     onSuccess: () -> Unit,
     onFailure: () -> Unit,
 ) {
+    var retry by remember { mutableStateOf(false) }
     val biometricPromptManager = remember {
         BiometricPromptManager(ContextActivityProvider.getCurrentActivity() as AppCompatActivity)
     }
-    var retry by remember { mutableStateOf(false) }
-    if (retry)
-        CheckForUpdatesAndLaunch()
     val biometricResult by biometricPromptManager.promptResults.collectAsState(
         initial = null
     )
@@ -49,7 +58,7 @@ actual fun BiometrikAuthenticator(
         if (biometricResult is AuthenticationNotSet)
             onSuccess()
     }
-    if (biometricResult == null) {
+    if (biometricResult == null || retry) {
         biometricPromptManager.showBiometricPrompt(
             title = stringResource(Res.string.login_required),
             description = stringResource(Res.string.enter_your_credentials_to_continue)
@@ -60,23 +69,22 @@ actual fun BiometrikAuthenticator(
             AuthenticationSuccess, AuthenticationNotSet, HardwareUnavailable,
             FeatureUnavailable,
                 -> onSuccess()
-
             else -> {
-                retry = false
-                GliderTheme {
-                    ErrorUI(
-                        containerModifier = Modifier
-                            .fillMaxSize(),
-                        retryContent = {
-                            TextButton(
-                                onClick = { retry = true }
-                            ) {
-                                Text(
-                                    text = stringResource(com.tecknobit.equinoxcompose.resources.Res.string.retry)
+                AnimatedVisibility(
+                    visible = !retry
+                ) {
+                    retry = false
+                    GliderTheme {
+                        ErrorUI(
+                            containerModifier = Modifier
+                                .fillMaxSize(),
+                            retryContent = {
+                                RetryButton(
+                                    onRetry = { retry = !retry }
                                 )
                             }
-                        }
-                    )
+                        )
+                    }
                 }
             }
         }
