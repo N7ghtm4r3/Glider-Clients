@@ -5,6 +5,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.text.input.ImeAction
+import com.tecknobit.equinoxcompose.annotations.ScreenSection
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.glider.ui.components.PasswordInputField
@@ -35,6 +36,7 @@ class InsertPasswordScreenTab : PasswordFormScreen<InsertPasswordScreenViewModel
      * The form where the user can insert the details of the password
      */
     @Composable
+    @ScreenSection
     override fun ColumnScope.Form() {
         TailInputField()
         ScopesInputField(

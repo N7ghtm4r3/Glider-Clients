@@ -5,7 +5,6 @@ import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowState
 import androidx.compose.ui.window.application
 import com.tecknobit.ametistaengine.AmetistaEngine
-import com.tecknobit.equinoxcompose.session.setUpSession
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.app_name
 import glider.composeapp.generated.resources.logo
@@ -26,12 +25,6 @@ fun main() {
                 placement = WindowPlacement.Maximized
             )
         ) {
-            setUpSession(
-                hasBeenDisconnectedAction = {
-                    localUser.clear()
-                    navigator.navigate(AUTH_SCREEN)
-                }
-            )
             App()
         }
     }

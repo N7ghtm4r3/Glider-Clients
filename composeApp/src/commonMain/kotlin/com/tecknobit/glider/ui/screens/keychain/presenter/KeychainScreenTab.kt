@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalComposeApi::class)
+
 package com.tecknobit.glider.ui.screens.keychain.presenter
 
 import androidx.compose.foundation.layout.Arrangement
@@ -15,6 +17,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
@@ -22,12 +25,14 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcompose.annotations.ScreenSection
 import com.tecknobit.equinoxcompose.components.DebouncedOutlinedTextField
-import com.tecknobit.equinoxcompose.session.ManagedContent
-import com.tecknobit.equinoxcompose.session.createUiLayoutAppearance
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
+import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowContainer
+import com.tecknobit.equinoxcompose.session.sessionflow.rememberSessionFlowState
 import com.tecknobit.equinoxcompose.utilities.responsiveAssignment
+import com.tecknobit.glider.ui.components.RetryButton
 import com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu
 import com.tecknobit.glider.ui.screens.keychain.components.Passwords
 import com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel
@@ -58,15 +63,11 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
      */
     @Composable
     override fun ColumnScope.ScreenContent() {
-        ManagedContent(
+        SessionFlowContainer(
             modifier = Modifier
                 .fillMaxSize(),
-            serverOfflineUiDefaults = createUiLayoutAppearance(
-                containerColor = MaterialTheme.colorScheme.inverseOnSurface
-            ),
-            noInternetConnectionUiDefaults = createUiLayoutAppearance(
-                containerColor = MaterialTheme.colorScheme.inverseOnSurface
-            ),
+            statusContainerColor = MaterialTheme.colorScheme.inverseOnSurface,
+            state = viewModel.sessionFlowState,
             viewModel = viewModel,
             content = {
                 Column {
@@ -75,6 +76,13 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
                         viewModel = viewModel
                     )
                 }
+            },
+            retryFailedFlowContent = {
+                RetryButton(
+                    onRetry = {
+                        viewModel.passwordsState.retryLastFailedRequest()
+                    }
+                )
             }
         )
     }
@@ -83,6 +91,7 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
      * Section where the user can apply the filters to the passwords list to retrieve
      */
     @Composable
+    @ScreenSection
     private fun Filters() {
         Row(
             modifier = Modifier
@@ -131,6 +140,7 @@ class KeychainScreenTab : GliderScreenTab<KeychainScreenViewModel>(
     override fun CollectStates() {
         viewModel.keywords = remember { mutableStateOf("") }
         viewModel.passwordTypes = remember { mutableStateListOf() }
+        viewModel.sessionFlowState = rememberSessionFlowState()
         LaunchedEffect(Unit) {
             viewModel.passwordTypes.addAll(PasswordType.entries)
         }
