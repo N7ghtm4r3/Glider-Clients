@@ -9,6 +9,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -20,6 +25,7 @@ import com.tecknobit.glider.ui.theme.AppTypography
 import com.tecknobit.glider.ui.theme.GliderTheme
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.app_name
+import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.stringResource
 
 /**
@@ -35,6 +41,11 @@ class Splashscreen : EquinoxNoModelScreen() {
      */
     @Composable
     override fun ArrangeScreenContent() {
+        var start by remember { mutableStateOf(false) }
+        LaunchedEffect(Unit) {
+            delay(1000L)
+            start = true
+        }
         GliderTheme {
             Column(
                 modifier = Modifier
@@ -72,7 +83,8 @@ class Splashscreen : EquinoxNoModelScreen() {
                 }
             }
         }
-        CheckForUpdatesAndLaunch()
+        if (start)
+            CheckForUpdatesAndLaunch()
     }
 
     /**

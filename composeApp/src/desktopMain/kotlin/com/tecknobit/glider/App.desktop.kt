@@ -6,6 +6,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.tecknobit.glider.helpers.BiometrikAuthenticator
 import com.tecknobit.glider.ui.theme.GliderTheme
 import com.tecknobit.octocatkdu.OctocatKDUConfig
 import com.tecknobit.octocatkdu.UpdaterDialog
@@ -33,8 +34,13 @@ actual fun CheckForUpdatesAndLaunch() {
                 dismissAction = { launchApp = true }
             )
         )
-        if (launchApp)
-            startSession()
+        if (launchApp) {
+            BiometrikAuthenticator(
+                onSuccess = {
+                    startSession()
+                }
+            )
+        }
     }
 }
 

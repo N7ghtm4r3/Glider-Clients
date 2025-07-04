@@ -3,6 +3,8 @@ package com.tecknobit.glider.helpers
 import androidx.compose.runtime.Composable
 import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 
+private var alreadyAuthenticated = false
+
 @Composable
 @FutureEquinoxApi
 @Deprecated(
@@ -10,6 +12,7 @@ import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
             "or will be integrated as component in Equinox"
 )
 actual fun BiometrikAuthenticator(
+    requestOnFirstOpenOnly: Boolean,
     onSuccess: () -> Unit,
     onFailure: () -> Unit,
 ) {

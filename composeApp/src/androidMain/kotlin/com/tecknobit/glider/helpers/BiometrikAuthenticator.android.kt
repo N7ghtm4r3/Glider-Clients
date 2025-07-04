@@ -8,7 +8,6 @@ import androidx.biometric.BiometricManager.BIOMETRIC_ERROR_NONE_ENROLLED
 import androidx.biometric.BiometricManager.BIOMETRIC_ERROR_NO_HARDWARE
 import androidx.biometric.BiometricManager.from
 import androidx.biometric.BiometricPrompt
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -37,6 +36,8 @@ import kotlinx.coroutines.channels.Channel.Factory.UNLIMITED
 import kotlinx.coroutines.flow.receiveAsFlow
 import org.jetbrains.compose.resources.stringResource
 
+private var alreadyAuthenticated = false
+
 @Composable
 @FutureEquinoxApi
 @Deprecated(
@@ -44,43 +45,50 @@ import org.jetbrains.compose.resources.stringResource
             "or will be integrated as component in Equinox"
 )
 actual fun BiometrikAuthenticator(
+    requestOnFirstOpenOnly: Boolean,
     onSuccess: () -> Unit,
     onFailure: () -> Unit,
 ) {
-    var retry by remember { mutableStateOf(false) }
-    val biometricPromptManager = remember {
-        BiometricPromptManager(ContextActivityProvider.getCurrentActivity() as AppCompatActivity)
-    }
-    val biometricResult by biometricPromptManager.promptResults.collectAsState(
-        initial = null
-    )
-    LaunchedEffect(biometricResult) {
-        if (biometricResult is AuthenticationNotSet)
-            onSuccess()
-    }
-    if (biometricResult == null || retry) {
-        biometricPromptManager.showBiometricPrompt(
-            title = stringResource(Res.string.login_required),
-            description = stringResource(Res.string.enter_your_credentials_to_continue)
+    if (requestOnFirstOpenOnly && alreadyAuthenticated)
+        onSuccess()
+    else {
+        var retry by remember { mutableStateOf(false) }
+        val biometricPromptManager = remember {
+            BiometricPromptManager(ContextActivityProvider.getCurrentActivity() as AppCompatActivity)
+        }
+        val biometricResult by biometricPromptManager.promptResults.collectAsState(
+            initial = null
         )
-    }
-    biometricResult?.let { result ->
-        when (result) {
-            AuthenticationSuccess, AuthenticationNotSet, HardwareUnavailable,
-            FeatureUnavailable,
-                -> onSuccess()
-            else -> {
-                AnimatedVisibility(
-                    visible = !retry
-                ) {
-                    retry = false
+        LaunchedEffect(biometricResult) {
+            if (biometricResult is AuthenticationNotSet) {
+                alreadyAuthenticated = true
+                onSuccess()
+            }
+        }
+        if (biometricResult == null || retry) {
+            retry = false
+            biometricPromptManager.showBiometricPrompt(
+                title = stringResource(Res.string.login_required),
+                description = stringResource(Res.string.enter_your_credentials_to_continue)
+            )
+        }
+        biometricResult?.let { result ->
+            when (result) {
+                AuthenticationSuccess, AuthenticationNotSet, HardwareUnavailable,
+                FeatureUnavailable,
+                    -> {
+                    alreadyAuthenticated = true
+                    onSuccess()
+                }
+
+                else -> {
                     GliderTheme {
                         ErrorUI(
                             containerModifier = Modifier
                                 .fillMaxSize(),
                             retryContent = {
                                 RetryButton(
-                                    onRetry = { retry = !retry }
+                                    onRetry = { retry = true }
                                 )
                             }
                         )

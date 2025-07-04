@@ -1,10 +1,9 @@
 package com.tecknobit.glider
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.NonRestartableComposable
+import com.tecknobit.glider.helpers.BiometrikAuthenticator
 import kotlinx.browser.document
-import kotlinx.coroutines.delay
 
 /**
  * Method to check whether are available any updates for each platform and then launch the application
@@ -14,10 +13,11 @@ import kotlinx.coroutines.delay
 @Composable
 @NonRestartableComposable
 actual fun CheckForUpdatesAndLaunch() {
-    LaunchedEffect(Unit) {
-        delay(1000)
-        startSession()
-    }
+    BiometrikAuthenticator(
+        onSuccess = {
+            startSession()
+        }
+    )
 }
 
 /**
