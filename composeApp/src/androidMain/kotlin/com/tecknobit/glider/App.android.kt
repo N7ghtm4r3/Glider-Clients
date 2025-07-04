@@ -54,7 +54,7 @@ actual fun CloseApplicationOnNavBack() {
  *
  */
 actual fun setUserLanguage() {
-    val locale = Locale(localUser.language)
+    val locale = Locale.forLanguageTag(localUser.language)
     Locale.setDefault(locale)
     val context = AppContext.get()
     val config = context.resources.configuration
