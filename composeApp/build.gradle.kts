@@ -118,8 +118,8 @@ android {
         applicationId = "com.tecknobit.glider"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 8
-        versionName = "2.0.2"
+        versionCode = 9
+        versionName = "2.0.3"
     }
     packaging {
         resources {
@@ -161,8 +161,8 @@ compose.desktop {
                 "jdk.security.auth"
             )
             packageName = "Glider"
-            packageVersion = "2.0.2"
-            version = "2.0.2"
+            packageVersion = "2.0.3"
+            version = "2.0.3"
             description = "Glider, open source passwords manager"
             copyright = "© 2025 Tecknobit"
             vendor = "Tecknobit"
@@ -179,7 +179,7 @@ compose.desktop {
                 iconFile.set(project.file("src/desktopMain/resources/logo.png"))
                 packageName = "com-tecknobit-glider"
                 debMaintainer = "infotecknobitcompany@gmail.com"
-                appRelease = "2.0.2"
+                appRelease = "2.0.3"
                 appCategory = "PERSONALIZATION"
                 rpmLicenseType = "APACHE2"
             }

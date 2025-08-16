@@ -1,6 +1,5 @@
 package com.tecknobit.glider.helpers
 
-import com.tecknobit.ametistaengine.AmetistaEngine.Companion.ametistaEngine
 import com.tecknobit.equinoxcompose.network.EquinoxRequester
 import com.tecknobit.equinoxcore.annotations.Assembler
 import com.tecknobit.equinoxcore.annotations.CustomParametersOrder
@@ -68,9 +67,10 @@ class GliderRequester(
 ) {
 
     init {
-        attachInterceptorOnRequest {
-            ametistaEngine.notifyNetworkRequest()
-        }
+        // TODO: TO REIMPLEMENT WHEN NECESSARY
+//        attachInterceptorOnRequest {
+//            ametistaEngine.notifyNetworkRequest()
+//        }
     }
 
     /**

@@ -2,7 +2,7 @@ package com.tecknobit.glider.ui.shared.presentations
 
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.MutableState
-import com.tecknobit.equinoxcompose.viewmodels.EquinoxViewModel
+import com.tecknobit.equinoxcompose.session.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.glidercore.helpers.GliderInputsValidator.scopesAreValid

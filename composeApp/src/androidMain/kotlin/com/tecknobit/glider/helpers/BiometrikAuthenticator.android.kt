@@ -18,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.tecknobit.equinoxcompose.components.ErrorUI
+import com.tecknobit.equinoxcompose.components.RetryButton
 import com.tecknobit.equinoxcore.annotations.FutureEquinoxApi
 import com.tecknobit.equinoxcore.utilities.ContextActivityProvider
 import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationError
@@ -26,7 +27,6 @@ import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.Authe
 import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationSuccess
 import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.FeatureUnavailable
 import com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.HardwareUnavailable
-import com.tecknobit.glider.ui.components.RetryButton
 import com.tecknobit.glider.ui.theme.GliderTheme
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.enter_your_credentials_to_continue

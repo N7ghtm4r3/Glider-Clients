@@ -87,7 +87,7 @@ const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
  */
 @Composable
 fun App() {
-    InitAmetista()
+    // InitAmetista()
     displayFontFamily = FontFamily(Font(Res.font.josefinsans))
     bodyFontFamily = FontFamily(Font(Res.font.inter))
     PreComposeApp {
@@ -139,6 +139,7 @@ fun App() {
  * Method used to initialize the Ametista system
  */
 @Composable
+// TODO: TO REIMPLEMENT WHEN NECESSARY
 private fun InitAmetista() {
     LaunchedEffect(Unit) {
         val ametistaEngine = AmetistaEngine.ametistaEngine
