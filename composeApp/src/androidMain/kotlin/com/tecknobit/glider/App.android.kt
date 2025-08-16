@@ -1,5 +1,6 @@
 package com.tecknobit.glider
 
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.LocalActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
@@ -11,7 +12,6 @@ import com.tecknobit.equinoxcore.utilities.AppContext
 import com.tecknobit.glider.MainActivity.Companion.appUpdateManager
 import com.tecknobit.glider.MainActivity.Companion.launcher
 import com.tecknobit.glider.helpers.BiometrikAuthenticator
-import moe.tlaster.precompose.navigation.BackHandler
 import java.util.Locale
 
 /**
