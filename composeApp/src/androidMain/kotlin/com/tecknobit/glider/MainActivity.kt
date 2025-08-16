@@ -3,7 +3,6 @@ package com.tecknobit.glider
 import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.StrictMode
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
@@ -15,14 +14,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
-import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.equinoxcore.utilities.ContextActivityProvider
 
 /**
  * The [MainActivity] is used as entry point of Glider's application for Android
  *
  * @author N7ghtm4r3 - Tecknobit
- * @see ComponentActivity
+ * @see AppCompatActivity
  *
  */
 class MainActivity : AppCompatActivity() {
@@ -56,7 +54,7 @@ class MainActivity : AppCompatActivity() {
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AmetistaEngine.intake()
+        // AmetistaEngine.intake()
         setContent {
             enableEdgeToEdge()
             initSession()

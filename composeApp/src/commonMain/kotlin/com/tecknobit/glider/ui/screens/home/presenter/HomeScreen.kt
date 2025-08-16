@@ -74,22 +74,18 @@ class HomeScreen : NavigatorScreen<I18nNavigationTab>() {
         return arrayOf(
             I18nNavigationTab(
                 title = Res.string.generate,
-                contentDescription = "Generate password",
                 icon = Icons.Default.Password
             ),
             I18nNavigationTab(
                 title = Res.string.insert,
-                contentDescription = "Insert password",
                 icon = Icons.Default.Keyboard
             ),
             I18nNavigationTab(
                 title = Res.string.keychain,
-                contentDescription = "Keychain",
                 icon = Icons.Default.Key
             ),
             I18nNavigationTab(
                 title = Res.string.account,
-                contentDescription = "Account",
                 icon = Icons.Default.ManageAccounts
             )
         )

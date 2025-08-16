@@ -35,6 +35,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import com.tecknobit.equinoxcompose.components.RetryButton
 import com.tecknobit.equinoxcompose.session.screens.EquinoxNoModelScreen
 import com.tecknobit.equinoxcompose.session.screens.EquinoxScreen
 import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowContainer
@@ -43,7 +44,6 @@ import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.equinoxcore.annotations.Wrapper
 import com.tecknobit.glider.navigator
-import com.tecknobit.glider.ui.components.RetryButton
 import com.tecknobit.glider.ui.shared.data.PasswordDetails
 import com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel
 import com.tecknobit.glider.ui.theme.GliderTheme
@@ -104,7 +104,7 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
                                 ),
                                 navigationIcon = {
                                     IconButton(
-                                        onClick = { navigator.goBack() }
+                                        onClick = { navigator.popBackStack() }
                                     ) {
                                         Icon(
                                             imageVector = Icons.Default.ArrowBackIosNew,
@@ -153,9 +153,11 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
                 retryFailedFlowContent = {
                     RetryButton(
                         onRetry = {
-                            // TODO: TO INTEGRATE DIRECTLY INTO reload METHOD
-                            viewModel.retrievePassword()
-                            viewModel.sessionFlowState.reload()
+                            viewModel.sessionFlowState.reload(
+                                onReload = {
+                                    viewModel.retrievePassword()
+                                }
+                            )
                         }
                     )
                 }

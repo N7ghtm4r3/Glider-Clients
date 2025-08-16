@@ -100,16 +100,6 @@
     ]
   },
   {
-    "name": "class BiometricPromptManager(activity: AppCompatActivity)",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/index.html",
-    "searchKeys": [
-      "BiometricPromptManager",
-      "class BiometricPromptManager(activity: AppCompatActivity)",
-      "com.tecknobit.glider.helpers.BiometricPromptManager"
-    ]
-  },
-  {
     "name": "class EditGeneratedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditGeneratedPasswordScreenViewModel> ",
     "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen",
     "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter/-edit-generated-password-screen/index.html",
@@ -250,12 +240,12 @@
     ]
   },
   {
-    "name": "class Splashscreen : EquinoxNoModelScreen",
+    "name": "class Splashscreen(biometrikState: BiometrikState) : EquinoxNoModelScreen",
     "description": "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen",
     "location": "-glider/com.tecknobit.glider.ui.screens.splashscreen/-splashscreen/index.html",
     "searchKeys": [
       "Splashscreen",
-      "class Splashscreen : EquinoxNoModelScreen",
+      "class Splashscreen(biometrikState: BiometrikState) : EquinoxNoModelScreen",
       "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen"
     ]
   },
@@ -441,16 +431,6 @@
   },
   {
     "name": "constructor()",
-    "description": "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen.Splashscreen",
-    "location": "-glider/com.tecknobit.glider.ui.screens.splashscreen/-splashscreen/-splashscreen.html",
-    "searchKeys": [
-      "Splashscreen",
-      "constructor()",
-      "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen.Splashscreen"
-    ]
-  },
-  {
-    "name": "constructor()",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.PasswordFormViewModel",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/-password-form-view-model.html",
     "searchKeys": [
@@ -460,23 +440,13 @@
     ]
   },
   {
-    "name": "constructor(activity: AppCompatActivity)",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricPromptManager",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-prompt-manager.html",
+    "name": "constructor(biometrikState: BiometrikState)",
+    "description": "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen.Splashscreen",
+    "location": "-glider/com.tecknobit.glider.ui.screens.splashscreen/-splashscreen/-splashscreen.html",
     "searchKeys": [
-      "BiometricPromptManager",
-      "constructor(activity: AppCompatActivity)",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricPromptManager"
-    ]
-  },
-  {
-    "name": "constructor(error: String)",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationError.AuthenticationError",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/-authentication-error/-authentication-error.html",
-    "searchKeys": [
-      "AuthenticationError",
-      "constructor(error: String)",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationError.AuthenticationError"
+      "Splashscreen",
+      "constructor(biometrikState: BiometrikState)",
+      "com.tecknobit.glider.ui.screens.splashscreen.Splashscreen.Splashscreen"
     ]
   },
   {
@@ -610,16 +580,6 @@
     ]
   },
   {
-    "name": "data class AuthenticationError(val error: String) : BiometricPromptManager.BiometricResult",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationError",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/-authentication-error/index.html",
-    "searchKeys": [
-      "AuthenticationError",
-      "data class AuthenticationError(val error: String) : BiometricPromptManager.BiometricResult",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationError"
-    ]
-  },
-  {
     "name": "data class ConnectedDevice(val id: String, val brand: String, val model: String, val browser: String? = null, val lastLogin: Long, val type: ConnectedDeviceType)",
     "description": "com.tecknobit.glider.ui.screens.account.data.ConnectedDevice",
     "location": "-glider/com.tecknobit.glider.ui.screens.account.data/-connected-device/index.html",
@@ -660,56 +620,6 @@
     ]
   },
   {
-    "name": "data object AuthenticationFailed : BiometricPromptManager.BiometricResult",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationFailed",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/-authentication-failed/index.html",
-    "searchKeys": [
-      "AuthenticationFailed",
-      "data object AuthenticationFailed : BiometricPromptManager.BiometricResult",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationFailed"
-    ]
-  },
-  {
-    "name": "data object AuthenticationNotSet : BiometricPromptManager.BiometricResult",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationNotSet",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/-authentication-not-set/index.html",
-    "searchKeys": [
-      "AuthenticationNotSet",
-      "data object AuthenticationNotSet : BiometricPromptManager.BiometricResult",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationNotSet"
-    ]
-  },
-  {
-    "name": "data object AuthenticationSuccess : BiometricPromptManager.BiometricResult",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationSuccess",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/-authentication-success/index.html",
-    "searchKeys": [
-      "AuthenticationSuccess",
-      "data object AuthenticationSuccess : BiometricPromptManager.BiometricResult",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationSuccess"
-    ]
-  },
-  {
-    "name": "data object FeatureUnavailable : BiometricPromptManager.BiometricResult",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.FeatureUnavailable",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/-feature-unavailable/index.html",
-    "searchKeys": [
-      "FeatureUnavailable",
-      "data object FeatureUnavailable : BiometricPromptManager.BiometricResult",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.FeatureUnavailable"
-    ]
-  },
-  {
-    "name": "data object HardwareUnavailable : BiometricPromptManager.BiometricResult",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.HardwareUnavailable",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/-hardware-unavailable/index.html",
-    "searchKeys": [
-      "HardwareUnavailable",
-      "data object HardwareUnavailable : BiometricPromptManager.BiometricResult",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.HardwareUnavailable"
-    ]
-  },
-  {
     "name": "expect class KReviewer",
     "description": "com.tecknobit.glider.helpers.KReviewer",
     "location": "-glider/com.tecknobit.glider.helpers/-k-reviewer/index.html",
@@ -727,16 +637,6 @@
       "KReviewer",
       "expect constructor()",
       "com.tecknobit.glider.helpers.KReviewer.KReviewer"
-    ]
-  },
-  {
-    "name": "expect fun BiometrikAuthenticator(requestOnFirstOpenOnly: Boolean = true, onSuccess: () -> Unit, onFailure: () -> Unit = {})",
-    "description": "com.tecknobit.glider.helpers.BiometrikAuthenticator",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometrik-authenticator.html",
-    "searchKeys": [
-      "BiometrikAuthenticator",
-      "expect fun BiometrikAuthenticator(requestOnFirstOpenOnly: Boolean = true, onSuccess: () -> Unit, onFailure: () -> Unit = {})",
-      "com.tecknobit.glider.helpers.BiometrikAuthenticator"
     ]
   },
   {
@@ -800,32 +700,32 @@
     ]
   },
   {
-    "name": "fun DeleteAccount(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
+    "name": "fun DeleteAccount(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>)",
     "description": "com.tecknobit.glider.ui.components.DeleteAccount",
     "location": "-glider/com.tecknobit.glider.ui.components/-delete-account.html",
     "searchKeys": [
       "DeleteAccount",
-      "fun DeleteAccount(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
+      "fun DeleteAccount(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>)",
       "com.tecknobit.glider.ui.components.DeleteAccount"
     ]
   },
   {
-    "name": "fun DeletePassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
+    "name": "fun DeletePassword(viewModel: KeychainScreenViewModel, show: <Error class: unknown class><Boolean>, password: Password)",
     "description": "com.tecknobit.glider.ui.components.DeletePassword",
     "location": "-glider/com.tecknobit.glider.ui.components/-delete-password.html",
     "searchKeys": [
       "DeletePassword",
-      "fun DeletePassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
+      "fun DeletePassword(viewModel: KeychainScreenViewModel, show: <Error class: unknown class><Boolean>, password: Password)",
       "com.tecknobit.glider.ui.components.DeletePassword"
     ]
   },
   {
-    "name": "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: MutableState<Boolean>, device: ConnectedDevice)",
+    "name": "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>, device: ConnectedDevice)",
     "description": "com.tecknobit.glider.ui.components.DisconnectDevice",
     "location": "-glider/com.tecknobit.glider.ui.components/-disconnect-device.html",
     "searchKeys": [
       "DisconnectDevice",
-      "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: MutableState<Boolean>, device: ConnectedDevice)",
+      "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>, device: ConnectedDevice)",
       "com.tecknobit.glider.ui.components.DisconnectDevice"
     ]
   },
@@ -850,12 +750,12 @@
     ]
   },
   {
-    "name": "fun Logout(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
+    "name": "fun Logout(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>)",
     "description": "com.tecknobit.glider.ui.components.Logout",
     "location": "-glider/com.tecknobit.glider.ui.components/-logout.html",
     "searchKeys": [
       "Logout",
-      "fun Logout(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
+      "fun Logout(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>)",
       "com.tecknobit.glider.ui.components.Logout"
     ]
   },
@@ -890,12 +790,12 @@
     ]
   },
   {
-    "name": "fun PasswordInputField(password: MutableState<String>, passwordError: MutableState<Boolean>)",
+    "name": "fun PasswordInputField(password: <Error class: unknown class><String>, passwordError: <Error class: unknown class><Boolean>)",
     "description": "com.tecknobit.glider.ui.components.PasswordInputField",
     "location": "-glider/com.tecknobit.glider.ui.components/-password-input-field.html",
     "searchKeys": [
       "PasswordInputField",
-      "fun PasswordInputField(password: MutableState<String>, passwordError: MutableState<Boolean>)",
+      "fun PasswordInputField(password: <Error class: unknown class><String>, passwordError: <Error class: unknown class><Boolean>)",
       "com.tecknobit.glider.ui.components.PasswordInputField"
     ]
   },
@@ -910,12 +810,12 @@
     ]
   },
   {
-    "name": "fun PasswordTimeline(show: MutableState<Boolean>, password: Password)",
+    "name": "fun PasswordTimeline(show: <Error class: unknown class><Boolean>, password: Password)",
     "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordTimeline",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-timeline.html",
     "searchKeys": [
       "PasswordTimeline",
-      "fun PasswordTimeline(show: MutableState<Boolean>, password: Password)",
+      "fun PasswordTimeline(show: <Error class: unknown class><Boolean>, password: Password)",
       "com.tecknobit.glider.ui.screens.keychain.components.PasswordTimeline"
     ]
   },
@@ -930,12 +830,12 @@
     ]
   },
   {
-    "name": "fun PasswordTypeFiltersMenu(expanded: MutableState<Boolean>, viewModel: KeychainScreenViewModel)",
+    "name": "fun PasswordTypeFiltersMenu(expanded: <Error class: unknown class><Boolean>, viewModel: KeychainScreenViewModel)",
     "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-type-filters-menu.html",
     "searchKeys": [
       "PasswordTypeFiltersMenu",
-      "fun PasswordTypeFiltersMenu(expanded: MutableState<Boolean>, viewModel: KeychainScreenViewModel)",
+      "fun PasswordTypeFiltersMenu(expanded: <Error class: unknown class><Boolean>, viewModel: KeychainScreenViewModel)",
       "com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu"
     ]
   },
@@ -950,23 +850,13 @@
     ]
   },
   {
-    "name": "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
+    "name": "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: <Error class: unknown class><Boolean>, password: Password)",
     "description": "com.tecknobit.glider.ui.components.RefreshPassword",
     "location": "-glider/com.tecknobit.glider.ui.components/-refresh-password.html",
     "searchKeys": [
       "RefreshPassword",
-      "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
+      "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: <Error class: unknown class><Boolean>, password: Password)",
       "com.tecknobit.glider.ui.components.RefreshPassword"
-    ]
-  },
-  {
-    "name": "fun RetryButton(onRetry: () -> Unit, text: StringResource = Res.string.retry)",
-    "description": "com.tecknobit.glider.ui.components.RetryButton",
-    "location": "-glider/com.tecknobit.glider.ui.components/-retry-button.html",
-    "searchKeys": [
-      "RetryButton",
-      "fun RetryButton(onRetry: () -> Unit, text: StringResource = Res.string.retry)",
-      "com.tecknobit.glider.ui.components.RetryButton"
     ]
   },
   {
@@ -1120,16 +1010,6 @@
     ]
   },
   {
-    "name": "fun showBiometricPrompt(title: String, description: String)",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.showBiometricPrompt",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/show-biometric-prompt.html",
-    "searchKeys": [
-      "showBiometricPrompt",
-      "fun showBiometricPrompt(title: String, description: String)",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.showBiometricPrompt"
-    ]
-  },
-  {
     "name": "fun startSession()",
     "description": "com.tecknobit.glider.startSession",
     "location": "-glider/com.tecknobit.glider/start-session.html",
@@ -1170,42 +1050,42 @@
     ]
   },
   {
-    "name": "lateinit var includeNumbers: MutableState<Boolean>",
+    "name": "lateinit var includeNumbers: <Error class: unknown class><Boolean>",
     "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeNumbers",
     "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-numbers.html",
     "searchKeys": [
       "includeNumbers",
-      "lateinit var includeNumbers: MutableState<Boolean>",
+      "lateinit var includeNumbers: <Error class: unknown class><Boolean>",
       "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeNumbers"
     ]
   },
   {
-    "name": "lateinit var includeSpecialCharacters: MutableState<Boolean>",
+    "name": "lateinit var includeSpecialCharacters: <Error class: unknown class><Boolean>",
     "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeSpecialCharacters",
     "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-special-characters.html",
     "searchKeys": [
       "includeSpecialCharacters",
-      "lateinit var includeSpecialCharacters: MutableState<Boolean>",
+      "lateinit var includeSpecialCharacters: <Error class: unknown class><Boolean>",
       "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeSpecialCharacters"
     ]
   },
   {
-    "name": "lateinit var includeUppercaseLetters: MutableState<Boolean>",
+    "name": "lateinit var includeUppercaseLetters: <Error class: unknown class><Boolean>",
     "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeUppercaseLetters",
     "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-uppercase-letters.html",
     "searchKeys": [
       "includeUppercaseLetters",
-      "lateinit var includeUppercaseLetters: MutableState<Boolean>",
+      "lateinit var includeUppercaseLetters: <Error class: unknown class><Boolean>",
       "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeUppercaseLetters"
     ]
   },
   {
-    "name": "lateinit var keywords: MutableState<String>",
+    "name": "lateinit var keywords: <Error class: unknown class><String>",
     "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.keywords",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/keywords.html",
     "searchKeys": [
       "keywords",
-      "lateinit var keywords: MutableState<String>",
+      "lateinit var keywords: <Error class: unknown class><String>",
       "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.keywords"
     ]
   },
@@ -1220,62 +1100,62 @@
     ]
   },
   {
-    "name": "lateinit var navigator: Navigator",
+    "name": "lateinit var navigator: NavHostController",
     "description": "com.tecknobit.glider.navigator",
     "location": "-glider/com.tecknobit.glider/navigator.html",
     "searchKeys": [
       "navigator",
-      "lateinit var navigator: Navigator",
+      "lateinit var navigator: NavHostController",
       "com.tecknobit.glider.navigator"
     ]
   },
   {
-    "name": "lateinit var passwordError: MutableState<Boolean>",
+    "name": "lateinit var passwordError: <Error class: unknown class><Boolean>",
     "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordError",
     "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/password-error.html",
     "searchKeys": [
       "passwordError",
-      "lateinit var passwordError: MutableState<Boolean>",
+      "lateinit var passwordError: <Error class: unknown class><Boolean>",
       "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordError"
     ]
   },
   {
-    "name": "lateinit var passwordError: MutableState<Boolean>",
+    "name": "lateinit var passwordError: <Error class: unknown class><Boolean>",
     "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordError",
     "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/password-error.html",
     "searchKeys": [
       "passwordError",
-      "lateinit var passwordError: MutableState<Boolean>",
+      "lateinit var passwordError: <Error class: unknown class><Boolean>",
       "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordError"
     ]
   },
   {
-    "name": "lateinit var passwordTypes: SnapshotStateList<PasswordType>",
+    "name": "lateinit var passwordTypes: <Error class: unknown class><PasswordType>",
     "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.passwordTypes",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/password-types.html",
     "searchKeys": [
       "passwordTypes",
-      "lateinit var passwordTypes: SnapshotStateList<PasswordType>",
+      "lateinit var passwordTypes: <Error class: unknown class><PasswordType>",
       "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.passwordTypes"
     ]
   },
   {
-    "name": "lateinit var passwordValue: MutableState<String>",
+    "name": "lateinit var passwordValue: <Error class: unknown class><String>",
     "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordValue",
     "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/password-value.html",
     "searchKeys": [
       "passwordValue",
-      "lateinit var passwordValue: MutableState<String>",
+      "lateinit var passwordValue: <Error class: unknown class><String>",
       "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordValue"
     ]
   },
   {
-    "name": "lateinit var passwordValue: MutableState<String>",
+    "name": "lateinit var passwordValue: <Error class: unknown class><String>",
     "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordValue",
     "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/password-value.html",
     "searchKeys": [
       "passwordValue",
-      "lateinit var passwordValue: MutableState<String>",
+      "lateinit var passwordValue: <Error class: unknown class><String>",
       "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordValue"
     ]
   },
@@ -1300,22 +1180,22 @@
     ]
   },
   {
-    "name": "lateinit var scopes: MutableState<String>",
+    "name": "lateinit var scopes: <Error class: unknown class><String>",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopes",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/scopes.html",
     "searchKeys": [
       "scopes",
-      "lateinit var scopes: MutableState<String>",
+      "lateinit var scopes: <Error class: unknown class><String>",
       "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopes"
     ]
   },
   {
-    "name": "lateinit var scopesError: MutableState<Boolean>",
+    "name": "lateinit var scopesError: <Error class: unknown class><Boolean>",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopesError",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/scopes-error.html",
     "searchKeys": [
       "scopesError",
-      "lateinit var scopesError: MutableState<Boolean>",
+      "lateinit var scopesError: <Error class: unknown class><Boolean>",
       "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopesError"
     ]
   },
@@ -1340,22 +1220,22 @@
     ]
   },
   {
-    "name": "lateinit var tail: MutableState<String>",
+    "name": "lateinit var tail: <Error class: unknown class><String>",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tail",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/tail.html",
     "searchKeys": [
       "tail",
-      "lateinit var tail: MutableState<String>",
+      "lateinit var tail: <Error class: unknown class><String>",
       "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tail"
     ]
   },
   {
-    "name": "lateinit var tailError: MutableState<Boolean>",
+    "name": "lateinit var tailError: <Error class: unknown class><Boolean>",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tailError",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/tail-error.html",
     "searchKeys": [
       "tailError",
-      "lateinit var tailError: MutableState<Boolean>",
+      "lateinit var tailError: <Error class: unknown class><Boolean>",
       "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tailError"
     ]
   },
@@ -1437,16 +1317,6 @@
       "performPasswordOperation",
       "open override fun performPasswordOperation()",
       "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.performPasswordOperation"
-    ]
-  },
-  {
-    "name": "sealed interface BiometricResult",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/index.html",
-    "searchKeys": [
-      "BiometricResult",
-      "sealed interface BiometricResult",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult"
     ]
   },
   {
@@ -1740,16 +1610,6 @@
     ]
   },
   {
-    "name": "val error: String",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationError.error",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/-biometric-result/-authentication-error/error.html",
-    "searchKeys": [
-      "error",
-      "val error: String",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.BiometricResult.AuthenticationError.error"
-    ]
-  },
-  {
     "name": "val errorContainerDark: Color",
     "description": "com.tecknobit.glider.ui.theme.errorContainerDark",
     "location": "-glider/com.tecknobit.glider.ui.theme/error-container-dark.html",
@@ -1800,12 +1660,12 @@
     ]
   },
   {
-    "name": "val events: SnapshotStateList<PasswordEvent>",
+    "name": "val events: <Error class: unknown class>",
     "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.events",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/events.html",
     "searchKeys": [
       "events",
-      "val events: SnapshotStateList<PasswordEvent>",
+      "val events: <Error class: unknown class>",
       "com.tecknobit.glider.ui.screens.keychain.data.Password.events"
     ]
   },
@@ -2240,12 +2100,12 @@
     ]
   },
   {
-    "name": "val password: MutableState<String>",
+    "name": "val password: <Error class: unknown class>",
     "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.password",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/password.html",
     "searchKeys": [
       "password",
-      "val password: MutableState<String>",
+      "val password: <Error class: unknown class>",
       "com.tecknobit.glider.ui.screens.keychain.data.Password.password"
     ]
   },
@@ -2327,16 +2187,6 @@
       "primaryLightHighContrast",
       "val primaryLightHighContrast: Color",
       "com.tecknobit.glider.ui.theme.primaryLightHighContrast"
-    ]
-  },
-  {
-    "name": "val promptResults: Flow<BiometricPromptManager.BiometricResult>",
-    "description": "com.tecknobit.glider.helpers.BiometricPromptManager.promptResults",
-    "location": "-glider/com.tecknobit.glider.helpers/-biometric-prompt-manager/prompt-results.html",
-    "searchKeys": [
-      "promptResults",
-      "val promptResults: Flow<BiometricPromptManager.BiometricResult>",
-      "com.tecknobit.glider.helpers.BiometricPromptManager.promptResults"
     ]
   },
   {

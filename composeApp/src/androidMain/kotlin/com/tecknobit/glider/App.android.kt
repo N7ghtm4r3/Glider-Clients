@@ -1,5 +1,6 @@
 package com.tecknobit.glider
 
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.LocalActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
@@ -10,8 +11,6 @@ import com.google.android.play.core.ktx.isImmediateUpdateAllowed
 import com.tecknobit.equinoxcore.utilities.AppContext
 import com.tecknobit.glider.MainActivity.Companion.appUpdateManager
 import com.tecknobit.glider.MainActivity.Companion.launcher
-import com.tecknobit.glider.helpers.BiometrikAuthenticator
-import moe.tlaster.precompose.navigation.BackHandler
 import java.util.Locale
 
 /**
@@ -22,24 +21,20 @@ import java.util.Locale
 @Composable
 @NonRestartableComposable
 actual fun CheckForUpdatesAndLaunch() {
-    BiometrikAuthenticator(
-        onSuccess = {
-            appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
-                val isUpdateAvailable = info.updateAvailability() == UPDATE_AVAILABLE
-                val isUpdateSupported = info.isImmediateUpdateAllowed
-                if (isUpdateAvailable && isUpdateSupported) {
-                    appUpdateManager.startUpdateFlowForResult(
-                        info,
-                        launcher,
-                        AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
-                    )
-                } else
-                    startSession()
-            }.addOnFailureListener {
-                startSession()
-            }
-        }
-    )
+    appUpdateManager.appUpdateInfo.addOnSuccessListener { info ->
+        val isUpdateAvailable = info.updateAvailability() == UPDATE_AVAILABLE
+        val isUpdateSupported = info.isImmediateUpdateAllowed
+        if (isUpdateAvailable && isUpdateSupported) {
+            appUpdateManager.startUpdateFlowForResult(
+                info,
+                launcher,
+                AppUpdateOptions.newBuilder(AppUpdateType.IMMEDIATE).build()
+            )
+        } else
+            startSession()
+    }.addOnFailureListener {
+        startSession()
+    }
 }
 
 /**

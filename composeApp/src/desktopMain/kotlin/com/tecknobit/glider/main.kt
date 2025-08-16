@@ -4,7 +4,6 @@ import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.WindowPlacement
 import androidx.compose.ui.window.WindowState
 import androidx.compose.ui.window.application
-import com.tecknobit.ametistaengine.AmetistaEngine
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.app_name
 import glider.composeapp.generated.resources.logo
@@ -15,7 +14,7 @@ import org.jetbrains.compose.resources.stringResource
  * Method to start the of `Glider` desktop app
  */
 fun main() {
-    AmetistaEngine.intake()
+    // AmetistaEngine.intake()
     application {
         Window(
             onCloseRequest = ::exitApplication,
