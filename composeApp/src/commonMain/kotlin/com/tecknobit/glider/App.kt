@@ -12,6 +12,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.ametistaengine.AmetistaEngine.Companion.FILES_AMETISTA_CONFIG_PATHNAME
+import com.tecknobit.biometrik.rememberBiometrikState
 import com.tecknobit.equinoxcompose.session.screens.equinoxScreen
 import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowState
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
@@ -89,6 +90,7 @@ const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
 @Composable
 fun App() {
     // InitAmetista()
+    val biometrikState = rememberBiometrikState()
     displayFontFamily = FontFamily(Font(Res.font.josefinsans))
     bodyFontFamily = FontFamily(Font(Res.font.inter))
     navigator = rememberNavController()
@@ -104,7 +106,9 @@ fun App() {
                 // TODO: TO REMOVE THIS THEME CALL
                 GliderTheme {
                     val splashscreen = equinoxScreen {
-                        Splashscreen()
+                        Splashscreen(
+                            biometrikState = biometrikState
+                        )
                     }
                     splashscreen.ShowContent()
                 }

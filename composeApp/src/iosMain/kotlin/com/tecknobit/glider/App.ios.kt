@@ -1,8 +1,9 @@
 package com.tecknobit.glider
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.NonRestartableComposable
-import com.tecknobit.glider.helpers.BiometrikAuthenticator
+import kotlinx.coroutines.delay
 import platform.Foundation.NSLocale
 import platform.Foundation.NSUserDefaults
 
@@ -14,11 +15,10 @@ import platform.Foundation.NSUserDefaults
 @Composable
 @NonRestartableComposable
 actual fun CheckForUpdatesAndLaunch() {
-    BiometrikAuthenticator(
-        onSuccess = {
-            startSession()
-        }
-    )
+    LaunchedEffect(Unit) {
+        delay(1000L)
+        startSession()
+    }
 }
 
 /**

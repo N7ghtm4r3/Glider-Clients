@@ -78,7 +78,6 @@ kotlin {
             implementation(libs.app.update.ktx)
             implementation(libs.review)
             implementation(libs.review.ktx)
-            implementation(libs.androidx.biometric)
             implementation(libs.androidx.appcompat)
         }
         commonMain.dependencies {
@@ -101,6 +100,7 @@ kotlin {
             implementation(libs.kinfo)
             implementation(libs.equinox.navigation)
             implementation(libs.navigation.compose)
+            implementation(libs.biometrik)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
