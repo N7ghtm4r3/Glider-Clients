@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalComposeApi::class)
+@file:OptIn(ExperimentalComposeApi::class, ExperimentalStdlibApi::class)
 
 package com.tecknobit.glider
 
@@ -6,8 +6,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.text.font.FontFamily
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.tecknobit.ametistaengine.AmetistaEngine
 import com.tecknobit.ametistaengine.AmetistaEngine.Companion.FILES_AMETISTA_CONFIG_PATHNAME
+import com.tecknobit.equinoxcompose.session.screens.equinoxScreen
 import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowState
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
@@ -19,16 +24,12 @@ import com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGener
 import com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen
 import com.tecknobit.glider.ui.screens.home.presenter.HomeScreen
 import com.tecknobit.glider.ui.screens.splashscreen.Splashscreen
+import com.tecknobit.glider.ui.theme.GliderTheme
 import glider.composeapp.generated.resources.Res
 import glider.composeapp.generated.resources.inter
 import glider.composeapp.generated.resources.josefinsans
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
-import moe.tlaster.precompose.PreComposeApp
-import moe.tlaster.precompose.navigation.NavHost
-import moe.tlaster.precompose.navigation.Navigator
-import moe.tlaster.precompose.navigation.path
-import moe.tlaster.precompose.navigation.rememberNavigator
 import org.jetbrains.compose.resources.Font
 
 /**
@@ -44,7 +45,7 @@ lateinit var displayFontFamily: FontFamily
 /**
  * `navigator` -> the navigator instance is useful to manage the navigation between the screens of the application
  */
-lateinit var navigator: Navigator
+lateinit var navigator: NavHostController
 
 /**
  * `localUser` -> the helper to manage the local sessions stored locally in
@@ -90,45 +91,78 @@ fun App() {
     // InitAmetista()
     displayFontFamily = FontFamily(Font(Res.font.josefinsans))
     bodyFontFamily = FontFamily(Font(Res.font.inter))
-    PreComposeApp {
-        navigator = rememberNavigator()
+    navigator = rememberNavController()
+    // TODO: TO USE THIS UNIQUE THEME CALL
+    // GliderTheme {
         NavHost(
-            navigator = navigator,
-            initialRoute = SPLASHSCREEN
+            navController = navigator,
+            startDestination = SPLASHSCREEN
         ) {
-            scene(
+            composable(
                 route = SPLASHSCREEN
             ) {
-                Splashscreen().ShowContent()
+                // TODO: TO REMOVE THIS THEME CALL
+                GliderTheme {
+                    val splashscreen = equinoxScreen {
+                        Splashscreen()
+                    }
+                    splashscreen.ShowContent()
+                }
             }
-            scene(
+            composable(
                 route = AUTH_SCREEN
             ) {
-                AuthScreen().ShowContent()
+                // TODO: TO REMOVE THIS THEME CALL
+                GliderTheme {
+                    val authScreen = equinoxScreen { AuthScreen() }
+                    authScreen.ShowContent()
+                }
             }
-            scene(
+            composable(
                 route = HOME_SCREEN
             ) {
-                HomeScreen().ShowContent()
+                // TODO: TO REMOVE THIS THEME CALL
+                GliderTheme {
+                    val homeScreen = equinoxScreen { HomeScreen() }
+                    homeScreen.ShowContent()
+                }
             }
-            scene(
-                route = "$EDIT_GENERATED_PASSWORD_SCREEN/{${IDENTIFIER_KEY}}"
-            ) { backstackEntry ->
-                val passwordId = backstackEntry.path<String>(IDENTIFIER_KEY)!!
-                EditGeneratedPasswordScreen(
-                    passwordId = passwordId
-                ).ShowContent()
+            composable(
+                route = EDIT_GENERATED_PASSWORD_SCREEN
+            ) {
+                // TODO: TO REMOVE THIS THEME CALL
+                GliderTheme {
+                    val savedStateHandle = navigator.previousBackStackEntry!!.savedStateHandle
+                    val passwordId: String? = savedStateHandle[IDENTIFIER_KEY]
+                    passwordId?.let {
+                        val editGeneratedPasswordScreen = equinoxScreen {
+                            EditGeneratedPasswordScreen(
+                                passwordId = passwordId
+                            )
+                        }
+                        editGeneratedPasswordScreen.ShowContent()
+                    }
+                }
             }
-            scene(
-                route = "$EDIT_INSERTED_PASSWORD_SCREEN/{${IDENTIFIER_KEY}}"
-            ) { backstackEntry ->
-                val passwordId = backstackEntry.path<String>(IDENTIFIER_KEY)!!
-                EditInsertedPasswordScreen(
-                    passwordId = passwordId
-                ).ShowContent()
+            composable(
+                route = EDIT_INSERTED_PASSWORD_SCREEN
+            ) {
+                // TODO: TO REMOVE THIS THEME CALL
+                GliderTheme {
+                    val savedStateHandle = navigator.previousBackStackEntry!!.savedStateHandle
+                    val passwordId: String? = savedStateHandle[IDENTIFIER_KEY]
+                    passwordId?.let {
+                        val editInsertedPasswordScreen = equinoxScreen {
+                            EditInsertedPasswordScreen(
+                                passwordId = passwordId
+                            )
+                        }
+                        editInsertedPasswordScreen.ShowContent()
+                    }
+                }
             }
         }
-    }
+    // }
     SessionFlowState.invokeOnUserDisconnected {
         localUser.clear()
         navigator.navigate(AUTH_SCREEN)

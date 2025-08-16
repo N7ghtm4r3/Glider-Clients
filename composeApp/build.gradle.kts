@@ -91,7 +91,6 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
-            implementation(libs.precompose)
             implementation(libs.equinox.compose)
             implementation(libs.equinox.core)
             implementation(libs.kotlinx.serialization.json)
@@ -101,6 +100,7 @@ kotlin {
             implementation(libs.ametista.engine)
             implementation(libs.kinfo)
             implementation(libs.equinox.navigation)
+            implementation(libs.navigation.compose)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

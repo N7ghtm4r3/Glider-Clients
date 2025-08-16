@@ -63,7 +63,7 @@ class EditInsertedPasswordScreenViewModel(
                 },
                 onSuccess = {
                     _performingPasswordOperation.emit(false)
-                    navigator.goBack()
+                    navigator.popBackStack()
                 },
                 onFailure = {
                     _performingPasswordOperation.emit(false)

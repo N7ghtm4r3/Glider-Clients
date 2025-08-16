@@ -104,7 +104,7 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
                                 ),
                                 navigationIcon = {
                                     IconButton(
-                                        onClick = { navigator.goBack() }
+                                        onClick = { navigator.popBackStack() }
                                     ) {
                                         Icon(
                                             imageVector = Icons.Default.ArrowBackIosNew,
