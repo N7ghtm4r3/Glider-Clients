@@ -7,6 +7,7 @@ import com.tecknobit.equinoxcompose.annotations.DestinationScreen
 import com.tecknobit.equinoxcore.annotations.Wrapper
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
 import com.tecknobit.equinoxmisc.navigationcomposeutil.navWithData
+import com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen
 import com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen
 import com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen
 import com.tecknobit.glider.ui.screens.home.presenter.HomeScreen
@@ -47,6 +48,11 @@ const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
 @DestinationScreen(Splashscreen::class)
 fun navToSplashscreen() {
     navigator.navigate(SPLASHSCREEN)
+}
+
+@DestinationScreen(AuthScreen::class)
+fun navToAuthScreen() {
+    navigator.navigate(AUTH_SCREEN)
 }
 
 @DestinationScreen(HomeScreen::class)

@@ -21,6 +21,7 @@ import com.tecknobit.glider.helpers.GliderLocalUser
 import com.tecknobit.glider.helpers.GliderRequester
 import com.tecknobit.glider.helpers.HOME_SCREEN
 import com.tecknobit.glider.helpers.SPLASHSCREEN
+import com.tecknobit.glider.helpers.navToAuthScreen
 import com.tecknobit.glider.helpers.navigator
 import com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen
 import com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen
@@ -124,7 +125,7 @@ fun App() {
     }
     SessionFlowState.invokeOnUserDisconnected {
         localUser.clear()
-        navigator.navigate(AUTH_SCREEN)
+        navToAuthScreen()
     }
 }
 
@@ -162,7 +163,7 @@ fun startSession() {
                 onFailure = {
                     localUser.clear()
                     requester.clearSession()
-                    navigator.navigate(AUTH_SCREEN)
+                    navToAuthScreen()
                 },
                 onConnectionError = { }
             )
