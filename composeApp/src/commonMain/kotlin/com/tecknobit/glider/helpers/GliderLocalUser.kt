@@ -4,6 +4,7 @@ import com.tecknobit.equinoxcompose.session.EquinoxLocalUser
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
 import com.tecknobit.equinoxcore.json.treatsAsString
+import com.tecknobit.glider.GliderConfig.LOCAL_STORAGE_PATH
 import com.tecknobit.glider.requester
 import com.tecknobit.glidercore.DEVICE_IDENTIFIER_KEY
 import kotlinx.serialization.json.JsonObject
@@ -14,62 +15,14 @@ import kotlinx.serialization.json.JsonObject
  * @author N7ghtm4r3 - Tecknobit
  */
 class GliderLocalUser : EquinoxLocalUser(
-    localStoragePath = "Glider"
+    localStoragePath = LOCAL_STORAGE_PATH
 ) {
 
     /**
-     * `deviceId` the identifier of the current device
+     * `deviceId` The identifier of the current device
      */
     var deviceId: String? = null
-        set(value) {
-            if (field != value) {
-                setPreference(
-                    key = DEVICE_IDENTIFIER_KEY,
-                    value = value
-                )
-                field = value
-            }
-        }
-
-    /**
-     * Method to insert and initialize a new local user
-     *
-     * @param hostAddress The host address with which the user communicates
-     * @param name The name of the user
-     * @param surname The surname of the user
-     * @param email The email address of the user
-     * @param password The password of the user
-     * @param language The preferred language of the user
-     * @param response The payload response received from an authentication request
-     * @param custom Custom parameters added during the customization of the equinox user
-     */
-    @RequiresSuperCall
-    override fun insertNewUser(
-        hostAddress: String,
-        name: String,
-        surname: String,
-        email: String,
-        password: String,
-        language: String,
-        response: JsonObject,
-        vararg custom: Any?,
-    ) {
-        super.insertNewUser(
-            hostAddress,
-            name,
-            surname,
-            email,
-            password,
-            language,
-            response,
-            *custom
-        )
-        val device: JsonObject = custom.extractsCustomValue(
-            itemPosition = 0
-        )
-        deviceId = device[IDENTIFIER_KEY].treatsAsString()
-        requester.setLocalUserDeviceId()
-    }
+        private set
 
     /**
      * Method to init the local user session
@@ -77,7 +30,72 @@ class GliderLocalUser : EquinoxLocalUser(
     @RequiresSuperCall
     override fun initLocalUser() {
         super.initLocalUser()
-        deviceId = getPreference(DEVICE_IDENTIFIER_KEY)
+        setPreference<String>(
+            key = DEVICE_IDENTIFIER_KEY,
+            prefInit = { deviceId ->
+                this.deviceId = deviceId
+            }
+        )
+    }
+
+    /**
+     * Method used to insert a new user and save locally his/her properties
+     *
+     * @param hostAddress The host address with which the user communicates
+     * @param userId The identifier of the user
+     * @param userToken The token of the user
+     * @param profilePic The profile picture of the user
+     * @param name The name of the user
+     * @param surname The surname of the user
+     * @param email The email of the user
+     * @param language The language of the user
+     * @param custom The custom parameters added during the customization of the [EquinoxLocalUser]
+     */
+    override fun insertNewUser(
+        hostAddress: String,
+        userId: String,
+        userToken: String,
+        profilePic: String,
+        name: String,
+        surname: String,
+        email: String,
+        language: String,
+        vararg custom: Any?,
+    ) {
+        super.insertNewUser(
+            hostAddress,
+            userId,
+            userToken,
+            profilePic,
+            name,
+            surname,
+            email,
+            language,
+            *custom
+        )
+        val device: JsonObject = custom.extractsCustomValue(
+            itemPosition = 0
+        )
+        val deviceId = device[IDENTIFIER_KEY].treatsAsString()
+        initDeviceId(
+            deviceId = deviceId
+        )
+        requester.setLocalUserDeviceId()
+    }
+
+    /**
+     * Method used to initialize the [deviceId] property and locally save
+     *
+     * @param deviceId The identifier of the current device
+     */
+    private fun initDeviceId(
+        deviceId: String,
+    ) {
+        this.deviceId = deviceId
+        savePreference(
+            key = DEVICE_IDENTIFIER_KEY,
+            value = deviceId
+        )
     }
 
 }

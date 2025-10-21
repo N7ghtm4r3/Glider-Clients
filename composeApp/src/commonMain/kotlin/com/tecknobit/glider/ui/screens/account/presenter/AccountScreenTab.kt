@@ -549,7 +549,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
     @Composable
     override fun CollectStates() {
         viewModel.email = remember { mutableStateOf(localUser.email) }
-        viewModel.password = remember { mutableStateOf(localUser.password) }
         viewModel.language = remember { mutableStateOf(localUser.language) }
         viewModel.theme = remember { mutableStateOf(localUser.theme) }
     }

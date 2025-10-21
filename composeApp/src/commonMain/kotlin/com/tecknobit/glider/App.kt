@@ -1,17 +1,14 @@
-@file:OptIn(ExperimentalComposeApi::class, ExperimentalStdlibApi::class)
+@file:OptIn(ExperimentalComposeApi::class)
 
 package com.tecknobit.glider
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ExperimentalComposeApi
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.text.font.FontFamily
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.tecknobit.ametistaengine.AmetistaEngine
-import com.tecknobit.ametistaengine.AmetistaEngine.Companion.FILES_AMETISTA_CONFIG_PATHNAME
 import com.tecknobit.biometrik.rememberBiometrikState
 import com.tecknobit.equinoxcompose.session.screens.equinoxScreen
 import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowState
@@ -89,7 +86,6 @@ const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
  */
 @Composable
 fun App() {
-    // InitAmetista()
     val biometrikState = rememberBiometrikState()
     displayFontFamily = FontFamily(Font(Res.font.josefinsans))
     bodyFontFamily = FontFamily(Font(Res.font.inter))
@@ -174,25 +170,6 @@ fun App() {
 }
 
 /**
- * Method used to initialize the Ametista system
- */
-@Composable
-// TODO: TO REIMPLEMENT WHEN NECESSARY
-private fun InitAmetista() {
-    LaunchedEffect(Unit) {
-        val ametistaEngine = AmetistaEngine.ametistaEngine
-        ametistaEngine.fireUp(
-            configData = Res.readBytes(FILES_AMETISTA_CONFIG_PATHNAME),
-            host = AmetistaConfig.HOST,
-            serverSecret = AmetistaConfig.SERVER_SECRET!!,
-            applicationId = AmetistaConfig.APPLICATION_IDENTIFIER!!,
-            bypassSslValidation = AmetistaConfig.BYPASS_SSL_VALIDATION,
-            debugMode = false
-        )
-    }
-}
-
-/**
  * Method to check whether are available any updates for each platform and then launch the application
  * which the correct first screen to display
  *
@@ -206,6 +183,7 @@ expect fun CheckForUpdatesAndLaunch()
  */
 fun startSession() {
     requester = GliderRequester(
+        debugMode = true, // TODO: TO REMOVE
         host = localUser.hostAddress,
         userId = localUser.userId,
         userToken = localUser.userToken,
