@@ -45,21 +45,35 @@ const val EDIT_GENERATED_PASSWORD_SCREEN = "EditGeneratedPasswordScreen"
  */
 const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
 
+/**
+ * Method used to navigate to the [Splashscreen]
+ */
 @DestinationScreen(Splashscreen::class)
 fun navToSplashscreen() {
     navigator.navigate(SPLASHSCREEN)
 }
 
+/**
+ * Method used to navigate to the [AuthScreen]
+ */
 @DestinationScreen(AuthScreen::class)
 fun navToAuthScreen() {
     navigator.navigate(AUTH_SCREEN)
 }
 
+/**
+ * Method used to navigate to the [HomeScreen]
+ */
 @DestinationScreen(HomeScreen::class)
 fun navToHome() {
     navigator.navigate(HOME_SCREEN)
 }
 
+/**
+ * Method used to navigate to edit the [password] based on its type
+ *
+ * @param password The password to edit
+ */
 @Wrapper
 fun navToEditPassword(
     password: Password,
@@ -78,6 +92,11 @@ fun navToEditPassword(
     }
 }
 
+/**
+ * Method to navigate to the [EditGeneratedPasswordScreen]
+ *
+ * @param navData The navigation data to share with the screen
+ */
 @DestinationScreen(EditGeneratedPasswordScreen::class)
 private fun navToEditGeneratedPassword(
     navData: Map<String, Any>,
@@ -88,6 +107,11 @@ private fun navToEditGeneratedPassword(
     )
 }
 
+/**
+ * Method to navigate to the [EditInsertedPasswordScreen]
+ *
+ * @param navData The navigation data to share with the screen
+ */
 @DestinationScreen(EditInsertedPasswordScreen::class)
 private fun navToEditInsertedPassword(
     navData: Map<String, Any>,
