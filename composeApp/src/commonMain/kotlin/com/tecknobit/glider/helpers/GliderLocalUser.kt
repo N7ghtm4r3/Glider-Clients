@@ -3,6 +3,7 @@ package com.tecknobit.glider.helpers
 import com.tecknobit.equinoxcompose.session.EquinoxLocalUser
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
+import com.tecknobit.equinoxcore.helpers.THEME_KEY
 import com.tecknobit.equinoxcore.json.treatsAsString
 import com.tecknobit.glider.GliderConfig.LOCAL_STORAGE_PATH
 import com.tecknobit.glider.requester
@@ -15,7 +16,8 @@ import kotlinx.serialization.json.JsonObject
  * @author N7ghtm4r3 - Tecknobit
  */
 class GliderLocalUser : EquinoxLocalUser(
-    localStoragePath = LOCAL_STORAGE_PATH
+    localStoragePath = LOCAL_STORAGE_PATH,
+    observableKeys = setOf(THEME_KEY)
 ) {
 
     /**

@@ -90,8 +90,7 @@ fun App() {
     displayFontFamily = FontFamily(Font(Res.font.josefinsans))
     bodyFontFamily = FontFamily(Font(Res.font.inter))
     navigator = rememberNavController()
-    // TODO: TO USE THIS UNIQUE THEME CALL
-    // GliderTheme {
+    GliderTheme {
         NavHost(
             navController = navigator,
             startDestination = SPLASHSCREEN
@@ -99,70 +98,55 @@ fun App() {
             composable(
                 route = SPLASHSCREEN
             ) {
-                // TODO: TO REMOVE THIS THEME CALL
-                GliderTheme {
-                    val splashscreen = equinoxScreen {
-                        Splashscreen(
-                            biometrikState = biometrikState
-                        )
-                    }
-                    splashscreen.ShowContent()
+                val splashscreen = equinoxScreen {
+                    Splashscreen(
+                        biometrikState = biometrikState
+                    )
                 }
+                splashscreen.ShowContent()
             }
             composable(
                 route = AUTH_SCREEN
             ) {
-                // TODO: TO REMOVE THIS THEME CALL
-                GliderTheme {
-                    val authScreen = equinoxScreen { AuthScreen() }
-                    authScreen.ShowContent()
-                }
+                val authScreen = equinoxScreen { AuthScreen() }
+                authScreen.ShowContent()
             }
             composable(
                 route = HOME_SCREEN
             ) {
-                // TODO: TO REMOVE THIS THEME CALL
-                GliderTheme {
-                    val homeScreen = equinoxScreen { HomeScreen() }
-                    homeScreen.ShowContent()
-                }
+                val homeScreen = equinoxScreen { HomeScreen() }
+                homeScreen.ShowContent()
             }
             composable(
                 route = EDIT_GENERATED_PASSWORD_SCREEN
             ) {
-                // TODO: TO REMOVE THIS THEME CALL
-                GliderTheme {
-                    val savedStateHandle = navigator.previousBackStackEntry!!.savedStateHandle
-                    val passwordId: String? = savedStateHandle[IDENTIFIER_KEY]
-                    passwordId?.let {
-                        val editGeneratedPasswordScreen = equinoxScreen {
-                            EditGeneratedPasswordScreen(
-                                passwordId = passwordId
-                            )
-                        }
-                        editGeneratedPasswordScreen.ShowContent()
+                val savedStateHandle = navigator.previousBackStackEntry!!.savedStateHandle
+                val passwordId: String? = savedStateHandle[IDENTIFIER_KEY]
+                passwordId?.let {
+                    val editGeneratedPasswordScreen = equinoxScreen {
+                        EditGeneratedPasswordScreen(
+                            passwordId = passwordId
+                        )
                     }
+                    editGeneratedPasswordScreen.ShowContent()
                 }
             }
             composable(
                 route = EDIT_INSERTED_PASSWORD_SCREEN
             ) {
-                // TODO: TO REMOVE THIS THEME CALL
-                GliderTheme {
-                    val savedStateHandle = navigator.previousBackStackEntry!!.savedStateHandle
-                    val passwordId: String? = savedStateHandle[IDENTIFIER_KEY]
-                    passwordId?.let {
-                        val editInsertedPasswordScreen = equinoxScreen {
-                            EditInsertedPasswordScreen(
-                                passwordId = passwordId
-                            )
-                        }
-                        editInsertedPasswordScreen.ShowContent()
+                val savedStateHandle = navigator.previousBackStackEntry!!.savedStateHandle
+                val passwordId: String? = savedStateHandle[IDENTIFIER_KEY]
+                passwordId?.let {
+                    val editInsertedPasswordScreen = equinoxScreen {
+                        EditInsertedPasswordScreen(
+                            passwordId = passwordId
+                        )
                     }
+                    editInsertedPasswordScreen.ShowContent()
                 }
             }
         }
-    // }
+    }
     SessionFlowState.invokeOnUserDisconnected {
         localUser.clear()
         navigator.navigate(AUTH_SCREEN)
