@@ -10,12 +10,12 @@
     ]
   },
   {
-    "name": "abstract class EditPasswordFormViewModel(passwordId: String) : PasswordFormViewModel",
+    "name": "abstract class EditPasswordFormViewModel(passwordId: String?) : PasswordFormViewModel",
     "description": "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-edit-password-form-view-model/index.html",
     "searchKeys": [
       "EditPasswordFormViewModel",
-      "abstract class EditPasswordFormViewModel(passwordId: String) : PasswordFormViewModel",
+      "abstract class EditPasswordFormViewModel(passwordId: String?) : PasswordFormViewModel",
       "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel"
     ]
   },
@@ -100,42 +100,42 @@
     ]
   },
   {
-    "name": "class EditGeneratedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditGeneratedPasswordScreenViewModel> ",
+    "name": "class EditGeneratedPasswordScreen(passwordId: String?) : EditPasswordFormScreen<EditGeneratedPasswordScreenViewModel> ",
     "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen",
     "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter/-edit-generated-password-screen/index.html",
     "searchKeys": [
       "EditGeneratedPasswordScreen",
-      "class EditGeneratedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditGeneratedPasswordScreenViewModel> ",
+      "class EditGeneratedPasswordScreen(passwordId: String?) : EditPasswordFormScreen<EditGeneratedPasswordScreenViewModel> ",
       "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen"
     ]
   },
   {
-    "name": "class EditGeneratedPasswordScreenViewModel(passwordId: String) : EditPasswordFormViewModel",
+    "name": "class EditGeneratedPasswordScreenViewModel(passwordId: String?) : EditPasswordFormViewModel",
     "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel",
     "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation/-edit-generated-password-screen-view-model/index.html",
     "searchKeys": [
       "EditGeneratedPasswordScreenViewModel",
-      "class EditGeneratedPasswordScreenViewModel(passwordId: String) : EditPasswordFormViewModel",
+      "class EditGeneratedPasswordScreenViewModel(passwordId: String?) : EditPasswordFormViewModel",
       "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel"
     ]
   },
   {
-    "name": "class EditInsertedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditInsertedPasswordScreenViewModel> ",
+    "name": "class EditInsertedPasswordScreen(passwordId: String?) : EditPasswordFormScreen<EditInsertedPasswordScreenViewModel> ",
     "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen",
     "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presenter/-edit-inserted-password-screen/index.html",
     "searchKeys": [
       "EditInsertedPasswordScreen",
-      "class EditInsertedPasswordScreen(passwordId: String) : EditPasswordFormScreen<EditInsertedPasswordScreenViewModel> ",
+      "class EditInsertedPasswordScreen(passwordId: String?) : EditPasswordFormScreen<EditInsertedPasswordScreenViewModel> ",
       "com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen"
     ]
   },
   {
-    "name": "class EditInsertedPasswordScreenViewModel(passwordId: String) : EditPasswordFormViewModel",
+    "name": "class EditInsertedPasswordScreenViewModel(passwordId: String?) : EditPasswordFormViewModel",
     "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel",
     "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/index.html",
     "searchKeys": [
       "EditInsertedPasswordScreenViewModel",
-      "class EditInsertedPasswordScreenViewModel(passwordId: String) : EditPasswordFormViewModel",
+      "class EditInsertedPasswordScreenViewModel(passwordId: String?) : EditPasswordFormViewModel",
       "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel"
     ]
   },
@@ -251,52 +251,52 @@
   },
   {
     "name": "const val AUTH_SCREEN: String",
-    "description": "com.tecknobit.glider.AUTH_SCREEN",
-    "location": "-glider/com.tecknobit.glider/-a-u-t-h_-s-c-r-e-e-n.html",
+    "description": "com.tecknobit.glider.helpers.AUTH_SCREEN",
+    "location": "-glider/com.tecknobit.glider.helpers/-a-u-t-h_-s-c-r-e-e-n.html",
     "searchKeys": [
       "AUTH_SCREEN",
       "const val AUTH_SCREEN: String",
-      "com.tecknobit.glider.AUTH_SCREEN"
+      "com.tecknobit.glider.helpers.AUTH_SCREEN"
     ]
   },
   {
     "name": "const val EDIT_GENERATED_PASSWORD_SCREEN: String",
-    "description": "com.tecknobit.glider.EDIT_GENERATED_PASSWORD_SCREEN",
-    "location": "-glider/com.tecknobit.glider/-e-d-i-t_-g-e-n-e-r-a-t-e-d_-p-a-s-s-w-o-r-d_-s-c-r-e-e-n.html",
+    "description": "com.tecknobit.glider.helpers.EDIT_GENERATED_PASSWORD_SCREEN",
+    "location": "-glider/com.tecknobit.glider.helpers/-e-d-i-t_-g-e-n-e-r-a-t-e-d_-p-a-s-s-w-o-r-d_-s-c-r-e-e-n.html",
     "searchKeys": [
       "EDIT_GENERATED_PASSWORD_SCREEN",
       "const val EDIT_GENERATED_PASSWORD_SCREEN: String",
-      "com.tecknobit.glider.EDIT_GENERATED_PASSWORD_SCREEN"
+      "com.tecknobit.glider.helpers.EDIT_GENERATED_PASSWORD_SCREEN"
     ]
   },
   {
     "name": "const val EDIT_INSERTED_PASSWORD_SCREEN: String",
-    "description": "com.tecknobit.glider.EDIT_INSERTED_PASSWORD_SCREEN",
-    "location": "-glider/com.tecknobit.glider/-e-d-i-t_-i-n-s-e-r-t-e-d_-p-a-s-s-w-o-r-d_-s-c-r-e-e-n.html",
+    "description": "com.tecknobit.glider.helpers.EDIT_INSERTED_PASSWORD_SCREEN",
+    "location": "-glider/com.tecknobit.glider.helpers/-e-d-i-t_-i-n-s-e-r-t-e-d_-p-a-s-s-w-o-r-d_-s-c-r-e-e-n.html",
     "searchKeys": [
       "EDIT_INSERTED_PASSWORD_SCREEN",
       "const val EDIT_INSERTED_PASSWORD_SCREEN: String",
-      "com.tecknobit.glider.EDIT_INSERTED_PASSWORD_SCREEN"
+      "com.tecknobit.glider.helpers.EDIT_INSERTED_PASSWORD_SCREEN"
     ]
   },
   {
     "name": "const val HOME_SCREEN: String",
-    "description": "com.tecknobit.glider.HOME_SCREEN",
-    "location": "-glider/com.tecknobit.glider/-h-o-m-e_-s-c-r-e-e-n.html",
+    "description": "com.tecknobit.glider.helpers.HOME_SCREEN",
+    "location": "-glider/com.tecknobit.glider.helpers/-h-o-m-e_-s-c-r-e-e-n.html",
     "searchKeys": [
       "HOME_SCREEN",
       "const val HOME_SCREEN: String",
-      "com.tecknobit.glider.HOME_SCREEN"
+      "com.tecknobit.glider.helpers.HOME_SCREEN"
     ]
   },
   {
     "name": "const val SPLASHSCREEN: String",
-    "description": "com.tecknobit.glider.SPLASHSCREEN",
-    "location": "-glider/com.tecknobit.glider/-s-p-l-a-s-h-s-c-r-e-e-n.html",
+    "description": "com.tecknobit.glider.helpers.SPLASHSCREEN",
+    "location": "-glider/com.tecknobit.glider.helpers/-s-p-l-a-s-h-s-c-r-e-e-n.html",
     "searchKeys": [
       "SPLASHSCREEN",
       "const val SPLASHSCREEN: String",
-      "com.tecknobit.glider.SPLASHSCREEN"
+      "com.tecknobit.glider.helpers.SPLASHSCREEN"
     ]
   },
   {
@@ -500,52 +500,52 @@
     ]
   },
   {
-    "name": "constructor(passwordId: String)",
+    "name": "constructor(passwordId: String?)",
     "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel.EditGeneratedPasswordScreenViewModel",
     "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation/-edit-generated-password-screen-view-model/-edit-generated-password-screen-view-model.html",
     "searchKeys": [
       "EditGeneratedPasswordScreenViewModel",
-      "constructor(passwordId: String)",
+      "constructor(passwordId: String?)",
       "com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel.EditGeneratedPasswordScreenViewModel"
     ]
   },
   {
-    "name": "constructor(passwordId: String)",
+    "name": "constructor(passwordId: String?)",
     "description": "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen.EditGeneratedPasswordScreen",
     "location": "-glider/com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter/-edit-generated-password-screen/-edit-generated-password-screen.html",
     "searchKeys": [
       "EditGeneratedPasswordScreen",
-      "constructor(passwordId: String)",
+      "constructor(passwordId: String?)",
       "com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen.EditGeneratedPasswordScreen"
     ]
   },
   {
-    "name": "constructor(passwordId: String)",
+    "name": "constructor(passwordId: String?)",
     "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.EditInsertedPasswordScreenViewModel",
     "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/-edit-inserted-password-screen-view-model.html",
     "searchKeys": [
       "EditInsertedPasswordScreenViewModel",
-      "constructor(passwordId: String)",
+      "constructor(passwordId: String?)",
       "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.EditInsertedPasswordScreenViewModel"
     ]
   },
   {
-    "name": "constructor(passwordId: String)",
+    "name": "constructor(passwordId: String?)",
     "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen.EditInsertedPasswordScreen",
     "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presenter/-edit-inserted-password-screen/-edit-inserted-password-screen.html",
     "searchKeys": [
       "EditInsertedPasswordScreen",
-      "constructor(passwordId: String)",
+      "constructor(passwordId: String?)",
       "com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen.EditInsertedPasswordScreen"
     ]
   },
   {
-    "name": "constructor(passwordId: String)",
+    "name": "constructor(passwordId: String?)",
     "description": "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.EditPasswordFormViewModel",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-edit-password-form-view-model/-edit-password-form-view-model.html",
     "searchKeys": [
       "EditPasswordFormViewModel",
-      "constructor(passwordId: String)",
+      "constructor(passwordId: String?)",
       "com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel.EditPasswordFormViewModel"
     ]
   },
@@ -700,32 +700,32 @@
     ]
   },
   {
-    "name": "fun DeleteAccount(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>)",
+    "name": "fun DeleteAccount(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
     "description": "com.tecknobit.glider.ui.components.DeleteAccount",
     "location": "-glider/com.tecknobit.glider.ui.components/-delete-account.html",
     "searchKeys": [
       "DeleteAccount",
-      "fun DeleteAccount(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>)",
+      "fun DeleteAccount(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
       "com.tecknobit.glider.ui.components.DeleteAccount"
     ]
   },
   {
-    "name": "fun DeletePassword(viewModel: KeychainScreenViewModel, show: <Error class: unknown class><Boolean>, password: Password)",
+    "name": "fun DeletePassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
     "description": "com.tecknobit.glider.ui.components.DeletePassword",
     "location": "-glider/com.tecknobit.glider.ui.components/-delete-password.html",
     "searchKeys": [
       "DeletePassword",
-      "fun DeletePassword(viewModel: KeychainScreenViewModel, show: <Error class: unknown class><Boolean>, password: Password)",
+      "fun DeletePassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
       "com.tecknobit.glider.ui.components.DeletePassword"
     ]
   },
   {
-    "name": "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>, device: ConnectedDevice)",
+    "name": "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: MutableState<Boolean>, device: ConnectedDevice)",
     "description": "com.tecknobit.glider.ui.components.DisconnectDevice",
     "location": "-glider/com.tecknobit.glider.ui.components/-disconnect-device.html",
     "searchKeys": [
       "DisconnectDevice",
-      "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>, device: ConnectedDevice)",
+      "fun DisconnectDevice(viewModel: AccountScreenViewModel, show: MutableState<Boolean>, device: ConnectedDevice)",
       "com.tecknobit.glider.ui.components.DisconnectDevice"
     ]
   },
@@ -750,12 +750,12 @@
     ]
   },
   {
-    "name": "fun Logout(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>)",
+    "name": "fun Logout(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
     "description": "com.tecknobit.glider.ui.components.Logout",
     "location": "-glider/com.tecknobit.glider.ui.components/-logout.html",
     "searchKeys": [
       "Logout",
-      "fun Logout(viewModel: AccountScreenViewModel, show: <Error class: unknown class><Boolean>)",
+      "fun Logout(viewModel: AccountScreenViewModel, show: MutableState<Boolean>)",
       "com.tecknobit.glider.ui.components.Logout"
     ]
   },
@@ -790,12 +790,12 @@
     ]
   },
   {
-    "name": "fun PasswordInputField(password: <Error class: unknown class><String>, passwordError: <Error class: unknown class><Boolean>)",
+    "name": "fun PasswordInputField(password: MutableState<String>, passwordError: MutableState<Boolean>)",
     "description": "com.tecknobit.glider.ui.components.PasswordInputField",
     "location": "-glider/com.tecknobit.glider.ui.components/-password-input-field.html",
     "searchKeys": [
       "PasswordInputField",
-      "fun PasswordInputField(password: <Error class: unknown class><String>, passwordError: <Error class: unknown class><Boolean>)",
+      "fun PasswordInputField(password: MutableState<String>, passwordError: MutableState<Boolean>)",
       "com.tecknobit.glider.ui.components.PasswordInputField"
     ]
   },
@@ -810,12 +810,12 @@
     ]
   },
   {
-    "name": "fun PasswordTimeline(show: <Error class: unknown class><Boolean>, password: Password)",
+    "name": "fun PasswordTimeline(show: MutableState<Boolean>, password: Password)",
     "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordTimeline",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-timeline.html",
     "searchKeys": [
       "PasswordTimeline",
-      "fun PasswordTimeline(show: <Error class: unknown class><Boolean>, password: Password)",
+      "fun PasswordTimeline(show: MutableState<Boolean>, password: Password)",
       "com.tecknobit.glider.ui.screens.keychain.components.PasswordTimeline"
     ]
   },
@@ -830,12 +830,12 @@
     ]
   },
   {
-    "name": "fun PasswordTypeFiltersMenu(expanded: <Error class: unknown class><Boolean>, viewModel: KeychainScreenViewModel)",
+    "name": "fun PasswordTypeFiltersMenu(expanded: MutableState<Boolean>, viewModel: KeychainScreenViewModel)",
     "description": "com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.components/-password-type-filters-menu.html",
     "searchKeys": [
       "PasswordTypeFiltersMenu",
-      "fun PasswordTypeFiltersMenu(expanded: <Error class: unknown class><Boolean>, viewModel: KeychainScreenViewModel)",
+      "fun PasswordTypeFiltersMenu(expanded: MutableState<Boolean>, viewModel: KeychainScreenViewModel)",
       "com.tecknobit.glider.ui.screens.keychain.components.PasswordTypeFiltersMenu"
     ]
   },
@@ -850,12 +850,12 @@
     ]
   },
   {
-    "name": "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: <Error class: unknown class><Boolean>, password: Password)",
+    "name": "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
     "description": "com.tecknobit.glider.ui.components.RefreshPassword",
     "location": "-glider/com.tecknobit.glider.ui.components/-refresh-password.html",
     "searchKeys": [
       "RefreshPassword",
-      "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: <Error class: unknown class><Boolean>, password: Password)",
+      "fun RefreshPassword(viewModel: KeychainScreenViewModel, show: MutableState<Boolean>, password: Password)",
       "com.tecknobit.glider.ui.components.RefreshPassword"
     ]
   },
@@ -970,6 +970,46 @@
     ]
   },
   {
+    "name": "fun navToAuthScreen()",
+    "description": "com.tecknobit.glider.helpers.navToAuthScreen",
+    "location": "-glider/com.tecknobit.glider.helpers/nav-to-auth-screen.html",
+    "searchKeys": [
+      "navToAuthScreen",
+      "fun navToAuthScreen()",
+      "com.tecknobit.glider.helpers.navToAuthScreen"
+    ]
+  },
+  {
+    "name": "fun navToEditPassword(password: Password)",
+    "description": "com.tecknobit.glider.helpers.navToEditPassword",
+    "location": "-glider/com.tecknobit.glider.helpers/nav-to-edit-password.html",
+    "searchKeys": [
+      "navToEditPassword",
+      "fun navToEditPassword(password: Password)",
+      "com.tecknobit.glider.helpers.navToEditPassword"
+    ]
+  },
+  {
+    "name": "fun navToHome()",
+    "description": "com.tecknobit.glider.helpers.navToHome",
+    "location": "-glider/com.tecknobit.glider.helpers/nav-to-home.html",
+    "searchKeys": [
+      "navToHome",
+      "fun navToHome()",
+      "com.tecknobit.glider.helpers.navToHome"
+    ]
+  },
+  {
+    "name": "fun navToSplashscreen()",
+    "description": "com.tecknobit.glider.helpers.navToSplashscreen",
+    "location": "-glider/com.tecknobit.glider.helpers/nav-to-splashscreen.html",
+    "searchKeys": [
+      "navToSplashscreen",
+      "fun navToSplashscreen()",
+      "com.tecknobit.glider.helpers.navToSplashscreen"
+    ]
+  },
+  {
     "name": "fun refreshPassword(password: Password, onRefresh: () -> Unit)",
     "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.refreshPassword",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/refresh-password.html",
@@ -1050,42 +1090,42 @@
     ]
   },
   {
-    "name": "lateinit var includeNumbers: <Error class: unknown class><Boolean>",
+    "name": "lateinit var includeNumbers: MutableState<Boolean>",
     "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeNumbers",
     "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-numbers.html",
     "searchKeys": [
       "includeNumbers",
-      "lateinit var includeNumbers: <Error class: unknown class><Boolean>",
+      "lateinit var includeNumbers: MutableState<Boolean>",
       "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeNumbers"
     ]
   },
   {
-    "name": "lateinit var includeSpecialCharacters: <Error class: unknown class><Boolean>",
+    "name": "lateinit var includeSpecialCharacters: MutableState<Boolean>",
     "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeSpecialCharacters",
     "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-special-characters.html",
     "searchKeys": [
       "includeSpecialCharacters",
-      "lateinit var includeSpecialCharacters: <Error class: unknown class><Boolean>",
+      "lateinit var includeSpecialCharacters: MutableState<Boolean>",
       "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeSpecialCharacters"
     ]
   },
   {
-    "name": "lateinit var includeUppercaseLetters: <Error class: unknown class><Boolean>",
+    "name": "lateinit var includeUppercaseLetters: MutableState<Boolean>",
     "description": "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeUppercaseLetters",
     "location": "-glider/com.tecknobit.glider.ui.screens.generate.presentation/-generate-screen-view-model/include-uppercase-letters.html",
     "searchKeys": [
       "includeUppercaseLetters",
-      "lateinit var includeUppercaseLetters: <Error class: unknown class><Boolean>",
+      "lateinit var includeUppercaseLetters: MutableState<Boolean>",
       "com.tecknobit.glider.ui.screens.generate.presentation.GenerateScreenViewModel.includeUppercaseLetters"
     ]
   },
   {
-    "name": "lateinit var keywords: <Error class: unknown class><String>",
+    "name": "lateinit var keywords: MutableState<String>",
     "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.keywords",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/keywords.html",
     "searchKeys": [
       "keywords",
-      "lateinit var keywords: <Error class: unknown class><String>",
+      "lateinit var keywords: MutableState<String>",
       "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.keywords"
     ]
   },
@@ -1101,61 +1141,61 @@
   },
   {
     "name": "lateinit var navigator: NavHostController",
-    "description": "com.tecknobit.glider.navigator",
-    "location": "-glider/com.tecknobit.glider/navigator.html",
+    "description": "com.tecknobit.glider.helpers.navigator",
+    "location": "-glider/com.tecknobit.glider.helpers/navigator.html",
     "searchKeys": [
       "navigator",
       "lateinit var navigator: NavHostController",
-      "com.tecknobit.glider.navigator"
+      "com.tecknobit.glider.helpers.navigator"
     ]
   },
   {
-    "name": "lateinit var passwordError: <Error class: unknown class><Boolean>",
+    "name": "lateinit var passwordError: MutableState<Boolean>",
     "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordError",
     "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/password-error.html",
     "searchKeys": [
       "passwordError",
-      "lateinit var passwordError: <Error class: unknown class><Boolean>",
+      "lateinit var passwordError: MutableState<Boolean>",
       "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordError"
     ]
   },
   {
-    "name": "lateinit var passwordError: <Error class: unknown class><Boolean>",
+    "name": "lateinit var passwordError: MutableState<Boolean>",
     "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordError",
     "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/password-error.html",
     "searchKeys": [
       "passwordError",
-      "lateinit var passwordError: <Error class: unknown class><Boolean>",
+      "lateinit var passwordError: MutableState<Boolean>",
       "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordError"
     ]
   },
   {
-    "name": "lateinit var passwordTypes: <Error class: unknown class><PasswordType>",
+    "name": "lateinit var passwordTypes: SnapshotStateList<PasswordType>",
     "description": "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.passwordTypes",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.presentation/-keychain-screen-view-model/password-types.html",
     "searchKeys": [
       "passwordTypes",
-      "lateinit var passwordTypes: <Error class: unknown class><PasswordType>",
+      "lateinit var passwordTypes: SnapshotStateList<PasswordType>",
       "com.tecknobit.glider.ui.screens.keychain.presentation.KeychainScreenViewModel.passwordTypes"
     ]
   },
   {
-    "name": "lateinit var passwordValue: <Error class: unknown class><String>",
+    "name": "lateinit var passwordValue: MutableState<String>",
     "description": "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordValue",
     "location": "-glider/com.tecknobit.glider.ui.screens.editinsertedpassword.presentation/-edit-inserted-password-screen-view-model/password-value.html",
     "searchKeys": [
       "passwordValue",
-      "lateinit var passwordValue: <Error class: unknown class><String>",
+      "lateinit var passwordValue: MutableState<String>",
       "com.tecknobit.glider.ui.screens.editinsertedpassword.presentation.EditInsertedPasswordScreenViewModel.passwordValue"
     ]
   },
   {
-    "name": "lateinit var passwordValue: <Error class: unknown class><String>",
+    "name": "lateinit var passwordValue: MutableState<String>",
     "description": "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordValue",
     "location": "-glider/com.tecknobit.glider.ui.screens.insert.presentation/-insert-password-screen-view-model/password-value.html",
     "searchKeys": [
       "passwordValue",
-      "lateinit var passwordValue: <Error class: unknown class><String>",
+      "lateinit var passwordValue: MutableState<String>",
       "com.tecknobit.glider.ui.screens.insert.presentation.InsertPasswordScreenViewModel.passwordValue"
     ]
   },
@@ -1180,22 +1220,22 @@
     ]
   },
   {
-    "name": "lateinit var scopes: <Error class: unknown class><String>",
+    "name": "lateinit var scopes: MutableState<String>",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopes",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/scopes.html",
     "searchKeys": [
       "scopes",
-      "lateinit var scopes: <Error class: unknown class><String>",
+      "lateinit var scopes: MutableState<String>",
       "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopes"
     ]
   },
   {
-    "name": "lateinit var scopesError: <Error class: unknown class><Boolean>",
+    "name": "lateinit var scopesError: MutableState<Boolean>",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopesError",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/scopes-error.html",
     "searchKeys": [
       "scopesError",
-      "lateinit var scopesError: <Error class: unknown class><Boolean>",
+      "lateinit var scopesError: MutableState<Boolean>",
       "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.scopesError"
     ]
   },
@@ -1220,22 +1260,22 @@
     ]
   },
   {
-    "name": "lateinit var tail: <Error class: unknown class><String>",
+    "name": "lateinit var tail: MutableState<String>",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tail",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/tail.html",
     "searchKeys": [
       "tail",
-      "lateinit var tail: <Error class: unknown class><String>",
+      "lateinit var tail: MutableState<String>",
       "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tail"
     ]
   },
   {
-    "name": "lateinit var tailError: <Error class: unknown class><Boolean>",
+    "name": "lateinit var tailError: MutableState<Boolean>",
     "description": "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tailError",
     "location": "-glider/com.tecknobit.glider.ui.shared.presentations/-password-form-view-model/tail-error.html",
     "searchKeys": [
       "tailError",
-      "lateinit var tailError: <Error class: unknown class><Boolean>",
+      "lateinit var tailError: MutableState<Boolean>",
       "com.tecknobit.glider.ui.shared.presentations.PasswordFormViewModel.tailError"
     ]
   },
@@ -1270,12 +1310,12 @@
     ]
   },
   {
-    "name": "open override fun insertNewUser(hostAddress: String, name: String, surname: String, email: String, password: String, language: String, response: JsonObject, vararg custom: Any?)",
+    "name": "open override fun insertNewUser(hostAddress: String, userId: String, userToken: String, profilePic: String, name: String, surname: String, email: String, language: String, vararg custom: Any?)",
     "description": "com.tecknobit.glider.helpers.GliderLocalUser.insertNewUser",
     "location": "-glider/com.tecknobit.glider.helpers/-glider-local-user/insert-new-user.html",
     "searchKeys": [
       "insertNewUser",
-      "open override fun insertNewUser(hostAddress: String, name: String, surname: String, email: String, password: String, language: String, response: JsonObject, vararg custom: Any?)",
+      "open override fun insertNewUser(hostAddress: String, userId: String, userToken: String, profilePic: String, name: String, surname: String, email: String, language: String, vararg custom: Any?)",
       "com.tecknobit.glider.helpers.GliderLocalUser.insertNewUser"
     ]
   },
@@ -1660,12 +1700,12 @@
     ]
   },
   {
-    "name": "val events: <Error class: unknown class>",
+    "name": "val events: SnapshotStateList<PasswordEvent>",
     "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.events",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/events.html",
     "searchKeys": [
       "events",
-      "val events: <Error class: unknown class>",
+      "val events: SnapshotStateList<PasswordEvent>",
       "com.tecknobit.glider.ui.screens.keychain.data.Password.events"
     ]
   },
@@ -2100,12 +2140,12 @@
     ]
   },
   {
-    "name": "val password: <Error class: unknown class>",
+    "name": "val password: MutableState<String>",
     "description": "com.tecknobit.glider.ui.screens.keychain.data.Password.password",
     "location": "-glider/com.tecknobit.glider.ui.screens.keychain.data/-password/password.html",
     "searchKeys": [
       "password",
-      "val password: <Error class: unknown class>",
+      "val password: MutableState<String>",
       "com.tecknobit.glider.ui.screens.keychain.data.Password.password"
     ]
   },

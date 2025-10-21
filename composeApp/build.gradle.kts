@@ -4,7 +4,6 @@ import org.jetbrains.compose.desktop.application.dsl.TargetFormat.Pkg
 import org.jetbrains.dokka.base.DokkaBase
 import org.jetbrains.dokka.base.DokkaBaseConfiguration
 import org.jetbrains.dokka.gradle.DokkaTask
-import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
@@ -17,12 +16,11 @@ plugins {
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.dokka)
     kotlin("plugin.serialization") version "2.0.20"
-    id("com.github.gmazzo.buildconfig") version "5.5.1"
+    id("com.github.gmazzo.buildconfig") version "5.7.0"
 }
 
 kotlin {
     androidTarget {
-        @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
             jvmTarget.set(JvmTarget.JVM_22)
         }
@@ -41,7 +39,6 @@ kotlin {
 
     jvm("desktop") {
         compilations.all {
-            @OptIn(ExperimentalKotlinGradlePluginApi::class)
             this@jvm.compilerOptions {
                 jvmTarget.set(JvmTarget.JVM_22)
             }
@@ -96,10 +93,10 @@ kotlin {
             implementation(libs.glidercore)
             implementation(libs.lazy.pagination.compose)
             implementation(libs.jetlime)
-            implementation(libs.ametista.engine)
             implementation(libs.kinfo)
             implementation(libs.equinox.navigation)
             implementation(libs.navigation.compose)
+            implementation(libs.equinoxmisc.navigation.compose.util)
             implementation(libs.biometrik)
         }
         desktopMain.dependencies {
@@ -118,8 +115,8 @@ android {
         applicationId = "com.tecknobit.glider"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 9
-        versionName = "2.0.3"
+        versionCode = 10
+        versionName = "2.0.4"
     }
     packaging {
         resources {
@@ -161,8 +158,8 @@ compose.desktop {
                 "jdk.security.auth"
             )
             packageName = "Glider"
-            packageVersion = "2.0.3"
-            version = "2.0.3"
+            packageVersion = "2.0.4"
+            version = "2.0.4"
             description = "Glider, open source passwords manager"
             copyright = "© 2025 Tecknobit"
             vendor = "Tecknobit"
@@ -179,7 +176,7 @@ compose.desktop {
                 iconFile.set(project.file("src/desktopMain/resources/logo.png"))
                 packageName = "com-tecknobit-glider"
                 debMaintainer = "infotecknobitcompany@gmail.com"
-                appRelease = "2.0.3"
+                appRelease = "2.0.4"
                 appCategory = "PERSONALIZATION"
                 rpmLicenseType = "APACHE2"
             }
@@ -204,22 +201,10 @@ tasks.withType<DokkaTask>().configureEach {
 }
 
 buildConfig {
-    className("AmetistaConfig")
+    className("GliderConfig")
     packageName("com.tecknobit.glider")
     buildConfigField<String>(
-        name = "HOST",
-        value = project.findProperty("host").toString()
-    )
-    buildConfigField<String?>(
-        name = "SERVER_SECRET",
-        value = project.findProperty("server_secret").toString()
-    )
-    buildConfigField<String?>(
-        name = "APPLICATION_IDENTIFIER",
-        value = project.findProperty("application_id").toString()
-    )
-    buildConfigField<Boolean>(
-        name = "BYPASS_SSL_VALIDATION",
-        value = project.findProperty("bypass_ssl_validation").toString().toBoolean()
+        name = "LOCAL_STORAGE_PATH",
+        value = project.findProperty("localStoragePath").toString()
     )
 }

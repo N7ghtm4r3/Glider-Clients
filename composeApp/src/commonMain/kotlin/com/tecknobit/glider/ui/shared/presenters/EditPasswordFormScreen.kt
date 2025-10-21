@@ -22,6 +22,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.TopAppBarDefaults.topAppBarColors
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.runtime.NonRestartableComposable
@@ -43,7 +44,7 @@ import com.tecknobit.equinoxcompose.session.sessionflow.rememberSessionFlowState
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.annotations.Structure
 import com.tecknobit.equinoxcore.annotations.Wrapper
-import com.tecknobit.glider.navigator
+import com.tecknobit.glider.helpers.navigator
 import com.tecknobit.glider.ui.shared.data.PasswordDetails
 import com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel
 import com.tecknobit.glider.ui.theme.GliderTheme
@@ -99,9 +100,9 @@ abstract class EditPasswordFormScreen<V : EditPasswordFormViewModel>(
                     Scaffold(
                         topBar = {
                             MediumTopAppBar(
-                                colors = TopAppBarDefaults.mediumTopAppBarColors(
-                                    containerColor = MaterialTheme.colorScheme.primary
-                                ),
+                                colors = topAppBarColors(
+        containerColor = MaterialTheme.colorScheme.primary
+        ),
                                 navigationIcon = {
                                     IconButton(
                                         onClick = { navigator.popBackStack() }

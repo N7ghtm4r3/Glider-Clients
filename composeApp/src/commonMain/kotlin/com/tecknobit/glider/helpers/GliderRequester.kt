@@ -66,13 +66,6 @@ class GliderRequester(
     connectionErrorMessage = "Server temporary unavailable"
 ) {
 
-    init {
-        // TODO: TO REIMPLEMENT WHEN NECESSARY
-//        attachInterceptorOnRequest {
-//            ametistaEngine.notifyNetworkRequest()
-//        }
-    }
-
     /**
      * `deviceIdHeader` the default headers map with the current [deviceId]
      */

@@ -65,10 +65,9 @@ import com.tecknobit.equinoxcompose.utilities.ResponsiveContent
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.SUPPORTED_LANGUAGES
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isEmailValid
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
-import com.tecknobit.glider.SPLASHSCREEN
 import com.tecknobit.glider.bodyFontFamily
+import com.tecknobit.glider.helpers.navToSplashscreen
 import com.tecknobit.glider.localUser
-import com.tecknobit.glider.navigator
 import com.tecknobit.glider.ui.components.DeleteAccount
 import com.tecknobit.glider.ui.components.FirstPageProgressIndicator
 import com.tecknobit.glider.ui.components.Logout
@@ -308,7 +307,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                         viewModel.changeLanguage(
                             onChange = {
                                 visible.value = false
-                                navigator.navigate(SPLASHSCREEN)
+                                navToSplashscreen()
                             }
                         )
                     }
@@ -320,10 +319,7 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
                     dismissAction = { visible -> visible.value = false },
                     confirmAction = { visible ->
                         viewModel.changeTheme(
-                            onChange = {
-                                visible.value = false
-                                navigator.navigate(SPLASHSCREEN)
-                            }
+                            onChange = { visible.value = false }
                         )
                     }
                 ),
@@ -549,7 +545,6 @@ class AccountScreenTab : GliderScreenTab<AccountScreenViewModel>(
     @Composable
     override fun CollectStates() {
         viewModel.email = remember { mutableStateOf(localUser.email) }
-        viewModel.password = remember { mutableStateOf(localUser.password) }
         viewModel.language = remember { mutableStateOf(localUser.language) }
         viewModel.theme = remember { mutableStateOf(localUser.theme) }
     }

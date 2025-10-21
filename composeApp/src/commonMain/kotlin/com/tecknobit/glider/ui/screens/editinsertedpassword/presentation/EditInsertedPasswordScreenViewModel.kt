@@ -6,7 +6,7 @@ import com.tecknobit.equinoxcompose.session.viewmodels.EquinoxViewModel
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.InputsValidator.Companion.isPasswordValid
 import com.tecknobit.equinoxcore.network.sendRequestAsyncHandlers
-import com.tecknobit.glider.navigator
+import com.tecknobit.glider.helpers.navigator
 import com.tecknobit.glider.requester
 import com.tecknobit.glider.ui.screens.editgeneratedpassword.presentation.EditGeneratedPasswordScreenViewModel
 import com.tecknobit.glider.ui.shared.presentations.EditPasswordFormViewModel
@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
  *
  */
 class EditInsertedPasswordScreenViewModel(
-    passwordId: String,
+    passwordId: String?,
 ) : EditPasswordFormViewModel(
     passwordId = passwordId
 ) {
@@ -55,7 +55,7 @@ class EditInsertedPasswordScreenViewModel(
             requester.sendRequestAsyncHandlers(
                 request = {
                     editPassword(
-                        passwordId = passwordId,
+                        passwordId = passwordId!!,
                         tail = tail.value,
                         scopes = scopes.value,
                         password = passwordValue.value

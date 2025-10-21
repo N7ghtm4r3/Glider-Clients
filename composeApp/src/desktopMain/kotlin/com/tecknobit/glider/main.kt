@@ -14,7 +14,6 @@ import org.jetbrains.compose.resources.stringResource
  * Method to start the of `Glider` desktop app
  */
 fun main() {
-    // AmetistaEngine.intake()
     application {
         Window(
             onCloseRequest = ::exitApplication,

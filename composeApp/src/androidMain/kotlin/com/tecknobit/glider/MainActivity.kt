@@ -2,7 +2,6 @@ package com.tecknobit.glider
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.os.StrictMode
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.ActivityResultLauncher
@@ -54,7 +53,6 @@ class MainActivity : AppCompatActivity() {
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // AmetistaEngine.intake()
         setContent {
             enableEdgeToEdge()
             initSession()
@@ -71,8 +69,6 @@ class MainActivity : AppCompatActivity() {
     @NonRestartableComposable
     @SuppressLint("ComposableNaming")
     private fun initSession() {
-        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
-        StrictMode.setThreadPolicy(policy)
         ContextActivityProvider.setCurrentActivity(this)
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
     }
