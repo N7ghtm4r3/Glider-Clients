@@ -6,9 +6,8 @@ import com.tecknobit.equinoxcore.annotations.Assembler
 import com.tecknobit.equinoxcore.annotations.CustomParametersOrder
 import com.tecknobit.equinoxcore.annotations.RequiresSuperCall
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
-import com.tecknobit.glider.HOME_SCREEN
+import com.tecknobit.glider.helpers.navToHome
 import com.tecknobit.glider.localUser
-import com.tecknobit.glider.navigator
 import com.tecknobit.glider.requester
 import com.tecknobit.glidercore.BRAND_KEY
 import com.tecknobit.glidercore.BROWSER_KEY
@@ -162,7 +161,7 @@ class AuthScreenViewModel : EquinoxAuthViewModel(
         vararg custom: Any?,
     ) {
         super.launchApp(response, name, surname, language, *custom)
-        navigator.navigate(HOME_SCREEN)
+        navToHome()
     }
 
 }

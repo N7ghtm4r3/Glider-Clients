@@ -12,9 +12,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.tecknobit.equinoxcompose.components.EquinoxAlertDialog
-import com.tecknobit.glider.SPLASHSCREEN
 import com.tecknobit.glider.displayFontFamily
-import com.tecknobit.glider.navigator
+import com.tecknobit.glider.helpers.navToSplashscreen
 import com.tecknobit.glider.ui.screens.account.data.ConnectedDevice
 import com.tecknobit.glider.ui.screens.account.presentation.AccountScreenViewModel
 import com.tecknobit.glider.ui.screens.keychain.data.Password
@@ -162,7 +161,7 @@ fun Logout(
         text = Res.string.logout_warn_text,
         confirmAction = {
             viewModel.clearSession {
-                navigator.navigate(SPLASHSCREEN)
+                navToSplashscreen()
             }
         }
     )
@@ -192,7 +191,7 @@ fun DeleteAccount(
         text = Res.string.delete_warn_text,
         confirmAction = {
             viewModel.deleteAccount {
-                navigator.navigate(SPLASHSCREEN)
+                navToSplashscreen()
             }
         }
     )

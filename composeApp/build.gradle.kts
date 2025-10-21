@@ -98,6 +98,7 @@ kotlin {
             implementation(libs.kinfo)
             implementation(libs.equinox.navigation)
             implementation(libs.navigation.compose)
+            implementation(libs.equinoxmisc.navigation.compose.util)
             implementation(libs.biometrik)
         }
         desktopMain.dependencies {

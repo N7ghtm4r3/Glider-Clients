@@ -5,7 +5,6 @@ package com.tecknobit.glider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.ExperimentalComposeApi
 import androidx.compose.ui.text.font.FontFamily
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -15,8 +14,14 @@ import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowState
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
 import com.tecknobit.equinoxcore.network.sendRequest
+import com.tecknobit.glider.helpers.AUTH_SCREEN
+import com.tecknobit.glider.helpers.EDIT_GENERATED_PASSWORD_SCREEN
+import com.tecknobit.glider.helpers.EDIT_INSERTED_PASSWORD_SCREEN
 import com.tecknobit.glider.helpers.GliderLocalUser
 import com.tecknobit.glider.helpers.GliderRequester
+import com.tecknobit.glider.helpers.HOME_SCREEN
+import com.tecknobit.glider.helpers.SPLASHSCREEN
+import com.tecknobit.glider.helpers.navigator
 import com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen
 import com.tecknobit.glider.ui.screens.editgeneratedpassword.presenter.EditGeneratedPasswordScreen
 import com.tecknobit.glider.ui.screens.editinsertedpassword.presenter.EditInsertedPasswordScreen
@@ -41,11 +46,6 @@ lateinit var bodyFontFamily: FontFamily
 lateinit var displayFontFamily: FontFamily
 
 /**
- * `navigator` -> the navigator instance is useful to manage the navigation between the screens of the application
- */
-lateinit var navigator: NavHostController
-
-/**
  * `localUser` -> the helper to manage the local sessions stored locally in
  * the device
  */
@@ -55,31 +55,6 @@ val localUser = GliderLocalUser()
  * `requester` -> the instance to manage the requests with the backend
  */
 lateinit var requester: GliderRequester
-
-/**
- * `SPLASHSCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.splashscreen.Splashscreen]
- */
-const val SPLASHSCREEN = "Splashscreen"
-
-/**
- * `AUTH_SCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.auth.presenter.AuthScreen]
- */
-const val AUTH_SCREEN = "AuthScreen"
-
-/**
- * `HOME_SCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.home.presenter.HomeScreen]
- */
-const val HOME_SCREEN = "HomeScreen"
-
-/**
- * `EDIT_GENERATED_PASSWORD_SCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.generate.presenter.GenerateScreenTab]
- */
-const val EDIT_GENERATED_PASSWORD_SCREEN = "EditGeneratedPasswordScreen"
-
-/**
- * `EDIT_INSERTED_PASSWORD_SCREEN` -> route to navigate to the [com.tecknobit.glider.ui.screens.insert.presenter.InsertPasswordScreenTab]
- */
-const val EDIT_INSERTED_PASSWORD_SCREEN = "EditInsertedPasswordScreen"
 
 /**
  * Common entry point of the **Glider** application

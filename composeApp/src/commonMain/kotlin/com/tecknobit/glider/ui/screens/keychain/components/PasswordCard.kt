@@ -39,10 +39,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
-import com.tecknobit.glider.EDIT_GENERATED_PASSWORD_SCREEN
-import com.tecknobit.glider.EDIT_INSERTED_PASSWORD_SCREEN
-import com.tecknobit.glider.navigator
+import com.tecknobit.glider.helpers.navToEditPassword
 import com.tecknobit.glider.ui.components.DeletePassword
 import com.tecknobit.glider.ui.components.RefreshPassword
 import com.tecknobit.glider.ui.icons.SettingsBRoll
@@ -227,15 +224,9 @@ private fun ToolsBar(
                     modifier = Modifier
                         .clip(CircleShape)
                         .clickable {
-                            val savedStateHandle = navigator.currentBackStackEntry?.savedStateHandle
-                            savedStateHandle?.let {
-                                val route = if (password.type == GENERATED)
-                                    EDIT_GENERATED_PASSWORD_SCREEN
-                                else
-                                    EDIT_INSERTED_PASSWORD_SCREEN
-                                savedStateHandle[IDENTIFIER_KEY] = password.id
-                                navigator.navigate(route)
-                            }
+                            navToEditPassword(
+                                password = password
+                            )
                         },
                     imageVector = Icons.Default.Edit,
                     contentDescription = null
