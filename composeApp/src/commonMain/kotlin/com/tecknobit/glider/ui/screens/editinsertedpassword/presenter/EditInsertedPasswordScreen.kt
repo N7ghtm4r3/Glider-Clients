@@ -30,7 +30,7 @@ import com.tecknobit.glider.ui.shared.presenters.PasswordFormScreen
  * @see EditPasswordFormScreen
  */
 class EditInsertedPasswordScreen(
-    passwordId: String,
+    passwordId: String?,
 ) : EditPasswordFormScreen<EditInsertedPasswordScreenViewModel>(
     viewModel = EditInsertedPasswordScreenViewModel(
         passwordId = passwordId

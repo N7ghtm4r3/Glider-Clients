@@ -1,4 +1,4 @@
-@file:OptIn(ExperimentalComposeApi::class)
+@file:OptIn(ExperimentalComposeApi::class, ExperimentalStdlibApi::class)
 
 package com.tecknobit.glider
 
@@ -14,6 +14,7 @@ import com.tecknobit.equinoxcompose.session.sessionflow.SessionFlowState
 import com.tecknobit.equinoxcore.helpers.IDENTIFIER_KEY
 import com.tecknobit.equinoxcore.network.Requester.Companion.toResponseData
 import com.tecknobit.equinoxcore.network.sendRequest
+import com.tecknobit.equinoxmisc.navigationcomposeutil.getDestinationNavData
 import com.tecknobit.glider.helpers.AUTH_SCREEN
 import com.tecknobit.glider.helpers.EDIT_GENERATED_PASSWORD_SCREEN
 import com.tecknobit.glider.helpers.EDIT_INSERTED_PASSWORD_SCREEN
@@ -96,30 +97,28 @@ fun App() {
             composable(
                 route = EDIT_GENERATED_PASSWORD_SCREEN
             ) {
-                val savedStateHandle = navigator.previousBackStackEntry!!.savedStateHandle
-                val passwordId: String? = savedStateHandle[IDENTIFIER_KEY]
-                passwordId?.let {
-                    val editGeneratedPasswordScreen = equinoxScreen {
-                        EditGeneratedPasswordScreen(
-                            passwordId = passwordId
-                        )
-                    }
-                    editGeneratedPasswordScreen.ShowContent()
+                val passwordId: String? = navigator.getDestinationNavData(
+                    key = IDENTIFIER_KEY
+                )
+                val editGeneratedPasswordScreen = equinoxScreen {
+                    EditGeneratedPasswordScreen(
+                        passwordId = passwordId
+                    )
                 }
+                editGeneratedPasswordScreen.ShowContent()
             }
             composable(
                 route = EDIT_INSERTED_PASSWORD_SCREEN
             ) {
-                val savedStateHandle = navigator.previousBackStackEntry!!.savedStateHandle
-                val passwordId: String? = savedStateHandle[IDENTIFIER_KEY]
-                passwordId?.let {
-                    val editInsertedPasswordScreen = equinoxScreen {
-                        EditInsertedPasswordScreen(
-                            passwordId = passwordId
-                        )
-                    }
-                    editInsertedPasswordScreen.ShowContent()
+                val passwordId: String? = navigator.getDestinationNavData(
+                    key = IDENTIFIER_KEY
+                )
+                val editInsertedPasswordScreen = equinoxScreen {
+                    EditInsertedPasswordScreen(
+                        passwordId = passwordId
+                    )
                 }
+                editInsertedPasswordScreen.ShowContent()
             }
         }
     }
@@ -143,7 +142,6 @@ expect fun CheckForUpdatesAndLaunch()
  */
 fun startSession() {
     requester = GliderRequester(
-        debugMode = true, // TODO: TO REMOVE
         host = localUser.hostAddress,
         userId = localUser.userId,
         userToken = localUser.userToken,

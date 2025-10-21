@@ -34,7 +34,7 @@ import kotlinx.serialization.json.decodeFromJsonElement
  */
 @Structure
 abstract class EditPasswordFormViewModel(
-    protected val passwordId: String,
+    protected val passwordId: String?,
 ) : PasswordFormViewModel() {
 
     /**
@@ -54,20 +54,22 @@ abstract class EditPasswordFormViewModel(
      * Method to request the current password details
      */
     fun retrievePassword() {
-        viewModelScope.launch {
-            requester.sendRequest(
-                request = {
-                    getPassword(
-                        passwordId = passwordId
-                    )
-                },
-                onSuccess = {
-                    sessionFlowState.notifyOperational()
-                    _password.value = Json.decodeFromJsonElement(it.toResponseData())
-                },
-                onFailure = { showSnackbarMessage(it) },
-                onConnectionError = { sessionFlowState.notifyServerOffline() }
-            )
+        passwordId?.let {
+            viewModelScope.launch {
+                requester.sendRequest(
+                    request = {
+                        getPassword(
+                            passwordId = passwordId
+                        )
+                    },
+                    onSuccess = {
+                        sessionFlowState.notifyOperational()
+                        _password.value = Json.decodeFromJsonElement(it.toResponseData())
+                    },
+                    onFailure = { showSnackbarMessage(it) },
+                    onConnectionError = { sessionFlowState.notifyServerOffline() }
+                )
+            }
         }
     }
 

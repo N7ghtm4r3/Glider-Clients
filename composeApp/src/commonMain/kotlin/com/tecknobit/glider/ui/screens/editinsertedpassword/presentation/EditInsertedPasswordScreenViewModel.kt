@@ -29,7 +29,7 @@ import kotlinx.coroutines.launch
  *
  */
 class EditInsertedPasswordScreenViewModel(
-    passwordId: String,
+    passwordId: String?,
 ) : EditPasswordFormViewModel(
     passwordId = passwordId
 ) {
@@ -55,7 +55,7 @@ class EditInsertedPasswordScreenViewModel(
             requester.sendRequestAsyncHandlers(
                 request = {
                     editPassword(
-                        passwordId = passwordId,
+                        passwordId = passwordId!!,
                         tail = tail.value,
                         scopes = scopes.value,
                         password = passwordValue.value
